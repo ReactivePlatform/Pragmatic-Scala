@@ -1,0 +1,8 @@
+
+scala> def foo(a: Int)(b: Int)(c:Int) = {}
+foo: (a: Int)(b: Int)(c: Int)Unit
+
+scala> foo _
+res0: Int => (Int => (Int => Unit)) = <function1>
+
+scala> :quit

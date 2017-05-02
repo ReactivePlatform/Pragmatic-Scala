@@ -1,0 +1,9 @@
+Compiled from "CreditCard.scala"
+public class CreditCard {
+  private final int number;
+  private int creditLimit;
+  public int number();
+  public int creditLimit();
+  public void creditLimit_$eq(int);
+  public CreditCard(int, int);
+}

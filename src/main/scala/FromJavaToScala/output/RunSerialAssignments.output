@@ -1,0 +1,6 @@
+SerialAssignments.scala:4: error: type mismatch;
+ found   : Unit
+ required: Int
+a = b = 3
+      ^
+one error found

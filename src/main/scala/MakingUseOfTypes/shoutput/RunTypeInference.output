@@ -1,0 +1,6 @@
+Compiled from "TypeInference.scala"
+public class TypeInference {
+  private final java.lang.String greet;
+  public java.lang.String greet();
+  public TypeInference();
+}

@@ -1,0 +1,7 @@
+got hello (class java.lang.String) there (class java.lang.String)
+got 4 (class java.lang.Integer) 5 (class java.lang.Integer)
+got hi (class java.lang.String) 5 (class java.lang.Integer)
+message content is howdy
+true
+false
+false

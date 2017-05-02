@@ -1,0 +1,9 @@
+Generics3.scala:11: error: type mismatch;
+ found   : java.util.ArrayList[Int]
+ required: java.util.ArrayList[Any]
+Note: Int <: Any, but Java-defined class ArrayList is invariant in type E.
+You may wish to investigate a wildcard type such as `_ <: Any`. (SLS 
+3.2.10)
+list2 = list1 // Compilation Error
+        ^
+one error found

@@ -1,0 +1,4 @@
+Raw: Right(2.0)
+result 2.0
+Raw: Left(Error computing, invalid input)
+Error: Error computing, invalid input

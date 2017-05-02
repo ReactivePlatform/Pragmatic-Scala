@@ -1,0 +1,8 @@
+scala>  val colors = Set("Blue", "Green", "Red")
+colors: scala.collection.immutable.Set[String] = Set(Blue, Green, Red)
+
+scala> colors.getClass
+res0: Class[_ <: scala.collection.immutable.Set[String]] = class 
+scala.collection.immutable.Set$Set3
+
+scala> :quit

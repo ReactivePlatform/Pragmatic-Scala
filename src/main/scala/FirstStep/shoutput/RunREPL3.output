@@ -1,0 +1,3 @@
+
+scala> val number = 7
+number: Int = 7

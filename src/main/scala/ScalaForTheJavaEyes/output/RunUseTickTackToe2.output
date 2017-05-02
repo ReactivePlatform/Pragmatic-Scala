@@ -1,0 +1,7 @@
+(fragment of UseTickTackToe2.scala):3: error: method validateCell cannot be 
+  accessed in TickTackToeBoard
+tickTackToeBoard.validateCell(1, 2)
+                  ^
+one error found
+!!!
+discarding <script preamble>

@@ -1,0 +1,14 @@
+Compiled from "Dude.scala"
+public class Dude {
+  private final java.lang.String firstName;
+  private final java.lang.String lastName;
+  private java.lang.String position;
+  public java.lang.String firstName();
+  public java.lang.String lastName();
+  public java.lang.String position();
+  public void position_$eq(java.lang.String);
+  public void setPosition(java.lang.String);
+  public java.lang.String getFirstName();
+  public java.lang.String getPosition();
+  public Dude(java.lang.String, java.lang.String);
+}

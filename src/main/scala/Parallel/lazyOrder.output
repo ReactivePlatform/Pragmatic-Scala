@@ -1,0 +1,9 @@
+> scala lazyOrder.scala 
+1
+2
+1
+> scala lazyOrder.scala 
+1
+2
+-1
+> 

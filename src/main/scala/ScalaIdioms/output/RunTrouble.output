@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.ArrayStoreException: Apple
+	at Trouble.main(Trouble.java:12)

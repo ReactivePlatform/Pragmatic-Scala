@@ -1,0 +1,12 @@
+Compiled from "Printable.scala"
+public abstract class Printable$class {
+  public static void print(Printable);
+  public static void $init$(Printable);
+}
+Compiled from "Printable.scala"
+public abstract class Printable$class {
+  public static void print(Printable);
+  public static void $init$(Printable);
+}
+We can reuse the trait here if we like...
+running printable...

@@ -1,0 +1,18 @@
+Ticker  Units  Closing Price($) Total Value($)
+   AAPL    200           125.90  25180.00
+   ADBE    125            77.36  9670.00
+    ALU    150             3.84  576.00
+    AMD    150             2.80  420.00
+   CSCO    250            28.44  7110.00
+    HPQ    225            33.28  7488.00
+    IBM    215           162.88  35019.20
+   INTC    160            31.31  5009.60
+   MSFT    190            42.88  8147.20
+    NSM    200            29.94  5988.00
+   ORCL    200            44.41  8882.00
+   SYMC    230            24.38  5607.40
+    TXN    190            59.28  11263.20
+   VRSN    200            64.75  12950.00
+    XRX    240            13.18  3163.20
+The total value of your investments is $146473.80
+Took 1.98  seconds

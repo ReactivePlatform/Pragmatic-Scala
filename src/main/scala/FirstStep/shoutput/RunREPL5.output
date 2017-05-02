@@ -1,0 +1,11 @@
+scala> def isPalindrome(str: String) = 
+     |   str == str.reverse
+isPalindrome: (str: String)Boolean
+
+scala> isPalindrome("mom")
+res0: Boolean = true
+
+scala> isPalindrome("dude")
+res1: Boolean = false
+
+scala> :quit

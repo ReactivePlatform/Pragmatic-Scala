@@ -1,0 +1,5 @@
+/Users/venkats/books/vsscala2/Book/code/Introduction/MaxImperative.scala:4:
+ error: val in for comprehension must be followed by assignment
+for (val value <- values) {
+               ^
+one error found

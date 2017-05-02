@@ -1,0 +1,5 @@
+OKJava.java:8: error: incompatible types: ArrayList<Integer> cannot be 
+converted to ArrayList<Object>
+    ArrayList<Object> list2 = list; // Compilation error
+                              ^
+1 error

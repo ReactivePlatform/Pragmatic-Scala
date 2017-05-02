@@ -1,0 +1,9 @@
+# of Filtered: 1
+# of feeds with auth name D* and pragprog in URL: 1
+Get Andy's Feed: Some(blog.toolshed.com)
+Get Bill's Feed: None
+Get Andy's Feed Using apply(): blog.toolshed.com
+Get Bill's Feed: Not found
+Venkat's blog in original feeds: None
+Venkat's blog in new feed: blog.agiledeveloper.com
+Number of forums: 2

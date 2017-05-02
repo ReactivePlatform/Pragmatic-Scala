@@ -1,0 +1,8 @@
+(fragment of SerialAssignments.scala):3: error: type mismatch;
+ found   : Unit
+ required: Int
+a = b = c
+       ^
+one error found
+!!!
+discarding <script preamble>

@@ -1,0 +1,5 @@
+Access.scala:9: error: method turnTable in class Microwave cannot be 
+accessed in this.Microwave
+microwave.turnTable() //ERROR
+          ^
+one error found

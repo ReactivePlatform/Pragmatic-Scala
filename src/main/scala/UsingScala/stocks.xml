@@ -1,0 +1,25 @@
+<!--
+ ! Excerpted from "Pragmatic Scala",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
+-->
+<symbols> 
+  <symbol ticker="AAPL"><units>200</units></symbol>
+  <symbol ticker="ADBE"><units>125</units></symbol>
+  <symbol ticker="ALU"><units>150</units></symbol>
+  <symbol ticker="AMD"><units>150</units></symbol>
+  <symbol ticker="CSCO"><units>250</units></symbol>
+  <symbol ticker="HPQ"><units>225</units></symbol>
+  <symbol ticker="IBM"><units>215</units></symbol>
+  <symbol ticker="INTC"><units>160</units></symbol>
+  <symbol ticker="MSFT"><units>190</units></symbol>
+  <symbol ticker="NSM"><units>200</units></symbol>
+  <symbol ticker="ORCL"><units>200</units></symbol>
+  <symbol ticker="SYMC"><units>230</units></symbol>
+  <symbol ticker="TXN"><units>190</units></symbol>
+  <symbol ticker="VRSN"><units>200</units></symbol>
+  <symbol ticker="XRX"><units>240</units></symbol>
+</symbols> 

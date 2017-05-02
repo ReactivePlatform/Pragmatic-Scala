@@ -1,0 +1,15 @@
+First feed: blog.toolshed.com
+Second feed: pragdave.me
+First Feed In Prefixed: forums.pragprog.com/forums/87
+First feed in feeds with forum: blog.toolshed.com
+Last feed in feeds with forum: forums.pragprog.com/forums/246
+Last Feed In Appended: agilelearner.com
+Feeds with blog: blog.toolshed.com, blog.agiledeveloper.com
+All feeds have com: true
+All feeds have dave: false
+Any feed has dave: true
+Any feed has bill: false
+Feed url lengths: 17, 21, 23
+Total length of feed urls: 61
+Total length of feed urls: 61
+Total length of feed urls: 61

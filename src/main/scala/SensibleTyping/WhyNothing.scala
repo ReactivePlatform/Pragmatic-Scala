@@ -1,0 +1,16 @@
+/***
+ * Excerpted from "Pragmatic Scala",
+ * published by The Pragmatic Bookshelf.
+ * Copyrights apply to this code. It may not be used to create training material, 
+ * courses, books, articles, and the like. Contact us if you are in doubt.
+ * We make no guarantees that this code is fit for any purpose. 
+ * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
+***/
+val op1, op2 = 0
+
+val result = 
+  if (op2 != 0)
+    op1/op2
+  else
+    throw new ArithmeticException("Division by Zero")
+println(result)

@@ -1,0 +1,16 @@
+<symbols>
+  <symbol ticker="AAPL"><units>200</units></symbol>
+  <symbol ticker="IBM"><units>215</units></symbol>
+</symbols>
+class scala.xml.Elem
+<symbol ticker="AAPL"><units>200</units></symbol>
+<symbol ticker="IBM"><units>215</units></symbol>
+class scala.xml.NodeSeq$$anon$1
+<units>200</units>
+<units>215</units>
+class scala.xml.NodeSeq$$anon$1
+200
+Units: 200
+Ticker	Units
+AAPL    200
+IBM     215

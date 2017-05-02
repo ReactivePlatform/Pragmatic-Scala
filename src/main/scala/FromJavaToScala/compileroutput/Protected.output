@@ -1,0 +1,15 @@
+Protected.scala:12: error: method checkEngine in class Vehicle cannot be 
+accessed in automobiles.Vehicle
+ Access to protected method checkEngine not permitted because
+ prefix type automobiles.Vehicle does not conform to
+ class Car in package automobiles where the access take place
+    vehicle.checkEngine() //ERROR
+            ^
+Protected.scala:17: error: method checkEngine in class Vehicle cannot be 
+accessed in automobiles.Vehicle
+ Access to protected method checkEngine not permitted because
+ enclosing class GasStation in package automobiles is not a subclass of
+ class Vehicle in package automobiles where target is defined
+    vehicle.checkEngine() //ERROR
+            ^
+two errors found
