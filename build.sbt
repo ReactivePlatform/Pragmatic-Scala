@@ -1,3 +1,6 @@
+import com.typesafe.sbt.SbtGit.GitKeys
+import com.typesafe.sbt.git.DefaultReadableGit
+
 name := "PragmaticScala"
 
 version := "1.0"
@@ -12,10 +15,9 @@ enablePlugins(AkkaParadoxPlugin)
 
 enablePlugins(GhpagesPlugin)
 
-scmInfo := Some(ScmInfo(
-  url("https://github.com/ReactivePlatform/Pragmatic-Scala"),
-  "git@github.com:ReactivePlatform/Pragmatic-Scala.git"))
-
 enablePlugins(GhpagesPlugin)
 
-git.remoteRepo := scmInfo.value.get.connection
+git.remoteRepo := "https://github.com/ReactivePlatform/Pragmatic-Scala.git"
+
+GitKeys.gitReader in ThisProject := baseDirectory(base => new DefaultReadableGit(base)).value
+
