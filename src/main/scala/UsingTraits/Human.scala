@@ -6,7 +6,10 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+
+// #fiddle_code
 class Human(val name: String) extends Friend
 
 class Woman(override val name: String) extends Human(name)
 class Man(override val name: String) extends Human(name)
+// #fiddle_code
