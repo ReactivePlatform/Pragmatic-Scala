@@ -1,3 +1,5 @@
+package UsingTraits
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,7 +8,9 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 class Dog(val name: String) extends Animal with Friend {          
   //optionally override method here.
-  override def listen() = println(s"$name's listening quietly")
+  override def listen(): Unit = println(s"$name's listening quietly")
 }
+// #snip

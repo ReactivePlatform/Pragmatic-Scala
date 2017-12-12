@@ -1,3 +1,5 @@
+import UsingTraits.{Cat, Friend}
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,10 +8,12 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
-def useFriend(friend: Friend) = friend.listen
+// #snip
+def useFriend(friend: Friend): Unit = friend.listen()
 
 val angel = new Cat("Angel") with Friend
 val friend : Friend = angel
-angel.listen
+angel.listen()
 
 useFriend(angel)
+// #snip

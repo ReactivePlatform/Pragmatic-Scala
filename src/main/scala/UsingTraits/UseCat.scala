@@ -1,3 +1,5 @@
+package UsingTraits
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,11 +8,13 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 object UseCat extends App {
-  def useFriend(friend: Friend) = friend.listen
+  def useFriend(friend: Friend): Unit = friend.listen()
 
   val alf = new Cat("Alf")
   val friend : Friend = alf // ERROR
 
   useFriend(alf) // ERROR  
 }
+// #snip

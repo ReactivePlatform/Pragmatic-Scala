@@ -1,3 +1,5 @@
+package UsingTraits
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -7,9 +9,9 @@
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
 
-// #fiddle_code
+// #snip
 class Human(val name: String) extends Friend
 
 class Woman(override val name: String) extends Human(name)
 class Man(override val name: String) extends Human(name)
-// #fiddle_code
+// #snip
