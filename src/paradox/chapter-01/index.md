@@ -1,3 +1,5 @@
-# 第一章
+# 第1章——Exploring Scala
 
-### list 1
+## 代码清单1-1（Introduction/TopStock.scala）
+
+@@snip[Introduction/TopStock.scala](../../main/scala/Introduction/TopStock.scala){ #snip }

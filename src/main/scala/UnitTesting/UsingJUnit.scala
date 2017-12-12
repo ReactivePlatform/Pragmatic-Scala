@@ -1,3 +1,5 @@
+package UnitTesting
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,16 +8,20 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
+import java.util
 import java.util.ArrayList
+
 import org.junit.Test
 import org.junit.Assert._
 
 class UsingJUnit {
   @Test 
   def listAdd() {
-    val list = new ArrayList[String]
+    val list = new util.ArrayList[String]
     list.add("Milk")
     list add "Sugar" 
     assertEquals(2, list.size)
   }
 }
+//#snip

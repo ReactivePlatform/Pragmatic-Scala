@@ -1,69 +1,69 @@
 # 第7章——特质
 
-## HumanWithListen.scala
+## 代码清单7-1（UsingTraits/HumanWithListen.scala）
 
-@@snip[HumanWithListen.scala](../../main/scala/UsingTraits/HumanWithListen.scala){ #snip }
+@@snip[UsingTraits/HumanWithListen.scala](../../main/scala/UsingTraits/HumanWithListen.scala){ #snip }
 
-## Friend.scala
+## 代码清单7-2（UsingTraits/Friend.scala）
 
 @@snip[UsingTraits/Friend.scala](../../main/scala/UsingTraits/Friend.scala){ #snip }
 
-## Human.scala
+##代码清单7-3
 
 @@snip[UsingTraits/Human.scala](../../main/scala/UsingTraits/Human.scala){ #snip }
 
-## Dog.scala
+## 代码清单7-4
 
 @@snip[UsingTraits/Dog.scala](../../main/scala/UsingTraits/Dog.scala){ #snip }
 
-## Animal.scala
+## 代码清单7-5
 
 @@snip[UsingTraits/Animal.scala](../../main/scala/UsingTraits/Animal.scala){ #snip }
 
-## UseFriend.scala
+## 代码清单7-6
 
 @@snip[UsingTraits/UseFriend.scala](../../main/scala/UsingTraits/UseFriend.scala){ #snip }
 
-## Cat.scala
+## 代码清单7-7
 
 @@snip[UsingTraits/Cat.scala](../../main/scala/UsingTraits/Cat.scala){ #snip }
 
-## UseCat.scala
+## 代码清单7-8
 
 @@snip[UsingTraits/UseCat.scala](../../main/scala/UsingTraits/UseCat.scala){ #snip }
 
-## TreatCatAsFriend.scala
+## 代码清单7-9
 
 @@snip[UsingTraits/TreatCatAsFriend.scala](../../main/scala/UsingTraits/TreatCatAsFriend.scala){ #snip }
 
-## Decorator.scala 1
+## 代码清单7-10
 
 @@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_1 }
 
-## Decorator.scala 2
+## 代码清单7-11
 
 @@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_2 }
 
-## Decorator.scala 3
+## 代码清单7-12
 
 @@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_3 }
 
-## Decorator.scala 4
+## 代码清单7-13
 
 @@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_4 }
 
-## MethodBinding.scala 1
+## 代码清单7-14
 
 @@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_1 }
 
-## MethodBinding.scala 2
+## 代码清单7-15
 
 @@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_2 }
 
-## MethodBinding.scala 3
+## 代码清单7-16
 
 @@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_3 }
 
-## MethodBinding.scala 4
+## 代码清单7-17
 
 @@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_4 }

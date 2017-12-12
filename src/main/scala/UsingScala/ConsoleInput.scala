@@ -6,8 +6,10 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 import scala.io._
 
 print("Please enter a ticker symbol:")
 val symbol = StdIn.readLine()
 println(s"OK, got it, you own $symbol")
+// #snip

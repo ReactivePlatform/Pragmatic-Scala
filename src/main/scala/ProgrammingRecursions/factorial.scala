@@ -6,12 +6,14 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 def factorial(number: Int) : BigInt = {
   if(number == 0)
     1
   else
     number * factorial(number - 1)  
 }
+// #snip
 
 println("//" + "START:USE1_OUTPUT")
 println(factorial(5))

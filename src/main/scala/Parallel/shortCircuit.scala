@@ -6,12 +6,13 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 def expensiveComputation() = {
   println("...assume slow operation...")
   false
 }
 
-def evaluate(input: Int) = {
+def evaluate(input: Int): Unit = {
   println(s"evaluate called with $input")
   if(input >= 10 && expensiveComputation())
     println("doing work...")
@@ -21,3 +22,4 @@ def evaluate(input: Int) = {
 
 evaluate(0)
 evaluate(100)
+// #snip

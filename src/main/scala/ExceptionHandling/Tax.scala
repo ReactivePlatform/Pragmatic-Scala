@@ -1,3 +1,5 @@
+package ExceptionHandling
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,8 +8,9 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 object Tax {
-  def taxFor(amount: Double) = {
+  def taxFor(amount: Double): Double = {
     if (amount < 0) 
        throw new IllegalArgumentException("Amount must be greater than zero")
        
@@ -19,3 +22,4 @@ object Tax {
     amount * 0.08
   }
 }
+// #snip

@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// ##snip
 import java.io.File
 
 def getChildren(file: File) = {
@@ -31,3 +32,4 @@ while(filesToVisit.size > 0) {
 val end = System.nanoTime
 println(s"Number of files found: $count")
 println(s"Time taken: ${(end - start)/1.0e9} seconds")
+// ##snip
