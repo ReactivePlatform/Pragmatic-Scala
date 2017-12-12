@@ -21,3 +21,7 @@ git.remoteRepo := "https://github.com/ReactivePlatform/Pragmatic-Scala.git"
 
 GitKeys.gitReader in ThisProject := baseDirectory(base => new DefaultReadableGit(base)).value
 
+excludeFilter in ghpagesCleanSite :=
+  new FileFilter{
+    def accept(f: File) = (ghpagesRepository.value / "CNAME").getCanonicalPath == f.getCanonicalPath
+  } || "versions.html"
