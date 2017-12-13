@@ -11,8 +11,6 @@ resolvers += "akka" at "https://dl.bintray.com/akka/maven/"
 
 enablePlugins(ParadoxSitePlugin)
 
-enablePlugins(AkkaParadoxPlugin)
-
 enablePlugins(GhpagesPlugin)
 
 git.remoteRepo := "https://github.com/ReactivePlatform/Pragmatic-Scala.git"
@@ -23,3 +21,14 @@ excludeFilter in ghpagesCleanSite :=
   new FileFilter{
     def accept(f: File) = (ghpagesRepository.value / "CNAME").getCanonicalPath == f.getCanonicalPath
   } || "versions.html"
+
+enablePlugins(ParadoxMaterialThemePlugin)
+
+ParadoxMaterialThemePlugin.paradoxMaterialThemeSettings(Paradox)
+
+paradoxMaterialTheme in Compile := {
+  ParadoxMaterialTheme()
+    .withColor("red", "pink")
+    .withLogoIcon("cloud")
+    .withCopyright("Copyleft © 2017")
+}
