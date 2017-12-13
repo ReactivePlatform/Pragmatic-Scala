@@ -15,8 +15,6 @@ enablePlugins(AkkaParadoxPlugin)
 
 enablePlugins(GhpagesPlugin)
 
-enablePlugins(GhpagesPlugin)
-
 git.remoteRepo := "https://github.com/ReactivePlatform/Pragmatic-Scala.git"
 
 GitKeys.gitReader in ThisProject := baseDirectory(base => new DefaultReadableGit(base)).value
