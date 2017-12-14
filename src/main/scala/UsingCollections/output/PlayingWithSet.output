@@ -1,8 +1,22 @@
+// #snip_8-3_output
 blog feeds: blog.toolshed.com, blog.agiledeveloper.com
+// #snip_8-3_output
+
+// #snip_8-4_output
 # of merged feeds: 4
+// #snip_8-4_output
+
+// #snip_8-5_output
 common feeds: blog.toolshed.com
+// #snip_8-5_output
+
+// #snip_8-6_output
 One url: http://blog.toolshed.com
+// #snip_8-6_output
+
+// #snip_8-7_output
 Refresh Feeds:
   Refreshing blog.toolshed.com...
   Refreshing pragdave.me...
   Refreshing blog.agiledeveloper.com...
+// #snip_8-7_output

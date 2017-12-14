@@ -6,30 +6,32 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_8-2
 val feeds1 = Set("blog.toolshed.com", "pragdave.me", "blog.agiledeveloper.com")
 val feeds2 = Set("blog.toolshed.com", "martinfowler.com/bliki")
+// #snip_8-2
 
-println("/" + "/" + "START:FILTER_OUTPUT")
+// #snip_8-3
 val blogFeeds = feeds1 filter ( _ contains "blog" )
 println(s"blog feeds: ${blogFeeds.mkString(", ")}")
-println("/" + "/" + "END:FILTER_OUTPUT")
+// #snip_8-3
 
-println("/" + "/" + "START:MERGE_OUTPUT")
+// #snip_8-4
 val mergedFeeds = feeds1 ++ feeds2
 println(s"# of merged feeds: ${mergedFeeds.size}")
-println("/" + "/" + "END:MERGE_OUTPUT")
-            
-println("/" + "/" + "START:INTERSECT_OUTPUT")
+// #snip_8-4
+
+// #snip_8-5
 val commonFeeds = feeds1 & feeds2
 println(s"common feeds: ${commonFeeds.mkString(", ")}")
-println("/" + "/" + "END:INTERSECT_OUTPUT")
+// #snip_8-5
 
-println("/" + "/" + "START:MAP_OUTPUT")
+// #snip_8-6
 val urls = feeds1 map ( "http://" + _ )
 println(s"One url: ${urls.head}")
-println("/" + "/" + "END:MAP_OUTPUT")
+// #snip_8-6
 
-println("/" + "/" + "START:FOREACH_OUTPUT")
+// #snip_8-7
 println("Refresh Feeds:")
 feeds1 foreach { feed => println(s"  Refreshing $feed...") }
-println("/" + "/" + "END:FOREACH_OUTPUT")
+// #snip_8-7

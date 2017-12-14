@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_8-33
 class Person(val firstName: String, val lastName: String)
 object Person {
   def apply(firstName: String, lastName: String) : Person = 
@@ -18,3 +19,4 @@ val lastNames =
   for (friend <- friends; lastName = friend.lastName) yield lastName
 
 println(lastNames.mkString(", "))
+// #snip_8-33

@@ -1,69 +1,69 @@
 # 第7章——特质
 
-## 代码清单7-1（UsingTraits/HumanWithListen.scala）
+## 代码清单7-1
 
-@@snip[UsingTraits/HumanWithListen.scala](../../main/scala/UsingTraits/HumanWithListen.scala){ #snip }
+@@snip[代码清单7-1](../../main/scala/UsingTraits/HumanWithListen.scala){ #snip }
 
-## 代码清单7-2（UsingTraits/Friend.scala）
+## 代码清单7-2
 
-@@snip[UsingTraits/Friend.scala](../../main/scala/UsingTraits/Friend.scala){ #snip }
+@@snip[代码清单7-2](../../main/scala/UsingTraits/Friend.scala){ #snip }
 
 ##代码清单7-3
 
-@@snip[UsingTraits/Human.scala](../../main/scala/UsingTraits/Human.scala){ #snip }
+@@snip[代码清单7-3](../../main/scala/UsingTraits/Human.scala){ #snip }
 
 ## 代码清单7-4
 
-@@snip[UsingTraits/Dog.scala](../../main/scala/UsingTraits/Dog.scala){ #snip }
+@@snip[代码清单7-4](../../main/scala/UsingTraits/Dog.scala){ #snip }
 
 ## 代码清单7-5
 
-@@snip[UsingTraits/Animal.scala](../../main/scala/UsingTraits/Animal.scala){ #snip }
+@@snip[代码清单7-5](../../main/scala/UsingTraits/Animal.scala){ #snip }
 
 ## 代码清单7-6
 
-@@snip[UsingTraits/UseFriend.scala](../../main/scala/UsingTraits/UseFriend.scala){ #snip }
+@@snip[代码清单7-6](../../main/scala/UsingTraits/UseFriend.scala){ #snip }
 
 ## 代码清单7-7
 
-@@snip[UsingTraits/Cat.scala](../../main/scala/UsingTraits/Cat.scala){ #snip }
+@@snip[代码清单7-7](../../main/scala/UsingTraits/Cat.scala){ #snip }
 
 ## 代码清单7-8
 
-@@snip[UsingTraits/UseCat.scala](../../main/scala/UsingTraits/UseCat.scala){ #snip }
+@@snip[代码清单7-8](../../main/scala/UsingTraits/UseCat.scala){ #snip }
 
 ## 代码清单7-9
 
-@@snip[UsingTraits/TreatCatAsFriend.scala](../../main/scala/UsingTraits/TreatCatAsFriend.scala){ #snip }
+@@snip[代码清单7-9](../../main/scala/UsingTraits/TreatCatAsFriend.scala){ #snip }
 
 ## 代码清单7-10
 
-@@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_1 }
+@@snip[代码清单7-10](../../main/scala/UsingTraits/Decorator.scala){ #snip_1 }
 
 ## 代码清单7-11
 
-@@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_2 }
+@@snip[代码清单7-11](../../main/scala/UsingTraits/Decorator.scala){ #snip_2 }
 
 ## 代码清单7-12
 
-@@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_3 }
+@@snip[代码清单7-12](../../main/scala/UsingTraits/Decorator.scala){ #snip_3 }
 
 ## 代码清单7-13
 
-@@snip[UsingTraits/Decorator.scala](../../main/scala/UsingTraits/Decorator.scala){ #snip_4 }
+@@snip[代码清单7-13](../../main/scala/UsingTraits/Decorator.scala){ #snip_4 }
 
 ## 代码清单7-14
 
-@@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_1 }
+@@snip[代码清单7-14](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_1 }
 
 ## 代码清单7-15
 
-@@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_2 }
+@@snip[代码清单7-15](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_2 }
 
 ## 代码清单7-16
 
-@@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_3 }
+@@snip[代码清单7-16](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_3 }
 
 ## 代码清单7-17
 
-@@snip[UsingTraits/MethodBinding.scala](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_4 }
+@@snip[代码清单7-17](../../main/scala/UsingTraits/MethodBinding.scala){ #snip_4 }

@@ -1,15 +1,41 @@
+// #snip_8-16_output
 First feed: blog.toolshed.com
 Second feed: pragdave.me
+// #snip_8-16_output
+
+// #snip_8-17_output
 First Feed In Prefixed: forums.pragprog.com/forums/87
+// #snip_8-17_output
+
+// #snip_8-18_output
 First feed in feeds with forum: blog.toolshed.com
 Last feed in feeds with forum: forums.pragprog.com/forums/246
+// #snip_8-18_output
+
+// #snip_8-19_output
 Last Feed In Appended: agilelearner.com
+// #snip_8-19_output
+
+// #snip_8-20_output
 Feeds with blog: blog.toolshed.com, blog.agiledeveloper.com
 All feeds have com: true
 All feeds have dave: false
 Any feed has dave: true
 Any feed has bill: false
+// #snip_8-20_output
+
+// #snip_8-21_output
 Feed url lengths: 17, 21, 23
+// #snip_8-21_output
+
+// #snip_8-22_output
 Total length of feed urls: 61
+// #snip_8-22_output
+
+// #snip_8-23_output
 Total length of feed urls: 61
+// #snip_8-23_output
+
+// #snip_8-24_output
 Total length of feed urls: 61
+// #snip_8-24_output

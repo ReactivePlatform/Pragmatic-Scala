@@ -6,11 +6,12 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_8-27
 class Sample {
-  def unary_+() = println("Called unary +")
-  def unary_-() = println("called unary -")
-  def unary_!() = println("called unary !")
-  def unary_~() = println("called unary ~")
+  def unary_+(): Unit = println("Called unary +")
+  def unary_-(): Unit = println("called unary -")
+  def unary_!(): Unit = println("called unary !")
+  def unary_~(): Unit = println("called unary ~")
 }
 
 val sample = new Sample
@@ -18,3 +19,4 @@ val sample = new Sample
 -sample
 !sample
 ~sample
+// #snip_8-27
