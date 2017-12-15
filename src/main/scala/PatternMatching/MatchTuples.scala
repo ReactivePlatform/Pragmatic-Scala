@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 def processCoordinates(input: Any) {
   input match {
     case (lat, long) => printf("Processing (%d, %d)...", lat, long)
@@ -16,3 +17,5 @@ def processCoordinates(input: Any) {
 
 processCoordinates((39, -104))
 processCoordinates("done")
+// #snip
+

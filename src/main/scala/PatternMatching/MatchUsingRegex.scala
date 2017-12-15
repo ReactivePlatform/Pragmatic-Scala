@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_9-24
 def process(input : String) {        
   val GoogStock = """^GOOG:(\d*\.\d+)""".r
   input match {
@@ -16,3 +17,4 @@ def process(input : String) {
 process("GOOG:310.84")
 process("GOOG:310")
 process("IBM:84.01")
+// #snip_9-24

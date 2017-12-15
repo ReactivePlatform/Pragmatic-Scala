@@ -1,2 +1,4 @@
+// #snip_9-7_output
 scala.MatchError: 0 (of class java.lang.Integer)
 You matched max
+// #snip_9-7_output

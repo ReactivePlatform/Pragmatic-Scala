@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_9-17
 object StockService {
   def process(input : String) {
     input match {
@@ -16,12 +17,14 @@ object StockService {
     }
   }
 }
+// #snip_9-17
 
 object Symbol {
   def unapply(symbol : String) : Boolean = symbol == "GOOG" || symbol == "IBM" 
     // you'd look up database above... here only GOOG and IBM are recognized
 }
 
+// #snip_9-18
 object ReceiveStockPrice { 
   def unapply(input: String) : Option[(String, Double)] = {
     try {
@@ -38,8 +41,11 @@ object ReceiveStockPrice {
     }
   }
 }
+// #snip_9-18
 
+// #snip_9-19
 StockService process "GOOG"
 StockService process "GOOG:310.84"
 StockService process "GOOG:BUY"
 StockService process "ERR:12.21"
+// #snip_9-19

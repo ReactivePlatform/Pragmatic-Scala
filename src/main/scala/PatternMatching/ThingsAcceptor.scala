@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_9-11
 case class Apple()
 case class Orange()
 case class Book ()
@@ -20,6 +21,10 @@ object ThingsAcceptor {
     }
   }
 }
+// #snip_9-11
+
+// #snip_9-12
 ThingsAcceptor.acceptStuff(Apple())
 ThingsAcceptor.acceptStuff(Book())
 ThingsAcceptor.acceptStuff(Apple)
+// #snip_9-12

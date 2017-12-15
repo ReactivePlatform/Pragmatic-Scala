@@ -1,4 +1,6 @@
+// #snip_9-20_output
 Look up price for valid symbol GOOG
 Received price $310.84 for symbol GOOG
 Invalid input GOOG:BUY
 Invalid input ERR:12.21
+// #snip_9-20_output

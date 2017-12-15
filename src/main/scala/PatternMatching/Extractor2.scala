@@ -10,8 +10,10 @@ object StockService {
   def process(input : String) {
     input match {
       case Symbol() => println(s"Look up price for valid symbol $input")
+        // #snip_9-20
       case ReceiveStockPrice(symbol @ Symbol(), price) => 
         println(s"Received price $$$price for symbol $symbol")
+        // #snip_9-20
       case _ => println(s"Invalid input $input")
     }
   }

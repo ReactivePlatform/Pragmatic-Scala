@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 def processItems(items: List[String]) {
   items match {
     case List("apple", "ibm") => println("Apples and IBMs")
@@ -20,3 +21,4 @@ processItems(List("apple", "ibm"))
 processItems(List("red", "blue", "green"))
 processItems(List("red", "blue", "white"))
 processItems(List("apple", "orange", "grapes", "dates"))
+// #snip

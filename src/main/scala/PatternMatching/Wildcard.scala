@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 object DayOfWeek extends Enumeration { 
   val SUNDAY = Value("Sunday")
   val MONDAY = Value("Monday")
@@ -26,3 +27,4 @@ def activity(day: DayOfWeek.Value) {
 
 activity(DayOfWeek.SATURDAY)
 activity(DayOfWeek.MONDAY)
+// #snip

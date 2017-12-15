@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_9-13
 abstract class Thing
 case class Apple() extends Thing
 
@@ -19,3 +20,5 @@ object ThingsAcceptor {
 }
 
 ThingsAcceptor.acceptStuff(Apple) //error: type mismatch;
+// #snip_9-13
+

@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 class Sample {
   val max = 100
 
@@ -23,3 +24,4 @@ try {
   case ex: Throwable => println(ex)
 }
 sample.process(100)
+// #snip

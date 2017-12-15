@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip_9-25
 def process(input : String) {        
   val MatchStock = """^(.+):(\d*\.\d+)""".r
   input match {
@@ -18,3 +19,4 @@ def process(input : String) {
 process("GOOG:310.84")
 process("IBM:84.01")
 process("GE:15.96")
+// #snip_9-25
