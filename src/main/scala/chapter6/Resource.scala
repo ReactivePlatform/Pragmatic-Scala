@@ -14,28 +14,33 @@
  * limitations under the License.
  */
 
-class Resource private () {
-  println("Starting transaction...")
-  private def cleanUp() { println("Ending transaction...") }
-  def op1(): Unit = println("Operation 1")
-  def op2(): Unit = println("Operation 2")
-  def op3(): Unit = println("Operation 3")
-}
+package chapter6
 
-object Resource {
-  def use(codeBlock: Resource ⇒ Unit) {
-    val resource = new Resource
-    try {
-      codeBlock(resource)
-    } finally {
-      resource.cleanUp()
+object Resource extends App {
+  class Resource private () {
+    println("Starting transaction...")
+    private def cleanUp() { println("Ending transaction...") }
+    def op1(): Unit = println("Operation 1")
+    def op2(): Unit = println("Operation 2")
+    def op3(): Unit = println("Operation 3")
+  }
+
+  object Resource {
+    def use(codeBlock: Resource ⇒ Unit) {
+      val resource = new Resource
+      try {
+        codeBlock(resource)
+      } finally {
+        resource.cleanUp()
+      }
     }
   }
-}
 
-Resource.use { resource ⇒
-  resource.op1()
-  resource.op2()
-  resource.op3()
-  resource.op1()
+  Resource.use { resource ⇒
+    resource.op1()
+    resource.op2()
+    resource.op3()
+    resource.op1()
+  }
+
 }

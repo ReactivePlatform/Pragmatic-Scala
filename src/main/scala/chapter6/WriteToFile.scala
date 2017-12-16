@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-import java.io._
+package chapter6
 
-def writeToFile(fileName: String)(codeBlock: PrintWriter ⇒ Unit): Unit = {
-  val writer = new PrintWriter(new File(fileName))
-  try { codeBlock(writer) } finally { writer.close() }
-}
+object WriteToFile extends App {
+  import java.io._
 
-writeToFile("output/output.txt") { writer ⇒
-  writer write "hello from Scala"
+  def writeToFile(fileName: String)(codeBlock: PrintWriter ⇒ Unit): Unit = {
+    val writer = new PrintWriter(new File(fileName))
+    try { codeBlock(writer) } finally { writer.close() }
+  }
+
+  writeToFile("output/output.txt") { writer ⇒
+    writer write "hello from Scala"
+  }
 }

@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-def printValue(generator: () ⇒ Int): Unit = {
-  println(s"Generated value is ${generator()}")
-}
+package chapter6
 
-printValue(() ⇒ 42)
+object ZeroParam extends App {
+  def printValue(generator: () ⇒ Int): Unit = {
+    println(s"Generated value is ${generator()}")
+  }
+
+  printValue(() ⇒ 42)
+
+}

@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-def totalResultOverRange(number: Int, codeBlock: Int ⇒ Int) = {
-  var result = 0
-  for (i ← 1 to number) {
-    result += codeBlock(i)
+package chapter6
+
+object Loop extends App {
+  def totalResultOverRange(number: Int, codeBlock: Int ⇒ Int) = {
+    var result = 0
+    for (i ← 1 to number) {
+      result += codeBlock(i)
+    }
+    result
   }
-  result
+
+  println(totalResultOverRange(11, i ⇒ i))
+
+  println(totalResultOverRange(11, i ⇒ if (i % 2 == 0) i else 0))
+
+  println(totalResultOverRange(11, i ⇒ if (i % 2 != 0) i else 0))
+
 }
-
-println(totalResultOverRange(11, i ⇒ i))
-
-println(totalResultOverRange(11, i ⇒ if (i % 2 == 0) i else 0))
-
-println(totalResultOverRange(11, i ⇒ if (i % 2 != 0) i else 0))

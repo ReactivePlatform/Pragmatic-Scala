@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter6
+
 object EquipmentUseDry2 extends App {
   def calculator(input: Int) = { println(s"calc with $input"); input }
 

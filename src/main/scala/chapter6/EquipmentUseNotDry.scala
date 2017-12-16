@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter6
+
 object EquipmentUseNotDry extends App {
   val equipment1 = new Equipment(
     { input ⇒ println(s"calc with $input"); input })

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter6
+
 class Equipment(val routine: Int ⇒ Int) {
   def simulate(input: Int): Int = {
     print("Running simulation...")

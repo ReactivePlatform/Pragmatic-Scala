@@ -14,22 +14,27 @@
  * limitations under the License.
  */
 
-import java.util.Date
+package chapter6
 
-def log(date: Date, message: String): Unit = {
-  //...
-  println(s"$date ---- $message")
-}
+object Log extends App {
+  import java.util.Date
 
-val date = new Date(1420095600000L)
-log(date, "message1")
-log(date, "message2")
-log(date, "message3")
+  def log(date: Date, message: String): Unit = {
+    //...
+    println(s"$date ---- $message")
+  }
 
-{
   val date = new Date(1420095600000L)
-  val logWithDateBound = log(date, _: String)
-  logWithDateBound("message1")
-  logWithDateBound("message2")
-  logWithDateBound("message3")
+  log(date, "message1")
+  log(date, "message2")
+  log(date, "message3")
+
+  {
+    val date = new Date(1420095600000L)
+    val logWithDateBound = log(date, _: String)
+    logWithDateBound("message1")
+    logWithDateBound("message2")
+    logWithDateBound("message3")
+  }
+
 }
