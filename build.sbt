@@ -53,3 +53,7 @@ def setPreferences(preferences: IFormattingPreferences): IFormattingPreferences 
 ScalariformKeys.preferences := setPreferences(ScalariformKeys.preferences.value)
 ScalariformKeys.preferences in Compile := setPreferences(ScalariformKeys.preferences.value)
 ScalariformKeys.preferences in Test := setPreferences(ScalariformKeys.preferences.value)
+
+scalafixSettings
+
+scalafixConfigure(Compile, Test, IntegrationTest)
