@@ -14,8 +14,14 @@
  * limitations under the License.
  */
 
-def getPersonInfo(primaryKey: Int) = {
-  ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
-}
+package chapter3
 
-val (firstName, lastName) = getPersonInfo(1)
+object MultipleAssignment2 extends App {
+
+  def getPersonInfo(primaryKey: Int) = {
+    ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
+  }
+
+  val (firstName, lastName) = getPersonInfo(1)
+
+}

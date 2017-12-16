@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-class Microwave {
-  def start(): Unit = println("started")
-  def stop(): Unit = println("stopped")
-  private def turnTable(): Unit = println("turning table")
+package chapter3
+
+object Access extends App {
+  class Microwave {
+    def start(): Unit = println("started")
+    def stop(): Unit = println("stopped")
+    private def turnTable(): Unit = println("turning table")
+  }
+  val microwave = new Microwave
+  microwave.start() // OK
 }
-val microwave = new Microwave
-microwave.start() // OK

@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-def getPersonInfo(primaryKey: Int) = {
-  // Assume primaryKey is used to fetch a person's info...
-  // Here response is hard-coded
-  ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
+package chapter3
+
+object MultipleAssignment extends App {
+  def getPersonInfo(primaryKey: Int) = {
+    // Assume primaryKey is used to fetch a person's info...
+    // Here response is hard-coded
+    ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
+  }
+
+  val (firstName, lastName, emailAddress) = getPersonInfo(1)
+
+  println(s"First Name: $firstName")
+  println(s"Last Name: $lastName")
+  println(s"Email Address: $emailAddress")
+
 }
-
-val (firstName, lastName, emailAddress) = getPersonInfo(1)
-
-println(s"First Name: $firstName")
-println(s"Last Name: $lastName")
-println(s"Email Address: $emailAddress")

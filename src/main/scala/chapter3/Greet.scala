@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-for (i ← 1 to 3) {
-  print(s"$i,")
-}
+package chapter3
 
-println("Scala Rocks!!!")
+object Greet extends App {
+  for (i ← 1 to 3) {
+    print(s"$i,")
+  }
+
+  println("Scala Rocks!!!")
+
+}

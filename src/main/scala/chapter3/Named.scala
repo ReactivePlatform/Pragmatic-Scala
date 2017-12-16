@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-def mail(destination: String = "head office", mailClass: String = "first"): Unit =
-  println(s"sending to $destination by $mailClass class")
+package chapter3
 
-mail(mailClass = "Priority", destination = "Bahamas office")
+object Named extends App {
+  def mail(destination: String = "head office", mailClass: String = "first"): Unit =
+    println(s"sending to $destination by $mailClass class")
 
-mail(mailClass = "Priority")
+  mail(mailClass = "Priority", destination = "Bahamas office")
+
+  mail(mailClass = "Priority")
+
+}

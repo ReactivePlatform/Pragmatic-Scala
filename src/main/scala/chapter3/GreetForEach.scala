@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
-(1 to 3).foreach(i ⇒ print(s"$i,"))
+package chapter3
 
-println("Scala Rocks!!!")
+object GreetForEach extends App {
+  (1 to 3).foreach(i ⇒ print(s"$i,"))
+
+  println("Scala Rocks!!!")
+
+}

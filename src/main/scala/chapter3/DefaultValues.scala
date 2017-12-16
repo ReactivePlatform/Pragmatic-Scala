@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-def mail(destination: String = "head office", mailClass: String = "first"): Unit =
-  println(s"sending to $destination by $mailClass class")
+package chapter3
 
-mail("Houston office", "Priority")
-mail("Boston office")
-mail()
+object DefaultValues extends App {
+  def mail(destination: String = "head office", mailClass: String = "first"): Unit =
+    println(s"sending to $destination by $mailClass class")
+
+  mail("Houston office", "Priority")
+  mail("Boston office")
+  mail()
+
+}

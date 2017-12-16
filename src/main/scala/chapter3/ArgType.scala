@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
-def function(input: Int*): Unit = println(input.getClass)
+package chapter3
 
-function(1, 2, 3)
+object ArgType extends App {
+  def function(input: Int*): Unit = println(input.getClass)
+
+  function(1, 2, 3)
+
+}

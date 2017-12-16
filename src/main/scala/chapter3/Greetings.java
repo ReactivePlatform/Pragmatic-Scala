@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+package chapter3;
 //Java code
 public class Greetings {
   public static void main(String[] args) {

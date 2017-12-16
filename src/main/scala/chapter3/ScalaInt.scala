@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter3
+
 class ScalaInt {
   def playWithInt() {
     val capacity: Int = 10

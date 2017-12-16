@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-class Car {
-  def turn(direction: String) //...
-  {
-  }
-}
+package chapter3
 
-val car = new Car()
-car turn "right"
+object DotParenthesisOptional extends App {
+
+  class Car {
+    def turn(direction: String) //...
+    {
+    }
+  }
+
+  val car = new Car()
+  car turn "right"
+
+}

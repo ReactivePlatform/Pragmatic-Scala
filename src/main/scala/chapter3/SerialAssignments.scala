@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-var a = 1
-var b = 2
+package chapter3
 
-a = b = 3
+object SerialAssignments extends App {
+  var a = 1
+  var b = 2
+
+  a = b = 3
+}
