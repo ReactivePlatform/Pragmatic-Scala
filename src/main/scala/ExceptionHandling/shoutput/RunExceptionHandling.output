@@ -1,6 +1,8 @@
+// #snip_10-4_output
 Amount: $100.0 Tax: $8.0
 Amount: $0.009 Don't bother reporting...Amount too small to be taxed
 Amount: $-2.0 Amount must be greater than zero
 Amount: $1000001.0 java.lang.Exception: Amount too large...
 	at Tax$.taxFor(Tax.scala:9)
 ...
+// #snip_10-4_output

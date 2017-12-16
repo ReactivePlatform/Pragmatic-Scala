@@ -1,5 +1,7 @@
-JavaCatchOrder.java:10: error: exception StringIndexOutOfBoundsException 
+// #snip_10-6_output
+JavaCatchOrder.java:10: error: exception StringIndexOutOfBoundsException
 has already been caught
     catch(StringIndexOutOfBoundsException ex) { //ERROR
     ^
 1 error
+// #snip_10-6_output

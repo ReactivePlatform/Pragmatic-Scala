@@ -1,3 +1,5 @@
+package ExceptionHandling;
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,8 +8,8 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 //Java code—will not compile due to incorrect catch order
-
 public class JavaCatchOrder {
   public void catchOrderExample() {
     try {
@@ -19,3 +21,4 @@ public class JavaCatchOrder {
       System.out.println("Invalid Index"); }
   }
 }
+// #snip

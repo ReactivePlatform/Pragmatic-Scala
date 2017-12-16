@@ -1,3 +1,5 @@
+import ExceptionHandling.Tax
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,6 +8,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 for (amount <- List(100.0, 0.009, -2.0, 1000001.0)) {
   try {
     print(s"Amount: $$$amount ")
@@ -16,3 +19,4 @@ for (amount <- List(100.0, 0.009, -2.0, 1000001.0)) {
     case _ : Throwable => println("Something went wrong")
   }
 }
+// #snip

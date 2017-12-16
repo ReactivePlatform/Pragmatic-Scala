@@ -1,3 +1,5 @@
+import ExceptionHandling.Tax
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -6,12 +8,14 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsscala2 for more book information.
 ***/
+// #snip
 val amount = -2
 try {
   print(s"Amount: $$$amount ")
   println(s"Tax: $$${Tax.taxFor(amount)}")
 }
 catch {      
-  case ex : Exception => println("Something went wrong")
+  case _: Exception => println("Something went wrong")
   case ex : IllegalArgumentException => println(ex.getMessage)
 }
+// #snip

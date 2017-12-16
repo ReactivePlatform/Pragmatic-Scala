@@ -1,3 +1,5 @@
+package ExceptionHandling;
+
 /***
  * Excerpted from "Pragmatic Scala",
  * published by The Pragmatic Bookshelf.
@@ -8,12 +10,14 @@
 ***/
 public class ThreadSleep {
   public void someMethod() {
-    // Java code
+      // #snip
+      // Java code
     try {
       Thread.sleep(1000);
     }                    
     catch(InterruptedException ex) {
       // Losing sleep over what to do here?
     }
+      // #snip
   }
 }
