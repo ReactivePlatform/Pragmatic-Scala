@@ -1,5 +1,0 @@
-error: could not optimize @tailrec annotated method factorial: it contains 
-a recursive call not in tail position
-    number * factorial(number - 1)
-           ^
-error found

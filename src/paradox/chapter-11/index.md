@@ -2,4 +2,4 @@
 
 ## 代码清单11-1（ProgrammingRecursions/factorial.scala）
 
-@@snip[ProgrammingRecursions/factorial.scala](../../main/scala/ProgrammingRecursions/factorial.scala){ #snip }
+@@snip[ProgrammingRecursions/factorial.scala](../../main/scala/chapter11/factorial.scala){ #snip }

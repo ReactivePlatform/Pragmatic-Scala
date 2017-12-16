@@ -2,4 +2,4 @@
 
 ## 代码清单15-1（UsingScala/ConsoleInput.scala）
 
-@@snip[UsingScala/ConsoleInput.scala](../../main/scala/UsingScala/ConsoleInput.scala){ #snip }
+@@snip[UsingScala/ConsoleInput.scala](../../main/scala/chapter15/ConsoleInput.scala){ #snip }

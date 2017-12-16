@@ -1,8 +1,0 @@
-java.lang.RuntimeException: Error
-	at Main$$anon$1.mad(mad.scala:3)
-	at Main$$anon$1.mad(mad.scala:5)
-	at Main$$anon$1.mad(mad.scala:5)
-	at Main$$anon$1.mad(mad.scala:5)
-	at Main$$anon$1.mad(mad.scala:5)
-	at Main$$anon$1.mad(mad.scala:5)
-	at Main$$anon$1.<init>(mad.scala:8)

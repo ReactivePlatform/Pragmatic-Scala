@@ -1,3 +1,0 @@
-java.lang.RuntimeException: Error
-	at Main$$anon$1.mad(mad2.scala:3)
-	at Main$$anon$1.<init>(mad2.scala:8)

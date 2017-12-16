@@ -2,4 +2,4 @@
 
 ## 代码清单16-1（UnitTesting/UsingJUnit.scala）
 
-@@snip[UnitTesting/UsingJUnit.scala](../../main/scala/UnitTesting/UsingJUnit.scala){ #snip }
+@@snip[UnitTesting/UsingJUnit.scala](../../main/scala/chapter16/UsingJUnit.scala){ #snip }

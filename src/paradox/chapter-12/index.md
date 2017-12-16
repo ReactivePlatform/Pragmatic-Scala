@@ -2,4 +2,4 @@
 
 ## 代码清单12-1（Parallel/shortCircuit.scala）
 
-@@snip[Parallel/shortCircuit.scala](../../main/scala/Parallel/shortCircuit.scala){ #snip }
+@@snip[Parallel/shortCircuit.scala](../../main/scala/chapter12/shortCircuit.scala){ #snip }
