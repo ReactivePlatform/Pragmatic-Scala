@@ -14,4 +14,10 @@
  * limitations under the License.
  */
 
-println("Hello World, Welcome to Scala")
+package chapter2
+
+object HelloWorld extends App {
+
+  println("Hello World, Welcome to Scala")
+
+}

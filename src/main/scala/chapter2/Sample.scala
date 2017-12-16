@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter2
+
 object Sample extends App {
   println("Hello Scala")
 }
