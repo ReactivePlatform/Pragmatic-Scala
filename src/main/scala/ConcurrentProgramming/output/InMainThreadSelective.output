@@ -1,4 +1,0 @@
-Main running in Thread[main,5,main]
-Actor1 running in Thread[Thread-2,5,main]
-Actor2 running in Thread[main,5,main]
-Actor 3 running in Thread[Thread-4,5,main]
