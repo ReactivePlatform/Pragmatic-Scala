@@ -1,9 +1,0 @@
-Protected.scala:13: error: method checkEngine cannot be accessed in
-  automobiles.Vehicle
-    vehicle.checkEngine() //ERROR       
-            ^
-Protected.scala:19: error: method checkEngine cannot be accessed in
-  automobiles.Vehicle
-    vehicle.checkEngine() //ERROR    
-            ^
-two errors found

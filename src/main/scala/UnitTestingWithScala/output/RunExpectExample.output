@@ -1,7 +1,0 @@
-Test Starting - Main$$anon$1$ExpectExample.testAssertFailure
-TEST FAILED - Main$$anon$1$ExpectExample.testAssertFailure: 
-  Unexpected List size
-Expected 2, but got 0 ((virtual file):7)
-org.scalatest.TestFailedException: Unexpected List size
-Expected 2, but got 0
-...

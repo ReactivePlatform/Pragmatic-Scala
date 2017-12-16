@@ -1,8 +1,0 @@
-Test Starting - Main$$anon$1$UsingFunSuite: Check if the list is Empty 
-  On Creation
-Test Succeeded - Main$$anon$1$UsingFunSuite: Check if the list is Empty 
-  On Creation
-Test Starting - Main$$anon$1$UsingFunSuite: Get must throw exception 
-  when called on an empty list
-Test Succeeded - Main$$anon$1$UsingFunSuite: Get must throw exception 
-  when called on an empty list

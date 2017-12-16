@@ -1,7 +1,0 @@
-Test Starting - Main$$anon$1$AssertionFailureWithMessage.testAssertFailure
-TEST FAILED - Main$$anon$1$AssertionFailureWithMessage.testAssertFailure: 
-  Unexpected size of List
-2 did not equal 0 ((virtual file):7)
-org.scalatest.TestFailedException: Unexpected size of List
-2 did not equal 0
-...

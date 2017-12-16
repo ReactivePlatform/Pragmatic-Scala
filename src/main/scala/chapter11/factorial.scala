@@ -14,11 +14,23 @@
  * limitations under the License.
  */
 
-import chapter14.Person
+// #snip
+def factorial(number: Int) : BigInt = {
+  if(number == 0)
+    1
+  else
+    number * factorial(number - 1)  
+}
+// #snip
 
-val george = new Person("George", "Washington")
+println("//" + "START:USE1_OUTPUT")
+println(factorial(5))
+println("//" + "END:USE1_OUTPUT")
 
-val georgesDogs = List(new Dog("Captain"), new Dog("Clode"), 
-  new Dog("Forester"), new Dog("Searcher"))
-                                    
-println(s"$george had several dogs ${georgesDogs.mkString(", ")}...")
+println("//" + "START:STACK_OVERFLOW_OUTPUT")
+try {
+println(factorial(10000))
+} catch {
+  case ex : Throwable => println(ex)
+}
+println("//" + "END:STACK_OVERFLOW_OUTPUT")

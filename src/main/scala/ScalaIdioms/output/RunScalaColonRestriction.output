@@ -1,7 +1,0 @@
-ScalaColonRestriction.scala:2: error: '=>' expected but '{' found.
-  def method:() {}
-                ^
-ScalaColonRestriction.scala:2: error: identifier expected but ';' found.
-  def method:() {}
-                  ^
-two errors found

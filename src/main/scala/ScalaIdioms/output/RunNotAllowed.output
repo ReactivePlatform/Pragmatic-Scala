@@ -1,8 +1,0 @@
-(fragment of NotAllowed.scala):4: error: type mismatch;
- found   : Array[Int]
- required: Array[Any]
-arr2 = arr1 // Compilation ERROR
-        ^
-one error found
-!!!
-discarding <script preamble>

@@ -1,8 +1,0 @@
-(fragment of ParametersErr.scala):3: error: type mismatch;
- found   : Array[Int]
- required: Int
-println(max(numbers))
-             ^
-one error found
-!!!
-discarding <script preamble>

@@ -1,5 +1,0 @@
-Test Starting - Main$$anon$1$AssertionFailureExample2.testAssertFailure
-TEST FAILED - Main$$anon$1$AssertionFailureExample2.testAssertFailure: 
-  2 did not equal 0 ((virtual file):7)
-org.scalatest.TestFailedException: 2 did not equal 0
-...

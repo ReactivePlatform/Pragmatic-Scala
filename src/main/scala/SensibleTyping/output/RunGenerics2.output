@@ -1,8 +1,0 @@
-(fragment of Generics2.scala):6: error: type mismatch;
- found   : java.util.ArrayList[Int]
- required: java.util.ArrayList[Nothing]
-list2 = list1 // Compilation Error
-         ^
-one error found
-!!!
-discarding <script preamble>

@@ -1,7 +1,0 @@
-(fragment of NeedSemicolon.scala):12: error: wrong number of arguments for 
-  method apply: ()this.Sample in object Sample
-val sample2 = Sample //Error, semicolon is needed
-               ^
-one error found
-!!!
-discarding <script preamble>

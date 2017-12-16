@@ -1,7 +1,0 @@
-(fragment of Access.scala):9: error: 
-  method turnTable cannot be accessed in this.Microwave
-microwave.turnTable() //ERROR
-           ^
-one error found
-!!!
-discarding <script preamble>

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import chapter14.Person
+@scala.annotation.tailrec
+def factorial(fact: BigInt, number: Int) : BigInt = {
+  if(number == 0)
+    fact
+  else
+    factorial(fact * number, number - 1)
+}
 
-val george = new Person("George", "Washington")
-
-val georgesDogs = List(new Dog("Captain"), new Dog("Clode"), 
-  new Dog("Forester"), new Dog("Searcher"))
-                                    
-println(s"$george had several dogs ${georgesDogs.mkString(", ")}...")
+println(factorial(1, 10000))
