@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-import investments._
+package chapter14
+
+import chapter14.java.{ Investment, InvestmentType }
 
 object UseInvestment extends App {
   val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 class Dog(val name: String) {
-  override def toString = name
+  override def toString: String = name
 }

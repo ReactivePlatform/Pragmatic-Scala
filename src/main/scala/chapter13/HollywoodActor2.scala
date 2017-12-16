@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
 
-class HollywoodActor() extends Actor {
-  def receive = {
-    case message ⇒ println(s"$message - ${Thread.currentThread}")
+object HollywoodActor2 {
+
+  class HollywoodActor() extends Actor {
+    def receive: PartialFunction[Any, Unit] = {
+      case message ⇒ println(s"$message - ${Thread.currentThread}")
+    }
   }
+
 }

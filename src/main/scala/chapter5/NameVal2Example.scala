@@ -15,8 +15,8 @@
  */
 
 class Name(val value: String) extends AnyVal {
-  override def toString = value
-  def length = value.length
+  override def toString: String = value
+  def length: Int = value.length
 }
 
 object UseName extends App {

@@ -16,7 +16,7 @@
 
 import java.util.Date
 
-def log(date: Date, message: String) = {
+def log(date: Date, message: String): Unit = {
   //...
   println(s"$date ---- $message")
 }

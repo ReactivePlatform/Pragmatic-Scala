@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-def mail(destination: String = "head office", mailClass: String = "first") =
+def mail(destination: String = "head office", mailClass: String = "first"): Unit =
   println(s"sending to $destination by $mailClass class")
 
 mail("Houston office", "Priority")

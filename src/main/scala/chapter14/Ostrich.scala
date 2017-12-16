@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 class Ostrich extends Bird {
   override def fly() {
     throw new NoFlyException

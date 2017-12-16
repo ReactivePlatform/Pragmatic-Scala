@@ -23,5 +23,5 @@ val list2 = new java.util.ArrayList[Int] {
   println("Created list2")
 }
 
-println(list1.getClass())
-println(list2.getClass())
+println(list1.getClass)
+println(list2.getClass)

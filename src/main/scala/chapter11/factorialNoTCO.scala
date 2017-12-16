@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-@scala.annotation.tailrec
-def factorial(number: Int): BigInt = {
-  if (number == 0)
-    1
-  else
-    number * factorial(number - 1)
-}
+package chapter11
 
-println(factorial(10000))
+object factorialNoTCO extends App {
+  @scala.annotation.tailrec
+  def factorial(number: Int): BigInt = {
+    if (number == 0)
+      1
+    else
+      number * factorial(number - 1)
+  }
+
+  println(factorial(10000))
+}

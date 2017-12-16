@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-// #snip
-import scala.io._
+package chapter15
 
-print("Please enter a ticker symbol:")
-val symbol = StdIn.readLine()
-println(s"OK, got it, you own $symbol")
-// #snip
+object ConsoleInput extends App {
+  // #snip
+  import scala.io._
+
+  print("Please enter a ticker symbol:")
+  val symbol = StdIn.readLine()
+  println(s"OK, got it, you own $symbol")
+  // #snip
+
+}

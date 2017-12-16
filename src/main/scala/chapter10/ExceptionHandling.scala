@@ -15,6 +15,7 @@
  */
 
 package chapter10
+
 object ExceptionHandling extends App {
   // #snip
   for (amount ← List(100.0, 0.009, -2.0, 1000001.0)) {

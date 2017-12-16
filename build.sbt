@@ -57,3 +57,10 @@ ScalariformKeys.preferences in Test := setPreferences(ScalariformKeys.preference
 scalafixSettings
 
 scalafixConfigure(Compile, Test, IntegrationTest)
+
+
+libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.6"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.8"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4"
+libraryDependencies += "junit" % "junit" % "4.12"
+libraryDependencies += "org.mockito" % "mockito-core" % "2.13.0"

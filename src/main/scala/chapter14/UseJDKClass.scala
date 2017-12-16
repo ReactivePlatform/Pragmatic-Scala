@@ -14,7 +14,12 @@
  * limitations under the License.
  */
 
-import java.util.Currency
+package chapter14
 
-val currencies = Currency.getAvailableCurrencies
-println(s"${currencies.size} currencies are available.")
+object UseJDKClass extends App {
+  import java.util.Currency
+
+  val currencies = Currency.getAvailableCurrencies
+  println(s"${currencies.size} currencies are available.")
+
+}

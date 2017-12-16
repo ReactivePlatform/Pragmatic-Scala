@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
 import java.io._
 
 class FileExplorer extends Actor {
-  def receive = {
+  def receive: PartialFunction[Any, Unit] = {
     case dirName: String ⇒
       val file = new File(dirName)
       val children = file.listFiles()

@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-import chapter14.Person
+package chapter14
 
-val george = new Person("George", "Washington")
+object usePerson extends App {
 
-val georgesDogs = List(new Dog("Captain"), new Dog("Clode"),
-  new Dog("Forester"), new Dog("Searcher"))
+  val george = new Person("George", "Washington")
 
-println(s"$george had several dogs ${georgesDogs.mkString(", ")}...")
+  val georgesDogs = List(new Dog("Captain"), new Dog("Clode"),
+    new Dog("Forester"), new Dog("Searcher"))
+
+  println(s"$george had several dogs ${georgesDogs.mkString(", ")}...")
+}

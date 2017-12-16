@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14;
+
 //Java code
 public class BuddyUser {
   public static void main(String[] args) {

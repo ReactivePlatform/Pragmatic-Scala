@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+package chapter15
+
 object FindTotalWorthSequential extends App {
-  val symbolsAndUnits = StockPriceFinder.getTickersAndUnits
+  val symbolsAndUnits = StockPriceFinder.getTickersAndUnits()
 
   println("Ticker  Units  Closing Price($) Total Value($)")
 

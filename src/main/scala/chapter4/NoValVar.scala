@@ -15,5 +15,5 @@
  */
 
 class NoValVar(number: Int) {
-  def getValue = number
+  def getValue: Int = number
 }

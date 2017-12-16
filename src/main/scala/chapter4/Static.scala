@@ -20,7 +20,7 @@ class Marker private (val color: String) {
   override def toString = s"marker color $color"
 }
 object Marker {
-  private val markers = Map(
+  private val markers = mutable.Map(
     "red" -> new Marker("red"),
     "blue" -> new Marker("blue"),
     "yellow" -> new Marker("yellow"))

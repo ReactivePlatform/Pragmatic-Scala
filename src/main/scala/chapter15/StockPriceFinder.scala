@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter15
+
 import java.util.Calendar
 
 object StockPriceFinder {
@@ -25,7 +27,7 @@ object StockPriceFinder {
     val closingPrice = mostRecentData.split(",")(4).toDouble
     closingPrice
   }
-  def getTickersAndUnits() = {
+  def getTickersAndUnits(): Map[String, Int] = {
     val stocksAndUnitsXML = scala.xml.XML.load("stocks.xml")
     (Map[String, Int]() /: (stocksAndUnitsXML \ "symbol")) {
       (map, symbolNode) ⇒

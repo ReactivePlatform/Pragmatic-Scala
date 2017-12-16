@@ -26,10 +26,9 @@ package chapter16
 ***/
 // #snip
 import java.util
-import java.util.ArrayList
 
-import org.junit.Test
 import org.junit.Assert._
+import org.junit.Test
 
 class UsingJUnit {
   @Test

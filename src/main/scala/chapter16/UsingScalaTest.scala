@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
+import java.util
+
 import org.scalatest._
 import java.util.ArrayList
 
 class UsingScalaTest extends FlatSpec with Matchers {
   trait EmptyArrayList {
-    val list = new ArrayList[String]
+    val list = new util.ArrayList[String]
   }
 
   "a list" should "be empty on create" in new EmptyArrayList {

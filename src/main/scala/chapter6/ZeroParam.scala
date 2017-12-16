@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-def printValue(generator: () ⇒ Int) = {
+def printValue(generator: () ⇒ Int): Unit = {
   println(s"Generated value is ${generator()}")
 }
 

@@ -1,3 +1,4 @@
+import java.time.LocalDate
 /*
  * Copyright 2017 pragmatic-scala.reactiveplatform.xyz
  *
@@ -19,7 +20,7 @@ object DateUtil {
   val from_now = "from_now"
 
   implicit class DateHelper(val offset: Int) {
-    def days(when: String) = {
+    def days(when: String): LocalDate = {
       import java.time.LocalDate
       val today = LocalDate.now
       when match {

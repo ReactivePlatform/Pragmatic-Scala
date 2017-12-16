@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package automobiles
+package chapter14
 
 class Car(val year: Int) {
   private[this] var miles: Int = 0

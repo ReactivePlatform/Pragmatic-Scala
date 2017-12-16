@@ -1,4 +1,5 @@
-> scala lazyOrder.scala 
+// #snip_12-4_output
+> scala lazyOrder.scala
 1
 2
 1
@@ -6,4 +7,5 @@
 1
 2
 -1
-> 
+>
+// #snip_12-4_output

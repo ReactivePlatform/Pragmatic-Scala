@@ -14,31 +14,37 @@
  * limitations under the License.
  */
 
-import scala.io.Source._
+package chapter11
 
-def explore(count: Int, words: List[String]): Int =
-  if (words.isEmpty)
-    count
-  else
-    countPalindrome(count, words)
+object words extends App {
 
-def countPalindrome(count: Int, words: List[String]): Int = {
-  val firstWord = words.head
+  import scala.io.Source._
 
-  if (firstWord.reverse == firstWord)
-    explore(count + 1, words.tail)
-  else
-    explore(count, words.tail)
-}
+  def explore(count: Int, words: List[String]): Int =
+    if (words.isEmpty)
+      count
+    else
+      countPalindrome(count, words)
 
-def callExplore(text: String): Unit = println(explore(0, text.split(" ").toList))
+  def countPalindrome(count: Int, words: List[String]): Int = {
+    val firstWord = words.head
 
-callExplore("dad mom and racecar")
+    if (firstWord.reverse == firstWord)
+      explore(count + 1, words.tail)
+    else
+      explore(count, words.tail)
+  }
 
-try {
-  val text =
-    fromURL("https://en.wikipedia.org/wiki/Gettysburg_Address").mkString
-  callExplore(text)
-} catch {
-  case ex: Throwable ⇒ println(ex)
+  def callExplore(text: String): Unit = println(explore(0, text.split(" ").toList))
+
+  callExplore("dad mom and racecar")
+
+  try {
+    val text =
+      fromURL("https://en.wikipedia.org/wiki/Gettysburg_Address").mkString
+    callExplore(text)
+  } catch {
+    case ex: Throwable ⇒ println(ex)
+  }
+
 }

@@ -15,5 +15,5 @@
  */
 
 object Greeter {
-  def greet() = println("Ahoy, me hearties!")
+  def greet(): Unit = println("Ahoy, me hearties!")
 }

@@ -14,20 +14,25 @@
  * limitations under the License.
  */
 
-class Sample {
-  val max = 100
+package chapter9
 
-  def process(input: Int) {
-    input match {
-      case `max` ⇒ println(s"You matched max $max")
+object MatchWithField2 extends App {
+  class Sample {
+    val max = 100
+
+    def process(input: Int) {
+      input match {
+        case `max` ⇒ println(s"You matched max $max")
+      }
     }
   }
-}
 
-val sample = new Sample
-try {
-  sample.process(0)
-} catch {
-  case ex: Throwable ⇒ println(ex)
+  val sample = new Sample
+  try {
+    sample.process(0)
+  } catch {
+    case ex: Throwable ⇒ println(ex)
+  }
+  sample.process(100)
+
 }
-sample.process(100)

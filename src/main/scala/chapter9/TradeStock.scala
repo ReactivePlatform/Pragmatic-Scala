@@ -14,32 +14,37 @@
  * limitations under the License.
  */
 
-//  #snip_9-8
-trait Trade
-case class Sell(stockSymbol: String, quantity: Int) extends Trade
-case class Buy(stockSymbol: String, quantity: Int) extends Trade
-case class Hedge(stockSymbol: String, quantity: Int) extends Trade
-//  #snip_9-8
+package chapter9
 
-//  #snip_9-9
-object TradeProcessor {
-  def processTransaction(request: Trade) {
-    request match {
-      case Sell(stock, 1000) ⇒ println(s"Selling 1000-units of $stock")
-      case Sell(stock, quantity) ⇒
-        println(s"Selling $quantity units of $stock")
-      case Buy(stock, quantity) if quantity > 2000 ⇒
-        println(s"Buying $quantity (large) units of $stock")
-      case Buy(stock, quantity) ⇒
-        println(s"Buying $quantity units of $stock")
+object TradeStock extends App {
+  //  #snip_9-8
+  trait Trade
+  case class Sell(stockSymbol: String, quantity: Int) extends Trade
+  case class Buy(stockSymbol: String, quantity: Int) extends Trade
+  case class Hedge(stockSymbol: String, quantity: Int) extends Trade
+  //  #snip_9-8
+
+  //  #snip_9-9
+  object TradeProcessor {
+    def processTransaction(request: Trade) {
+      request match {
+        case Sell(stock, 1000) ⇒ println(s"Selling 1000-units of $stock")
+        case Sell(stock, quantity) ⇒
+          println(s"Selling $quantity units of $stock")
+        case Buy(stock, quantity) if quantity > 2000 ⇒
+          println(s"Buying $quantity (large) units of $stock")
+        case Buy(stock, quantity) ⇒
+          println(s"Buying $quantity units of $stock")
+      }
     }
   }
-}
-//  #snip_9-9
+  //  #snip_9-9
 
-//  #snip_9-10
-TradeProcessor.processTransaction(Sell("GOOG", 500))
-TradeProcessor.processTransaction(Buy("GOOG", 700))
-TradeProcessor.processTransaction(Sell("GOOG", 1000))
-TradeProcessor.processTransaction(Buy("GOOG", 3000))
-//  #snip_9-10
+  //  #snip_9-10
+  TradeProcessor.processTransaction(Sell("GOOG", 500))
+  TradeProcessor.processTransaction(Buy("GOOG", 700))
+  TradeProcessor.processTransaction(Sell("GOOG", 1000))
+  TradeProcessor.processTransaction(Buy("GOOG", 3000))
+  //  #snip_9-10
+
+}

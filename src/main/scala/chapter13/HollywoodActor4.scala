@@ -14,16 +14,18 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
-import scala.collection.mutable._
+import scala.collection._
 
 case class Play(role: String)
 case class ReportCount(role: String)
 
 class HollywoodActor() extends Actor {
-  val messagesCount: Map[String, Int] = Map()
+  val messagesCount: mutable.Map[String, Int] = mutable.Map()
 
-  def receive = {
+  def receive: PartialFunction[Any, Unit] = {
     case Play(role) ⇒
       val currentCount = messagesCount.getOrElse(role, 0)
       messagesCount.update(role, currentCount + 1)

@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
+import chapter13.CreateActors.system
+
 import scala.concurrent.duration._
 import scala.concurrent.Await
 
@@ -34,7 +38,7 @@ object UseActor extends App {
 
   println("Sent roles to play")
 
-  implicit val timeout = Timeout(2.seconds)
+  implicit val timeout: Timeout = Timeout(2.seconds)
   val wonkaFuture = depp ? ReportCount("Wonka")
   val sparrowFuture = depp ? ReportCount("Sparrow")
   val gumpFuture = hanks ? ReportCount("Gump")
@@ -47,5 +51,6 @@ object UseActor extends App {
   println(s"Depp played Sparrow $sparrowCount time(s)")
   println(s"Hanks played Gump $gumpCount time(s)")
 
-  system.shutdown()
+  val terminateFuture = system.terminate()
+  Await.ready(terminateFuture, Duration.Inf)
 }

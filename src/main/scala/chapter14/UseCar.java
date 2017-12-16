@@ -16,7 +16,6 @@
 
 //Java code
 package chapter14;
-import automobiles.Car;
 
 public class UseCar {
   public static void main(String[] args) {

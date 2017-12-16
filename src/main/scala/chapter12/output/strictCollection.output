@@ -1,3 +1,4 @@
+// #snip_12-5_output
 isOlderThan17 called for (Mark,32)
 isOlderThan17 called for (Bob,22)
 isOlderThan17 called for (Jane,8)
@@ -17,3 +18,4 @@ isNameStartsWithJ called for (Mike,19)
 isNameStartsWithJ called for (Paula,42)
 isNameStartsWithJ called for (John,21)
 (Jill,21)
+// #snip_12-5_output

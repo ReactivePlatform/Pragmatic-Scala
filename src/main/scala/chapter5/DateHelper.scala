@@ -18,7 +18,7 @@ import scala.language.implicitConversions
 import java.time.LocalDate
 
 class DateHelper(offset: Int) {
-  def days(when: String) = {
+  def days(when: String): LocalDate = {
     val today = LocalDate.now
     when match {
       case "ago"      ⇒ today.minusDays(offset)
@@ -31,5 +31,5 @@ class DateHelper(offset: Int) {
 object DateHelper {
   val ago = "ago"
   val from_now = "from_now"
-  implicit def convertInt2DateHelper(offset: Int) = new DateHelper(offset)
+  implicit def convertInt2DateHelper(offset: Int): DateHelper = new DateHelper(offset)
 }

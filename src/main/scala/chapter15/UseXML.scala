@@ -13,44 +13,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package chapter15
 
-println("/" + "/" + "START:DEFINE_OUTPUT")
-val xmlFragment =
-  <symbols>
-    <symbol ticker="AAPL"><units>200</units></symbol>
-    <symbol ticker="IBM"><units>215</units></symbol>
-  </symbols>
+object UseXML extends App {
+  println("/" + "/" + "START:DEFINE_OUTPUT")
+  val xmlFragment =
+    <symbols>
+      <symbol ticker="AAPL"><units>200</units></symbol>
+      <symbol ticker="IBM"><units>215</units></symbol>
+    </symbols>
 
-println(xmlFragment)
-println(xmlFragment.getClass)
-println("/" + "/" + "END:DEFINE_OUTPUT")
+  println(xmlFragment)
+  println(xmlFragment.getClass)
+  println("/" + "/" + "END:DEFINE_OUTPUT")
 
-println("/" + "/" + "START:QUERY1_OUTPUT")
-var symbolNodes = xmlFragment \ "symbol"
-symbolNodes foreach println
-println(symbolNodes.getClass)
-println("/" + "/" + "END:QUERY1_OUTPUT")
+  println("/" + "/" + "START:QUERY1_OUTPUT")
+  var symbolNodes = xmlFragment \ "symbol"
+  symbolNodes foreach println
+  println(symbolNodes.getClass)
+  println("/" + "/" + "END:QUERY1_OUTPUT")
 
-println("/" + "/" + "START:QUERY2_OUTPUT")
-var unitsNodes = xmlFragment \\ "units"
-unitsNodes foreach println
-println(unitsNodes.getClass)
-println(unitsNodes.head.text)
-println("/" + "/" + "END:QUERY2_OUTPUT")
+  println("/" + "/" + "START:QUERY2_OUTPUT")
+  var unitsNodes = xmlFragment \\ "units"
+  unitsNodes foreach println
+  println(unitsNodes.getClass)
+  println(unitsNodes.head.text)
+  println("/" + "/" + "END:QUERY2_OUTPUT")
 
-println("/" + "/" + "START:QUERY3_OUTPUT")
-unitsNodes.head match {
-  case <units>{ numberOfUnits }</units> ⇒ println(s"Units: $numberOfUnits")
+  println("/" + "/" + "START:QUERY3_OUTPUT")
+  unitsNodes.head match {
+    case <units>{ numberOfUnits }</units> ⇒ println(s"Units: $numberOfUnits")
+  }
+  println("/" + "/" + "END:QUERY3_OUTPUT")
+
+  println("/" + "/" + "START:QUERY4_OUTPUT")
+  println("Ticker\tUnits")
+  xmlFragment match {
+    case <symbols>{ symbolNodes @ _* }</symbols> ⇒
+      for (symbolNode @ <symbol>{ _* }</symbol> ← symbolNodes) {
+        println("%-7s %s".format(
+          symbolNode \ "@ticker", (symbolNode \ "units").text))
+      }
+  }
+  println("/" + "/" + "END:QUERY4_OUTPUT")
 }
-println("/" + "/" + "END:QUERY3_OUTPUT")
-
-println("/" + "/" + "START:QUERY4_OUTPUT")
-println("Ticker\tUnits")
-xmlFragment match {
-  case <symbols>{ symbolNodes @ _* }</symbols> ⇒
-    for (symbolNode @ <symbol>{ _* }</symbol> ← symbolNodes) {
-      println("%-7s %s".format(
-        symbolNode \ "@ticker", (symbolNode \ "units").text))
-    }
-}
-println("/" + "/" + "END:QUERY4_OUTPUT")

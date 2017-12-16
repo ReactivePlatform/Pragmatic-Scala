@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+package chapter14;
 //Java code
 class Penguin extends Bird {      
   public void fly() throws NoFlyException {

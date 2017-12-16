@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-import scala.io.Source
+package chapter15
 
-println("*** The content of the file you read is:")
-Source.fromFile("ReadingFile.scala").foreach { print }
+object ReadingFile extends App {
+  import scala.io.Source
+
+  println("*** The content of the file you read is:")
+  Source.fromFile("ReadingFile.scala").foreach { print }
+}

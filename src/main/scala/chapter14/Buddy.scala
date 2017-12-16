@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 class Buddy {
   def greet() { println("Hello from Buddy class") }
 }

@@ -17,7 +17,7 @@
 class Person(val firstName: String, val lastName: String) {
   var position: String = _
 
-  println(s"Creating ${toString}")
+  println(s"Creating $toString")
 
   def this(firstName: String, lastName: String, positionHeld: String) {
     this(firstName, lastName)

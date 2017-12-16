@@ -20,7 +20,7 @@ def compute(input: Int) =
   else
     Left("Error computing, invalid input")
 
-def displayResult(result: Either[String, Double]) = {
+def displayResult(result: Either[String, Double]): Unit = {
   println(s"Raw: $result")
   result match {
     case Right(value) ⇒ println(s"result $value")

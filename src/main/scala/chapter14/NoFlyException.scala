@@ -14,4 +14,6 @@
  * limitations under the License.
  */
 
+package chapter14
+
 class NoFlyException extends Exception {}

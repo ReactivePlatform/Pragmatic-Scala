@@ -16,7 +16,7 @@
 
 object MyInterpolator {
   implicit class Interpolator(val context: StringContext) extends AnyVal {
-    def mask(args: Any*) = {
+    def mask(args: Any*): StringBuilder = {
       val processed = context.parts.zip(args).map { item ⇒
         val (text, expression) = item
         if (text.endsWith("^"))

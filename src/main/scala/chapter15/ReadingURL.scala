@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package chapter15
 
-import scala.io.Source
-import java.net.URL
+object ReadingURL extends App {
+  import scala.io.Source
+  import java.net.URL
 
-val source = Source.fromURL(new URL("http://localhost"))
+  val source = Source.fromURL(new URL("http://localhost"))
 
-println(s"What's Source?: ${source}")
-println(s"Raw String: ${source.mkString}")
+  println(s"What's Source?: $source")
+  println(s"Raw String: ${source.mkString}")
+}

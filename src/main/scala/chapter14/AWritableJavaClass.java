@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+package chapter14;
 //Java code
 public class AWritableJavaClass implements Writable {
   public void write(String message) {

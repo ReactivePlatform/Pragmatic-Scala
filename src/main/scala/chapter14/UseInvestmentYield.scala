@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package chapter14
 
 import chapter14.java.{ Investment, InvestmentType }
 
-object UseInvestment extends App {
+object UseInvestmentYield extends App {
   val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)
   val theYield1 = investment.`yield`
   val theYield2 = investment.`yield`()

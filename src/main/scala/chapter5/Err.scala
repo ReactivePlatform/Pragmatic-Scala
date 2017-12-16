@@ -24,8 +24,8 @@ class Two(val number: Int) {
   def foo = "two"
 }
 
-implicit def convertIntToOne(number: Int) = new One(number)
-implicit def convertIntToTwo(number: Int) = new Two(number)
+implicit def convertIntToOne(number: Int): One = new One(number)
+implicit def convertIntToTwo(number: Int): Two = new Two(number)
 
 println(2.foo)
 println(2.foo)

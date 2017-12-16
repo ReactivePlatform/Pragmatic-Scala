@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-// #snip_9-13
-abstract class Thing
-case class Apple() extends Thing
+package chapter9
 
-object ThingsAcceptor {
-  def acceptStuff(thing: Thing) {
-    thing match {
-      //...
-      case _ ⇒
+object ThingsAcceptor2 extends App {
+  // #snip_9-13
+  abstract class Thing
+  case class Apple() extends Thing
+
+  object ThingsAcceptor {
+    def acceptStuff(thing: Thing) {
+      thing match {
+        //...
+        case _ ⇒
+      }
     }
   }
+
+  ThingsAcceptor.acceptStuff(Apple) //error: type mismatch;
+  // #snip_9-13
+
 }
-
-ThingsAcceptor.acceptStuff(Apple) //error: type mismatch;
-// #snip_9-13
-

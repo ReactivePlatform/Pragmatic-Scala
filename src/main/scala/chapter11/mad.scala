@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-def mad(parameter: Int): Int = {
-  if (parameter == 0)
-    throw new RuntimeException("Error")
-  else
-    1 * mad(parameter - 1)
-}
+package chapter11
 
-mad(5)
+object mad extends App {
+  def mad(parameter: Int): Int = {
+    if (parameter == 0)
+      throw new RuntimeException("Error")
+    else
+      1 * mad(parameter - 1)
+  }
+
+  mad(5)
+}

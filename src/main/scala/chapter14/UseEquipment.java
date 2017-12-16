@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14;
+
 public class UseEquipment {
   public static int printAndReturn(int value) {
     System.out.println("called with " + value);

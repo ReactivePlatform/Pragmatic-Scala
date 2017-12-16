@@ -23,7 +23,7 @@ class Marker(val color: String) {
 }
 
 object MarkerFactory {
-  private val markers = Map(
+  private val markers = mutable.Map(
     "red" -> new Marker("red"),
     "blue" -> new Marker("blue"),
     "yellow" -> new Marker("yellow"))

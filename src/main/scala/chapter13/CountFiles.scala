@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
 
 object CountFiles extends App {

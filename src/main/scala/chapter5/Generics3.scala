@@ -16,8 +16,8 @@
 
 import java.util._
 
-var list1 = new ArrayList[Int]
-var list2 = new ArrayList[Any]
+var list1 = new util.ArrayList[Int]
+var list2 = new util.ArrayList[Any]
 
 var ref1: Int = 1
 var ref2: Any = null

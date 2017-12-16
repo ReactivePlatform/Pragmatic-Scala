@@ -28,7 +28,7 @@ class DateHelper(offset: Int) {
   }
 }
 
-implicit def convertInt2DateHelper(offset: Int) = new DateHelper(offset)
+implicit def convertInt2DateHelper(offset: Int): DateHelper = new DateHelper(offset)
 
 val ago = "ago"
 val from_now = "from_now"

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 object Single {
   def greet() { println("Hello from Single") }
 }

@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-// #snip
-def processCoordinates(input: Any) {
-  input match {
-    case (lat, long) ⇒ printf("Processing (%d, %d)...", lat, long)
-    case "done"      ⇒ println("done")
-    case _           ⇒ println("invalid input")
-  }
-}
+package chapter9
 
-processCoordinates((39, -104))
-processCoordinates("done")
-// #snip
+object MatchTuples extends App {
+  // #snip
+  def processCoordinates(input: Any) {
+    input match {
+      case (lat, long) ⇒ printf("Processing (%d, %d)...", lat, long)
+      case "done"      ⇒ println("done")
+      case _           ⇒ println("invalid input")
+    }
+  }
+
+  processCoordinates((39, -104))
+  processCoordinates("done")
+  // #snip
+}
 

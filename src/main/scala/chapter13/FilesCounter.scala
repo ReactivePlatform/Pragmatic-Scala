@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
 import akka.routing._
-import java.io._
+
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
 
 class FilesCounter extends Actor {
-  val start = System.nanoTime
+  val start: Long = System.nanoTime
   var filesCount = 0L
   var pending = 0
 
-  val fileExplorers =
+  val fileExplorers: ActorRef =
     context.actorOf(RoundRobinPool(100).props(Props[FileExplorer]))
 
-  def receive = {
+  def receive: PartialFunction[Any, Unit] = {
     case dirName: String ⇒
       pending = pending + 1
       fileExplorers ! dirName
@@ -39,7 +43,8 @@ class FilesCounter extends Actor {
         val end = System.nanoTime
         println(s"Files count: $filesCount")
         println(s"Time taken: ${(end - start) / 1.0e9} seconds")
-        context.system.shutdown()
+        val terminateFuture = context.system.terminate()
+        Await.ready(terminateFuture, Duration.Inf)
       }
   }
 }

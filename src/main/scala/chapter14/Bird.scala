@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 abstract class Bird {
   @throws(classOf[NoFlyException]) def fly()
   //...

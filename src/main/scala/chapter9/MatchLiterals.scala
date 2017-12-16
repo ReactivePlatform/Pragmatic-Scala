@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-// #snip
-def activity(day: String) {
-  day match {
-    case "Sunday"   ⇒ print("Eat, sleep, repeat... ")
-    case "Saturday" ⇒ print("Hang out with friends... ")
-    case "Monday"   ⇒ print("...code for fun...")
-    case "Friday"   ⇒ print("...read a good book...")
+package chapter9
+
+object MatchLiterals extends App {
+  // #snip
+  def activity(day: String) {
+    day match {
+      case "Sunday"   ⇒ print("Eat, sleep, repeat... ")
+      case "Saturday" ⇒ print("Hang out with friends... ")
+      case "Monday"   ⇒ print("...code for fun...")
+      case "Friday"   ⇒ print("...read a good book...")
+    }
   }
+  List("Monday", "Sunday", "Saturday").foreach { activity }
+  // #snip
+
 }
-List("Monday", "Sunday", "Saturday").foreach { activity }
-// #snip

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 trait Writable {
   def write(message: String): Unit
 }

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 class Equipment {
   def simulate(input: Int)(calculator: Int ⇒ Int): Int = {
     //...

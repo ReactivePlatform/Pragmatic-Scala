@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
 
 class HollywoodActor() extends Actor {
-  def receive = {
+  def receive: PartialFunction[Any, Unit] = {
     case message ⇒ println(s"playing the role of $message")
   }
 }

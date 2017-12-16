@@ -22,7 +22,7 @@ package society {
       private[society] var friends = null
       private[this] var secrets = null
 
-      def help(another: Executive) = {
+      def help(another: Executive): Unit = {
         println(another.workDetails)
         println(secrets)
         println(another.secrets) //ERROR
@@ -30,7 +30,7 @@ package society {
     }
 
     class Assistant {
-      def assist(anExec: Executive) = {
+      def assist(anExec: Executive): Unit = {
         println(anExec.workDetails)
         println(anExec.friends)
       }

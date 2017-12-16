@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package  chapter14;
+
 public class APrintable implements Printable {
   public void print() {
     System.out.println("We can reuse the trait here if we like...");

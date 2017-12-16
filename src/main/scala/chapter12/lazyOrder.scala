@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package chapter12
 
-import scala.io._
+object lazyOrder extends App {
+  // #snip
+  import scala.io._
 
-def read = StdIn.readInt()
+  def read = StdIn.readInt()
 
-lazy val first = read
-lazy val second = read
+  lazy val first = read
+  lazy val second = read
 
-if (Math.random() < 0.5)
-  second
+  if (Math.random() < 0.5)
+    second
 
-println(first - second)
+  println(first - second)
+  // #snip
+}

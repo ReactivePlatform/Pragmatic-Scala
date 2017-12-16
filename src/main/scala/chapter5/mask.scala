@@ -23,6 +23,6 @@ object UseInterpolator extends App {
 
   println(mask"""Account: $account
     |Social Security Number: $ssn
-    |Balance: $$^${balance}
+    |Balance: $$^$balance
     |Thanks for your business.""".stripMargin)
 }

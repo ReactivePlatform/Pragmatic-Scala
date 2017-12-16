@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-def function(input: Int*) = println(input.getClass)
+def function(input: Int*): Unit = println(input.getClass)
 
 function(1, 2, 3)

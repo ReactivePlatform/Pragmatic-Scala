@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter14
+
 trait Printable {
   def print() {
     println("running printable...")

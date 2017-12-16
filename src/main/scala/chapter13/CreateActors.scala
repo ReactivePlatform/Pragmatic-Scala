@@ -14,7 +14,12 @@
  * limitations under the License.
  */
 
+package chapter13
+
 import akka.actor._
+
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
 
 object CreateActors extends App {
   val system = ActorSystem("sample")
@@ -23,5 +28,6 @@ object CreateActors extends App {
 
   depp ! "Wonka"
 
-  system.shutdown()
+  val terminateFuture = system.terminate()
+  Await.ready(terminateFuture, Duration.Inf)
 }

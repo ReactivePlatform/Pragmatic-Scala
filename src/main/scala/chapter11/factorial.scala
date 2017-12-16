@@ -14,23 +14,28 @@
  * limitations under the License.
  */
 
-// #snip
-def factorial(number: Int): BigInt = {
-  if (number == 0)
-    1
-  else
-    number * factorial(number - 1)
-}
-// #snip
+package chapter11
 
-println("//" + "START:USE1_OUTPUT")
-println(factorial(5))
-println("//" + "END:USE1_OUTPUT")
+object factorial extends App {
+  // #snip
+  def factorial(number: Int): BigInt = {
+    if (number == 0)
+      1
+    else
+      number * factorial(number - 1)
+  }
+  // #snip
 
-println("//" + "START:STACK_OVERFLOW_OUTPUT")
-try {
-  println(factorial(10000))
-} catch {
-  case ex: Throwable ⇒ println(ex)
+  println("//" + "START:USE1_OUTPUT")
+  println(factorial(5))
+  println("//" + "END:USE1_OUTPUT")
+
+  println("//" + "START:STACK_OVERFLOW_OUTPUT")
+  try {
+    println(factorial(10000))
+  } catch {
+    case ex: Throwable ⇒ println(ex)
+  }
+  println("//" + "END:STACK_OVERFLOW_OUTPUT")
+
 }
-println("//" + "END:STACK_OVERFLOW_OUTPUT")

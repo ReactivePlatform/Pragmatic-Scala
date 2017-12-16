@@ -13,5 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package chapter10
 
-Thread.sleep(1000)
+object ThreadSleep {
+  Thread.sleep(1000)
+}

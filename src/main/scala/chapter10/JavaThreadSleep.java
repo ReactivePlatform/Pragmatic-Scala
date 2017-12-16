@@ -16,7 +16,7 @@
 
 package chapter10;
 
-public class ThreadSleep {
+public class JavaThreadSleep {
   public void someMethod() {
       // #snip
       // Java code

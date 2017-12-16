@@ -17,9 +17,9 @@
 class Resource private () {
   println("Starting transaction...")
   private def cleanUp() { println("Ending transaction...") }
-  def op1() = println("Operation 1")
-  def op2() = println("Operation 2")
-  def op3() = println("Operation 3")
+  def op1(): Unit = println("Operation 1")
+  def op2(): Unit = println("Operation 2")
+  def op3(): Unit = println("Operation 3")
 }
 
 object Resource {
