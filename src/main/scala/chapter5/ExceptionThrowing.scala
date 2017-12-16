@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-def someOp(number: Int) =
-  if (number < 10)
-    number * 2
-  else
-    throw new RuntimeException("invalid argument")
+package chapter5
+
+object ExceptionThrowing extends App {
+  def someOp(number: Int) =
+    if (number < 10)
+      number * 2
+    else
+      throw new RuntimeException("invalid argument")
+
+}

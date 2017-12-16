@@ -14,7 +14,12 @@
  * limitations under the License.
  */
 
-import java.util._
+package chapter5
 
-var list1: util.List[Int] = new util.ArrayList[Int]
-var list2 = new util.ArrayList[Int]
+object Generics extends App {
+  import java._
+
+  var list1: util.List[Int] = new util.ArrayList[Int]
+  var list2 = new util.ArrayList[Int]
+
+}

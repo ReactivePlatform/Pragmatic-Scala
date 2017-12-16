@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter5
+
 import DateHelper._
 
 object DaysDSL extends App {

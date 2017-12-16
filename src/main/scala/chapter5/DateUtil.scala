@@ -1,4 +1,3 @@
-import java.time.LocalDate
 /*
  * Copyright 2017 pragmatic-scala.reactiveplatform.xyz
  *
@@ -14,6 +13,10 @@ import java.time.LocalDate
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package chapter5
+
+import java.time.LocalDate
 
 object DateUtil {
   val ago = "ago"

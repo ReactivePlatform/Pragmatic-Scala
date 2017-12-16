@@ -14,19 +14,24 @@
  * limitations under the License.
  */
 
-class Name(val value: String) extends AnyVal {
-  override def toString: String = value
-  def length: Int = value.length
-}
+package chapter5
 
-object UseName extends App {
-  def printName(name: Name) {
-    println(name)
+object NameVal2Example extends App {
+  class Name(val value: String) extends AnyVal {
+    override def toString: String = value
+    def length: Int = value.length
   }
 
-  val name = new Name("Snowy")
+  object UseName extends App {
+    def printName(name: Name) {
+      println(name)
+    }
 
-  val any: Any = name
-  println(name.length)
-  printName(name)
+    val name = new Name("Snowy")
+
+    val any: Any = name
+    println(name.length)
+    printName(name)
+  }
+
 }

@@ -14,18 +14,23 @@
  * limitations under the License.
  */
 
-import scala.language.implicitConversions
+package chapter5
 
-class One(val number: Int) {
-  def foo = "one"
+object Err extends App {
+  import scala.language.implicitConversions
+
+  class One(val number: Int) {
+    def foo = "one"
+  }
+
+  class Two(val number: Int) {
+    def foo = "two"
+  }
+
+  implicit def convertIntToOne(number: Int): One = new One(number)
+  implicit def convertIntToTwo(number: Int): Two = new Two(number)
+
+  println(2.foo) //Error
+  println(2.foo) //Error
+
 }
-
-class Two(val number: Int) {
-  def foo = "two"
-}
-
-implicit def convertIntToOne(number: Int): One = new One(number)
-implicit def convertIntToTwo(number: Int): Two = new Two(number)
-
-println(2.foo)
-println(2.foo)

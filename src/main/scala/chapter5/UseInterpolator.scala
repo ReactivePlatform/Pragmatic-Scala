@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter5
+
 object UseInterpolator extends App {
   import MyInterpolator._
 

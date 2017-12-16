@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter5;
+
 //Java code 
 class Fruit {} 
 class Banana extends Fruit {}

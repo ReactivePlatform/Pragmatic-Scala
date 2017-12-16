@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter5
+
 class TypeInference {
   val greet = "Ahoy!"
 }

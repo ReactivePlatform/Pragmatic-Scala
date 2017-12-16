@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter5
+
 object DateUtil {
   val ago = "ago"
   val from_now = "from_now"

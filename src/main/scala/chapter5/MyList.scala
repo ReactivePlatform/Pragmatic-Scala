@@ -14,7 +14,12 @@
  * limitations under the License.
  */
 
-class MyList[+T] //...
-var list1 = new MyList[Int]
-var list2: MyList[Any] = null
-list2 = list1 // OK
+package chapter5
+
+object MyList extends App {
+  class MyList[+T] //...
+  var list1 = new MyList[Int]
+  var list2: MyList[Any] = null
+  list2 = list1 // OK
+
+}

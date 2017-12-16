@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-import java.util._
+package chapter5
 
-var list1 = new util.ArrayList[Int]
-var list2 = new util.ArrayList[Any]
+object Generics3 extends App {
+  import java._
 
-var ref1: Int = 1
-var ref2: Any = null
+  var list1 = new util.ArrayList[Int]
+  var list2 = new util.ArrayList[Any]
 
-ref2 = ref1 //OK
+  var ref1: Int = 1
+  var ref2: Any = null
 
-list2 = list1 // Compilation Error
+  ref2 = ref1 //OK
+
+  list2 = list1 // Compilation Error
+
+}

@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
-val greet: String = "Ahoy!"
+package chapter5
 
-println(greet)
+object DefiningVariableWithType extends App {
+  val greet: String = "Ahoy!"
+
+  println(greet)
+
+}

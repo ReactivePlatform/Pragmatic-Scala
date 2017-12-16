@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter5
+
 object MyInterpolator {
   implicit class Interpolator(val context: StringContext) extends AnyVal {
     def mask(args: Any*): StringBuilder = {
