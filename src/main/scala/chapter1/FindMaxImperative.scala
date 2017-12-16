@@ -14,12 +14,17 @@
  * limitations under the License.
  */
 
-def findMax(temperatures: List[Int]) = {
-  var highTemperature = Integer.MIN_VALUE
-  for (temperature ← temperatures) {
-    highTemperature = Math.max(highTemperature, temperature)
-  }
-  highTemperature
-}
+package chapter1
 
-println(findMax(List(23, 27, 17)))
+object FindMaxImperative extends App {
+  def findMax(temperatures: List[Int]) = {
+    var highTemperature = Integer.MIN_VALUE
+    for (temperature ← temperatures) {
+      highTemperature = Math.max(highTemperature, temperature)
+    }
+    highTemperature
+  }
+
+  println(findMax(List(23, 27, 17)))
+
+}

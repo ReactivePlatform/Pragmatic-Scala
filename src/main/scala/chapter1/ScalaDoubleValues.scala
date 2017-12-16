@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-val values = List(1, 2, 3, 4, 5)
+package chapter1
 
-val doubleValues = values.map(_ * 2)
+object ScalaDoubleValues extends App {
+  val values = List(1, 2, 3, 4, 5)
 
-println(doubleValues)
+  val doubleValues = values.map(_ * 2)
+
+  println(doubleValues)
+
+}

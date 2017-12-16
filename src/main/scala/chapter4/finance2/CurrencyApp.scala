@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2017 pragmatic-scala.reactiveplatform.xyz
  *
@@ -14,7 +15,9 @@
  * limitations under the License.
  */
 
-import finance.currencies._
+package chapter4.finance2
+
+import chapter4.finance2.finance.currencies._
 
 object CurrencyApp extends App {
   var moneyInGBP = new Money(10, Currency.GBP)

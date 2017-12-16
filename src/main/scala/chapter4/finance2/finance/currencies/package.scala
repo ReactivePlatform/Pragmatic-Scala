@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package finance
+package chapter4.finance2.finance
 
 package object currencies {
   import Currency._

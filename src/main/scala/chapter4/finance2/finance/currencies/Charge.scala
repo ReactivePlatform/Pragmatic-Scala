@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package finance.currencies
-
-import Currency._
+package chapter4.finance2.finance.currencies
 
 object Charge {
   def chargeInUSD(money: Money): String = {

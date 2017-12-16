@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-def findMax(temperatures: List[Int]) = {
-  temperatures.foldLeft(Integer.MIN_VALUE) { Math.max }
-}
+package chapter1
 
-println(findMax(List(23, 27, 17)))
+object FindMaxFunctional extends App {
+  def findMax(temperatures: List[Int]) = {
+    temperatures.foldLeft(Integer.MIN_VALUE) { Math.max }
+  }
+
+  println(findMax(List(23, 27, 17)))
+
+}

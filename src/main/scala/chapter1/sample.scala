@@ -14,5 +14,10 @@
  * limitations under the License.
  */
 
-var i = 1
-i = "haha" //Error
+package chapter1
+
+object sample extends App {
+  var i = 1
+  i = "haha" //Error
+
+}

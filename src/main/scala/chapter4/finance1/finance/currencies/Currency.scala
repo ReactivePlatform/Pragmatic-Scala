@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package finance.currencies
+package chapter4.finance1.finance.currencies
 
 object Currency extends Enumeration {
   type Currency = Value
