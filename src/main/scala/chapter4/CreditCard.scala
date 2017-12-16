@@ -14,4 +14,6 @@
  * limitations under the License.
  */
 
+package chapter4
+
 class CreditCard(val number: Int, var creditLimit: Int)

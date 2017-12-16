@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter4
+
 object CopApp extends App {
   type Cop = PoliceOfficer
 

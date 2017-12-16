@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter4
+
 import scala.beans.BeanProperty
 
 class Dude(@BeanProperty val firstName: String, val lastName: String) {

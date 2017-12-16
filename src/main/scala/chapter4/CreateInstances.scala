@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package chapter4
 
-new StringBuilder("hello")
+object CreateInstances extends App {
+  new StringBuilder("hello")
 
-new StringBuilder()
+  new StringBuilder()
 
-new StringBuilder
+  new StringBuilder
+
+}

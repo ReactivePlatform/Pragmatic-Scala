@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 
-class Car(val year: Int) {
-  private var milesDriven: Int = 0
+package chapter4
 
-  def miles = milesDriven
+object UseCar extends App {
 
-  def drive(distance: Int) {
-    milesDriven += Math.abs(distance)
+  class Car(val year: Int) {
+    private var milesDriven: Int = 0
+
+    def miles = milesDriven
+
+    def drive(distance: Int) {
+      milesDriven += Math.abs(distance)
+    }
   }
-}
 
-val car = new Car(2015)
-println(s"Car made in year ${car.year}")
-println(s"Miles driven ${car.miles}")
-println("Drive for 10 miles")
-car.drive(10)
-println(s"Miles driven ${car.miles}")
+  val car = new Car(2015)
+  println(s"Car made in year ${car.year}")
+  println(s"Miles driven ${car.miles}")
+  println("Drive for 10 miles")
+  car.drive(10)
+  println(s"Miles driven ${car.miles}")
+
+}

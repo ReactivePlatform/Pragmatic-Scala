@@ -14,7 +14,12 @@
  * limitations under the License.
  */
 
-def echo2[T1, T2](input1: T1, input2: T2): Unit =
-  println(s"received $input1 and $input2")
+package chapter4
 
-echo2("Hi", "5")
+object Echo2 extends App {
+  def echo2[T1, T2](input1: T1, input2: T2): Unit =
+    println(s"received $input1 and $input2")
+
+  echo2("Hi", "5")
+
+}

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter4
+
 object Greeter {
   def greet(): Unit = println("Ahoy, me hearties!")
 }

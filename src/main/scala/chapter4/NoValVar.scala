@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter4
+
 class NoValVar(number: Int) {
   def getValue: Int = number
 }

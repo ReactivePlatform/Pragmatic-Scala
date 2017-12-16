@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 
-class Sample(number: Int) {
-  println("You are constructing an instance of Sample")
-}
+package chapter4
 
-new Sample(6)
+object Sample extends App {
+  class Sample(number: Int) {
+    println("You are constructing an instance of Sample")
+  }
+
+  new Sample(6)
+}

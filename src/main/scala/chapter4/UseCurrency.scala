@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter4
+
 import finance.currencies.Currency
 
 object UseCurrency extends App {

@@ -14,4 +14,6 @@
  * limitations under the License.
  */
 
+package chapter4
+
 class PoliceOfficer(val name: String)

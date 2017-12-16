@@ -14,7 +14,12 @@
  * limitations under the License.
  */
 
-def echo[T](input1: T, input2: T): Unit =
-  println(s"received $input1 (${input1.getClass}) and $input2 (${input2.getClass})")
+package chapter4
 
-echo[Int]("hi", 5) //error: type mismatch
+object EchoErr extends App {
+  def echo[T](input1: T, input2: T): Unit =
+    println(s"received $input1 (${input1.getClass}) and $input2 (${input2.getClass})")
+
+  echo[Int]("hi", 5) //error: type mismatch
+
+}

@@ -14,20 +14,25 @@
  * limitations under the License.
  */
 
-import scala.collection.mutable._
+package chapter4
 
-class Marker private (val color: String) {
-  override def toString = s"marker color $color"
-}
-object Marker {
-  private val markers = mutable.Map(
-    "red" -> new Marker("red"),
-    "blue" -> new Marker("blue"),
-    "yellow" -> new Marker("yellow"))
+object Static extends App {
+  import scala.collection._
 
-  def supportedColors = markers.keys
-  def apply(color: String) = markers.getOrElseUpdate(color, new Marker(color))
+  class Marker private (val color: String) {
+    override def toString = s"marker color $color"
+  }
+  object Marker {
+    private val markers = mutable.Map(
+      "red" -> new Marker("red"),
+      "blue" -> new Marker("blue"),
+      "yellow" -> new Marker("yellow"))
+
+    def supportedColors = markers.keys
+    def apply(color: String) = markers.getOrElseUpdate(color, new Marker(color))
+  }
+  println(s"Supported colors are : ${Marker.supportedColors}")
+  println(Marker("blue"))
+  println(Marker("red"))
+
 }
-println(s"Supported colors are : ${Marker.supportedColors}")
-println(Marker("blue"))
-println(Marker("red"))
