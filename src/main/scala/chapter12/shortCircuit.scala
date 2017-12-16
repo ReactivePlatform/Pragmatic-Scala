@@ -14,20 +14,24 @@
  * limitations under the License.
  */
 
-// #snip
-def expensiveComputation() = {
-  println("...assume slow operation...")
-  false
-}
+package chapter12
 
-def evaluate(input: Int): Unit = {
-  println(s"evaluate called with $input")
-  if(input >= 10 && expensiveComputation())
-    println("doing work...")
-  else
-    println("skipping")
-}
+object shortCircuit extends App {
+  // #snip
+  def expensiveComputation() = {
+    println("...assume slow operation...")
+    false
+  }
 
-evaluate(0)
-evaluate(100)
-// #snip
+  def evaluate(input: Int): Unit = {
+    println(s"evaluate called with $input")
+    if (input >= 10 && expensiveComputation())
+      println("doing work...")
+    else
+      println("skipping")
+  }
+
+  evaluate(0)
+  evaluate(100)
+  // #snip
+}

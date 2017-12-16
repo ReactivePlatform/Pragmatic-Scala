@@ -20,11 +20,11 @@ class Marker private (val color: String) {
   override def toString = s"marker color $color"
 }
 object Marker {
-  private val markers = Map( 
-    "red" -> new Marker("red"), 
-    "blue" -> new Marker("blue"), 
+  private val markers = Map(
+    "red" -> new Marker("red"),
+    "blue" -> new Marker("blue"),
     "yellow" -> new Marker("yellow"))
-    
+
   def supportedColors = markers.keys
   def apply(color: String) = markers.getOrElseUpdate(color, new Marker(color))
 }

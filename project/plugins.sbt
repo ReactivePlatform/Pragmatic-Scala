@@ -10,3 +10,6 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-ghpages" % "0.6.2")
 
 addSbtPlugin("de.heikoseeberger" % "sbt-header" % "4.0.0")
 
+addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.1")
+
+

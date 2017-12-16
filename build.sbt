@@ -1,5 +1,8 @@
 import com.typesafe.sbt.SbtGit.GitKeys
+import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 import com.typesafe.sbt.git.DefaultReadableGit
+
+import scalariform.formatter.preferences._
 
 name := "PragmaticScala"
 
@@ -37,3 +40,16 @@ paradoxMaterialTheme in Compile := {
 organizationName := "pragmatic-scala.reactiveplatform.xyz"
 startYear := Some(2017)
 licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt"))
+
+def setPreferences(preferences: IFormattingPreferences): IFormattingPreferences = preferences
+  .setPreference(RewriteArrowSymbols, true)
+  .setPreference(AlignParameters, true)
+  .setPreference(AlignSingleLineCaseStatements, true)
+  .setPreference(DoubleIndentConstructorArguments, false)
+  .setPreference(DoubleIndentMethodDeclaration, false)
+  .setPreference(DanglingCloseParenthesis, Preserve)
+  .setPreference(NewlineAtEndOfFile, true)
+
+ScalariformKeys.preferences := setPreferences(ScalariformKeys.preferences.value)
+ScalariformKeys.preferences in Compile := setPreferences(ScalariformKeys.preferences.value)
+ScalariformKeys.preferences in Test := setPreferences(ScalariformKeys.preferences.value)

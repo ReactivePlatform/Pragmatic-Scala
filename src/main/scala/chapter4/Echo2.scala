@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-def echo2[T1, T2](input1: T1, input2: T2) = 
+def echo2[T1, T2](input1: T1, input2: T2) =
   println(s"received $input1 and $input2")
 
 echo2("Hi", "5")

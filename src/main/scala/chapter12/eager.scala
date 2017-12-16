@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 
-def expensiveComputation() = {
-  println("...assume slow operation...")
-  false
-}
+package chapter12
 
-def evaluate(input: Int) = {
-  println(s"evaluate called with $input")
-  val perform = expensiveComputation()
-  if(input >= 10 && perform)
-    println("doing work...")
-  else
-    println("skipping")
-}
+object eager extends App {
+  def expensiveComputation() = {
+    println("...assume slow operation...")
+    false
+  }
 
-evaluate(0)
-evaluate(100)
+  def evaluate(input: Int): Unit = {
+    println(s"evaluate called with $input")
+    // #snip
+    val perform = expensiveComputation()
+    if (input >= 10 && perform)
+      // #snip
+      println("doing work...")
+    else
+      println("skipping")
+  }
+
+  evaluate(0)
+  evaluate(100)
+}

@@ -16,11 +16,11 @@
 
 class Message[T](val content: T) {
   override def toString = s"message content is $content"
-  
+
   def is(value: T) = value == content
 }
 
-val message1 : Message[String] = new Message("howdy")
+val message1: Message[String] = new Message("howdy")
 val message2 = new Message(42)
 
 message1.is(22) //error: type mismatch

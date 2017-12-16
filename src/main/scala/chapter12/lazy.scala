@@ -13,20 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package chapter12
 
-def expensiveComputation() = {
-  println("...assume slow operation...")
-  false
+object `lazy` extends App {
+  def expensiveComputation() = {
+    println("...assume slow operation...")
+    false
+  }
+
+  def evaluate(input: Int): Unit = {
+    println(s"evaluate called with $input")
+    // #snip
+    lazy val perform = expensiveComputation()
+    if (input >= 10 && perform)
+      println("doing work...")
+    // #snip
+    else
+      println("skipping")
+  }
+
+  evaluate(0)
+  evaluate(100)
 }
-
-def evaluate(input: Int) = {
-  println(s"evaluate called with $input")
-  lazy val perform = expensiveComputation()
-  if(input >= 10 && perform)
-    println("doing work...")
-  else
-    println("skipping")
-}
-
-evaluate(0)
-evaluate(100)

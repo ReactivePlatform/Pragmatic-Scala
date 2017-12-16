@@ -1,6 +1,8 @@
+// #snip_12-2_output
 evaluate called with 0
 ...assume slow operation...
 skipping
 evaluate called with 100
 ...assume slow operation...
 skipping
+// #snip_12-2_output
