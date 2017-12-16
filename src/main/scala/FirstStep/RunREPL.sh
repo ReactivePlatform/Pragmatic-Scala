@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #---
 # Excerpted from "Pragmatic Scala",
 # published by The Pragmatic Bookshelf.
