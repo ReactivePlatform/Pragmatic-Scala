@@ -28,5 +28,5 @@ object CreateActors extends App {
   depp ! "Sparrow"
   hanks ! "Phillips"
   println(s"Calling from ${Thread.currentThread}")
-  system.shutdown()  
+  system.shutdown()
 }

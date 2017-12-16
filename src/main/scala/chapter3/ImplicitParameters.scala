@@ -26,7 +26,7 @@ def atOffice() = {
   println("--- at the office ---")
   implicit def officeNetwork = new Wifi("office-network")
   val cafeteriaNetwork = new Wifi("cafe-connect")
-  
+
   connectToNetwork("guest")(cafeteriaNetwork)
   connectToNetwork("Jill Coder")
   connectToNetwork("Joe Hacker")
@@ -35,7 +35,7 @@ def atOffice() = {
 def atJoesHome() = {
   println("--- at Joe's home ---")
   implicit def homeNetwork = new Wifi("home-network")
-  
+
   connectToNetwork("guest")(homeNetwork)
   connectToNetwork("Joe Hacker")
 }

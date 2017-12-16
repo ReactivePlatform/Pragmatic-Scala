@@ -15,8 +15,8 @@
  */
 
 // #snip_1
-abstract class Writer  {
-  def writeMessage(message: String):Unit
+abstract class Writer {
+  def writeMessage(message: String): Unit
 }
 // #snip_1
 
@@ -35,17 +35,17 @@ trait ProfanityFilteredWriter extends Writer {
 // #snip_3
 class StringWriterDelegate extends Writer {
   val writer = new java.io.StringWriter
-  
+
   def writeMessage(message: String): Unit = writer.write(message)
-  override def toString : String = writer.toString
+  override def toString: String = writer.toString
 }
 // #snip_3
 
 // #snip_4
-val myWriterProfanityFirst = 
+val myWriterProfanityFirst =
   new StringWriterDelegate with UpperCaseWriter with ProfanityFilteredWriter
 
-val myWriterProfanityLast = 
+val myWriterProfanityLast =
   new StringWriterDelegate with ProfanityFilteredWriter with UpperCaseWriter
 
 myWriterProfanityFirst writeMessage "There is no sin except stupidity"

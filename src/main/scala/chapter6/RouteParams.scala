@@ -16,25 +16,25 @@
 
 val arr = Array(1, 2, 3, 4, 5)
 
-val largest = 
-  (Integer.MIN_VALUE /: arr) { (carry, elem) => Math.max(carry, elem)}
+val largest =
+  (Integer.MIN_VALUE /: arr) { (carry, elem) ⇒ Math.max(carry, elem) }
 
 println(largest)
 
 {
-val largest = (Integer.MIN_VALUE /: arr) { Math.max(_, _)}
+  val largest = (Integer.MIN_VALUE /: arr) { Math.max(_, _) }
 
-println(largest)
+  println(largest)
 }
 
 {
-val largest = (Integer.MIN_VALUE /: arr) { Math.max _ }
+  val largest = (Integer.MIN_VALUE /: arr) { Math.max _ }
 
-println(largest)
+  println(largest)
 }
 
 {
-val largest = (Integer.MIN_VALUE /: arr) { Math.max }
+  val largest = (Integer.MIN_VALUE /: arr) { Math.max }
 
-println(largest)
+  println(largest)
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-class Equipment(val routine : Int => Int) {
+class Equipment(val routine: Int ⇒ Int) {
   def simulate(input: Int) = {
     print("Running simulation...")
     routine(input)

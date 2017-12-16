@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-def mad(parameter: Int) : Int = {
-  if(parameter == 0)
+def mad(parameter: Int): Int = {
+  if (parameter == 0)
     throw new RuntimeException("Error")
   else
     mad(parameter - 1)

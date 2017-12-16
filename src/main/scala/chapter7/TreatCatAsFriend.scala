@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import chapter7.{Cat, Friend}
+import chapter7.{ Cat, Friend }
 
 // #snip
 def useFriend(friend: Friend): Unit = friend.listen()
 
 val angel = new Cat("Angel") with Friend
-val friend : Friend = angel
+val friend: Friend = angel
 angel.listen()
 
 useFriend(angel)

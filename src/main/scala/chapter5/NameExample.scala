@@ -26,5 +26,5 @@ object UseName extends App {
 
   val name = new Name("Snowy")
   println(name.length)
-  printName(name)  
+  printName(name)
 }

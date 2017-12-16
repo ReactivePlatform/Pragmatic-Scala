@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-def loopThrough(number: Int)(closure: Int => Unit) {
-  for (i <- 1 to number) { closure(i) }
+def loopThrough(number: Int)(closure: Int ⇒ Unit) {
+  for (i ← 1 to number) { closure(i) }
 }
-                   
-var result = 0
-val addIt = { value:Int => result += value }
 
-loopThrough(10) { elem => addIt(elem) }
+var result = 0
+val addIt = { value: Int ⇒ result += value }
+
+loopThrough(10) { elem ⇒ addIt(elem) }
 println(s"Total of values from 1 to 10 is $result")
 
 result = 0

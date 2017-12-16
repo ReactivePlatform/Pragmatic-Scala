@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-def getPersonInfo(primaryKey : Int) = { 
-  ("Venkat", "Subramaniam", "venkats@agiledeveloper.com") 
+def getPersonInfo(primaryKey: Int) = {
+  ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
 }
 
 val (firstName, lastName) = getPersonInfo(1)

@@ -15,6 +15,6 @@
  */
 
 abstract class Bird {
- @throws(classOf[NoFlyException]) def fly()
+  @throws(classOf[NoFlyException]) def fly()
   //...
 }

@@ -26,12 +26,12 @@ object UseFriend extends App {
   sara.listen()
   comet.listen()
 
-  val mansBestFriend : Friend = comet
+  val mansBestFriend: Friend = comet
   mansBestFriend.listen()
 
   def helpAsFriend(friend: Friend): Unit = friend.listen()
 
   helpAsFriend(sara)
-  helpAsFriend(comet)  
+  helpAsFriend(comet)
 }
 // #snip

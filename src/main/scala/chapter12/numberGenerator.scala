@@ -15,7 +15,7 @@
  */
 
 println("//" + "START:SERIES_OUTPUT")
-def generate(starting: Int) : Stream[Int] = {
+def generate(starting: Int): Stream[Int] = {
   starting #:: generate(starting + 1)
 }
 
@@ -28,5 +28,5 @@ println(generate(25).take(10).toList)
 println("//" + "END:CALL_OUTPUT")
 
 println("//" + "START:CALL2_OUTPUT")
-println(generate(25).takeWhile{ _ < 40 }.force)
+println(generate(25).takeWhile { _ < 40 }.force)
 println("//" + "END:CALL2_OUTPUT")

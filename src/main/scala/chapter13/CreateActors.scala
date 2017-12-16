@@ -23,5 +23,5 @@ object CreateActors extends App {
 
   depp ! "Wonka"
 
-  system.shutdown()  
+  system.shutdown()
 }

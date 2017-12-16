@@ -15,8 +15,8 @@
  */
 
 @scala.annotation.tailrec
-def factorial(fact: BigInt, number: Int) : BigInt = {
-  if(number == 0)
+def factorial(fact: BigInt, number: Int): BigInt = {
+  if (number == 0)
     fact
   else
     factorial(fact * number, number - 1)

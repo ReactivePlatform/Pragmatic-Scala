@@ -20,16 +20,16 @@ class Sample {
 
   def process(input: Int) {
     input match {
-      case MAX => println("You matched max")
+      case MAX ⇒ println("You matched max")
     }
   }
 }
 
 val sample = new Sample
 try {
-  sample.process(0)  
+  sample.process(0)
 } catch {
-  case ex: Throwable => println(ex)
+  case ex: Throwable ⇒ println(ex)
 }
 sample.process(100)
 // #snip

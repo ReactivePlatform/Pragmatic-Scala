@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-class Equipment { 
-  def simulate(input: Int)(calculator: Int => Int) : Int = {
+class Equipment {
+  def simulate(input: Int)(calculator: Int ⇒ Int): Int = {
     //...
-    calculator(input)    
+    calculator(input)
   }
 }

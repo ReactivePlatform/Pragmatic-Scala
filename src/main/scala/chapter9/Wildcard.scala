@@ -15,7 +15,7 @@
  */
 
 // #snip
-object DayOfWeek extends Enumeration { 
+object DayOfWeek extends Enumeration {
   val SUNDAY = Value("Sunday")
   val MONDAY = Value("Monday")
   val TUESDAY = Value("Tuesday")
@@ -25,11 +25,11 @@ object DayOfWeek extends Enumeration {
   val SATURDAY = Value("Saturday")
 }
 
-def activity(day: DayOfWeek.Value) {                 
+def activity(day: DayOfWeek.Value) {
   day match {
-    case DayOfWeek.SUNDAY => println("Eat, sleep, repeat...")
-    case DayOfWeek.SATURDAY => println("Hang out with friends")
-    case _ => println("...code for fun...")
+    case DayOfWeek.SUNDAY   ⇒ println("Eat, sleep, repeat...")
+    case DayOfWeek.SATURDAY ⇒ println("Hang out with friends")
+    case _                  ⇒ println("...code for fun...")
   }
 }
 

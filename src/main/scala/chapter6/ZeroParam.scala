@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-def printValue(generator: () => Int) = {
+def printValue(generator: () ⇒ Int) = {
   println(s"Generated value is ${generator()}")
 }
 
-printValue(() => 42)
+printValue(() ⇒ 42)

@@ -16,12 +16,12 @@
 
 def isDivisibleBy(number: Int, divisor: Int) = number % divisor == 0
 
-def isPrime(number: Int) = 
+def isPrime(number: Int) =
   number > 1 && !(2 to number - 1).exists { isDivisibleBy(number, _) }
 
-def primes(starting: Int) : Stream[Int] = {
+def primes(starting: Int): Stream[Int] = {
   println(s"computing for $starting")
-  if(isPrime(starting))
+  if (isPrime(starting))
     starting #:: primes(starting + 1)
   else
     primes(starting + 1)

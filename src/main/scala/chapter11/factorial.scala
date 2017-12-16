@@ -15,11 +15,11 @@
  */
 
 // #snip
-def factorial(number: Int) : BigInt = {
-  if(number == 0)
+def factorial(number: Int): BigInt = {
+  if (number == 0)
     1
   else
-    number * factorial(number - 1)  
+    number * factorial(number - 1)
 }
 // #snip
 
@@ -29,8 +29,8 @@ println("//" + "END:USE1_OUTPUT")
 
 println("//" + "START:STACK_OVERFLOW_OUTPUT")
 try {
-println(factorial(10000))
+  println(factorial(10000))
 } catch {
-  case ex : Throwable => println(ex)
+  case ex: Throwable ⇒ println(ex)
 }
 println("//" + "END:STACK_OVERFLOW_OUTPUT")

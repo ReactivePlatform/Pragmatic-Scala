@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-val greet : String = "Ahoy!"
+val greet: String = "Ahoy!"
 
 println(greet)

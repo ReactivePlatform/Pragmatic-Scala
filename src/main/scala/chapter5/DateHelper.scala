@@ -21,15 +21,15 @@ class DateHelper(offset: Int) {
   def days(when: String) = {
     val today = LocalDate.now
     when match {
-      case "ago" => today.minusDays(offset)
-      case "from_now" => today.plusDays(offset)
-      case _ => today
+      case "ago"      ⇒ today.minusDays(offset)
+      case "from_now" ⇒ today.plusDays(offset)
+      case _          ⇒ today
     }
   }
 }
 
 object DateHelper {
-  val ago = "ago"              
+  val ago = "ago"
   val from_now = "from_now"
   implicit def convertInt2DateHelper(offset: Int) = new DateHelper(offset)
 }

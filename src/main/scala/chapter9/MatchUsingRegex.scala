@@ -15,11 +15,11 @@
  */
 
 // #snip_9-24
-def process(input : String) {        
+def process(input: String) {
   val GoogStock = """^GOOG:(\d*\.\d+)""".r
   input match {
-    case GoogStock(price) => println(s"Price of GOOG is $$$price")
-    case _ => println(s"not processing $input")
+    case GoogStock(price) ⇒ println(s"Price of GOOG is $$$price")
+    case _                ⇒ println(s"not processing $input")
   }
 }
 process("GOOG:310.84")

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-class Car {        
+class Car {
   def turn(direction: String) //...
   {
-  }          
+  }
 }
 
 val car = new Car()

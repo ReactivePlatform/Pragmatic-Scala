@@ -16,10 +16,10 @@
 
 // #snip_9-15
 object StockService {
-  def process(input : String) {
+  def process(input: String) {
     input match {
-      case Symbol() => println(s"Look up price for valid symbol $input")
-      case _ => println(s"Invalid input $input")
+      case Symbol() ⇒ println(s"Look up price for valid symbol $input")
+      case _        ⇒ println(s"Invalid input $input")
     }
   }
 }
@@ -27,9 +27,9 @@ object StockService {
 
 // #snip_9-16
 object Symbol {
-  def unapply(symbol : String) : Boolean = {
+  def unapply(symbol: String): Boolean = {
     // you'd look up a database... here only GOOG and IBM are recognized
-    symbol == "GOOG" || symbol == "IBM" 
+    symbol == "GOOG" || symbol == "IBM"
   }
 }
 // #snip_9-16

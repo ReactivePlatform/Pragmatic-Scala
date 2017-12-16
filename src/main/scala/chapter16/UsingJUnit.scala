@@ -32,11 +32,11 @@ import org.junit.Test
 import org.junit.Assert._
 
 class UsingJUnit {
-  @Test 
+  @Test
   def listAdd() {
     val list = new util.ArrayList[String]
     list.add("Milk")
-    list add "Sugar" 
+    list add "Sugar"
     assertEquals(2, list.size)
   }
 }

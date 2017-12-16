@@ -31,21 +31,21 @@ object UseActor extends App {
 
   depp ! Play("Wonka")
   depp ! Play("Sparrow")
-  
-  println("Sent roles to play") 
-  
-  implicit val timeout = Timeout(2.seconds)  
-  val wonkaFuture = depp ? ReportCount("Wonka") 
+
+  println("Sent roles to play")
+
+  implicit val timeout = Timeout(2.seconds)
+  val wonkaFuture = depp ? ReportCount("Wonka")
   val sparrowFuture = depp ? ReportCount("Sparrow")
-  val gumpFuture = hanks ? ReportCount("Gump") 
-  
+  val gumpFuture = hanks ? ReportCount("Gump")
+
   val wonkaCount = Await.result(wonkaFuture, timeout.duration)
   val sparrowCount = Await.result(sparrowFuture, timeout.duration)
   val gumpCount = Await.result(gumpFuture, timeout.duration)
-  
+
   println(s"Depp played Wonka $wonkaCount time(s)")
   println(s"Depp played Sparrow $sparrowCount time(s)")
   println(s"Hanks played Gump $gumpCount time(s)")
 
-  system.shutdown()  
+  system.shutdown()
 }

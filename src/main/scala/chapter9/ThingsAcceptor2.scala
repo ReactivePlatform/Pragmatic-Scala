@@ -22,7 +22,7 @@ object ThingsAcceptor {
   def acceptStuff(thing: Thing) {
     thing match {
       //...
-      case _ =>
+      case _ ⇒
     }
   }
 }

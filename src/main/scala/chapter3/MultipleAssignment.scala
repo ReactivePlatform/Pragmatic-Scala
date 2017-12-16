@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-def getPersonInfo(primaryKey : Int) = { 
-  // Assume primaryKey is used to fetch a person's info... 
+def getPersonInfo(primaryKey: Int) = {
+  // Assume primaryKey is used to fetch a person's info...
   // Here response is hard-coded
-  ("Venkat", "Subramaniam", "venkats@agiledeveloper.com") 
+  ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
 }
 
 val (firstName, lastName, emailAddress) = getPersonInfo(1)

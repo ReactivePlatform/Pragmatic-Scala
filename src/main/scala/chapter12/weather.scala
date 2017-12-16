@@ -26,7 +26,7 @@ def getWeatherData(city: String) = {
   val temperature = (xmlResponse \\ "temperature" \ "@value").text
   val condition = (xmlResponse \\ "weather" \ "@value").text
   (cityName, temperature, condition)
-}  
+}
 
 def printWeatherData(weatherData: (String, String, String)) = {
   val (cityName, temperature, condition) = weatherData
@@ -34,22 +34,22 @@ def printWeatherData(weatherData: (String, String, String)) = {
   println(f"$cityName%-15s $temperature%-6s $condition")
 }
 
-def timeSample(getData: List[String] => List[(String, String, String)]) = {
-  val cities = List("Houston,us", "Chicago,us", "Boston,us", "Minneapolis,us", 
-    "Oslo,norway", "Tromso,norway", "Sydney,australia", "Berlin,germany", 
-    "London,uk", "Krakow,poland", "Rome,italy", "Stockholm,sweden", 
+def timeSample(getData: List[String] ⇒ List[(String, String, String)]) = {
+  val cities = List("Houston,us", "Chicago,us", "Boston,us", "Minneapolis,us",
+    "Oslo,norway", "Tromso,norway", "Sydney,australia", "Berlin,germany",
+    "London,uk", "Krakow,poland", "Rome,italy", "Stockholm,sweden",
     "Bangalore,india", "Brussels,belgium", "Reykjavik,iceland")
 
   val start = System.nanoTime
   getData(cities) sortBy { _._1 } foreach printWeatherData
   val end = System.nanoTime
-  println(s"Time taken: ${(end - start)/1.0e9} sec")
+  println(s"Time taken: ${(end - start) / 1.0e9} sec")
 }
 
 println("//" + "START:SEQUENTIAL_OUTPUT")
-timeSample { cities => cities map getWeatherData }
+timeSample { cities ⇒ cities map getWeatherData }
 println("//" + "END:SEQUENTIAL_OUTPUT")
 
 println("//" + "START:PARALLEL_OUTPUT")
-timeSample { cities => (cities.par map getWeatherData).toList }
+timeSample { cities ⇒ (cities.par map getWeatherData).toList }
 println("//" + "END:PARALLEL_OUTPUT")

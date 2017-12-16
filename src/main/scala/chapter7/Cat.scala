@@ -17,5 +17,5 @@
 package chapter7
 
 // #snip
-class Cat(val name: String) extends Animal 
+class Cat(val name: String) extends Animal
 // #snip

@@ -15,18 +15,19 @@
  */
 
 class Complex(val real: Int, val imaginary: Int) {
-  def +(operand: Complex) : Complex = {
+  def +(operand: Complex): Complex = {
     println("Calling +")
     new Complex(real + operand.real, imaginary + operand.imaginary)
-  }                                                               
-   
-  def *(operand: Complex) : Complex = {
-    println("Calling *")
-    new Complex(real * operand.real - imaginary * operand.imaginary,
-         real * operand.imaginary + imaginary * operand.real)
   }
-  override def toString : String = {
-    val sign = if(imaginary < 0) "" else "+"
+
+  def *(operand: Complex): Complex = {
+    println("Calling *")
+    new Complex(
+      real * operand.real - imaginary * operand.imaginary,
+      real * operand.imaginary + imaginary * operand.real)
+  }
+  override def toString: String = {
+    val sign = if (imaginary < 0) "" else "+"
     s"$real$sign${imaginary}i"
   }
 }

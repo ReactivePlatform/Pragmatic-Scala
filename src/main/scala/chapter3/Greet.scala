@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-for (i <- 1 to 3) {
+for (i ← 1 to 3) {
   print(s"$i,")
-} 
-    
+}
+
 println("Scala Rocks!!!")

@@ -29,8 +29,9 @@ println(s"First Feed In Prefixed: ${prefixedList.head}")
 // #snip_8-17
 
 // #snip_8-18
-val feedsWithForums = 
-  feeds ::: List("forums.pragprog.com/forums/87", 
+val feedsWithForums =
+  feeds ::: List(
+    "forums.pragprog.com/forums/87",
     "forums.pragprog.com/forums/246")
 println(s"First feed in feeds with forum: ${feedsWithForums.head}")
 println(s"Last feed in feeds with forum: ${feedsWithForums.last}")
@@ -42,24 +43,24 @@ println(s"Last Feed In Appended: ${appendedList.last}")
 // #snip_8-19
 
 // #snip_8-20
-println(s"Feeds with blog: ${feeds.filter( _ contains "blog" ).mkString(", ")}")
-println(s"All feeds have com: ${feeds.forall( _ contains "com" )}")
-println(s"All feeds have dave: ${feeds.forall( _ contains "dave" )}")
-println(s"Any feed has dave: ${feeds.exists( _ contains "dave" )}")
-println(s"Any feed has bill: ${feeds.exists( _ contains "bill" )}")
+println(s"Feeds with blog: ${feeds.filter(_ contains "blog").mkString(", ")}")
+println(s"All feeds have com: ${feeds.forall(_ contains "com")}")
+println(s"All feeds have dave: ${feeds.forall(_ contains "dave")}")
+println(s"Any feed has dave: ${feeds.exists(_ contains "dave")}")
+println(s"Any feed has bill: ${feeds.exists(_ contains "bill")}")
 // #snip_8-20
 
 // #snip_8-21
-println(s"Feed url lengths: ${feeds.map( _.length ).mkString(", ")}")
+println(s"Feed url lengths: ${feeds.map(_.length).mkString(", ")}")
 // #snip_8-21
 
 // #snip_8-22
-val total = feeds.foldLeft(0) { (total, feed) => total + feed.length }
+val total = feeds.foldLeft(0) { (total, feed) ⇒ total + feed.length }
 println(s"Total length of feed urls: $total")
 // #snip_8-22
 
 // #snip_8-23
-val total2 = (0 /: feeds) { (total, feed) => total + feed.length }
+val total2 = (0 /: feeds) { (total, feed) ⇒ total + feed.length }
 println(s"Total length of feed urls: $total2")
 // #snip_8-23
 

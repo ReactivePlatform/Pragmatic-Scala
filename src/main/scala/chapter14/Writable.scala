@@ -15,5 +15,5 @@
  */
 
 trait Writable {
-  def write(message: String) : Unit
+  def write(message: String): Unit
 }

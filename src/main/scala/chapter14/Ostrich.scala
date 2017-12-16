@@ -17,6 +17,6 @@
 class Ostrich extends Bird {
   override def fly() {
     throw new NoFlyException
-  }                         
+  }
   //...
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-for (i <- 1 until 3) {
+for (i ← 1 until 3) {
   print(s"$i,")
 }
 

@@ -16,36 +16,34 @@
 
 // #snip_9-17
 object StockService {
-  def process(input : String) {
+  def process(input: String) {
     input match {
-      case Symbol() => println(s"Look up price for valid symbol $input")
-      case ReceiveStockPrice(symbol, price) => 
+      case Symbol() ⇒ println(s"Look up price for valid symbol $input")
+      case ReceiveStockPrice(symbol, price) ⇒
         println(s"Received price $$$price for symbol $symbol")
-      case _ => println(s"Invalid input $input")
+      case _ ⇒ println(s"Invalid input $input")
     }
   }
 }
 // #snip_9-17
 
 object Symbol {
-  def unapply(symbol : String) : Boolean = symbol == "GOOG" || symbol == "IBM" 
-    // you'd look up database above... here only GOOG and IBM are recognized
+  def unapply(symbol: String): Boolean = symbol == "GOOG" || symbol == "IBM"
+  // you'd look up database above... here only GOOG and IBM are recognized
 }
 
 // #snip_9-18
-object ReceiveStockPrice { 
-  def unapply(input: String) : Option[(String, Double)] = {
+object ReceiveStockPrice {
+  def unapply(input: String): Option[(String, Double)] = {
     try {
       if (input contains ":") {
         val splitQuote = input split ":"
         Some(splitQuote(0), splitQuote(1).toDouble)
-      }
-      else {
+      } else {
         None
       }
-    }
-    catch {
-      case _ : NumberFormatException => None
+    } catch {
+      case _: NumberFormatException ⇒ None
     }
   }
 }

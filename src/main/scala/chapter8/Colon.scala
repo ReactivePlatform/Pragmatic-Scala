@@ -17,7 +17,7 @@
 // #snip_8-25
 class Cow {
   def ^(moon: Moon): Unit = println("Cow jumped over the moon")
-}        
+}
 class Moon {
   def ^:(cow: Cow): Unit = println("This cow jumped over the moon too")
 }

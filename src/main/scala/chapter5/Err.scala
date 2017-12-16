@@ -17,11 +17,11 @@
 import scala.language.implicitConversions
 
 class One(val number: Int) {
-  def foo= "one"
+  def foo = "one"
 }
 
 class Two(val number: Int) {
-  def foo= "two"
+  def foo = "two"
 }
 
 implicit def convertIntToOne(number: Int) = new One(number)

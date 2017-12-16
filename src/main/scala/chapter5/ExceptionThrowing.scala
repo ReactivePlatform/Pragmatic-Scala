@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-def someOp(number : Int) = 
-  if(number < 10)
+def someOp(number: Int) =
+  if (number < 10)
     number * 2
   else
     throw new RuntimeException("invalid argument")

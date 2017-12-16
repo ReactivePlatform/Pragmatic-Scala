@@ -18,6 +18,6 @@ import akka.actor._
 
 class HollywoodActor() extends Actor {
   def receive = {
-    case message => println(s"$message - ${Thread.currentThread}")
+    case message ⇒ println(s"$message - ${Thread.currentThread}")
   }
 }

@@ -15,6 +15,6 @@
  */
 
 abstract class Bird {
- def fly()
+  def fly()
   //...
 }

@@ -24,25 +24,25 @@ println("/" + "/" + "END:READ_OUTPUT")
 
 println("/" + "/" + "START:PARSE_OUTPUT")
 val stocksAndUnitsMap =
-  (Map[String, Int]() /: (stocksAndUnits \ "symbol")) { (map, symbolNode) =>
+  (Map[String, Int]() /: (stocksAndUnits \ "symbol")) { (map, symbolNode) ⇒
     val ticker = (symbolNode \ "@ticker").toString
     val units = (symbolNode \ "units").text.toInt
     map + (ticker -> units) //return new map, with one additional entry
   }
-  
+
 println(s"Number of symbol elements found is ${stocksAndUnitsMap.size}")
 println("/" + "/" + "END:PARSE_OUTPUT")
 
 println("/" + "/" + "START:STORE_OUTPUT")
-val updatedStocksAndUnitsXML = 
-<symbols>
-  { stocksAndUnitsMap map updateUnitsAndCreateXML }
-</symbols>
+val updatedStocksAndUnitsXML =
+  <symbols>
+    { stocksAndUnitsMap map updateUnitsAndCreateXML }
+  </symbols>
 
-def updateUnitsAndCreateXML(element : (String, Int)) = {
+def updateUnitsAndCreateXML(element: (String, Int)) = {
   val (ticker, units) = element
-  <symbol ticker={ticker}>
-    <units>{units + 1}</units>
+  <symbol ticker={ ticker }>
+    <units>{ units + 1 }</units>
   </symbol>
 }
 

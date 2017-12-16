@@ -16,16 +16,16 @@
 
 import scala.io.Source._
 
-def explore(count: Int, words: List[String]) : Int =
-  if(words.isEmpty)
+def explore(count: Int, words: List[String]): Int =
+  if (words.isEmpty)
     count
   else
     countPalindrome(count, words)
 
-def countPalindrome(count: Int, words: List[String]) : Int  = {
+def countPalindrome(count: Int, words: List[String]): Int = {
   val firstWord = words.head
-  
-  if(firstWord.reverse == firstWord)
+
+  if (firstWord.reverse == firstWord)
     explore(count + 1, words.tail)
   else
     explore(count, words.tail)
@@ -36,9 +36,9 @@ def callExplore(text: String): Unit = println(explore(0, text.split(" ").toList)
 callExplore("dad mom and racecar")
 
 try {
-  val text = 
+  val text =
     fromURL("https://en.wikipedia.org/wiki/Gettysburg_Address").mkString
-  callExplore(text)  
+  callExplore(text)
 } catch {
-  case ex : Throwable => println(ex)
+  case ex: Throwable ⇒ println(ex)
 }
