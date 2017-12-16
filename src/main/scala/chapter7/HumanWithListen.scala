@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-// #snip
-class Human(val name: String) {
-  def listen(): Unit = println(s"Your friend $name is listening")
+package chapter7
+
+object HumanWithListen extends App {
+  // #snip
+  class Human(val name: String) {
+    def listen(): Unit = println(s"Your friend $name is listening")
+  }
+
+  class Man(override val name: String) extends Human(name)
+  class Woman(override val name: String) extends Human(name)
+  // #snip
+
+  println(new Man("John").getClass)
+  println(new Woman("Sara").getClass)
+
 }
-
-class Man(override val name: String) extends Human(name)
-class Woman(override val name: String) extends Human(name)
-// #snip
-
-println(new Man("John").getClass)
-println(new Woman("Sara").getClass)

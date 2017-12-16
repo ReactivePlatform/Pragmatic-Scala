@@ -14,17 +14,23 @@
  * limitations under the License.
  */
 
-// #snip_8-27
-class Sample {
-  def unary_+(): Unit = println("Called unary +")
-  def unary_-(): Unit = println("called unary -")
-  def unary_!(): Unit = println("called unary !")
-  def unary_~(): Unit = println("called unary ~")
-}
+package chapter8
 
-val sample = new Sample
-+sample
--sample
-!sample
-~sample
-// #snip_8-27
+object Unary extends App {
+
+  // #snip_8-27
+  class Sample {
+    def unary_+(): Unit = println("Called unary +")
+    def unary_-(): Unit = println("called unary -")
+    def unary_!(): Unit = println("called unary !")
+    def unary_~(): Unit = println("called unary ~")
+  }
+
+  val sample = new Sample
+  +sample
+  -sample
+  !sample
+  ~sample
+  // #snip_8-27
+
+}

@@ -14,14 +14,18 @@
  * limitations under the License.
  */
 
-import chapter7.{ Cat, Friend }
+package chapter7
 
-// #snip
-def useFriend(friend: Friend): Unit = friend.listen()
+object TreatCatAsFriend extends App {
 
-val angel = new Cat("Angel") with Friend
-val friend: Friend = angel
-angel.listen()
+  // #snip
+  def useFriend(friend: Friend): Unit = friend.listen()
 
-useFriend(angel)
-// #snip
+  val angel = new Cat("Angel") with Friend
+  val friend: Friend = angel
+  angel.listen()
+
+  useFriend(angel)
+  // #snip
+
+}

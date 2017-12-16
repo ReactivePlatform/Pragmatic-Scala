@@ -14,19 +14,24 @@
  * limitations under the License.
  */
 
-// #snip_8-25
-class Cow {
-  def ^(moon: Moon): Unit = println("Cow jumped over the moon")
-}
-class Moon {
-  def ^:(cow: Cow): Unit = println("This cow jumped over the moon too")
-}
-// #snip_8-25
+package chapter8
 
-// #snip_8-26
-val cow = new Cow
-val moon = new Moon
+object Colon extends App {
+  // #snip_8-25
+  class Cow {
+    def ^(moon: Moon): Unit = println("Cow jumped over the moon")
+  }
+  class Moon {
+    def ^:(cow: Cow): Unit = println("This cow jumped over the moon too")
+  }
+  // #snip_8-25
 
-cow ^ moon
-cow ^: moon
-// #snip_8-26
+  // #snip_8-26
+  val cow = new Cow
+  val moon = new Moon
+
+  cow ^ moon
+  cow ^: moon
+  // #snip_8-26
+
+}

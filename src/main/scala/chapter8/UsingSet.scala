@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-// #snip
-val colors1 = Set("Blue", "Green", "Red")
-println(s"colors1: $colors1")
+package chapter8
 
-val colors2 = colors1 + "Black"
-println(s"colors2: $colors2")
-println(s"colors1: $colors1")
-// #snip
+object UsingSet extends App {
+  // #snip
+  val colors1 = Set("Blue", "Green", "Red")
+  println(s"colors1: $colors1")
+
+  val colors2 = colors1 + "Black"
+  println(s"colors2: $colors2")
+  println(s"colors1: $colors1")
+  // #snip
+}

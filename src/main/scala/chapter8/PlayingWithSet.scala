@@ -14,32 +14,38 @@
  * limitations under the License.
  */
 
-// #snip_8-2
-val feeds1 = Set("blog.toolshed.com", "pragdave.me", "blog.agiledeveloper.com")
-val feeds2 = Set("blog.toolshed.com", "martinfowler.com/bliki")
-// #snip_8-2
+package chapter8
 
-// #snip_8-3
-val blogFeeds = feeds1 filter (_ contains "blog")
-println(s"blog feeds: ${blogFeeds.mkString(", ")}")
-// #snip_8-3
+object PlayingWithSet extends App {
 
-// #snip_8-4
-val mergedFeeds = feeds1 ++ feeds2
-println(s"# of merged feeds: ${mergedFeeds.size}")
-// #snip_8-4
+  // #snip_8-2
+  val feeds1 = Set("blog.toolshed.com", "pragdave.me", "blog.agiledeveloper.com")
+  val feeds2 = Set("blog.toolshed.com", "martinfowler.com/bliki")
+  // #snip_8-2
 
-// #snip_8-5
-val commonFeeds = feeds1 & feeds2
-println(s"common feeds: ${commonFeeds.mkString(", ")}")
-// #snip_8-5
+  // #snip_8-3
+  val blogFeeds = feeds1 filter (_ contains "blog")
+  println(s"blog feeds: ${blogFeeds.mkString(", ")}")
+  // #snip_8-3
 
-// #snip_8-6
-val urls = feeds1 map ("http://" + _)
-println(s"One url: ${urls.head}")
-// #snip_8-6
+  // #snip_8-4
+  val mergedFeeds = feeds1 ++ feeds2
+  println(s"# of merged feeds: ${mergedFeeds.size}")
+  // #snip_8-4
 
-// #snip_8-7
-println("Refresh Feeds:")
-feeds1 foreach { feed ⇒ println(s"  Refreshing $feed...") }
-// #snip_8-7
+  // #snip_8-5
+  val commonFeeds = feeds1 & feeds2
+  println(s"common feeds: ${commonFeeds.mkString(", ")}")
+  // #snip_8-5
+
+  // #snip_8-6
+  val urls = feeds1 map ("http://" + _)
+  println(s"One url: ${urls.head}")
+  // #snip_8-6
+
+  // #snip_8-7
+  println("Refresh Feeds:")
+  feeds1 foreach { feed ⇒ println(s"  Refreshing $feed...") }
+  // #snip_8-7
+
+}

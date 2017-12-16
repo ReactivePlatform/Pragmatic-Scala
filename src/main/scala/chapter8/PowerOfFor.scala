@@ -14,31 +14,36 @@
  * limitations under the License.
  */
 
-// #snip_8-28
-for (_ ← 1 to 3) { print("ho ") }
-// #snip_8-28
+package chapter8
 
-// #snip_8-29
-val result = for (i ← 1 to 10)
-  yield i * 2
-// #snip_8-29
+object PowerOfFor extends App {
+  // #snip_8-28
+  for (_ ← 1 to 3) { print("ho ") }
+  // #snip_8-28
 
-// #snip_8-30
-val result2 = (1 to 10).map(_ * 2)
-// #snip_8-30
+  // #snip_8-29
+  val result = for (i ← 1 to 10)
+    yield i * 2
+  // #snip_8-29
 
-// #snip_8-31
-val doubleEven = for (i ← 1 to 10; if i % 2 == 0)
-  yield i * 2
-// #snip_8-31
+  // #snip_8-30
+  val result2 = (1 to 10).map(_ * 2)
+  // #snip_8-30
 
-// #snip_8-32
-for {
-  i ← 1 to 10
-  if i % 2 == 0
-} yield i * 2
-// #snip_8-32
+  // #snip_8-31
+  val doubleEven = for (i ← 1 to 10; if i % 2 == 0)
+    yield i * 2
+  // #snip_8-31
 
-println(result)
-println(doubleEven)
-println(result2)
+  // #snip_8-32
+  for {
+    i ← 1 to 10
+    if i % 2 == 0
+  } yield i * 2
+  // #snip_8-32
+
+  println(result)
+  println(doubleEven)
+  println(result2)
+
+}
