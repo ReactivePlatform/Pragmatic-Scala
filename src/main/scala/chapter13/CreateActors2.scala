@@ -24,6 +24,7 @@ import scala.concurrent.duration.Duration
 object CreateActors2 extends App {
   val system = ActorSystem("sample")
 
+  // #snip
   val depp = system.actorOf(Props[HollywoodActor])
   val hanks = system.actorOf(Props[HollywoodActor])
 
@@ -33,6 +34,8 @@ object CreateActors2 extends App {
   depp ! "Sparrow"
   hanks ! "Phillips"
   println(s"Calling from ${Thread.currentThread}")
+  // #snip
+
   val terminateFuture = system.terminate()
   Await.ready(terminateFuture, Duration.Inf)
 }

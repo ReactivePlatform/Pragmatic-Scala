@@ -16,6 +16,7 @@
 
 package chapter13
 
+// #snip
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
@@ -54,3 +55,5 @@ object UseActor extends App {
   val terminateFuture = system.terminate()
   Await.ready(terminateFuture, Duration.Inf)
 }
+// #snip
+

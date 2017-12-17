@@ -16,6 +16,7 @@
 
 package chapter13
 
+// #snip
 import akka.actor._
 import java.io._
 
@@ -35,3 +36,5 @@ class FileExplorer extends Actor {
       sender ! filesCount
   }
 }
+// #snip
+

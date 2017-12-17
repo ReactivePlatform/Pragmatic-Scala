@@ -27,6 +27,7 @@ object CreateActors3 extends App {
   val depp = system.actorOf(Props[HollywoodActor])
   val hanks = system.actorOf(Props[HollywoodActor])
 
+  // #snip
   depp ! "Wonka"
   hanks ! "Gump"
 
@@ -34,6 +35,8 @@ object CreateActors3 extends App {
 
   depp ! "Sparrow"
   hanks ! "Phillips"
+  // #snip
+
   println(s"Calling from ${Thread.currentThread}")
   val terminateFuture = system.terminate()
   Await.ready(terminateFuture, Duration.Inf)

@@ -17,7 +17,7 @@
 package chapter13
 
 object countFilesSequential extends App {
-  // ##snip
+  // #snip
   import java.io.File
 
   def getChildren(file: File) = {
@@ -31,7 +31,7 @@ object countFilesSequential extends App {
   var count = 0L
   var filesToVisit = List(exploreFrom)
 
-  while (filesToVisit.size > 0) {
+  while (filesToVisit.nonEmpty) {
     val head = filesToVisit.head
     filesToVisit = filesToVisit.tail
 
@@ -43,5 +43,5 @@ object countFilesSequential extends App {
   val end = System.nanoTime
   println(s"Number of files found: $count")
   println(s"Time taken: ${(end - start) / 1.0e9} seconds")
-  // ##snip
+  // #snip
 }

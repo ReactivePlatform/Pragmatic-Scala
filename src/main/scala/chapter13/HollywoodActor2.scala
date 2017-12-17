@@ -22,7 +22,9 @@ object HollywoodActor2 {
 
   class HollywoodActor() extends Actor {
     def receive: PartialFunction[Any, Unit] = {
+      // #snip
       case message ⇒ println(s"$message - ${Thread.currentThread}")
+      // #snip
     }
   }
 

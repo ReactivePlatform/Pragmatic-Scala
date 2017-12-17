@@ -16,6 +16,7 @@
 
 package chapter13
 
+// #snip
 import akka.actor._
 
 import scala.concurrent.Await
@@ -31,3 +32,4 @@ object CreateActors extends App {
   val terminateFuture = system.terminate()
   Await.ready(terminateFuture, Duration.Inf)
 }
+// #snip

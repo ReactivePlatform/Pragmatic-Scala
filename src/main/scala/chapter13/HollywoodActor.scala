@@ -16,6 +16,7 @@
 
 package chapter13
 
+// #snip
 import akka.actor._
 
 class HollywoodActor() extends Actor {
@@ -23,3 +24,5 @@ class HollywoodActor() extends Actor {
     case message ⇒ println(s"playing the role of $message")
   }
 }
+// #snip
+

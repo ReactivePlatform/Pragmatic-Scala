@@ -16,6 +16,7 @@
 
 package chapter13
 
+// #snip
 import akka.actor._
 import akka.routing._
 
@@ -48,3 +49,4 @@ class FilesCounter extends Actor {
       }
   }
 }
+// #snip

@@ -17,6 +17,7 @@
 package chapter13
 
 object HollywoodActor4 extends App {
+  // #snip
   import akka.actor._
   import scala.collection._
 
@@ -36,4 +37,5 @@ object HollywoodActor4 extends App {
         sender ! messagesCount.getOrElse(role, 0)
     }
   }
+  // #snip
 }

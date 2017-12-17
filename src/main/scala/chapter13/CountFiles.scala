@@ -16,6 +16,7 @@
 
 package chapter13
 
+// #snip
 import akka.actor._
 
 object CountFiles extends App {
@@ -25,3 +26,5 @@ object CountFiles extends App {
 
   filesCounter ! args(0)
 }
+// #snip
+
