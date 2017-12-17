@@ -19,10 +19,10 @@ package chapter13
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
-import chapter13.CreateActors.system
+import chapter13.HollywoodActor4.{ Play, ReportCount }
 
-import scala.concurrent.duration._
 import scala.concurrent.Await
+import scala.concurrent.duration._
 
 object UseActor extends App {
   val system = ActorSystem("sample")

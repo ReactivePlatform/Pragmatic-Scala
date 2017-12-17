@@ -23,7 +23,7 @@ object Generics3 extends App {
   var list2 = new util.ArrayList[Any]
 
   var ref1: Int = 1
-  var ref2: Any = null
+  var ref2: Any = _
 
   ref2 = ref1 //OK
 

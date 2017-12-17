@@ -6,7 +6,7 @@
 
 ## 代码清单10-2
 
-@@snip[代码清单10-2](../../main/scala/chapter10/ThreadSleep.java){ #snip }
+@@snip[代码清单10-2](../../main/scala/chapter10/JavaThreadSleep.java){ #snip }
 
 ## 代码清单10-3
 

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter16.withmock
+
 trait SpellChecker {
   def isCorrect(word: String): Boolean
 }

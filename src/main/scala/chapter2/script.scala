@@ -18,8 +18,8 @@ package chapter2
 
 object script extends App {
   val number = 6
-  number = 7
-  val number = 7
+  //number = 7
+  //val number = 7
   val list = List(1, 2, 3)
   def isPalindrome(str: String) =
     str == str.reverse

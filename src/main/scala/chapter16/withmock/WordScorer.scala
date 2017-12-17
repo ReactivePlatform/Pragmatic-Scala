@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package chapter16.withmock
+
 class WordScorer(val spellChecker: SpellChecker) {
   private val VOWELS = List('a', 'e', 'i', 'o', 'u')
 

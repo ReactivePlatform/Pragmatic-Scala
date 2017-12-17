@@ -32,7 +32,7 @@ object Parameterized extends App {
   class Message[T](val content: T) {
     override def toString = s"message content is $content"
 
-    def is(value: T) = value == content
+    def is(value: T): Boolean = value == content
   }
 
   println("//" + "START:USE_OUTPUT")

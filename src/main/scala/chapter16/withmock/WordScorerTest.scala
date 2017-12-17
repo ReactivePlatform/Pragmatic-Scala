@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
+package chapter16.withmock
+
 import org.scalatest.{ FlatSpec, Matchers }
 import org.mockito.Mockito._
-import org.mockito.Matchers.anyString
+import org.mockito.ArgumentMatchers.anyString
 
 class WordScorerTest extends FlatSpec with Matchers {
 

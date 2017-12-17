@@ -15,7 +15,7 @@
  */
 
 package chapter14
-import chapter14.java.{ Investment, InvestmentType }
+import chapter14.usingjava.{ Investment, InvestmentType }
 
 object UseInvestmentError extends App {
   {

@@ -10,6 +10,10 @@ version := "1.0"
 
 scalaVersion := "2.12.4"
 
+scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
+
+javacOptions in compile ++= Seq("-encoding", "UTF-8", "-source", "1.8", "-target", "1.8", "-Xlint:unchecked", "-XDignore.symbol.file")
+
 resolvers += "akka" at "https://dl.bintray.com/akka/maven/"
 
 enablePlugins(ParadoxSitePlugin)

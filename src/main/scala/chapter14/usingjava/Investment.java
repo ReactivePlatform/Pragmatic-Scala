@@ -15,8 +15,15 @@
  */
 
 //Java code
-package chapter14.java;
+package chapter14.usingjava;
 
-public enum InvestmentType {
-  BOND,  STOCK, REAL_ESTATE,  COMMODITIES,  COLLECTIBLES, MUTUAL_FUNDS
+public class Investment {                                        
+  private String investmentName;
+  private InvestmentType investmentType;
+             
+  public Investment(String name, InvestmentType type) {
+    investmentName = name;
+    investmentType = type;
+  } 
+  public int yield() { return 0; }
 }

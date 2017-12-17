@@ -19,7 +19,7 @@ package chapter5
 object MyList extends App {
   class MyList[+T] //...
   var list1 = new MyList[Int]
-  var list2: MyList[Any] = null
+  var list2: MyList[Any] = _
   list2 = list1 // OK
 
 }

@@ -16,30 +16,32 @@
 
 package chapter5
 
-object DateUtil {
-  val ago = "ago"
-  val from_now = "from_now"
+object ValDateUtil extends App {
+  object DateUtil {
+    val ago = "ago"
+    val from_now = "from_now"
 
-  implicit class DateHelper(val offset: Int) extends AnyVal {
-    import java.time.LocalDate
+    implicit class DateHelper(val offset: Int) extends AnyVal {
+      import java.time.LocalDate
 
-    def days(when: String): LocalDate = {
-      val today = LocalDate.now
-      when match {
-        case "ago"      ⇒ today.minusDays(offset)
-        case "from_now" ⇒ today.plusDays(offset)
-        case _          ⇒ today
+      def days(when: String): LocalDate = {
+        val today = LocalDate.now
+        when match {
+          case "ago"      ⇒ today.minusDays(offset)
+          case "from_now" ⇒ today.plusDays(offset)
+          case _          ⇒ today
+        }
       }
     }
   }
-}
 
-object UseDateUtil extends App {
-  import DateUtil._
+  object UseDateUtil extends App {
+    import DateUtil._
 
-  val past = 2 days ago
-  val appointment = 5 days from_now
+    val past = 2 days ago
+    val appointment = 5 days from_now
 
-  println(past)
-  println(appointment)
+    println(past)
+    println(appointment)
+  }
 }

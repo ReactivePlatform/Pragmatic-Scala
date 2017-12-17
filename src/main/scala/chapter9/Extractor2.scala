@@ -40,7 +40,7 @@ object Extractor2 extends App {
       try {
         if (input contains ":") {
           val splitQuote = input split ":"
-          Some(splitQuote(0), splitQuote(1).toDouble)
+          Some((splitQuote(0), splitQuote(1).toDouble))
         } else {
           None
         }
