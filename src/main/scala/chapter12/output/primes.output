@@ -1,3 +1,4 @@
+// #snip_12-11_output
 computing for 100
 computing for 101
 computing for 102
@@ -11,3 +12,4 @@ Let's ask for more...
 computing for 108
 computing for 109
 List(101, 103, 107, 109)
+// #snip_12-11_output

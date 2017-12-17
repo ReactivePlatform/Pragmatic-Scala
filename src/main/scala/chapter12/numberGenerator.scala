@@ -17,20 +17,21 @@
 package chapter12
 
 object numberGenerator extends App {
-  println("//" + "START:SERIES_OUTPUT")
+  // #snip
   def generate(starting: Int): Stream[Int] = {
     starting #:: generate(starting + 1)
   }
 
   println(generate(25))
-  println("//" + "END:SERIES_OUTPUT")
+  // #snip
 
-  println("//" + "START:CALL_OUTPUT")
+  // #snip_12-8
   println(generate(25).take(10).force)
   println(generate(25).take(10).toList)
-  println("//" + "END:CALL_OUTPUT")
+  // #snip_12-8
 
-  println("//" + "START:CALL2_OUTPUT")
+  // #snip_12-9
   println(generate(25).takeWhile { _ < 40 }.force)
-  println("//" + "END:CALL2_OUTPUT")
+  // #snip_12-9
+
 }

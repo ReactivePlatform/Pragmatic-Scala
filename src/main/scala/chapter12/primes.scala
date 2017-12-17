@@ -17,10 +17,11 @@
 package chapter12
 
 object primes extends App {
+  // #snip_12-10
   def isDivisibleBy(number: Int, divisor: Int) = number % divisor == 0
 
   def isPrime(number: Int) =
-    number > 1 && !(2 to number - 1).exists { isDivisibleBy(number, _) }
+    number > 1 && !(2 until number).exists { isDivisibleBy(number, _) }
 
   def primes(starting: Int): Stream[Int] = {
     println(s"computing for $starting")
@@ -29,11 +30,14 @@ object primes extends App {
     else
       primes(starting + 1)
   }
+  // #snip_12-10
 
+  // #snip_12-11
   val primesFrom100 = primes(100)
 
   println(primesFrom100.take(3).toList)
   println("Let's ask for more...")
   println(primesFrom100.take(4).toList)
+  // #snip_12-11
 
 }

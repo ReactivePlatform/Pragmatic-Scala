@@ -17,6 +17,7 @@
 package chapter12
 
 object weather extends App {
+  // #snip_12-12
   import scala.io.Source
   import scala.xml._
 
@@ -30,13 +31,17 @@ object weather extends App {
     val condition = (xmlResponse \\ "weather" \ "@value").text
     (cityName, temperature, condition)
   }
+  // #snip_12-12
 
+  // #snip_12-13
   def printWeatherData(weatherData: (String, String, String)): Unit = {
     val (cityName, temperature, condition) = weatherData
 
     println(f"$cityName%-15s $temperature%-6s $condition")
   }
+  // #snip_12-13
 
+  // #snip_12-14
   def timeSample(getData: List[String] ⇒ List[(String, String, String)]): Unit = {
     val cities = List("Houston,us", "Chicago,us", "Boston,us", "Minneapolis,us",
       "Oslo,norway", "Tromso,norway", "Sydney,australia", "Berlin,germany",
@@ -48,12 +53,14 @@ object weather extends App {
     val end = System.nanoTime
     println(s"Time taken: ${(end - start) / 1.0e9} sec")
   }
+  // #snip_12-14
 
-  println("//" + "START:SEQUENTIAL_OUTPUT")
+  // #snip_12-15
   timeSample { cities ⇒ cities map getWeatherData }
-  println("//" + "END:SEQUENTIAL_OUTPUT")
+  // #snip_12-15
 
-  println("//" + "START:PARALLEL_OUTPUT")
+  // #snip_12-16
   timeSample { cities ⇒ (cities.par map getWeatherData).toList }
-  println("//" + "END:PARALLEL_OUTPUT")
+  // #snip_12-16
+
 }
