@@ -19,6 +19,7 @@ package chapter16.withmock2
 class WordScorer(val spellChecker: SpellChecker) {
   private val VOWELS = List('a', 'e', 'i', 'o', 'u')
 
+  // #snip
   def score(word: String): Int = {
     if (spellChecker.isCorrect(word))
       (0 /: word) { (total, letter) ⇒
@@ -27,4 +28,6 @@ class WordScorer(val spellChecker: SpellChecker) {
     else
       0
   }
+  // #snip
+
 }

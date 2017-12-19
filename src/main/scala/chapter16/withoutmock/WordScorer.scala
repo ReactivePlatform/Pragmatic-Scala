@@ -16,6 +16,7 @@
 
 package chapter16.withoutmock
 
+// #snip
 class WordScorer() {
   private val VOWELS = List('a', 'e', 'i', 'o', 'u')
 
@@ -25,3 +26,5 @@ class WordScorer() {
     }
   }
 }
+// #snip
+

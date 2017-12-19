@@ -15,6 +15,7 @@
  */
 package chapter16.withoutmock
 
+// #snip
 import org.scalatest.{ FlatSpec, Matchers }
 
 class WordScorerTest extends FlatSpec with Matchers {
@@ -41,3 +42,4 @@ class WordScorerTest extends FlatSpec with Matchers {
     withWordScorer { _.score("that") should be(7) }
   }
 }
+// #snip

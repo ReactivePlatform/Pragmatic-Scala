@@ -24,7 +24,7 @@ object FindTotalWorthConcurrent extends App {
   //  #snip
   val valuesAndWorth = symbolsAndUnits.keys.par.map { symbol ⇒
     //  #snip
-  val units = symbolsAndUnits(symbol)
+    val units = symbolsAndUnits(symbol)
     val latestClosingPrice = StockPriceFinder getLatestClosingPrice symbol
     val value = units * latestClosingPrice
 
