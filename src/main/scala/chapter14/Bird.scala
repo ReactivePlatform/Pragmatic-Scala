@@ -18,7 +18,7 @@ package chapter14
 
 // #snip
 abstract class Bird {
-  @throws(classOf[NoFlyException]) def fly()
+  @throws(classOf[NoFlyException]) def fly(): Unit
   //...
 }
 // #snip

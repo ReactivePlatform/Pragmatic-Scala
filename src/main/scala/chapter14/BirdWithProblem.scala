@@ -17,7 +17,7 @@ package chapter14
 
 // #snip
 abstract class BirdWithProblem {
-  def fly()
+  def fly(): Unit
   //...
 }
 // #snip
