@@ -19,7 +19,7 @@ package chapter9
 object Extractor1 extends App {
   // #snip_9-15
   object StockService {
-    def process(input: String) {
+    def process(input: String): Unit = {
       input match {
         case Symbol() ⇒ println(s"Look up price for valid symbol $input")
         case _        ⇒ println(s"Invalid input $input")

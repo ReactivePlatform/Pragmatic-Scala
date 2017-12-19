@@ -17,12 +17,12 @@
 package chapter9
 
 object MatchTypesSwapped extends App {
-  def process(input: Any) {
+  def process(input: Any): Unit = {
     input match {
       case (_: Int, _: Int)          ⇒ print("Processing (int, int)... ")
       case (_: Double, _: Double)    ⇒ print("Processing (double, double)... ")
-      case _: Int                    ⇒ print("Processing int... ")
       case msg: Int if msg > 1000000 ⇒ println("Processing int > 1000000")
+      case _: Int                    ⇒ print("Processing int... ")
       case _: String                 ⇒ println("Processing string... ")
       case _                         ⇒ printf(s"Can't handle $input... ")
     }

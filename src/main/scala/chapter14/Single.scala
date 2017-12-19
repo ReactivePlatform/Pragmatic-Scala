@@ -18,6 +18,6 @@
 package chapter14
 
 object Single {
-  def greet() { println("Hello from Single") }
+  def greet(): Unit = { println("Hello from Single") }
 }
 // #snip

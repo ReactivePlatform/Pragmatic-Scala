@@ -21,8 +21,8 @@ object lazyOrder extends App {
 
   def read = StdIn.readInt()
 
-  lazy val first = read
-  lazy val second = read
+  @volatile lazy val first = read
+  @volatile lazy val second = read
 
   if (Math.random() < 0.5)
     second

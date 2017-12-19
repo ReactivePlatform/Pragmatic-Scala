@@ -21,7 +21,7 @@ object MatchWithValsOK extends App {
   class Sample {
     val MAX = 100
 
-    def process(input: Int) {
+    def process(input: Int): Unit = {
       input match {
         case MAX ⇒ println("You matched max")
       }

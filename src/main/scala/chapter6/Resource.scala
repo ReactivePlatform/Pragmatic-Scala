@@ -19,14 +19,14 @@ package chapter6
 object Resource extends App {
   class Resource private () {
     println("Starting transaction...")
-    private def cleanUp() { println("Ending transaction...") }
+    private def cleanUp(): Unit = { println("Ending transaction...") }
     def op1(): Unit = println("Operation 1")
     def op2(): Unit = println("Operation 2")
     def op3(): Unit = println("Operation 3")
   }
 
   object Resource {
-    def use(codeBlock: Resource ⇒ Unit) {
+    def use(codeBlock: Resource ⇒ Unit): Unit = {
       val resource = new Resource
       try {
         codeBlock(resource)

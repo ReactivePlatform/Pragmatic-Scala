@@ -19,9 +19,9 @@ package chapter3
 object DotParenthesisOptional extends App {
 
   class Car {
-    def turn(direction: String) //...
-    {
-    }
+    def turn(direction: String): Unit = //...
+      {
+      }
   }
 
   val car = new Car()

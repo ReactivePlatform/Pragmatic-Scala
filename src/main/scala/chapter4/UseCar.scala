@@ -23,7 +23,7 @@ object UseCar extends App {
 
     def miles = milesDriven
 
-    def drive(distance: Int) {
+    def drive(distance: Int): Unit = {
       milesDriven += Math.abs(distance)
     }
   }

@@ -18,10 +18,10 @@ package chapter14
 
 // #snip
 class Buddy {
-  def greet() { println("Hello from Buddy class") }
+  def greet(): Unit = { println("Hello from Buddy class") }
 }
 
 object Buddy {
-  def greet() { println("Hello from Buddy object") }
+  def greet(): Unit = { println("Hello from Buddy object") }
 }
 // #snip

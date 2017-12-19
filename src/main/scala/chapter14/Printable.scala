@@ -18,7 +18,7 @@ package chapter14
 
 // #snip
 trait Printable {
-  def print() {
+  def print(): Unit = {
     println("running printable...")
   }
 }

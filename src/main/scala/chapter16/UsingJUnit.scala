@@ -24,7 +24,7 @@ import org.junit.Test
 
 class UsingJUnit {
   @Test
-  def listAdd() {
+  def listAdd(): Unit = {
     val list = new util.ArrayList[String]
     list.add("Milk")
     list add "Sugar"

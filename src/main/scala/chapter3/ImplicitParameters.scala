@@ -21,7 +21,7 @@ object ImplicitParameters extends App {
     override def toString = name
   }
 
-  def connectToNetwork(user: String)(implicit wifi: Wifi) {
+  def connectToNetwork(user: String)(implicit wifi: Wifi): Unit = {
     println(s"User: $user connected to WIFI $wifi")
   }
 

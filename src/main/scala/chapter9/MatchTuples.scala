@@ -18,7 +18,7 @@ package chapter9
 
 object MatchTuples extends App {
   // #snip
-  def processCoordinates(input: Any) {
+  def processCoordinates(input: Any): Unit = {
     input match {
       case (lat, long) ⇒ printf("Processing (%d, %d)...", lat, long)
       case "done"      ⇒ println("done")

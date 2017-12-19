@@ -18,7 +18,7 @@ package chapter9
 
 object MatchUsingRegex extends App {
   // #snip_9-24
-  def process(input: String) {
+  def process(input: String): Unit = {
     val GoogStock = """^GOOG:(\d*\.\d+)""".r
     input match {
       case GoogStock(price) ⇒ println(s"Price of GOOG is $$$price")

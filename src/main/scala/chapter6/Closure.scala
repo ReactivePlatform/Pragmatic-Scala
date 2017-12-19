@@ -17,7 +17,7 @@
 package chapter6
 
 object Closure extends App {
-  def loopThrough(number: Int)(closure: Int ⇒ Unit) {
+  def loopThrough(number: Int)(closure: Int ⇒ Unit): Unit = {
     for (i ← 1 to number) { closure(i) }
   }
 

@@ -23,7 +23,7 @@ object ThingsAcceptor extends App {
   case class Book()
 
   object ThingsAcceptor {
-    def acceptStuff(thing: Any) {
+    def acceptStuff(thing: Any): Unit = {
       thing match {
         case Apple()  ⇒ println("Thanks for the Apple")
         case Orange() ⇒ println("Thanks for the Orange")

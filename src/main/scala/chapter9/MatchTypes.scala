@@ -18,7 +18,7 @@ package chapter9
 
 object MatchTypes extends App {
   // #snip
-  def process(input: Any) {
+  def process(input: Any): Unit = {
     input match {
       case (_: Int, _: Int)          ⇒ print("Processing (int, int)... ")
       case (_: Double, _: Double)    ⇒ print("Processing (double, double)... ")

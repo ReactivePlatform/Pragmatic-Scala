@@ -23,7 +23,7 @@ object PlayWithPets extends App {
 
   class Dog(override val name: String) extends Pet(name)
 
-  def workWithPets(pets: Array[Pet]) {}
+  def workWithPets(pets: Array[Pet]): Unit = {}
 
   def playWithPets[T <: Pet](pets: Array[T]): Unit =
     println("Playing with pets: " + pets.mkString(", "))

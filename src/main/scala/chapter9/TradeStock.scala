@@ -26,7 +26,7 @@ object TradeStock extends App {
 
   //  #snip_9-9
   object TradeProcessor {
-    def processTransaction(request: Trade) {
+    def processTransaction(request: Trade): Unit = {
       request match {
         case Sell(stock, 1000) ⇒ println(s"Selling 1000-units of $stock")
         case Sell(stock, quantity) ⇒

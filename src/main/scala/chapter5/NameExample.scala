@@ -23,7 +23,7 @@ object NameExample extends App {
   }
 
   object UseName extends App {
-    def printName(name: Name) {
+    def printName(name: Name): Unit = {
       println(name)
     }
 

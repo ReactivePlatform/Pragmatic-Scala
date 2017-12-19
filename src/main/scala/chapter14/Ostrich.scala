@@ -18,7 +18,7 @@ package chapter14
 
 // #snip
 class Ostrich extends Bird {
-  override def fly() {
+  override def fly(): Unit = {
     throw new NoFlyException
   }
   //...

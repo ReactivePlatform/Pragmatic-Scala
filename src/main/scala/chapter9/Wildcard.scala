@@ -28,7 +28,7 @@ object Wildcard extends App {
     val SATURDAY = Value("Saturday")
   }
 
-  def activity(day: DayOfWeek.Value) {
+  def activity(day: DayOfWeek.Value): Unit = {
     day match {
       case DayOfWeek.SUNDAY   ⇒ println("Eat, sleep, repeat...")
       case DayOfWeek.SATURDAY ⇒ println("Hang out with friends")

@@ -24,7 +24,7 @@ object `lazy` extends App {
   def evaluate(input: Int): Unit = {
     println(s"evaluate called with $input")
     // #snip
-    lazy val perform = expensiveComputation()
+    @volatile lazy val perform = expensiveComputation()
     if (input >= 10 && perform)
       println("doing work...")
     // #snip

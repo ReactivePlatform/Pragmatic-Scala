@@ -18,7 +18,7 @@ package chapter9
 
 object MatchLiterals extends App {
   // #snip
-  def activity(day: String) {
+  def activity(day: String): Unit = {
     day match {
       case "Sunday"   ⇒ print("Eat, sleep, repeat... ")
       case "Saturday" ⇒ print("Hang out with friends... ")
