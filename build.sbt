@@ -65,3 +65,5 @@ libraryDependencies += "junit" % "junit" % "4.12"
 libraryDependencies += "org.mockito" % "mockito-core" % "2.13.0"
 
 scalafixSettings
+
+scalafixConfigure(Compile)

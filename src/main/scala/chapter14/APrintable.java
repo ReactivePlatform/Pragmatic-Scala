@@ -20,8 +20,8 @@ package  chapter14;
 public class APrintable implements Printable {
   public void print() {
     System.out.println("We can reuse the trait here if we like...");
-    Printable$class.print(this); 
-    
+    //Printable$class.print(this); // for 2.11.x
+    Printable.super.print(); // for 2.12.x
   }
   
   public static void use(Printable printable) {
