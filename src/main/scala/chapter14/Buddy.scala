@@ -16,6 +16,7 @@
 
 package chapter14
 
+// #snip
 class Buddy {
   def greet() { println("Hello from Buddy class") }
 }
@@ -23,3 +24,4 @@ class Buddy {
 object Buddy {
   def greet() { println("Hello from Buddy object") }
 }
+// #snip

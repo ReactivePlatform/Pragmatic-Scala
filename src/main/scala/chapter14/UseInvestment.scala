@@ -16,9 +16,11 @@
 
 package chapter14
 
+// #snip
 import chapter14.usingjava.{ Investment, InvestmentType }
 
 object UseInvestment extends App {
   val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)
   println(investment.getClass)
 }
+// #snip

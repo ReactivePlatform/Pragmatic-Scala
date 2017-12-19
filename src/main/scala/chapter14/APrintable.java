@@ -16,6 +16,7 @@
 
 package  chapter14;
 
+// #snip
 public class APrintable implements Printable {
   public void print() {
     System.out.println("We can reuse the trait here if we like...");
@@ -32,3 +33,4 @@ public class APrintable implements Printable {
     use(aPrintable);
   }
 }
+// #snip

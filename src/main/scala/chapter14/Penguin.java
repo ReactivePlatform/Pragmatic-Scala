@@ -15,6 +15,8 @@
  */
 
 package chapter14;
+
+// #snip
 //Java code
 class Penguin extends Bird {      
   public void fly() throws NoFlyException {
@@ -22,3 +24,4 @@ class Penguin extends Bird {
   }
   //...
 }
+// #snip

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 package chapter14
 
 class Car(val year: Int) {
@@ -23,3 +24,4 @@ class Car(val year: Int) {
 
   override def toString: String = s"year: $year miles: $miles"
 }
+// #snip

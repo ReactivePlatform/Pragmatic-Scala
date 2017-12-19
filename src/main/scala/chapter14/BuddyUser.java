@@ -15,7 +15,7 @@
  */
 
 package chapter14;
-
+// #snip
 //Java code
 public class BuddyUser {
   public static void main(String[] args) {
@@ -23,3 +23,4 @@ public class BuddyUser {
     Buddy$.MODULE$.greet(); 
   }
 }
+// #snip

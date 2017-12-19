@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
+// #snip
 //Java code
 package chapter14.usingjava;
 
 public enum InvestmentType {
   BOND,  STOCK, REAL_ESTATE,  COMMODITIES,  COLLECTIBLES, MUTUAL_FUNDS
 }
+// #snip

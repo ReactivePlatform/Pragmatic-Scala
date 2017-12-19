@@ -16,8 +16,10 @@
 
 package chapter14
 
+// #snip
 trait Printable {
   def print() {
     println("running printable...")
   }
 }
+// #snip

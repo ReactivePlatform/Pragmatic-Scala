@@ -16,6 +16,8 @@
 
 package chapter14
 
+// #snip
 trait Writable {
   def write(message: String): Unit
 }
+// #snip

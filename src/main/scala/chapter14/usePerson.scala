@@ -17,11 +17,13 @@
 package chapter14
 
 object usePerson extends App {
-
+  // #snip
   val george = new Person("George", "Washington")
 
   val georgesDogs = List(new Dog("Captain"), new Dog("Clode"),
     new Dog("Forester"), new Dog("Searcher"))
 
   println(s"$george had several dogs ${georgesDogs.mkString(", ")}...")
+  // #snip
+
 }

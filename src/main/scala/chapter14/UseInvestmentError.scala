@@ -18,12 +18,9 @@ package chapter14
 import chapter14.usingjava.{ Investment, InvestmentType }
 
 object UseInvestmentError extends App {
-  {
-    val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)
-    // val theYield1 = investment.yield   //ERROR
-  }
-  {
-    val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)
-    //val theYield2 = investment.yield() //ERROR
-  }
+  val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)
+  // #snip
+  val theYield1 = investment.yield   //ERROR
+  val theYield2 = investment.yield() //ERROR
+  // #snip
 }

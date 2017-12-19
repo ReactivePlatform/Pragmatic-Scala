@@ -16,4 +16,6 @@
 
 package chapter14
 
+// #snip
 class NoFlyException extends Exception {}
+// #snip

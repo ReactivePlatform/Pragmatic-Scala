@@ -17,9 +17,11 @@
 package chapter14
 
 object UseJDKClass extends App {
+  // #snip
   import java.util.Currency
 
   val currencies = Currency.getAvailableCurrencies
   println(s"${currencies.size} currencies are available.")
+  // #snip
 
 }

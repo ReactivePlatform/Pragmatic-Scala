@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 //Java code
 package chapter14;
 
@@ -26,3 +27,4 @@ public class UseCar {
     System.out.println(car);
   }
 }
+// #snip

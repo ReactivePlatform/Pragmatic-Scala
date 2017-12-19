@@ -15,7 +15,9 @@
  */
 package chapter14
 
+// #snip
 abstract class BirdWithProblem {
   def fly()
   //...
 }
+// #snip

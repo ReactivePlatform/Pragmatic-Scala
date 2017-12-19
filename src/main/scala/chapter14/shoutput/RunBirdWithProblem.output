@@ -1,5 +1,8 @@
+// #snip_14-24_output
 Penguin.java:3: error: fly() in Penguin cannot override fly() in Bird
   public void fly() throws NoFlyException {
               ^
   overridden method does not throw NoFlyException
 1 error
+// #snip_14-24_output
+

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 //Java code
 package chapter14.usingjava;
 
@@ -27,3 +28,4 @@ public class Investment {
   } 
   public int yield() { return 0; }
 }
+// #snip
