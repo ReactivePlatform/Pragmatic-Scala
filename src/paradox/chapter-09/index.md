@@ -86,7 +86,7 @@
 
 ## 代码清单9-13
 
-@@snip[代码清单9-13](../../main/scala/chapter9/ThingsAcceptor2.scala){ #snip_9-13 }
+@@snip[代码清单9-13](../../test/scala/chapter9/ThingsAcceptor2.scala){ #snip_9-13 }
 
 ## 代码清单9-14
 

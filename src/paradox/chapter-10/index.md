@@ -30,7 +30,7 @@
 
 ## 代码清单10-6
 
-@@snip[代码清单10-6](../../main/scala/chapter10/JavaCatchOrder.java){ #snip }
+@@snip[代码清单10-6](../../test/java/chapter10/JavaCatchOrder.java){ #snip }
 
 *运行结果*
 

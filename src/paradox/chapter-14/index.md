@@ -50,7 +50,7 @@
 
 ## 代码清单14-9
 
-@@snip[代码清单14-9](../../main/scala/chapter14/UseInvestmentError.scala){ #snip }
+@@snip[代码清单14-9](../../test/scala/chapter14/UseInvestmentError.scala){ #snip }
 
 ## 代码清单14-10
 

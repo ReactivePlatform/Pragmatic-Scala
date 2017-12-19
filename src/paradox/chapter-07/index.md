@@ -30,7 +30,7 @@
 
 ## 代码清单7-8
 
-@@snip[代码清单7-8](../../main/scala/chapter7/UseCat.scala){ #snip }
+@@snip[代码清单7-8](../../test/scala/chapter7/UseCat.scala){ #snip }
 
 ## 代码清单7-9
 
