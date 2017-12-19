@@ -1,16 +1,30 @@
+// #snip_15-5_output
 <symbols>
   <symbol ticker="AAPL"><units>200</units></symbol>
   <symbol ticker="IBM"><units>215</units></symbol>
 </symbols>
 class scala.xml.Elem
+// #snip_15-5_output
+
+// #snip_15-6_output
 <symbol ticker="AAPL"><units>200</units></symbol>
 <symbol ticker="IBM"><units>215</units></symbol>
 class scala.xml.NodeSeq$$anon$1
+// #snip_15-6_output
+
+// #snip_15-7_output
 <units>200</units>
 <units>215</units>
 class scala.xml.NodeSeq$$anon$1
 200
+// #snip_15-7_output
+
+// #snip_15-8_output
 Units: 200
+// #snip_15-8_output
+
+// #snip_15-9_output
 Ticker	Units
 AAPL    200
 IBM     215
+// #snip_15-9_output

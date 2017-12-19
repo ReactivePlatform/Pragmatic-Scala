@@ -1,3 +1,4 @@
+// #snip_15-15_output
 Ticker  Units  Closing Price($) Total Value($)
    AAPL    200           125.90  25180.00
    ADBE    125            77.36  9670.00
@@ -16,3 +17,4 @@ Ticker  Units  Closing Price($) Total Value($)
     XRX    240            13.18  3163.20
 The total value of your investments is $146473.80
 Took 11.13  seconds
+// #snip_15-15_output

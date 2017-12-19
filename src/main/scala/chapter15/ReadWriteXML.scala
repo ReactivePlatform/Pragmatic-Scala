@@ -17,15 +17,15 @@
 package chapter15
 
 object ReadWriteXML extends App {
-  //  #snip
+  //  #snip_15-11
   import scala.xml._
 
   val stocksAndUnits = XML load "stocks.xml"
   println(stocksAndUnits.getClass)
   println(s"File has ${(stocksAndUnits \\ "symbol").size} symbol elements")
-  //  #snip
+  //  #snip_15-11
 
-  //  #snip
+  //  #snip_15-12
   val stocksAndUnitsMap =
     (Map[String, Int]() /: (stocksAndUnits \ "symbol")) { (map, symbolNode) ⇒
       val ticker = (symbolNode \ "@ticker").toString
@@ -34,9 +34,9 @@ object ReadWriteXML extends App {
     }
 
   println(s"Number of symbol elements found is ${stocksAndUnitsMap.size}")
-  //  #snip
+  //  #snip_15-12
 
-  //  #snip
+  //  #snip_15-13
   val updatedStocksAndUnitsXML =
     <symbols>
       { stocksAndUnitsMap map updateUnitsAndCreateXML }
@@ -53,6 +53,6 @@ object ReadWriteXML extends App {
 
   val elementsCount = (XML.load("stocks2.xml") \\ "symbol").size
   println(s"Saved file has $elementsCount symbol elements")
-  //  #snip
+  //  #snip_15-13
 }
 

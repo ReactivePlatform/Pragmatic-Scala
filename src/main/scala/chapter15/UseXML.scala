@@ -16,7 +16,7 @@
 package chapter15
 
 object UseXML extends App {
-  //  #snip
+  //  #snip_15-5
   val xmlFragment =
     <symbols>
       <symbol ticker="AAPL"><units>200</units></symbol>
@@ -25,28 +25,28 @@ object UseXML extends App {
 
   println(xmlFragment)
   println(xmlFragment.getClass)
-  //  #snip
+  //  #snip_15-5
 
-  //  #snip
+  //  #snip_15-6
   var symbolNodes = xmlFragment \ "symbol"
   symbolNodes foreach println
   println(symbolNodes.getClass)
-  //  #snip
+  //  #snip_15-6
 
-  //  #snip
+  //  #snip_15-7
   var unitsNodes = xmlFragment \\ "units"
   unitsNodes foreach println
   println(unitsNodes.getClass)
   println(unitsNodes.head.text)
-  //  #snip
+  //  #snip_15-7
 
-  //  #snip
+  //  #snip_15-8
   unitsNodes.head match {
     case <units>{ numberOfUnits }</units> ⇒ println(s"Units: $numberOfUnits")
   }
-  //  #snip
+  //  #snip_15-8
 
-  //  #snip
+  //  #snip_15-9
   println("Ticker\tUnits")
   xmlFragment match {
     case <symbols>{ symbolNodes @ _* }</symbols> ⇒
@@ -55,5 +55,5 @@ object UseXML extends App {
           symbolNode \ "@ticker", (symbolNode \ "units").text))
       }
   }
-  //  #snip
+  //  #snip_15-9
 }
