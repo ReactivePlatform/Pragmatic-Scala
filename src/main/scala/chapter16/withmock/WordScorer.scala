@@ -16,6 +16,7 @@
 
 package chapter16.withmock
 
+// #snip
 class WordScorer(val spellChecker: SpellChecker) {
   private val VOWELS = List('a', 'e', 'i', 'o', 'u')
 
@@ -26,3 +27,4 @@ class WordScorer(val spellChecker: SpellChecker) {
     }
   }
 }
+// #snip

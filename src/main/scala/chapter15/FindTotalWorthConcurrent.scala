@@ -16,13 +16,15 @@
 package chapter15
 
 object FindTotalWorthConcurrent extends App {
-  val symbolsAndUnits = StockPriceFinder.getTickersAndUnits()
+  val symbolsAndUnits = StockPriceFinder.getTickersAndUnits
 
   println("Ticker  Units  Closing Price($) Total Value($)")
 
   val startTime = System.nanoTime()
+  //  #snip
   val valuesAndWorth = symbolsAndUnits.keys.par.map { symbol ⇒
-    val units = symbolsAndUnits(symbol)
+    //  #snip
+  val units = symbolsAndUnits(symbol)
     val latestClosingPrice = StockPriceFinder getLatestClosingPrice symbol
     val value = units * latestClosingPrice
 

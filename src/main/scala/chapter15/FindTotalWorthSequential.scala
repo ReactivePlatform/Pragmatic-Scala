@@ -16,8 +16,9 @@
 
 package chapter15
 
+//  #snip
 object FindTotalWorthSequential extends App {
-  val symbolsAndUnits = StockPriceFinder.getTickersAndUnits()
+  val symbolsAndUnits = StockPriceFinder.getTickersAndUnits
 
   println("Ticker  Units  Closing Price($) Total Value($)")
 
@@ -44,3 +45,5 @@ object FindTotalWorthSequential extends App {
   println(f"The total value of your investments is $$$netWorth%.2f")
   println(f"Took ${(endTime - startTime) / 1000000000.0}%.2f  seconds")
 }
+//  #snip
+

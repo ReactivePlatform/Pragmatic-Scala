@@ -16,7 +16,7 @@
 package chapter15
 
 object UseXML extends App {
-  println("/" + "/" + "START:DEFINE_OUTPUT")
+  //  #snip
   val xmlFragment =
     <symbols>
       <symbol ticker="AAPL"><units>200</units></symbol>
@@ -25,28 +25,28 @@ object UseXML extends App {
 
   println(xmlFragment)
   println(xmlFragment.getClass)
-  println("/" + "/" + "END:DEFINE_OUTPUT")
+  //  #snip
 
-  println("/" + "/" + "START:QUERY1_OUTPUT")
+  //  #snip
   var symbolNodes = xmlFragment \ "symbol"
   symbolNodes foreach println
   println(symbolNodes.getClass)
-  println("/" + "/" + "END:QUERY1_OUTPUT")
+  //  #snip
 
-  println("/" + "/" + "START:QUERY2_OUTPUT")
+  //  #snip
   var unitsNodes = xmlFragment \\ "units"
   unitsNodes foreach println
   println(unitsNodes.getClass)
   println(unitsNodes.head.text)
-  println("/" + "/" + "END:QUERY2_OUTPUT")
+  //  #snip
 
-  println("/" + "/" + "START:QUERY3_OUTPUT")
+  //  #snip
   unitsNodes.head match {
     case <units>{ numberOfUnits }</units> ⇒ println(s"Units: $numberOfUnits")
   }
-  println("/" + "/" + "END:QUERY3_OUTPUT")
+  //  #snip
 
-  println("/" + "/" + "START:QUERY4_OUTPUT")
+  //  #snip
   println("Ticker\tUnits")
   xmlFragment match {
     case <symbols>{ symbolNodes @ _* }</symbols> ⇒
@@ -55,5 +55,5 @@ object UseXML extends App {
           symbolNode \ "@ticker", (symbolNode \ "units").text))
       }
   }
-  println("/" + "/" + "END:QUERY4_OUTPUT")
+  //  #snip
 }

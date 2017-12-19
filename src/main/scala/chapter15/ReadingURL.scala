@@ -16,6 +16,7 @@
 package chapter15
 
 object ReadingURL extends App {
+  //  #snip
   import scala.io.Source
   import java.net.URL
 
@@ -23,4 +24,5 @@ object ReadingURL extends App {
 
   println(s"What's Source?: $source")
   println(s"Raw String: ${source.mkString}")
+  //  #snip
 }

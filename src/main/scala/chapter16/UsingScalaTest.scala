@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-import java.util
+package chapter16
 
+// #snip
+import java.util
 import org.scalatest._
-import java.util.ArrayList
 
 class UsingScalaTest extends FlatSpec with Matchers {
   trait EmptyArrayList {
@@ -35,3 +36,4 @@ class UsingScalaTest extends FlatSpec with Matchers {
     list.size should be(2)
   }
 }
+// #snip

@@ -22,6 +22,7 @@ import org.mockito.ArgumentMatchers.anyString
 
 class WordScorerTest extends FlatSpec with Matchers {
 
+  // #snip
   def withWordScorer(test: WordScorer ⇒ Unit): Boolean = {
     val spellChecker = mock(classOf[SpellChecker])
     when(spellChecker.isCorrect(anyString)).thenReturn(true)
@@ -31,6 +32,7 @@ class WordScorerTest extends FlatSpec with Matchers {
 
     verify(spellChecker, times(1)).isCorrect(anyString())
   }
+  // #snip
 
   "score" should "return 0 for an empty word" in {
     withWordScorer { wordScorer ⇒ wordScorer.score("") should be(0) }
@@ -48,6 +50,7 @@ class WordScorerTest extends FlatSpec with Matchers {
     withWordScorer { _.score("that") should be(7) }
   }
 
+  // #snip
   "score" should "return 0 for word with incorrect spelling" in {
     val spellChecker = mock(classOf[SpellChecker])
     when(spellChecker.isCorrect(anyString)).thenReturn(false)
@@ -56,4 +59,6 @@ class WordScorerTest extends FlatSpec with Matchers {
     wordScorer.score("aoe") should be(0)
     verify(spellChecker, times(1)).isCorrect(anyString())
   }
+  // #snip
+
 }

@@ -15,6 +15,9 @@
  */
 package chapter16.withmock2
 
+// #snip
 trait SpellChecker {
   def isCorrect(word: String): Boolean
 }
+// #snip
+

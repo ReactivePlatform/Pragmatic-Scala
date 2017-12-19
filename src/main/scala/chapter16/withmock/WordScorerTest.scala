@@ -16,6 +16,7 @@
 
 package chapter16.withmock
 
+// #snip
 import org.scalatest.{ FlatSpec, Matchers }
 import org.mockito.Mockito._
 import org.mockito.ArgumentMatchers.anyString
@@ -50,3 +51,5 @@ class WordScorerTest extends FlatSpec with Matchers {
   }
 
 }
+// #snip
+
