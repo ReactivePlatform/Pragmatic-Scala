@@ -17,6 +17,7 @@
 package chapter1
 
 object FindMaxImperative extends App {
+  // #snip
   def findMax(temperatures: List[Int]) = {
     var highTemperature = Integer.MIN_VALUE
     for (temperature ← temperatures) {
@@ -24,6 +25,7 @@ object FindMaxImperative extends App {
     }
     highTemperature
   }
+  // #snip
 
   println(findMax(List(23, 27, 17)))
 

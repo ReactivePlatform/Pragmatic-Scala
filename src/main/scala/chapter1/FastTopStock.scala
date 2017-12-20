@@ -32,8 +32,10 @@ object FastTopStock extends App {
   val year = 2014
 
   val (topStock, topPrice) =
+    // #snip
     symbols.par.map { ticker ⇒ (ticker, getYearEndClosingPrice(ticker, year)) }
       .maxBy { stockPrice ⇒ stockPrice._2 }
+  // #snip
 
   printf(s"Top stock of $year is $topStock closing at price $$$topPrice")
 

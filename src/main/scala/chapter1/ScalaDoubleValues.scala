@@ -17,9 +17,11 @@
 package chapter1
 
 object ScalaDoubleValues extends App {
+  // #snip
   val values = List(1, 2, 3, 4, 5)
 
   val doubleValues = values.map(_ * 2)
+  // #snip
 
   println(doubleValues)
 

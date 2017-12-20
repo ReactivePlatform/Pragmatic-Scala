@@ -24,11 +24,14 @@ public class FindMax {
    System.out.println(findMax(temperatures));
   }
 
- public static int findMax(List<Integer> temperatures) { //Java code
+  // #snip
+  public static int findMax(List<Integer> temperatures) {
+      //Java code
    int highTemperature = Integer.MIN_VALUE;
    for(int temperature : temperatures) {
     highTemperature = Math.max(highTemperature, temperature);
    }
    return highTemperature;
  }
+    // #snip
 }
