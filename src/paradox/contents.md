@@ -4,6 +4,7 @@
 @@@ index
 
 * [第1章——探索Scala](chapter-01/index.md)
+* [第2章——体验Scala](chapter-02/index.md)
 * [第7章——特质](chapter-07/index.md)
 * [第8章——集合](chapter-08/index.md)
 * [第9章——模式匹配和正则表达式](chapter-09/index.md)

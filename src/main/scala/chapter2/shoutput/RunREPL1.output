@@ -1,3 +1,5 @@
-
+// #output
 scala> val number = 6
 number: Int = 6
+// #output
+

@@ -1,4 +1,4 @@
-# 第1章——Exploring Scala
+# 第1章——探索Scala
 
 ## 代码清单1-1
 

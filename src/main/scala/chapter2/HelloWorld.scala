@@ -17,7 +17,8 @@
 package chapter2
 
 object HelloWorld extends App {
-
+  // #snip
   println("Hello World, Welcome to Scala")
+  // #snip
 
 }

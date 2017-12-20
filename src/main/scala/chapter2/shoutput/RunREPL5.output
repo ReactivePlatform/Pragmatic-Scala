@@ -1,4 +1,5 @@
-scala> def isPalindrome(str: String) = 
+// #output
+scala> def isPalindrome(str: String) =
      |   str == str.reverse
 isPalindrome: (str: String)Boolean
 
@@ -9,3 +10,4 @@ scala> isPalindrome("dude")
 res1: Boolean = false
 
 scala> :quit
+// #output
