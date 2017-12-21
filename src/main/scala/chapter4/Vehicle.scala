@@ -17,6 +17,7 @@
 package chapter4
 
 object Vehicle extends App {
+  // #snip
   class Vehicle(val id: Int, val year: Int) {
     override def toString = s"ID: $id Year: $year"
   }
@@ -28,5 +29,6 @@ object Vehicle extends App {
 
   val car = new Car(1, 2015, 100)
   println(car)
+  // #snip
 
 }

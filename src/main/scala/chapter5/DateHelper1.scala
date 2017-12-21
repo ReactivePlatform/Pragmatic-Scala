@@ -21,7 +21,7 @@ object DateHelper1 extends App {
   import java.time.LocalDate
 
   class DateHelper(offset: Int) {
-    def days(when: String) = {
+    def days(when: String): LocalDate = {
       val today = LocalDate.now
       when match {
         case "ago"      ⇒ today.minusDays(offset)

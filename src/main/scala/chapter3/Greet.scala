@@ -17,10 +17,12 @@
 package chapter3
 
 object Greet extends App {
+  // #snip
   for (i ← 1 to 3) {
     print(s"$i,")
   }
 
   println("Scala Rocks!!!")
+  // #snip
 
 }

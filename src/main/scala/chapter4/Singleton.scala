@@ -17,6 +17,7 @@
 package chapter4
 
 object Singleton extends App {
+  // #snip
   import scala.collection._
 
   class Marker(val color: String) {
@@ -31,7 +32,7 @@ object Singleton extends App {
       "blue" -> new Marker("blue"),
       "yellow" -> new Marker("yellow"))
 
-    def getMarker(color: String) =
+    def getMarker(color: String): Marker =
       markers.getOrElseUpdate(color, new Marker(color))
   }
 
@@ -40,5 +41,6 @@ object Singleton extends App {
   println(MarkerFactory getMarker "red")
   println(MarkerFactory getMarker "red")
   println(MarkerFactory getMarker "green")
+  // #snip
 
 }

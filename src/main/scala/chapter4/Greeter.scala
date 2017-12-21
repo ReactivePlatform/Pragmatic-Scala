@@ -16,6 +16,9 @@
 
 package chapter4
 
+// #snip
 object Greeter {
   def greet(): Unit = println("Ahoy, me hearties!")
 }
+// #snip
+

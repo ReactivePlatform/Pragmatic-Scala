@@ -16,6 +16,7 @@
 
 package chapter4;
 
+// #snip
 //Java example
 public class Car {
   private final int year;
@@ -30,3 +31,4 @@ public class Car {
     miles += Math.abs(distance);
   }
 }
+// #snip

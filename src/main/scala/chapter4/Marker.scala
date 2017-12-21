@@ -17,6 +17,7 @@
 package chapter4
 
 object Marker extends App {
+  // #snip
   import scala.collection._
 
   class Marker private (val color: String) {
@@ -31,7 +32,7 @@ object Marker extends App {
       "blue" -> new Marker("blue"),
       "yellow" -> new Marker("yellow"))
 
-    def getMarker(color: String) =
+    def getMarker(color: String): Marker =
       markers.getOrElseUpdate(color, new Marker(color))
   }
 
@@ -40,5 +41,6 @@ object Marker extends App {
   println(Marker getMarker "red")
   println(Marker getMarker "red")
   println(Marker getMarker "green")
+  // #snip
 
 }

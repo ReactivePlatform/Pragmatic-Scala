@@ -18,6 +18,7 @@ package chapter3
 
 object OptionalSemicolon extends App {
 
+  // #snip
   val list1 = new java.util.ArrayList[Int];
   {
     println("Created list1")
@@ -29,5 +30,6 @@ object OptionalSemicolon extends App {
 
   println(list1.getClass)
   println(list2.getClass)
+  // #snip
 
 }

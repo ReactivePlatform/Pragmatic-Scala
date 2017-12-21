@@ -17,6 +17,7 @@
 package chapter4
 
 object Person extends App {
+  // #snip
   class Person(val firstName: String, val lastName: String) {
     var position: String = _
 
@@ -35,5 +36,6 @@ object Person extends App {
   println(john)
   val bill = new Person("Bill", "Walker")
   println(bill)
+  // #snip
 
 }

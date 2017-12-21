@@ -17,8 +17,10 @@
 package chapter3
 
 object ArgType extends App {
+  // #snip
   def function(input: Int*): Unit = println(input.getClass)
 
   function(1, 2, 3)
+  // #snip
 
 }

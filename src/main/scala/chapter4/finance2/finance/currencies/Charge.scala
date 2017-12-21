@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 package chapter4.finance2.finance.currencies
 
 object Charge {
@@ -22,3 +23,4 @@ object Charge {
     s"charged $$${moneyInUSD.amount}"
   }
 }
+// #snip

@@ -17,11 +17,12 @@
 package chapter3
 
 object MultipleAssignment2 extends App {
-
+  // #snip
   def getPersonInfo(primaryKey: Int): (String, String, String) = {
     ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
   }
 
   val (firstName, lastName, _) = getPersonInfo(1)
+  // #snip
 
 }

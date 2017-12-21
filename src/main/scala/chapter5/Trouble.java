@@ -16,6 +16,7 @@
 
 package chapter5;
 
+// #snip
 //Java code 
 class Fruit {} 
 class Banana extends Fruit {}
@@ -34,3 +35,4 @@ public class Trouble {
     }    
   }
 }
+// #snip

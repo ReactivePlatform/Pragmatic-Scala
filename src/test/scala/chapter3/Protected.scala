@@ -17,6 +17,7 @@
 package chapter3
 
 object Protected extends App {
+// #snip
   class Vehicle {
     protected def checkEngine() {}
   }
@@ -34,5 +35,6 @@ object Protected extends App {
       vehicle.checkEngine() //ERROR
     }
   }
+  // #snip
 }
 

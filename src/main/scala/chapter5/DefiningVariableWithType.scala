@@ -17,7 +17,9 @@
 package chapter5
 
 object DefiningVariableWithType extends App {
+  // #snip
   val greet: String = "Ahoy!"
+  // #snip
 
   println(greet)
 

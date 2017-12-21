@@ -16,6 +16,7 @@
 
 package chapter4.finance1
 
+// #snip
 import chapter4.finance1.finance.currencies._
 
 object CurrencyApp extends App {
@@ -25,3 +26,4 @@ object CurrencyApp extends App {
 
   println(Converter.convert(moneyInGBP, Currency.USD))
 }
+// #snip

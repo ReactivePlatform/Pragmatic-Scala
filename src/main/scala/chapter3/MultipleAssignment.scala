@@ -17,6 +17,7 @@
 package chapter3
 
 object MultipleAssignment extends App {
+  // #snip
   def getPersonInfo(primaryKey: Int) = {
     // Assume primaryKey is used to fetch a person's info...
     // Here response is hard-coded
@@ -28,5 +29,6 @@ object MultipleAssignment extends App {
   println(s"First Name: $firstName")
   println(s"Last Name: $lastName")
   println(s"Email Address: $emailAddress")
+  // #snip
 
 }

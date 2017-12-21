@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 package society {
 
   package professional {
@@ -46,3 +47,4 @@ package society {
     }
   }
 }
+// #snip

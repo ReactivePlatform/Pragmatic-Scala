@@ -17,6 +17,7 @@
 package chapter5
 
 object Generics3 extends App {
+  // #snip
   import java._
 
   var list1 = new util.ArrayList[Int]
@@ -28,5 +29,6 @@ object Generics3 extends App {
   ref2 = ref1 //OK
 
   list2 = list1 // Compilation Error
+  // #snip
 
 }

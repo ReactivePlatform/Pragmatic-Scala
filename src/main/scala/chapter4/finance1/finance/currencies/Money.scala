@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 package chapter4.finance1.finance.currencies
 
 import Currency._
@@ -21,3 +22,4 @@ import Currency._
 class Money(val amount: Int, val currency: Currency) {
   override def toString = s"$amount $currency"
 }
+// #snip

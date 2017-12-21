@@ -15,6 +15,7 @@
  */
 
 package chapter3;
+// #snip
 //Java code
 public class Greetings {
   public static void main(String[] args) {
@@ -24,3 +25,4 @@ public class Greetings {
     System.out.println("Scala Rocks!!!");
   }
 }
+// #snip

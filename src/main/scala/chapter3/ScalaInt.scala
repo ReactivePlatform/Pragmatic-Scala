@@ -16,6 +16,7 @@
 
 package chapter3
 
+// #snip
 class ScalaInt {
   def playWithInt(): Unit = {
     val capacity: Int = 10
@@ -23,3 +24,4 @@ class ScalaInt {
     list.ensureCapacity(capacity)
   }
 }
+// #snip

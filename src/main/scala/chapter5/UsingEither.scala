@@ -17,12 +17,15 @@
 package chapter5
 
 object UsingEither extends App {
+  // #snip
   def compute(input: Int) =
     if (input > 0)
       Right(math.sqrt(input))
     else
       Left("Error computing, invalid input")
+  // #snip
 
+  // #snip
   def displayResult(result: Either[String, Double]): Unit = {
     println(s"Raw: $result")
     result match {
@@ -30,8 +33,11 @@ object UsingEither extends App {
       case Left(err)    ⇒ println(s"Error: $err")
     }
   }
+  // #snip
 
+  // #snip
   displayResult(compute(4))
   displayResult(compute(-4))
+  // #snip
 
 }

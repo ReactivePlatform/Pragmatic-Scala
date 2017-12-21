@@ -17,8 +17,9 @@
 package chapter3
 
 object ImplicitParameters extends App {
+  // #snip
   class Wifi(name: String) {
-    override def toString = name
+    override def toString: String = name
   }
 
   def connectToNetwork(user: String)(implicit wifi: Wifi): Unit = {
@@ -45,5 +46,6 @@ object ImplicitParameters extends App {
 
   atOffice()
   atJoesHome()
+  // #snip
 
 }

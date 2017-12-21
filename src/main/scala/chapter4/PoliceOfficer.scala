@@ -16,4 +16,6 @@
 
 package chapter4
 
+// #snip
 class PoliceOfficer(val name: String)
+// #snip

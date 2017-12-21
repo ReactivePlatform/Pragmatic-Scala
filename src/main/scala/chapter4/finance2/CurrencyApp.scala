@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 
+// #snip
 package chapter4.finance2
 
 import chapter4.finance2.finance.currencies._
@@ -26,3 +27,4 @@ object CurrencyApp extends App {
 
   println(convert(moneyInGBP, Currency.USD))
 }
+// #snip

@@ -18,6 +18,7 @@ package chapter3
 
 object Equality extends App {
 
+  // #snip
   val str1 = "hello"
   val str2 = "hello"
   val str3 = new String("hello")
@@ -26,5 +27,6 @@ object Equality extends App {
   println(str1 eq str2) // Equivalent to Java's str1 == str2
   println(str1 == str3)
   println(str1 eq str3)
+  // #snip
 
 }

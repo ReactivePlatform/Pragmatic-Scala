@@ -17,10 +17,13 @@
 package chapter5
 
 object DefiningVariable extends App {
-
+  // #snip
   val greet = "Ahoy!"
+  // #snip
 
+  // #snip
   println(greet)
   println(greet.getClass)
+  // #snip
 
 }

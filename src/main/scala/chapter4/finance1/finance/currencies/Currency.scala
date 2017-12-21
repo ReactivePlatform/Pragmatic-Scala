@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
+// #snip
 package chapter4.finance1.finance.currencies
 
 object Currency extends Enumeration {
   type Currency = Value
   val CNY, GBP, INR, JPY, NOK, PLN, SEK, USD = Value
 }
+// #snip

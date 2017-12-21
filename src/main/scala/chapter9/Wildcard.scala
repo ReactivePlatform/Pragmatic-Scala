@@ -15,17 +15,18 @@
  */
 
 package chapter9
+import chapter9.Wildcard.DayOfWeek
 
 object Wildcard extends App {
   // #snip
   object DayOfWeek extends Enumeration {
-    val SUNDAY = Value("Sunday")
-    val MONDAY = Value("Monday")
-    val TUESDAY = Value("Tuesday")
-    val WEDNESDAY = Value("Wednesday")
-    val THURSDAY = Value("Thursday")
-    val FRIDAY = Value("Friday")
-    val SATURDAY = Value("Saturday")
+    val SUNDAY: DayOfWeek.Value = Value("Sunday")
+    val MONDAY: DayOfWeek.Value = Value("Monday")
+    val TUESDAY: DayOfWeek.Value = Value("Tuesday")
+    val WEDNESDAY: DayOfWeek.Value = Value("Wednesday")
+    val THURSDAY: DayOfWeek.Value = Value("Thursday")
+    val FRIDAY: DayOfWeek.Value = Value("Friday")
+    val SATURDAY: DayOfWeek.Value = Value("Saturday")
   }
 
   def activity(day: DayOfWeek.Value): Unit = {

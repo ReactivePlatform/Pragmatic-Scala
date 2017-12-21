@@ -17,6 +17,7 @@
 package chapter3
 
 object Complex2 extends App {
+  // #snip
   class Complex(val real: Int, val imaginary: Int) {
     def +(operand: Complex): Complex = {
       println("Calling +")
@@ -39,5 +40,6 @@ object Complex2 extends App {
   val c2 = new Complex(2, -3)
   val c3 = new Complex(2, 2)
   println(c1 + c2 * c3)
+  // #snip
 
 }

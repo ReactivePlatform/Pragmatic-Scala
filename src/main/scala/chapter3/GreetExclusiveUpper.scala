@@ -17,10 +17,12 @@
 package chapter3
 
 object GreetExclusiveUpper extends App {
+  // #snip
   for (i ← 1 until 3) {
     print(s"$i,")
   }
 
   println("Scala Rocks!!!")
+  // #snip
 
 }

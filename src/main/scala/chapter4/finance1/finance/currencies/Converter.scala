@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 package chapter4.finance1.finance.currencies
 
 import Currency._
@@ -25,3 +26,5 @@ object Converter {
     new Money(money.amount * conversionRate, to)
   }
 }
+// #snip
+

@@ -18,7 +18,7 @@ package chapter5
 
 object PlayWithPets extends App {
   class Pet(val name: String) {
-    override def toString = name
+    override def toString: String = name
   }
 
   class Dog(override val name: String) extends Pet(name)

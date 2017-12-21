@@ -17,6 +17,7 @@
 package chapter3
 
 object Access extends App {
+  // #snip
   class Microwave {
     def start(): Unit = println("started")
     def stop(): Unit = println("stopped")
@@ -24,4 +25,6 @@ object Access extends App {
   }
   val microwave = new Microwave
   microwave.start() // OK
+  // #snip
+
 }

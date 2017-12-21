@@ -16,4 +16,6 @@
 
 package chapter4
 
+// #snip
 class CreditCard(val number: Int, var creditLimit: Int)
+// #snip

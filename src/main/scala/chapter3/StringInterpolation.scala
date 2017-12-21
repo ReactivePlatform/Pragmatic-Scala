@@ -19,23 +19,31 @@ package chapter3
 object StringInterpolation extends App {
   val discount = 10
 
+  // #snip
   val message = s"A discount of $discount% has been applied"
+  // #snip
+
   println(message)
 
   {
+    // #snip
     var price = 90
     val totalPrice = s"The amount of discount is ${price * discount / 100} dollars"
+    // #snip
+
     println(totalPrice)
   }
 
   {
     var price = 90
+    // #snip
     val totalPrice = s"The amount of discount is $$${price * discount / 100}"
+    // #snip
     println(totalPrice)
   }
 
   {
-    println("//" + "START:EXPRESSION3_OUTPUT")
+    // #snip
     val discount = 10
     var price = 100
     val totalPrice =
@@ -44,41 +52,41 @@ object StringInterpolation extends App {
 
     price = 50
     println(totalPrice)
-    println("//" + "END:EXPRESSION3_OUTPUT")
+    // #snip
   }
 
   {
-    println("//" + "START:NOFORMAT_OUTPUT")
+    // #snip
     val product = "ticket"
     val price = 25.12
     val discount = 10
     println(s"On $product $discount% saves $$${price * discount / 100.00}")
-    println("//" + "END:NOFORMAT_OUTPUT")
+    // #snip
   }
 
   {
-    println("//" + "START:FORMAT_OUTPUT")
     val product = "ticket"
     val price = 25.12
     val discount = 10
+    // #snip
     println(f"On $product $discount%% saves $$${price * discount / 100.00}%2.2f")
-    println("//" + "END:FORMAT_OUTPUT")
+    // #snip
   }
 
   {
     val product = "ticket"
     val price = 25.12
-    println("//" + "START:HEREDOC_OUTPUT")
+    // #snip
     println(s"We just got the $product\nThe price was $$$price.")
-    println("//" + "END:HEREDOC_OUTPUT")
+    // #snip
   }
 
   {
     val product = "ticket"
     val price = 25.12
-    println("//" + "START:RAW_OUTPUT")
+    // #snip
     println(raw"We just got the $product\nThe price was $$$price.")
-    println("//" + "END:RAW_OUTPUT")
+    // #snip
   }
 
 }

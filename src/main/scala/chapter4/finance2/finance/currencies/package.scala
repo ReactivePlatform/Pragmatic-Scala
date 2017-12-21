@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// #snip
 package chapter4.finance2.finance
 
 package object currencies {
@@ -25,3 +26,4 @@ package object currencies {
     new Money(money.amount * conversionRate, to)
   }
 }
+// #snip

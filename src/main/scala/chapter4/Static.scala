@@ -17,6 +17,7 @@
 package chapter4
 
 object Static extends App {
+  // #snip
   import scala.collection._
 
   class Marker private (val color: String) {
@@ -28,11 +29,12 @@ object Static extends App {
       "blue" -> new Marker("blue"),
       "yellow" -> new Marker("yellow"))
 
-    def supportedColors = markers.keys
-    def apply(color: String) = markers.getOrElseUpdate(color, new Marker(color))
+    def supportedColors: Iterable[String] = markers.keys
+    def apply(color: String): Marker = markers.getOrElseUpdate(color, new Marker(color))
   }
   println(s"Supported colors are : ${Marker.supportedColors}")
   println(Marker("blue"))
   println(Marker("red"))
+  // #snip
 
 }

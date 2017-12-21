@@ -17,25 +17,29 @@
 package chapter4
 
 object Parameterized extends App {
+  // #snip
   def echo[T](input1: T, input2: T): Unit =
     println(s"got $input1 (${input1.getClass}) $input2 (${input2.getClass})")
+  // #snip
 
-  println("//" + "START:USE_FUNCTION_OUTPUT")
+  // #snip
   echo("hello", "there")
   echo(4, 5)
-  println("//" + "END:USE_FUNCTION_OUTPUT")
+  // #snip
 
-  println("//" + "START:OOPS_OUTPUT")
+  // #snip
   echo("hi", 5)
-  println("//" + "END:OOPS_OUTPUT")
+  // #snip
 
+  // #snip
   class Message[T](val content: T) {
     override def toString = s"message content is $content"
 
     def is(value: T): Boolean = value == content
   }
+  // #snip
 
-  println("//" + "START:USE_OUTPUT")
+  // #snip
   val message1: Message[String] = new Message("howdy")
   val message2 = new Message(42)
 
@@ -43,6 +47,6 @@ object Parameterized extends App {
   println(message1.is("howdy"))
   println(message1.is("hi"))
   println(message2.is(22))
-  println("//" + "END:USE_OUTPUT")
+  // #snip
 
 }

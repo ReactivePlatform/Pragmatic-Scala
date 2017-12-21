@@ -17,11 +17,15 @@
 package chapter3
 
 object DefaultValues extends App {
+  // #snip
   def mail(destination: String = "head office", mailClass: String = "first"): Unit =
     println(s"sending to $destination by $mailClass class")
+  // #snip
 
+  // #snip
   mail("Houston office", "Priority")
   mail("Boston office")
   mail()
+  // #snip
 
 }

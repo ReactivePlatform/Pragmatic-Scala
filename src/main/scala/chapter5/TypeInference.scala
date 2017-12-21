@@ -16,6 +16,9 @@
 
 package chapter5
 
+// #snip
 class TypeInference {
   val greet = "Ahoy!"
 }
+// #snip
+
