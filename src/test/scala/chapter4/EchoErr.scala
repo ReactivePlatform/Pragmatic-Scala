@@ -20,6 +20,8 @@ object EchoErr extends App {
   def echo[T](input1: T, input2: T): Unit =
     println(s"received $input1 (${input1.getClass}) and $input2 (${input2.getClass})")
 
+  // #snip
   echo[Int]("hi", 5) //error: type mismatch
+  // #snip
 
 }

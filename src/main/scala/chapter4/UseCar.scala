@@ -17,7 +17,7 @@
 package chapter4
 
 object UseCar extends App {
-  // #snip
+  // #snip_4-2
   class Car(val year: Int) {
     private var milesDriven: Int = 0
 
@@ -27,15 +27,15 @@ object UseCar extends App {
       milesDriven += Math.abs(distance)
     }
   }
-  // #snip
+  // #snip_4-2
 
-  // #snip
+  // #snip_4-3
   val car = new Car(2015)
   println(s"Car made in year ${car.year}")
   println(s"Miles driven ${car.miles}")
   println("Drive for 10 miles")
   car.drive(10)
   println(s"Miles driven ${car.miles}")
-  // #snip
+  // #snip_4-3
 
 }

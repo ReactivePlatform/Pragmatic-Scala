@@ -25,12 +25,13 @@ object Message extends App {
 
   val message1: Message[String] = new Message("howdy")
   val message2 = new Message(42)
-  // #snip
-  message1.is(22) //error: type mismatch
-  // #snip
 
-  // #snip
+  // #snip_4-17
+  message1.is(22) //error: type mismatch
+  // #snip_4-17
+
+  // #snip_4-18
   message2.is('A') //No error!
-  // #snip
+  // #snip_4-18
 
 }
