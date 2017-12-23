@@ -17,18 +17,24 @@
 package chapter6
 
 object Inject extends App {
+  // #snip_6-7
   def inject(arr: Array[Int], initial: Int, operation: (Int, Int) ⇒ Int) = {
     var carryOver = initial
     arr.foreach(element ⇒ carryOver = operation(carryOver, element))
     carryOver
   }
+  // #snip_6-7
 
+  // #snip_6-8
   val array = Array(2, 3, 5, 1, 6, 4)
   val sum = inject(array, 0, (carry, elem) ⇒ carry + elem)
   println(s"Sum of elements in array is $sum")
+  // #snip_6-8
 
+  // #snip_6-9
   val max =
     inject(array, Integer.MIN_VALUE, (carry, elem) ⇒ Math.max(carry, elem))
   println(s"Max of elements in array is  $max")
+  // #snip_6-9
 
 }

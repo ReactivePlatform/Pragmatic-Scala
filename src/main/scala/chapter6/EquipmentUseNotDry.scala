@@ -16,6 +16,7 @@
 
 package chapter6
 
+// #snip_6-24
 object EquipmentUseNotDry extends App {
   val equipment1 = new Equipment(
     { input ⇒ println(s"calc with $input"); input })
@@ -25,3 +26,4 @@ object EquipmentUseNotDry extends App {
   equipment1.simulate(4)
   equipment2.simulate(6)
 }
+// #snip_6-24

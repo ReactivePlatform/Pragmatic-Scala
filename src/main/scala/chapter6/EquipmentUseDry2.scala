@@ -16,6 +16,7 @@
 
 package chapter6
 
+// #snip
 object EquipmentUseDry2 extends App {
   def calculator(input: Int) = { println(s"calc with $input"); input }
 
@@ -25,3 +26,4 @@ object EquipmentUseDry2 extends App {
   equipment1.simulate(4)
   equipment2.simulate(6)
 }
+// #snip

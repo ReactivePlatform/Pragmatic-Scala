@@ -17,14 +17,19 @@
 package chapter6
 
 object WriteToFile extends App {
+  //  #snip_6-35
   import java.io._
 
   def writeToFile(fileName: String)(codeBlock: PrintWriter ⇒ Unit): Unit = {
     val writer = new PrintWriter(new File(fileName))
     try { codeBlock(writer) } finally { writer.close() }
   }
+  //  #snip_6-35
 
+  //  #snip_6-36
   writeToFile("output/output.txt") { writer ⇒
     writer write "hello from Scala"
   }
+  //  #snip_6-36
+
 }

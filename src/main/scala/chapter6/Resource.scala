@@ -17,6 +17,7 @@
 package chapter6
 
 object Resource extends App {
+  // #snip_6-33
   class Resource private () {
     println("Starting transaction...")
     private def cleanUp(): Unit = { println("Ending transaction...") }
@@ -35,12 +36,15 @@ object Resource extends App {
       }
     }
   }
+  // #snip_6-33
 
+  // #snip_6-34
   Resource.use { resource ⇒
     resource.op1()
     resource.op2()
     resource.op3()
     resource.op1()
   }
+  // #snip_6-34
 
 }

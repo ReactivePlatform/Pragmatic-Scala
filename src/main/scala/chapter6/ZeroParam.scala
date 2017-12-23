@@ -17,10 +17,12 @@
 package chapter6
 
 object ZeroParam extends App {
+  // #snip
   def printValue(generator: () ⇒ Int): Unit = {
     println(s"Generated value is ${generator()}")
   }
 
   printValue(() ⇒ 42)
+  // #snip
 
 }

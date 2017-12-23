@@ -17,6 +17,7 @@
 package chapter6
 
 object Log extends App {
+  //  #snip_6-27
   import java.util.Date
 
   def log(date: Date, message: String): Unit = {
@@ -28,13 +29,16 @@ object Log extends App {
   log(date, "message1")
   log(date, "message2")
   log(date, "message3")
+  //  #snip_6-27
 
   {
+    //  #snip_6-28
     val date = new Date(1420095600000L)
     val logWithDateBound = log(date, _: String)
     logWithDateBound("message1")
     logWithDateBound("message2")
     logWithDateBound("message3")
+    //  #snip_6-28
   }
 
 }

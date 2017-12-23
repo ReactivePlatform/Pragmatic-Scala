@@ -19,25 +19,33 @@ package chapter6
 object RouteParams extends App {
   val arr = Array(1, 2, 3, 4, 5)
 
+  // #snip_6-19
   val largest =
     (Integer.MIN_VALUE /: arr) { (carry, elem) ⇒ Math.max(carry, elem) }
+  // #snip_6-19
 
   println(largest)
 
   {
+    // #snip_6-20
     val largest = (Integer.MIN_VALUE /: arr) { Math.max(_, _) }
+    // #snip_6-20
 
     println(largest)
   }
 
   {
+    // #snip_6-21
     val largest = (Integer.MIN_VALUE /: arr) { Math.max _ }
+    // #snip_6-21
 
     println(largest)
   }
 
   {
+    // #snip_6-22
     val largest = (Integer.MIN_VALUE /: arr) { Math.max }
+    // #snip_6-22
 
     println(largest)
   }

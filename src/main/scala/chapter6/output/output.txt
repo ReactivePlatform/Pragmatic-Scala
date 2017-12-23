@@ -1,1 +1,3 @@
+// #output
 hello from Scala
+// #output

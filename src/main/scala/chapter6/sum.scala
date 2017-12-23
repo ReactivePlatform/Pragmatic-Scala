@@ -17,6 +17,7 @@
 package chapter6
 
 object sum extends App {
+  // #snip
   def sum(number: Int) = {
     var result = 0
     for (i ← 1 to number) {
@@ -24,6 +25,7 @@ object sum extends App {
     }
     result
   }
+  // #snip
 
   println(sum(10))
 }

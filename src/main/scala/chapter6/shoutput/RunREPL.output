@@ -1,4 +1,4 @@
-
+//  #output
 scala> import java.util.Date
 import java.util.Date
 
@@ -10,3 +10,5 @@ scala> val logWithDateBound = log(new Date, _ : String)
 logWithDateBound: String => Unit = <function1>
 
 scala> :quit
+//  #output
+

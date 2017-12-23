@@ -16,9 +16,11 @@
 
 package chapter6
 
+// #snip_6-23
 class Equipment(val routine: Int ⇒ Int) {
   def simulate(input: Int): Int = {
     print("Running simulation...")
     routine(input)
   }
 }
+// #snip_6-23
