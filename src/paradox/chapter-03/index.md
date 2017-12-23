@@ -1,4 +1,4 @@
-# 第3章——From Java to Scala
+# 第3章——从Java到Scala
 
 ## 代码清单3-1
 
@@ -226,4 +226,4 @@
 
 *运行结果*
 
-@@snip[代码清单3-34运行结果](../../main/scala/chapter3/compileroutput/FineGrainedAccessControl.output){ #output }
+@@snip[代码清单3-34运行结果](../../main/scala/chapter3/compileroutput/FineGrainedAccessControl.output){ #output }`
