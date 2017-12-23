@@ -1,3 +1,4 @@
+// #output
   private int mad(int);
     Code:
        0: iload_1
@@ -18,3 +19,4 @@ java/lang/RuntimeException."<init>":(Ljava/lang/String;)V
       20: invokespecial #22                 // Method mad:(I)I
       23: imul
       24: ireturn
+// #output

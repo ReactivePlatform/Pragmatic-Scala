@@ -17,25 +17,25 @@
 package chapter11
 
 object factorial extends App {
-  // #snip
+  // #snip_11-1
   def factorial(number: Int): BigInt = {
     if (number == 0)
       1
     else
       number * factorial(number - 1)
   }
-  // #snip
+  // #snip_11-1
 
-  println("//" + "START:USE1_OUTPUT")
+  // #snip_11-2
   println(factorial(5))
-  println("//" + "END:USE1_OUTPUT")
+  // #snip_11-2
 
-  println("//" + "START:STACK_OVERFLOW_OUTPUT")
   try {
+    // #snip_11-3
     println(factorial(10000))
+    // #snip_11-3
   } catch {
     case ex: Throwable ⇒ println(ex)
   }
-  println("//" + "END:STACK_OVERFLOW_OUTPUT")
 
 }

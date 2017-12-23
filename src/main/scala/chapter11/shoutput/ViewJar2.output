@@ -1,3 +1,4 @@
+// #output
   private int mad(int);
     Code:
        0: iload_1
@@ -15,4 +16,4 @@ java/lang/RuntimeException."<init>":(Ljava/lang/String;)V
       17: isub
       18: istore_1
       19: goto          0
-
+// #output

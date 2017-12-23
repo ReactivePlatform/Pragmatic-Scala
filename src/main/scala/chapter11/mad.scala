@@ -17,6 +17,7 @@
 package chapter11
 
 object mad extends App {
+  // #snip
   def mad(parameter: Int): Int = {
     if (parameter == 0)
       throw new RuntimeException("Error")
@@ -25,4 +26,5 @@ object mad extends App {
   }
 
   mad(5)
+  // #snip
 }

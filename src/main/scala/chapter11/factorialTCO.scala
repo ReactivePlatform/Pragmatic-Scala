@@ -17,6 +17,7 @@
 package chapter11
 
 object factorialTCO extends App {
+  // #snip
   @scala.annotation.tailrec
   def factorial(fact: BigInt, number: Int): BigInt = {
     if (number == 0)
@@ -26,4 +27,6 @@ object factorialTCO extends App {
   }
 
   println(factorial(1, 10000))
+  // #snip
+
 }

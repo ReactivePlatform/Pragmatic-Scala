@@ -1,2 +1,4 @@
+// #output
 3
 java.lang.StackOverflowError
+// #output

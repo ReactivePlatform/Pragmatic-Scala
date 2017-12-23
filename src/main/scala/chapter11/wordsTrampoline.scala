@@ -17,6 +17,7 @@
 package chapter11
 
 object wordsTrampoline extends App {
+  // #snip
   import scala.io.Source._
   import scala.util.control.TailCalls._
 
@@ -47,4 +48,5 @@ object wordsTrampoline extends App {
   } catch {
     case ex: Throwable ⇒ println(ex)
   }
+  // #snip
 }

@@ -18,6 +18,7 @@ package chapter11
 
 object words extends App {
 
+  // #snip
   import scala.io.Source._
 
   def explore(count: Int, words: List[String]): Int =
@@ -46,5 +47,6 @@ object words extends App {
   } catch {
     case ex: Throwable ⇒ println(ex)
   }
+  // #snip
 
 }
