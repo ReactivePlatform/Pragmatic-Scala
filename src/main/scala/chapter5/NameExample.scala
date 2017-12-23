@@ -17,6 +17,7 @@
 package chapter5
 
 object NameExample extends App {
+  // #snip
   class Name(val value: String) {
     override def toString: String = value
     def length: Int = value.length
@@ -31,5 +32,6 @@ object NameExample extends App {
     println(name.length)
     printName(name)
   }
+  // #snip
 
 }

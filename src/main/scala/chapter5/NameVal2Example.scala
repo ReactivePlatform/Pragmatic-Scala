@@ -29,7 +29,10 @@ object NameVal2Example extends App {
 
     val name = new Name("Snowy")
 
+    // #snip
     val any: Any = name
+    // #snip
+
     println(name.length)
     printName(name)
   }

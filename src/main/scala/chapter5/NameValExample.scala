@@ -17,7 +17,9 @@
 package chapter5
 
 object NameValExample extends App {
+  //#snip
   class Name(val value: String) extends AnyVal {
+    //#snip
     override def toString: String = value
     def length: Int = value.length
   }

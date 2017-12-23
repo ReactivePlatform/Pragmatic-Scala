@@ -16,6 +16,7 @@
 
 package chapter5
 
+// #snip
 object MyInterpolator {
   implicit class Interpolator(val context: StringContext) extends AnyVal {
     def mask(args: Any*): StringBuilder = {
@@ -31,3 +32,5 @@ object MyInterpolator {
     }
   }
 }
+// #snip
+

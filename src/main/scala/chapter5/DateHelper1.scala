@@ -17,6 +17,7 @@
 package chapter5
 
 object DateHelper1 extends App {
+  // #snip_5-24
   import scala.language.implicitConversions
   import java.time.LocalDate
 
@@ -30,7 +31,9 @@ object DateHelper1 extends App {
       }
     }
   }
+  // #snip_5-24
 
+  // #snip_5-25
   implicit def convertInt2DateHelper(offset: Int): DateHelper = new DateHelper(offset)
 
   val ago = "ago"
@@ -41,5 +44,5 @@ object DateHelper1 extends App {
 
   println(past)
   println(appointment)
-
+  // #snip_5-25
 }

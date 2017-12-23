@@ -17,6 +17,7 @@
 package chapter5
 
 object UseInterpolator extends App {
+  // #snip
   import MyInterpolator._
 
   val ssn = "123-45-6789"
@@ -27,4 +28,6 @@ object UseInterpolator extends App {
     |Social Security Number: $ssn
     |Balance: $$^$balance
     |Thanks for your business.""".stripMargin)
+  // #snip
+
 }

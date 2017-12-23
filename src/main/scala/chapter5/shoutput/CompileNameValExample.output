@@ -1,3 +1,4 @@
+// #output
        1: ldc           #78                 // String Snowy
        3: putfield      #75                 // Field 
 name:Ljava/lang/String;
@@ -20,3 +21,4 @@ name:()Ljava/lang/String;
       30: invokevirtual #97                 // Method 
 printName:(Ljava/lang/String;)V
       33: return
+// #output

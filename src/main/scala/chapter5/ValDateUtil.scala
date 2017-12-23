@@ -21,9 +21,11 @@ object ValDateUtil extends App {
     val ago = "ago"
     val from_now = "from_now"
 
+    // #snip
     implicit class DateHelper(val offset: Int) extends AnyVal {
-      import java.time.LocalDate
+      // #snip
 
+      import java.time.LocalDate
       def days(when: String): LocalDate = {
         val today = LocalDate.now
         when match {

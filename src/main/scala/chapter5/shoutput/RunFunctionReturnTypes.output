@@ -1,4 +1,4 @@
-
+// #output
 scala> def function1 { Math.sqrt(4) }
 function1: Unit
 
@@ -12,3 +12,4 @@ scala> def function4 : Double = { Math.sqrt(4) }
 function4: Double
 
 scala> :quit
+// #output

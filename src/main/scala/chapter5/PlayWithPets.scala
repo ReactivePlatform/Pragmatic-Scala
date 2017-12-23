@@ -17,6 +17,7 @@
 package chapter5
 
 object PlayWithPets extends App {
+  // #snip_5-18
   class Pet(val name: String) {
     override def toString: String = name
   }
@@ -24,21 +25,29 @@ object PlayWithPets extends App {
   class Dog(override val name: String) extends Pet(name)
 
   def workWithPets(pets: Array[Pet]): Unit = {}
+  // #snip_5-18
 
+  // #snip_5-19
+  val dogs = Array(new Dog("Rover"), new Dog("Comet"))
+  // #snip_5-19
+
+  //  workWithPets(dogs) // Compilation ERROR
+
+  // #snip_5-20
   def playWithPets[T <: Pet](pets: Array[T]): Unit =
     println("Playing with pets: " + pets.mkString(", "))
+  // #snip_5-20
 
-  val dogs = Array(new Dog("Rover"), new Dog("Comet"))
-  /*
-  workWithPets(dogs) // Compilation ERROR
-  */
-
+  // #snip_5-21
   playWithPets(dogs)
+  // #snip_5-21
 
+  // #snip_5-22
   def copyPets[S, D >: S](fromPets: Array[S], toPets: Array[D]): Unit = { //...
   }
 
   val pets = new Array[Pet](10)
   copyPets(dogs, pets)
+  // #snip_5-22
 
 }

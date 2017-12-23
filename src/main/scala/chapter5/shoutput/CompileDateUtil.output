@@ -1,4 +1,5 @@
-       5: invokevirtual #73                 // Method 
+// #output
+       5: invokevirtual #73                 // Method
 DateUtil$.DateHelper:(I)LDateUtil$DateHelper;
        8: getstatic     #69                 // Field 
 DateUtil$.MODULE$:LDateUtil$;
@@ -6,3 +7,4 @@ DateUtil$.MODULE$:LDateUtil$;
 DateUtil$.ago:()Ljava/lang/String;
       14: invokevirtual #83                 // Method 
 DateUtil$DateHelper.days:(Ljava/lang/String;)Ljava/time/LocalDate;
+// #output

@@ -1,3 +1,4 @@
+// #output
 NotAllowed.scala:4: error: type mismatch;
  found   : Array[Int]
  required: Array[Any]
@@ -7,3 +8,5 @@ You may wish to investigate a wildcard type such as `_ <: Any`. (SLS
 arr2 = arr1 // Compilation ERROR
        ^
 one error found
+// #output
+

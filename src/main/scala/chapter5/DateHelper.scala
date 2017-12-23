@@ -16,6 +16,7 @@
 
 package chapter5
 
+// #snip
 import scala.language.implicitConversions
 import java.time.LocalDate
 
@@ -35,3 +36,4 @@ object DateHelper {
   val from_now = "from_now"
   implicit def convertInt2DateHelper(offset: Int): DateHelper = new DateHelper(offset)
 }
+// #snip

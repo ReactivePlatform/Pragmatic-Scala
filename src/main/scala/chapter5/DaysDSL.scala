@@ -16,6 +16,7 @@
 
 package chapter5
 
+// #snip
 import DateHelper._
 
 object DaysDSL extends App {
@@ -25,3 +26,4 @@ object DaysDSL extends App {
   println(past)
   println(appointment)
 }
+// #snip

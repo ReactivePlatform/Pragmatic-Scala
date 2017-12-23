@@ -16,15 +16,14 @@
 
 package chapter5
 
-import java.time.LocalDate
-
+// #snip_5-28
 object DateUtil {
   val ago = "ago"
   val from_now = "from_now"
 
   implicit class DateHelper(val offset: Int) {
+    import java.time.LocalDate
     def days(when: String): LocalDate = {
-      import java.time.LocalDate
       val today = LocalDate.now
       when match {
         case "ago"      ⇒ today.minusDays(offset)
@@ -34,7 +33,9 @@ object DateUtil {
     }
   }
 }
+// #snip_5-28
 
+// #snip_5-29
 object UseDateUtil extends App {
   import DateUtil._
 
@@ -44,3 +45,4 @@ object UseDateUtil extends App {
   println(past)
   println(appointment)
 }
+// #snip_5-29

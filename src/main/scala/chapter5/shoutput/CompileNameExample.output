@@ -1,3 +1,4 @@
+// #output
        5: ldc           #76                 // String Snowy
        7: invokespecial #79                 // Method 
 Name."<init>":(Ljava/lang/String;)V
@@ -16,3 +17,4 @@ scala/Predef$.println:(Ljava/lang/Object;)V
       31: invokevirtual #81                 // Method name:()LName;
       34: invokevirtual #93                 // Method printName:(LName;)V
       37: return
+// #output
