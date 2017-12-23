@@ -33,13 +33,22 @@ enablePlugins(ParadoxMaterialThemePlugin)
 
 ParadoxMaterialThemePlugin.paradoxMaterialThemeSettings(Paradox)
 
-paradoxMaterialTheme in Compile := {
-  ParadoxMaterialTheme()
-    .withColor("red", "pink")
-    .withLogoIcon("cloud")
-    .withCopyright("Copyleft © 2017")
-}
 
+paradoxProperties in Compile ++= Map(
+  "project.name" -> "PragmaticScala",
+  "github.base_url" -> "https://github.com/ReactivePlatform/Pragmatic-Scala"
+)
+
+paradoxMaterialTheme in Compile ~= {
+  _.withColor("red", "pink")
+    .withLogoIcon("cloud")
+    .withCopyright("Copyleft © 2017 pragmatic-scala.reactiveplatform.xyz")
+    .withRepository(uri("https://github.com/ReactivePlatform/Pragmatic-Scala"))
+    .withSearch(tokenizer = "[\\s\\-\\.]+")
+    .withSocial(
+    uri("https://github.com/hepin1989")
+  )
+}
 
 organizationName := "pragmatic-scala.reactiveplatform.xyz"
 startYear := Some(2017)
