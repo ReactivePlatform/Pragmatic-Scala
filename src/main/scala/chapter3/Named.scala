@@ -20,12 +20,12 @@ object Named extends App {
   def mail(destination: String = "head office", mailClass: String = "first"): Unit =
     println(s"sending to $destination by $mailClass class")
 
-  // #snip
+  // #snip_3-16
   mail(mailClass = "Priority", destination = "Bahamas office")
-  // #snip
+  // #snip_3-16
 
-  // #snip
+  // #snip_3-17
   mail(mailClass = "Priority")
-  // #snip
+  // #snip_3-17
 
 }

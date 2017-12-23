@@ -17,23 +17,25 @@
 package chapter3
 
 object Parameters extends App {
-  // #snip
+  // #snip_3-8
   def max(values: Int*) = values.foldLeft(values(0)) { Math.max }
-  // #snip
+  // #snip_3-8
 
   println(
-    // #snip
+    // #snip_3-9
     max(8, 2, 3)
-    // #snip
+  // #snip_3-9
   )
 
   println(
-    // #snip
+    // #snip_3-10
     max(2, 5, 3, 7, 1, 6)
-    // #snip
+  // #snip_3-10
   )
 
+  // #snip_3-13
   val numbers = Array(2, 5, 3, 7, 1, 6)
   max(numbers: _*)
+  // #snip_3-13
 
 }

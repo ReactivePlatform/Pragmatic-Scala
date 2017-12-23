@@ -1,4 +1,5 @@
-FineGrainedAccessControl.scala:12: error: value secrets is not a member of 
+// #output
+FineGrainedAccessControl.scala:12: error: value secrets is not a member of
 society.professional.Executive
         println(another.secrets) //ERROR
                         ^
@@ -7,3 +8,4 @@ Executive cannot be accessed in society.professional.Executive
         println(person.workDetails) // ERROR
                        ^
 two errors found
+// #output

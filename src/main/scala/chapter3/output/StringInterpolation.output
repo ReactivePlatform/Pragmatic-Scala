@@ -1,10 +1,20 @@
 A discount of 10% has been applied
 The amount of discount is 9 dollars
 The amount of discount is $9
+
+// #output_3-24
 The amount after discount is $90.0
 The amount after discount is $90.0
+// #output_3-24
+
+// #output_3-25
 On ticket 10% saves $2.512
+// #output_3-25
+
+// #output_3-26
 On ticket 10% saves $2.51
+// #output_3-26
+
 We just got the ticket
 The price was $25.12.
 We just got the ticket\nThe price was $25.12.

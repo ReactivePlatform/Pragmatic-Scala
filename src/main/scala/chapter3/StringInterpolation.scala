@@ -19,31 +19,31 @@ package chapter3
 object StringInterpolation extends App {
   val discount = 10
 
-  // #snip
+  // #snip_3-21
   val message = s"A discount of $discount% has been applied"
-  // #snip
+  // #snip_3-21
 
   println(message)
 
   {
-    // #snip
+    // #snip_3-22
     var price = 90
     val totalPrice = s"The amount of discount is ${price * discount / 100} dollars"
-    // #snip
+    // #snip_3-22
 
     println(totalPrice)
   }
 
   {
     var price = 90
-    // #snip
+    // #snip_3-23
     val totalPrice = s"The amount of discount is $$${price * discount / 100}"
-    // #snip
+    // #snip_3-23
     println(totalPrice)
   }
 
   {
-    // #snip
+    // #snip_3-24
     val discount = 10
     var price = 100
     val totalPrice =
@@ -52,41 +52,41 @@ object StringInterpolation extends App {
 
     price = 50
     println(totalPrice)
-    // #snip
+    // #snip_3-24
   }
 
   {
-    // #snip
+    // #snip_3-25
     val product = "ticket"
     val price = 25.12
     val discount = 10
     println(s"On $product $discount% saves $$${price * discount / 100.00}")
-    // #snip
+    // #snip_3-25
   }
 
   {
     val product = "ticket"
     val price = 25.12
     val discount = 10
-    // #snip
+    // #snip_3-26
     println(f"On $product $discount%% saves $$${price * discount / 100.00}%2.2f")
-    // #snip
+    // #snip_3-26
   }
 
   {
     val product = "ticket"
     val price = 25.12
-    // #snip
+    // #snip_3-27
     println(s"We just got the $product\nThe price was $$$price.")
-    // #snip
+    // #snip_3-27
   }
 
   {
     val product = "ticket"
     val price = 25.12
-    // #snip
+    // #snip_3-28
     println(raw"We just got the $product\nThe price was $$$price.")
-    // #snip
+    // #snip_3-28
   }
 
 }

@@ -17,9 +17,9 @@
 package chapter3
 
 object SerialAssignments extends App {
+  // #snip
   var a = 1
   var b = 2
-  // #snip
   a = b = 3 //Error
   // #snip
 }

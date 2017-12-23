@@ -25,5 +25,4 @@ object MultiLine2 extends App {
   println(str)
   // #snip
 
-
 }

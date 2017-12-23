@@ -22,7 +22,7 @@ object MultipleAssignment2 extends App {
     ("Venkat", "Subramaniam", "venkats@agiledeveloper.com")
   }
 
-  val (firstName, lastName, _) = getPersonInfo(1)
+  val (firstName, lastName) = getPersonInfo(1)
   // #snip
 
 }
