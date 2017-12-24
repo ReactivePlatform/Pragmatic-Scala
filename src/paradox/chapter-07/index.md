@@ -24,6 +24,10 @@
 
 @@snip[代码清单7-6](../../main/scala/chapter7/UseFriend.scala){ #snip }
 
+*运行结果*
+
+@@snip[代码清单7-6运行结果](../../main/scala/chapter7/shoutput/RunUseFriend.output){ #output }
+
 ## 代码清单7-7
 
 @@snip[代码清单7-7](../../main/scala/chapter7/Cat.scala){ #snip }
@@ -32,9 +36,17 @@
 
 @@snip[代码清单7-8](../../test/scala/chapter7/UseCat.scala){ #snip }
 
+*编译结果*
+
+@@snip[代码清单7-8编译结果](../../main/scala/chapter7/shoutput/RunUseCat.output){ #output }
+
 ## 代码清单7-9
 
 @@snip[代码清单7-9](../../main/scala/chapter7/TreatCatAsFriend.scala){ #snip }
+
+*运行结果*
+
+@@snip[代码清单7-9运行结果](../../main/scala/chapter7/shoutput/RunTreatCatAsFriend.output){ #output }
 
 ## 代码清单7-10
 
@@ -52,6 +64,10 @@
 
 @@snip[代码清单7-13](../../main/scala/chapter7/Decorator.scala){ #snip_4 }
 
+*运行结果*
+
+@@snip[代码清单7-13运行结果](../../main/scala/chapter7/output/Decorator.output){ #output }
+
 ## 代码清单7-14
 
 @@snip[代码清单7-14](../../main/scala/chapter7/MethodBinding.scala){ #snip_1 }
@@ -67,3 +83,7 @@
 ## 代码清单7-17
 
 @@snip[代码清单7-17](../../main/scala/chapter7/MethodBinding.scala){ #snip_4 }
+
+*运行结果*
+
+@@snip[代码清单7-17运行结果](../../main/scala/chapter7/output/MethodBinding.output){ #output }

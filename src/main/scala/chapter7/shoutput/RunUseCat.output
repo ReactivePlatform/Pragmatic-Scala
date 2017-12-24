@@ -1,3 +1,4 @@
+// #output
 UseCat.scala:5: error: type mismatch;
  found   : Cat
  required: Friend
@@ -9,3 +10,5 @@ UseCat.scala:7: error: type mismatch;
   useFriend(alf) // ERROR
             ^
 two errors found
+// #output
+
