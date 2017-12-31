@@ -17,7 +17,7 @@
 package chapter9
 
 object ThingsAcceptor extends App {
-  // #snip_9-11
+  // #snip_9-13
   case class Apple()
   case class Orange()
   case class Book()
@@ -32,12 +32,12 @@ object ThingsAcceptor extends App {
       }
     }
   }
-  // #snip_9-11
+  // #snip_9-13
 
-  // #snip_9-12
+  // #snip_9-14
   ThingsAcceptor.acceptStuff(Apple())
   ThingsAcceptor.acceptStuff(Book())
   ThingsAcceptor.acceptStuff(Apple)
-  // #snip_9-12
+  // #snip_9-14
 
 }

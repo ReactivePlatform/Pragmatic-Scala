@@ -17,14 +17,14 @@
 package chapter9
 
 object TradeStock extends App {
-  //  #snip_9-8
+  //  #snip_9-10
   trait Trade
   case class Sell(stockSymbol: String, quantity: Int) extends Trade
   case class Buy(stockSymbol: String, quantity: Int) extends Trade
   case class Hedge(stockSymbol: String, quantity: Int) extends Trade
-  //  #snip_9-8
+  //  #snip_9-10
 
-  //  #snip_9-9
+  //  #snip_9-11
   object TradeProcessor {
     def processTransaction(request: Trade): Unit = {
       request match {
@@ -38,13 +38,13 @@ object TradeStock extends App {
       }
     }
   }
-  //  #snip_9-9
+  //  #snip_9-11
 
-  //  #snip_9-10
+  //  #snip_9-12
   TradeProcessor.processTransaction(Sell("GOOG", 500))
   TradeProcessor.processTransaction(Buy("GOOG", 700))
   TradeProcessor.processTransaction(Sell("GOOG", 1000))
   TradeProcessor.processTransaction(Buy("GOOG", 3000))
-  //  #snip_9-10
+  //  #snip_9-12
 
 }

@@ -17,7 +17,7 @@
 package chapter9
 
 object ThingsAcceptor2 extends App {
-  // #snip_9-13
+  // #snip
   abstract class Thing
   case class Apple() extends Thing
 
@@ -31,6 +31,6 @@ object ThingsAcceptor2 extends App {
   }
 
   ThingsAcceptor.acceptStuff(Apple) //error: type mismatch;
-  // #snip_9-13
+  // #snip
 
 }

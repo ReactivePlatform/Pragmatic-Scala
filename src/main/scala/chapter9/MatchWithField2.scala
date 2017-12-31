@@ -22,7 +22,9 @@ object MatchWithField2 extends App {
 
     def process(input: Int): Unit = {
       input match {
+        // #snip
         case `max` ⇒ println(s"You matched max $max")
+        // #snip
       }
     }
   }
