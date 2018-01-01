@@ -110,4 +110,4 @@
 
 *运行结果*
 
-@@snip[代码清单12-15运行结果](../../main/scala/chapter12/output/weather.output){ #snip_12-15_output }
+@@snip[代码清单12-15运行结果](../../main/scala/chapter12/output/weather.output){ #snip_12-16_output }
