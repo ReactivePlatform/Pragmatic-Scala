@@ -17,5 +17,7 @@
 package chapter10
 
 object ThreadSleep {
+  // #snip
   Thread.sleep(1000)
+  // #snip
 }
