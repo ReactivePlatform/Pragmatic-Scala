@@ -96,13 +96,17 @@
 
 @@snip[代码清单12-14](../../main/scala/chapter12/weather.scala){ #snip_12-14 }
 
-*运行结果*
-
-@@snip[代码清单12-14运行结果](../../main/scala/chapter12/output/weather.output){ #snip_12-14_output }
-
 ## 代码清单12-15
 
 @@snip[代码清单12-15](../../main/scala/chapter12/weather.scala){ #snip_12-15 }
+
+*运行结果*
+
+@@snip[代码清单12-15运行结果](../../main/scala/chapter12/output/weather.output){ #snip_12-15_output }
+
+## 代码清单12-16
+
+@@snip[代码清单12-16](../../main/scala/chapter12/weather.scala){ #snip_12-16 }
 
 *运行结果*
 
