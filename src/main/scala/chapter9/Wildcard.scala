@@ -15,7 +15,6 @@
  */
 
 package chapter9
-import chapter9.Wildcard.DayOfWeek
 
 object Wildcard extends App {
   // #snip
