@@ -56,7 +56,7 @@
 
 @@snip[代码清单13-7](../../main/scala/chapter13/HollywoodActor4.scala){ #snip }
 
-## 代码清单13-7
+## 代码清单13-8
 
 @@snip[代码清单13-8](../../main/scala/chapter13/UseActor.scala){ #snip }
 
@@ -75,6 +75,10 @@
 ## 代码清单13-11
 
 @@snip[代码清单13-11](../../main/scala/chapter13/CountFiles.scala){ #snip }
+
+*执行命令*
+
+@@snip[代码清单13-1运行命名](../../main/scala/chapter13/RunCountFiles.sh){ #snip }
 
 *运行结果*
 
