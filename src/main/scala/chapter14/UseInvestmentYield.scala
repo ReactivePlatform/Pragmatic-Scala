@@ -19,8 +19,8 @@ package chapter14
 import chapter14.usingjava.{ Investment, InvestmentType }
 
 object UseInvestmentYield extends App {
-  val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)
   // #snip
+  val investment = new Investment("XYZ Corporation", InvestmentType.STOCK)
   val theYield1 = investment.`yield`
   val theYield2 = investment.`yield`()
   // #snip

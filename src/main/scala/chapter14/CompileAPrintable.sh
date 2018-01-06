@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
+// #snip_1
 mkdir -p classes
 scalac -d classes Printable.scala
-echo "
+// #snip_1
+
+// #snip_2
 javap classes/Printable.class classes/Printable\$class.class
-echo "
-echo "
-echo "
+// #snip_2
+
+// #snip_3
 javac -d classes -classpath $SCALA_HOME/lib/scala-library.jar:classes \
   APrintable.java
 java -classpath $SCALA_HOME/lib/scala-library.jar:classes APrintable
-echo "
-echo "
+// #snip_3

@@ -8,9 +8,17 @@
 
 @@snip[代码清单14-2](../../main/scala/chapter14/Dog.scala){ #snip }
 
+*执行命令*
+
+@@snip[代码清单14-2运行命令](../../main/scala/chapter14/CompileAndCreateJar.sh){ #snip }
+
 ## 代码清单14-3
 
 @@snip[代码清单14-3](../../main/scala/chapter14/usePerson.scala){ #snip }
+
+*执行命令*
+
+@@snip[代码清单14-3运行命令](../../main/scala/chapter14/RunUsePerson.sh){ #snip }
 
 *运行结果*
 
@@ -20,6 +28,18 @@
 
 @@snip[代码清单14-4](../../main/scala/chapter14/UsePersonClass.scala){ #snip }
 
+*执行命令1*
+
+@@snip[代码清单14-4运行命令](../../main/scala/chapter14/RunUsePersonClass.sh){ #snip_1 }
+
+*执行命令2*
+
+@@snip[代码清单14-4运行命令](../../main/scala/chapter14/RunUsePersonClass.sh){ #snip_2 }
+
+*执行命令3*
+
+@@snip[代码清单14-4运行命令](../../main/scala/chapter14/RunUsePersonClassUsingJava.sh){ #snip }
+
 *运行结果*
 
 @@snip[代码清单14-4运行结果](../../main/scala/chapter14/shoutput/RunUsePersonClass.output){ #snip_14-4_output }
@@ -27,6 +47,10 @@
 ## 代码清单14-5
 
 @@snip[代码清单14-5](../../main/scala/chapter14/UseJDKClass.scala){ #snip }
+
+*执行命令*
+
+@@snip[代码清单14-5运行命令](../../main/scala/chapter14/RunUseJDKClass.sh){ #snip }
 
 *运行结果*
 
@@ -48,6 +72,14 @@
 
 @@snip[代码清单14-8](../../main/scala/chapter14/UseInvestment.scala){ #snip }
 
+*执行命令1*
+
+@@snip[代码清单14-8运行命令](../../main/scala/chapter14/RunUseInvestment.sh){ #snip }
+
+*执行命令2*
+
+@@snip[代码清单14-8运行命令](../../main/scala/chapter14/RunUseInvestment2.sh){ #snip }
+
 ## 代码清单14-9
 
 @@snip[代码清单14-9](../../test/scala/chapter14/UseInvestmentError.scala){ #snip }
@@ -64,6 +96,10 @@
 
 @@snip[代码清单14-12](../../main/scala/chapter14/UseCar.java){ #snip }
 
+*执行命令*
+
+@@snip[代码清单14-12运行命令](../../main/scala/chapter14/RunUseCar.sh){ #snip }
+
 ## 代码清单14-13
 
 @@snip[代码清单14-13](../../main/scala/chapter14/Writable.scala){ #snip }
@@ -76,6 +112,14 @@
 
 @@snip[代码清单14-15](../../main/scala/chapter14/Printable.scala){ #snip }
 
+*执行命令1*
+
+@@snip[代码清单14-15运行命令](../../main/scala/chapter14/CompileAPrintable.sh){ #snip_1 }
+
+*执行命令2*
+
+@@snip[代码清单14-15运行命令](../../main/scala/chapter14/CompileAPrintable.sh){ #snip_2 }
+
 *运行结果*
 
 @@snip[代码清单14-15运行结果](../../main/scala/chapter14/shoutput/CompileAPrintable.output){ #snip_14-15_output }
@@ -83,6 +127,10 @@
 ## 代码清单14-16
 
 @@snip[代码清单14-16](../../main/scala/chapter14/APrintable.java){ #snip }
+
+*执行命令*
+
+@@snip[代码清单14-16运行命令](../../main/scala/chapter14/CompileAPrintable.sh){ #snip_3 }
 
 *运行结果*
 
@@ -95,6 +143,11 @@
 ## 代码清单14-18
 
 @@snip[代码清单14-18](../../main/scala/chapter14/SingleUser.java){ #snip }
+
+*运行结果*
+
+@@snip[代码清单14-18运行结果](../../main/scala/chapter14/shoutput/RunSingle.output){ #output }
+
 
 ## 代码清单14-19
 
