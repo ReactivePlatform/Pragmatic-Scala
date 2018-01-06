@@ -98,7 +98,7 @@
 
 @@snip[代码清单15-13运行结果](../../main/scala/chapter15/output/ReadWriteXML.output){ #snip_15-13_output }
 
-*运行结果*
+*示例文件*
 
 @@snip[调用雅虎财经的运行结果](../../main/scala/chapter15/output/GOOG.out){ #snip_output }
 
