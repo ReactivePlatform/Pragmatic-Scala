@@ -1,4 +1,4 @@
-// #snip_16-3_output
+// #output
 Run starting. Expected test count is: 4
 WordScorerTest:
 score
@@ -14,4 +14,4 @@ Total number of tests run: 4
 Suites: completed 1, aborted 0
 Tests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0
 All tests passed.
-// #snip_16-3_output
+// #output

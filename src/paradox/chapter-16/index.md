@@ -4,6 +4,10 @@
 
 @@snip[代码清单16-1](../../main/scala/chapter16/UsingJUnit.scala){ #snip }
 
+*执行命令*
+
+@@snip[代码清单16-1编译命令](../../main/scala/chapter16/RunUsingJUnit.sh){ #snip }
+
 *运行结果*
 
 @@snip[代码清单16-1运行结果](../../main/scala/chapter16/shoutput/RunUsingJUnit.output){ #snip_16-1_output }
@@ -11,6 +15,10 @@
 ## 代码清单16-2
 
 @@snip[代码清单16-2](../../main/scala/chapter16/UsingScalaTest.scala){ #snip }
+
+*执行命令*
+
+@@snip[代码清单16-2编译命令](../../main/scala/chapter16/RunUsingScalaTest.sh){ #snip }
 
 *运行结果*
 
@@ -24,9 +32,13 @@
 
 @@snip[代码清单16-4](../../main/scala/chapter16/withoutmock/WordScorer.scala){ #snip }
 
+*执行命令*
+
+@@snip[代码清单16-4编译命令](../../main/scala/chapter16/withoutmock/RunWordScorerTest.sh){ #snip }
+
 *运行结果*
 
-@@snip[代码清单16-3运行结果](../../main/scala/chapter16/withoutmock/shoutput/RunWordScorerTest.output){ #snip_16-3_output }
+@@snip[代码清单16-4运行结果](../../main/scala/chapter16/withoutmock/shoutput/RunWordScorerTest.output){ #output }
 
 ## 代码清单16-5
 
@@ -40,19 +52,23 @@
 
 @@snip[代码清单16-7](../../main/scala/chapter16/withmock/WordScorer.scala){ #snip }
 
+*执行命令*
+
+@@snip[代码清单16-7编译命令](../../main/scala/chapter16/withmock/RunWordScorerTest.sh){ #snip }
+
 *运行结果*
 
-@@snip[代码清单16-6运行结果](../../main/scala/chapter16/withmock/shoutput/RunWordScorerTest.output){ #snip_16-6_output }
-
-## 代码清单16-7
-
-@@snip[代码清单16-7](../../main/scala/chapter16/withmock2/WordScorerTest.scala){ #snip }
+@@snip[代码清单16-7运行结果](../../main/scala/chapter16/withmock/shoutput/RunWordScorerTest.output){ #output }
 
 ## 代码清单16-8
 
-@@snip[代码清单16-8](../../main/scala/chapter16/withmock2/WordScorer.scala){ #snip }
+@@snip[代码清单16-8](../../main/scala/chapter16/withmock2/WordScorerTest.scala){ #snip }
+
+## 代码清单16-9
+
+@@snip[代码清单16-9](../../main/scala/chapter16/withmock2/WordScorer.scala){ #snip }
 
 *运行结果*
 
-@@snip[代码清单16-7运行结果](../../main/scala/chapter16/withmock2/shoutput/RunWordScorerTest.output){ #snip_16-7_output }
+@@snip[代码清单16-9运行结果](../../main/scala/chapter16/withmock2/shoutput/RunWordScorerTest.output){ #output }
 
