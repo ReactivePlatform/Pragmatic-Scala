@@ -12,10 +12,17 @@
 
 @@snip[代码清单5-3](../../main/scala/chapter5/DefiningVariable.scala){ #snip_5-3 }
 
+*运行结果*
+
+@@snip[代码清单5-3运行结果](../../main/scala/chapter5/output/DefiningVariable.output){ #output }
+
 ## 代码清单5-4
 
 @@snip[代码清单5-4](../../main/scala/chapter5/TypeInference.scala){ #snip }
 
+*使用命令*
+
+@@snip[代码清单5-4编译命令](../../main/scala/chapter5/RunTypeInference.sh){ #snip }
 
 *反编译结果*
 
@@ -45,7 +52,7 @@
 
 *运行结果*
 
-@@snip[代码清单5-7运行结果](../../main/scala/chapter5/output/RunGenerics2.output){ #output }
+@@snip[代码清单5-7运行结果](../../main/scala/chapter5/output/RunGenerics3.output){ #output }
 
 ## 代码清单5-8
 
@@ -107,6 +114,10 @@
 ## 代码清单5-17
 
 @@snip[代码清单5-17](../../test/scala/chapter5/OKJava.java){ #snip }
+
+*绕开限制*
+
+@@snip[代码清单5-17](../../test/scala/chapter5/OKJava.java){ #snip_1 }
 
 *运行结果*
 
@@ -211,6 +222,10 @@
 ## 代码清单5-36
 
 @@snip[代码清单5-36](../../main/scala/chapter5/MyInterpolator.scala){ #snip }
+
+*使用命令*
+
+@@snip[代码清单5-36编译命令](../../main/scala/chapter5/RunMask.sh){ #snip }
 
 *运行结果*
 

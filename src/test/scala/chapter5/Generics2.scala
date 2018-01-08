@@ -22,6 +22,8 @@ object Generics2 extends App {
 
   var list1 = new util.ArrayList[Int]
   var list2 = new util.ArrayList
+  list2.add(???)
+
   list2 = list1 // Compilation Error
   // #snip
 

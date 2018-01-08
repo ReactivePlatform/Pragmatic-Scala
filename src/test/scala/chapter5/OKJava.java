@@ -10,6 +10,8 @@ public class OKJava {
     ArrayList<Object> list2 = list; // Compilation error
       // #snip
 
-      ArrayList list3 = list;
+      //#snip_1
+    ArrayList list3 = list;
+      //#snip_1
   }
 }

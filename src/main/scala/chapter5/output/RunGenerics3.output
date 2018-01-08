@@ -1,3 +1,4 @@
+// #output
 Generics3.scala:11: error: type mismatch;
  found   : java.util.ArrayList[Int]
  required: java.util.ArrayList[Any]
@@ -7,3 +8,5 @@ You may wish to investigate a wildcard type such as `_ <: Any`. (SLS
 list2 = list1 // Compilation Error
         ^
 one error found
+// #output
+
