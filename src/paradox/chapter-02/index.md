@@ -36,6 +36,23 @@
 
 @@snip[代码清单2-8](../../main/scala/chapter2/HelloWorld.scala){ #snip }
 
+## 代码清单2-9
+
+@@snip[代码清单2-9](../../main/scala/chapter2/hello.sh){ #snip }
+
 *运行结果*
 
-@@snip[代码清单2-8运行结果](../../main/scala/chapter2/shoutput/RunSample.output){ #output }
+@@snip[代码清单2-9运行结果](../../main/scala/chapter2/shoutput/RunHello.output){ #output }
+
+## 代码清单2-10
+
+@@snip[代码清单2-10](../../main/scala/chapter2/RunScala.bat){ #snip }
+
+## 代码清单2-11
+
+@@snip[代码清单2-11](../../main/scala/chapter2/Sample.scala){ #snip }
+
+*运行结果*
+
+@@snip[代码清单2-11运行结果](../../main/scala/chapter2/shoutput/RunSample.output){ #output }
+
