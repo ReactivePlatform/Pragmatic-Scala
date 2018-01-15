@@ -32,6 +32,6 @@
 
 @@snip[代码清单1-6](../../main/scala/chapter1/FindMaxFunctional.scala){ #snip }
 
-## 代码清单1-6
+## 代码清单1-7
 
 @@snip[代码清单1-7](../../main/scala/chapter1/ScalaDoubleValues.scala){ #snip }
