@@ -50,7 +50,7 @@
 
 ## 代码清单2-11
 
-@@snip[代码清单2-11](../../main/scala/chapter2/Sample.scala){ }
+@@snip[代码清单2-11](../../main/scala/chapter2/Sample.scala){ #snip }
 
 *运行结果*
 
