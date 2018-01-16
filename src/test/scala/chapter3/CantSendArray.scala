@@ -24,5 +24,4 @@ object CantSendArray extends App {
   max(numbers) // type mismatch error
   // #snip
 
-
 }

@@ -26,7 +26,7 @@ object Inject3 extends App {
   val array = Array(2, 3, 5, 1, 6, 4)
 
   // #snip
-  val sum =  inject(array, 0) {(carryOver, elem) => carryOver + elem}
+  val sum = inject(array, 0) { (carryOver, elem) ⇒ carryOver + elem }
   // #snip
 
   println(sum)
