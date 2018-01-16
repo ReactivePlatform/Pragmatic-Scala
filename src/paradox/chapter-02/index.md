@@ -37,6 +37,7 @@
 @@snip[代码清单2-8](../../main/scala/chapter2/hello.sh){ }
 
 *运行命令*
+
 @@snip[代码清单2-8](../../main/scala/chapter2/RunHello.sh){ #snip }
 
 *运行结果*
