@@ -42,7 +42,7 @@
 
 ## 代码清单11-7
 
-@@snip[代码清单11-7](../../main/scala/chapter11/shoutput/ViewJar1.output){ #output }
+@@snip[代码清单11-7](../../main/scala/chapter11/shoutput/ViewJar2.output){ #output }
 
 ## 代码清单11-8
 

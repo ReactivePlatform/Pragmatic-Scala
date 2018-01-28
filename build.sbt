@@ -37,8 +37,8 @@ ParadoxMaterialThemePlugin.paradoxMaterialThemeSettings(Paradox)
 
 
 paradoxProperties in Compile ++= Map(
-  "project.name" -> "PragmaticScala",
-  "github.base_url" -> "https://github.com/ReactivePlatform/Pragmatic-Scala"
+  "project.name" -> "NettyInAction",
+  "github.base_url" -> "https://github.com/ReactivePlatform/netty-in-action-scala"
 )
 
 paradoxMaterialTheme in Compile ~= {
