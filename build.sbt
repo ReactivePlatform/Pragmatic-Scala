@@ -22,6 +22,8 @@ enablePlugins(GhpagesPlugin)
 
 enablePlugins(AutomateHeaderPlugin)
 
+(sources in Test) := Nil
+
 git.remoteRepo := "git@github.com:ReactivePlatform/Pragmatic-Scala.git"
 
 GitKeys.gitReader in ThisProject := baseDirectory(base => new DefaultReadableGit(base)).value

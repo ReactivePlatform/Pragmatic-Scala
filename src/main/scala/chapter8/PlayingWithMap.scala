@@ -32,9 +32,9 @@ object PlayingWithMap extends App {
   // #snip_8-10
   val filterNameStartWithDAndPragprogInFeed = feeds filter { element ⇒
     val (key, value) = element
-    (key startsWith "D") && (value contains "pragprog")
+    (key startsWith "D") && (value contains "pragdave")
   }
-  print("# of feeds with auth name D* and pragprog in URL: ")
+  print("# of feeds with auth name D* and pragdave in URL: ")
   println(filterNameStartWithDAndPragprogInFeed.size)
   // #snip_8-10
 
