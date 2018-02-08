@@ -18,7 +18,7 @@ Last Feed In Appended: agilelearner.com
 
 // #snip_8-20_output
 Feeds with blog: blog.toolshed.com, blog.agiledeveloper.com
-All feeds have com: true
+All feeds have com: false
 All feeds have dave: false
 Any feed has dave: true
 Any feed has bill: false
