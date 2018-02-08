@@ -25,17 +25,17 @@ Any feed has bill: false
 // #snip_8-20_output
 
 // #snip_8-21_output
-Feed url lengths: 17, 21, 23
+Feed url lengths: 17, 11, 23
 // #snip_8-21_output
 
 // #snip_8-22_output
-Total length of feed urls: 61
+Total length of feed urls: 51
 // #snip_8-22_output
 
 // #snip_8-23_output
-Total length of feed urls: 61
+Total length of feed urls: 51
 // #snip_8-23_output
 
 // #snip_8-24_output
-Total length of feed urls: 61
+Total length of feed urls: 51
 // #snip_8-24_output
