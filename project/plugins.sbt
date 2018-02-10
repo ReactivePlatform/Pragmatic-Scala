@@ -17,3 +17,6 @@ addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.5.7")
 addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0")
 
 addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.3.3")
+
+addSbtPlugin("com.dwijnand" % "sbt-reloadquick" % "1.0.0")
+
