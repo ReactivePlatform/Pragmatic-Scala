@@ -1,0 +1,17 @@
+<symbols>
+  <symbol ticker="AAPL"><units>200</units></symbol>
+  <symbol ticker="ADBE"><units>125</units></symbol>
+  <symbol ticker="ALU"><units>150</units></symbol>
+  <symbol ticker="AMD"><units>150</units></symbol>
+  <symbol ticker="CSCO"><units>250</units></symbol>
+  <symbol ticker="HPQ"><units>225</units></symbol>
+  <symbol ticker="IBM"><units>215</units></symbol>
+  <symbol ticker="INTC"><units>160</units></symbol>
+  <symbol ticker="MSFT"><units>190</units></symbol>
+  <symbol ticker="NSM"><units>200</units></symbol>
+  <symbol ticker="ORCL"><units>200</units></symbol>
+  <symbol ticker="SYMC"><units>230</units></symbol>
+  <symbol ticker="TXN"><units>190</units></symbol>
+  <symbol ticker="VRSN"><units>200</units></symbol>
+  <symbol ticker="XRX"><units>240</units></symbol>
+</symbols> 

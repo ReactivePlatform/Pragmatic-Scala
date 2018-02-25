@@ -1,0 +1,1 @@
+class NoFlyException extends Exception {}
