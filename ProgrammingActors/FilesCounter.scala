@@ -12,7 +12,7 @@ class FilesCounter extends Actor {
   val fileExplorers: ActorRef =
     context.actorOf(RoundRobinPool(100).props(Props[FileExplorer]))
 
-  def receive: PartialFunction[Any, Unit] = {
+  def receive: Receive = {
     case dirName: String =>
       pending = pending + 1
       fileExplorers ! dirName

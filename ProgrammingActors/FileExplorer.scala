@@ -2,7 +2,7 @@ import akka.actor._
 import java.io._
 
 class FileExplorer extends Actor {
-  def receive: PartialFunction[Any, Unit] = {
+  def receive: Receive = {
     case dirName: String =>
       val file = new File(dirName)
       val children = file.listFiles()
