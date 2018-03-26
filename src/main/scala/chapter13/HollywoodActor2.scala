@@ -21,7 +21,7 @@ import akka.actor._
 object HollywoodActor2 {
 
   class HollywoodActor() extends Actor {
-    def receive: PartialFunction[Any, Unit] = {
+    def receive: Receive = {
       // #snip
       case message ⇒ println(s"$message - ${Thread.currentThread}")
       // #snip

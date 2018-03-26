@@ -27,7 +27,7 @@ object HollywoodActor4 extends App {
   class HollywoodActor() extends Actor {
     val messagesCount: mutable.Map[String, Int] = mutable.Map()
 
-    def receive: PartialFunction[Any, Unit] = {
+    def receive: Receive = {
       case Play(role) ⇒
         val currentCount = messagesCount.getOrElse(role, 0)
         messagesCount.update(role, currentCount + 1)
