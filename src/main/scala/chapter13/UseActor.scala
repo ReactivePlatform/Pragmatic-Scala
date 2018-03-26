@@ -20,12 +20,16 @@ package chapter13
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
-import chapter13.HollywoodActor4.{ Play, ReportCount }
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
 object UseActor extends App {
+
+  case class Play(role: String)
+
+  case class ReportCount(role: String)
+
   val system = ActorSystem("sample")
 
   val depp = system.actorOf(Props[HollywoodActor])
@@ -55,5 +59,10 @@ object UseActor extends App {
   val terminateFuture = system.terminate()
   Await.ready(terminateFuture, Duration.Inf)
 }
+
+case class Play(role: String)
+
+case class ReportCount(role: String)
+
 // #snip
 
