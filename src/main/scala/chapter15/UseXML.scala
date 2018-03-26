@@ -43,7 +43,7 @@ object UseXML extends App {
 
   //  #snip_15-8
   unitsNodes.head match {
-    case <units>{ numberOfUnits @ _* }</units> ⇒ println(s"Units: $numberOfUnits")
+    case <units>{ numberOfUnits }</units> ⇒ println(s"Units: $numberOfUnits")
   }
   //  #snip_15-8
 
