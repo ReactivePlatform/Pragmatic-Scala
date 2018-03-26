@@ -1,9 +1,6 @@
 import akka.actor._
 import akka.routing._
 
-import scala.concurrent.Await
-import scala.concurrent.duration.Duration
-
 class FilesCounter extends Actor {
   val start: Long = System.nanoTime
   var filesCount = 0L
@@ -25,8 +22,7 @@ class FilesCounter extends Actor {
         val end = System.nanoTime
         println(s"Files count: $filesCount")
         println(s"Time taken: ${(end - start) / 1.0e9} seconds")
-        val terminateFuture = context.system.terminate()
-        Await.ready(terminateFuture, Duration.Inf)
+        context.system.terminate()
       }
   }
 }
