@@ -18,7 +18,7 @@ unitsNodes.head match {
 }
 println("Ticker\tUnits")
 xmlFragment match {
-  case <symbols>{ symbolNodes @ _* }</symbols> =>
+  case <symbols>{ symbolNodes }</symbols> =>
     for (symbolNode @ <symbol>{ _* }</symbol> <- symbolNodes) {
       println("%-7s %s".format(
         symbolNode \ "@ticker", (symbolNode \ "units").text))
