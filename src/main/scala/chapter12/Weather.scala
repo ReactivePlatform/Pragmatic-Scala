@@ -16,15 +16,14 @@
 
 package chapter12
 
-object weather extends App {
+object Weather extends App {
   // #snip_12-12
   import scala.io.Source
   import scala.xml._
 
   def getWeatherData(city: String) = {
-    val url = "http://api.openweathermap.org/data/2.5/weather"
-
-    val response = Source.fromURL(s"$url?q=$city&units=imperial&mode=xml")
+    val response = Source.fromURL(
+      s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/weathers/$city.xml")
     val xmlResponse = XML.loadString(response.mkString)
     val cityName = (xmlResponse \\ "city" \ "@name").text
     val temperature = (xmlResponse \\ "temperature" \ "@value").text
@@ -49,10 +48,13 @@ object weather extends App {
       "Bangalore,india", "Brussels,belgium", "Reykjavik,iceland")
 
     val start = System.nanoTime
-    getData(cities) sortBy { _._1 } foreach printWeatherData
+    getData(cities) sortBy {
+      _._1
+    } foreach printWeatherData
     val end = System.nanoTime
     println(s"Time taken: ${(end - start) / 1.0e9} sec")
   }
+
   // #snip_12-14
 
   // #snip_12-15

@@ -86,19 +86,19 @@
 
 ## 代码清单12-12
 
-@@snip[代码清单12-12](../../main/scala/chapter12/weather.scala){ #snip_12-12 }
+@@snip[代码清单12-12](../../main/scala/chapter12/Weather.scala){ #snip_12-12 }
 
 ## 代码清单12-13
 
-@@snip[代码清单12-13](../../main/scala/chapter12/weather.scala){ #snip_12-13 }
+@@snip[代码清单12-13](../../main/scala/chapter12/Weather.scala){ #snip_12-13 }
 
 ## 代码清单12-14
 
-@@snip[代码清单12-14](../../main/scala/chapter12/weather.scala){ #snip_12-14 }
+@@snip[代码清单12-14](../../main/scala/chapter12/Weather.scala){ #snip_12-14 }
 
 ## 代码清单12-15
 
-@@snip[代码清单12-15](../../main/scala/chapter12/weather.scala){ #snip_12-15 }
+@@snip[代码清单12-15](../../main/scala/chapter12/Weather.scala){ #snip_12-15 }
 
 *运行结果*
 
@@ -106,7 +106,7 @@
 
 ## 代码清单12-16
 
-@@snip[代码清单12-16](../../main/scala/chapter12/weather.scala){ #snip_12-16 }
+@@snip[代码清单12-16](../../main/scala/chapter12/Weather.scala){ #snip_12-16 }
 
 *运行结果*
 
