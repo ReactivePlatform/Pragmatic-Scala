@@ -17,6 +17,7 @@
 package chapter15
 
 object FindTotalWorthConcurrent extends App {
+
   val symbolsAndUnits = StockPriceFinder.getTickersAndUnits
 
   println("Ticker  Units  Closing Price($) Total Value($)")
@@ -32,13 +33,13 @@ object FindTotalWorthConcurrent extends App {
     (symbol, units, latestClosingPrice, value)
   }
 
-  val netWorth = (0.0 /: valuesAndWorth) { (worth, valueAndWorth) ⇒
+  val netWorth = (BigDecimal(0.0D) /: valuesAndWorth) { (worth, valueAndWorth) ⇒
     val (_, _, _, value) = valueAndWorth
     worth + value
   }
   val endTime = System.nanoTime()
 
-  valuesAndWorth.toList.sortBy { _._1 }.foreach { valueAndWorth ⇒
+  valuesAndWorth.toList.sortBy(_._1).foreach { valueAndWorth ⇒
     val (symbol, units, latestClosingPrice, value) = valueAndWorth
     println(f"$symbol%7s  $units%5d  $latestClosingPrice%15.2f  $value%.2f")
   }

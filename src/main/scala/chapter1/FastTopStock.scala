@@ -17,26 +17,43 @@
 package chapter1
 
 object FastTopStock extends App {
+
   import scala.io
 
-  def getYearEndClosingPrice(symbol: String, year: Int) = {
-    val url = s"http://ichart.finance.yahoo.com/table.csv?s=" +
-      s"$symbol&a=11&b=01&c=$year&d=11&e=31&f=$year&g=m"
+  // #snip_1-2
+  case class Record(year: Int, month: Int, date: Int, closePrice: BigDecimal)
+
+  def getYearEndClosingPrice(symbol: String, year: Int): BigDecimal = {
+    val url = s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/stocks/daily/daily_$symbol.csv"
 
     val data = io.Source.fromURL(url).mkString
-    val price = data.split("\n")(1).split(",")(4).toDouble
-    price
+    val maxClosePrize = data.split("\n")
+      .filter(record ⇒ record.startsWith(s"$year-12"))
+      .map(record ⇒ {
+        val Array(timestamp, open, high, low, close, volume) = record.split(",")
+        val Array(year, month, date) = timestamp.split("-")
+        Record(year.toInt, month.toInt, date.toInt, BigDecimal(close.trim))
+      })
+      .sortBy(_.date)(Ordering[Int].reverse)
+      .take(1)
+      .map(_.closePrice)
+      .head
+    maxClosePrize
   }
 
-  val symbols = List("AMD", "AAPL", "AMZN", "IBM", "ORCL", "MSFT")
-  val year = 2014
+  // #snip_1-2
 
+  // #snip_1-1
+  val symbols = List("AMD", "AAPL", "AMZN", "IBM", "ORCL", "MSFT")
+  val year = 2017
+
+  // #snip
   val (topStock, topPrice) =
-    // #snip
     symbols.par.map { ticker ⇒ (ticker, getYearEndClosingPrice(ticker, year)) }
       .maxBy { stockPrice ⇒ stockPrice._2 }
   // #snip
 
   printf(s"Top stock of $year is $topStock closing at price $$$topPrice")
+  // #snip_1-1
 
 }

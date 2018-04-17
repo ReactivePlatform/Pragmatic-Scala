@@ -17,19 +17,34 @@
 package chapter15
 
 //  #snip
-import java.util.Calendar
 
 object StockPriceFinder {
-  def getLatestClosingPrice(symbol: String): Double = {
-    val url = "http://ichart.finance.yahoo.com/table.csv?s=" +
-      symbol + "&a=00&b=01&c=" + Calendar.getInstance().get(Calendar.YEAR)
-    val data = scala.io.Source.fromURL(url).mkString
-    val mostRecentData = data.split("\n")(1)
-    val closingPrice = mostRecentData.split(",")(4).toDouble
-    closingPrice
+
+  import scala.io
+
+  case class Record(year: Int, month: Int, date: Int, closePrice: BigDecimal)
+
+  def getLatestClosingPrice(symbol: String): BigDecimal = {
+    val url = s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/stocks/daily/daily_$symbol.csv"
+
+    val data = io.Source.fromURL(url).mkString
+    val latestClosePrize = data.split("\n")
+      .slice(1, 2)
+      .map(record ⇒ {
+        val Array(timestamp, open, high, low, close, volume) = record.split(",")
+        val Array(year, month, date) = timestamp.split("-")
+        Record(year.toInt, month.toInt, date.toInt, BigDecimal(close.trim))
+      })
+      .map(_.closePrice)
+      .head
+    latestClosePrize
   }
+
   def getTickersAndUnits: Map[String, Int] = {
-    val stocksAndUnitsXML = scala.xml.XML.load("stocks.xml")
+    val classLoader = this.getClass.getClassLoader
+    val stocksXMLInputStream = classLoader.getResourceAsStream("stocks.xml")
+    //或者来自于文件
+    val stocksAndUnitsXML = scala.xml.XML.load(stocksXMLInputStream)
     (Map[String, Int]() /: (stocksAndUnitsXML \ "symbol")) {
       (map, symbolNode) ⇒
         val ticker = (symbolNode \ "@ticker").toString
