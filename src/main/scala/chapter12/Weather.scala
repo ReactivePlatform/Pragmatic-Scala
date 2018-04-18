@@ -48,9 +48,7 @@ object Weather extends App {
       "Bangalore,india", "Brussels,belgium", "Reykjavik,iceland")
 
     val start = System.nanoTime
-    getData(cities) sortBy {
-      _._1
-    } foreach printWeatherData
+    getData(cities).sortBy(_._1).foreach(printWeatherData)
     val end = System.nanoTime
     println(s"Time taken: ${(end - start) / 1.0e9} sec")
   }
