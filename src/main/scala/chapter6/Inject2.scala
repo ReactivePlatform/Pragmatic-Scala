@@ -21,7 +21,7 @@ object Inject2 extends App {
   val array = Array(2, 3, 5, 1, 6, 4)
 
   // #snip_6-10
-  val sum = array.foldLeft(0) { (sum, elem) ⇒ sum + elem } //Could be replaced with sum
+  val sum = array.foldLeft(0)((sum, elem) ⇒ sum + elem) //可以被替换为对sum方法的调用
   val max = array.foldLeft(Integer.MIN_VALUE) { (large, elem) ⇒
     Math.max(large, elem)
   }

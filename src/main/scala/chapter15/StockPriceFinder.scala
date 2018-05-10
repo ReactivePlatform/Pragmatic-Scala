@@ -19,15 +19,16 @@ package chapter15
 //  #snip
 
 object StockPriceFinder {
-
-  import scala.io
+  import scala.io.Source
 
   case class Record(year: Int, month: Int, date: Int, closePrice: BigDecimal)
 
   def getLatestClosingPrice(symbol: String): BigDecimal = {
-    val url = s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/stocks/daily/daily_$symbol.csv"
+    val url = s"https://raw.githubusercontent.com/ReactivePlatform/" +
+      s"Pragmatic-Scala-StaticResources/master/src/main/resources/" +
+      s"stocks/daily/daily_$symbol.csv"
 
-    val data = io.Source.fromURL(url).mkString
+    val data = Source.fromURL(url).mkString
     val latestClosePrize = data.split("\n")
       .slice(1, 2)
       .map(record ⇒ {
@@ -53,5 +54,6 @@ object StockPriceFinder {
     }
   }
 }
+
 //  #snip
 

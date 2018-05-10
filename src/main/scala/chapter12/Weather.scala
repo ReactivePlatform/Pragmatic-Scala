@@ -23,7 +23,9 @@ object Weather extends App {
 
   def getWeatherData(city: String) = {
     val response = Source.fromURL(
-      s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/weathers/$city.xml")
+      s"https://raw.githubusercontent.com/ReactivePlatform/" +
+        s"Pragmatic-Scala-StaticResources/master/src/main/resources/" +
+        s"weathers/$city.xml")
     val xmlResponse = XML.loadString(response.mkString)
     val cityName = (xmlResponse \\ "city" \ "@name").text
     val temperature = (xmlResponse \\ "temperature" \ "@value").text

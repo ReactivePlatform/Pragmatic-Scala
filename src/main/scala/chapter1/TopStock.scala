@@ -24,7 +24,9 @@ object TopStock extends App {
   case class Record(year: Int, month: Int, date: Int, closePrice: BigDecimal)
 
   def getYearEndClosingPrice(symbol: String, year: Int): BigDecimal = {
-    val url = s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/stocks/daily/daily_$symbol.csv"
+    val url = s"https://raw.githubusercontent.com/ReactivePlatform/" +
+      s"Pragmatic-Scala-StaticResources/master/src/main/resources/" +
+      s"stocks/daily/daily_$symbol.csv"
 
     val data = io.Source.fromURL(url).mkString
     val maxClosePrize = data.split("\n")

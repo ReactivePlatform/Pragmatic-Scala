@@ -30,7 +30,8 @@ object Static extends App {
       "yellow" -> new Marker("yellow"))
 
     def supportedColors: Iterable[String] = markers.keys
-    def apply(color: String): Marker = markers.getOrElseUpdate(color, new Marker(color))
+    def apply(color: String): Marker = markers.getOrElseUpdate(
+      color, op = new Marker(color))
   }
   println(s"Supported colors are : ${Marker.supportedColors}")
   println(Marker("blue"))
