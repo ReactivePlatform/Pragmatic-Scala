@@ -1,10 +1,9 @@
-import com.typesafe.sbt.SbtGit.GitKeys
 import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 import scalariform.formatter.preferences._
 
 name := "PragmaticScala"
 
-version := "1.0"
+version := "1.0.0"
 
 scalaVersion := "2.12.4"
 
@@ -28,8 +27,6 @@ scmInfo := Some(ScmInfo(url(
 
 git.remoteRepo := scmInfo.value.get.connection
 
-GitKeys.gitBranch in ThisProject := Some("sbt")
-
 excludeFilter in ghpagesCleanSite :=
   new FileFilter{
     def accept(f: File) = (ghpagesRepository.value / "CNAME").getCanonicalPath == f.getCanonicalPath
@@ -41,15 +38,15 @@ ParadoxMaterialThemePlugin.paradoxMaterialThemeSettings(Paradox)
 
 
 paradoxProperties in Compile ++= Map(
-  "project.name" -> "NettyInAction",
-  "github.base_url" -> "https://github.com/ReactivePlatform/netty-in-action-scala"
+  "project.name" -> "Pragmatic-Scala",
+  "github.base_url" -> "https://github.com/ReactivePlatform/Pragmatic-Scala"
 )
 
 paradoxMaterialTheme in Compile ~= {
   _.withColor("red", "pink")
     .withLogoIcon("cloud")
-    .withCopyright("Copyleft © 2017 pragmatic-scala.reactiveplatform.xyz")
-    .withRepository(uri("https://github.com/ReactivePlatform/Pragmatic-Scala"))
+    .withCopyright("Copyleft © 2018 pragmatic-scala.reactiveplatform.xyz")
+    .withRepository(uri("https://github.com/ReactivePlatform/Pragmatic-Scala.git"))
     .withSearch(tokenizer = "[\\s\\-\\.]+")
     .withSocial(
     uri("https://github.com/hepin1989")
@@ -57,7 +54,7 @@ paradoxMaterialTheme in Compile ~= {
 }
 
 organizationName := "pragmatic-scala.reactiveplatform.xyz"
-startYear := Some(2017)
+startYear := Some(2018)
 licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 
 def setPreferences(preferences: IFormattingPreferences): IFormattingPreferences = preferences

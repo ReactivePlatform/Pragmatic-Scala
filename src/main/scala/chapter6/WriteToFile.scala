@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 pragmatic-scala.reactiveplatform.xyz
+ * Copyright 2018 pragmatic-scala.reactiveplatform.xyz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
