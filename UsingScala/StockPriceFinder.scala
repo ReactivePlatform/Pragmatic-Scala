@@ -1,19 +1,30 @@
-import java.util.Calendar
-
 object StockPriceFinder {
-  def getLatestClosingPrice(symbol: String): Double = {
-    val url = "http://ichart.finance.yahoo.com/table.csv?s=" +
-      symbol + "&a=00&b=01&c=" + Calendar.getInstance().get(Calendar.YEAR)
-    val data = scala.io.Source.fromURL(url).mkString
-    val mostRecentData = data.split("\n")(1)
-    val closingPrice = mostRecentData.split(",")(4).toDouble
-    closingPrice
+  import scala.io.Source
+
+  case class Record(year: Int, month: Int, date: Int, closePrice: BigDecimal)
+
+  def getLatestClosingPrice(symbol: String): BigDecimal = {
+    val url = s"https://raw.githubusercontent.com/ReactivePlatform/" +
+      s"Pragmatic-Scala-StaticResources/master/src/main/resources/" +
+      s"stocks/daily/daily_$symbol.csv"
+
+    val data = Source.fromURL(url).mkString
+    val latestClosePrize = data.split("\n")
+      .slice(1, 2)
+      .map(record ⇒ {
+        val Array(timestamp, open, high, low, close, volume) = record.split(",")
+        val Array(year, month, date) = timestamp.split("-")
+        Record(year.toInt, month.toInt, date.toInt, BigDecimal(close.trim))
+      })
+      .map(_.closePrice)
+      .head
+    latestClosePrize
   }
-  
+
   def getTickersAndUnits: Map[String, Int] = {
     val stocksAndUnitsXML = scala.xml.XML.load("stocks.xml")
     (Map[String, Int]() /: (stocksAndUnitsXML \ "symbol")) {
-      (map, symbolNode) =>
+      (map, symbolNode) ⇒
         val ticker = (symbolNode \ "@ticker").toString
         val units = (symbolNode \ "units").text.toInt
         map + (ticker -> units)

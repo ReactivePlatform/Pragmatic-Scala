@@ -12,7 +12,7 @@ object FindTotalWorthSequential extends App {
     (symbol, units, latestClosingPrice, value)
   }
 
-  val netWorth = (0.0 /: valuesAndWorth) { (worth, valueAndWorth) ⇒
+  val netWorth = (BigDecimal(0.0D) /: valuesAndWorth) { (worth, valueAndWorth) ⇒
     val (_, _, _, value) = valueAndWorth
     worth + value
   }
