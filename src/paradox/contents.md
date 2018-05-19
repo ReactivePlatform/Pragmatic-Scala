@@ -27,6 +27,8 @@
 * [附录1——安装Scala](chapter-16/index.md)
 * [附录2——网络资源](chapter-16/index.md)
 * [参考文献](refs/references.md)
+* [额外指引](extras.md)
+* [勘误](errata.md)
 
 
 @@@
