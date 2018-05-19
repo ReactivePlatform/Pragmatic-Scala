@@ -201,6 +201,7 @@
 @@snip[代码清单3-28运行结果](../../main/scala/chapter3/output/RunSerialAssignments.output){ #output }
 
 >FromJavaToScala/Equality.scala
+
 @@snip[代码清单3-29](../../main/scala/chapter3/Equality.scala){ #snip }
 
 *运行结果*
