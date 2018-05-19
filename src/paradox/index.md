@@ -1,4 +1,4 @@
-@@toc { depth=2 }
+@@toc { depth=3 }
 
 《Scala 实用指南》
 
