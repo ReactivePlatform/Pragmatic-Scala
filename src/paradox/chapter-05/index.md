@@ -113,11 +113,11 @@
 
 ## 代码清单5-17
 
-@@snip[代码清单5-17](../../test/scala/chapter5/OKJava.java){ #snip }
+@@snip[代码清单5-17](../../test/java/chapter5/OKJava.java){ #snip }
 
 *绕开限制*
 
-@@snip[代码清单5-17](../../test/scala/chapter5/OKJava.java){ #snip_1 }
+@@snip[代码清单5-17](../../test/java/chapter5/OKJava.java){ #snip_1 }
 
 *运行结果*
 
