@@ -1,7 +1,5 @@
 import com.typesafe.sbt.SbtGit.GitKeys
 import com.typesafe.sbt.SbtScalariform.ScalariformKeys
-import com.typesafe.sbt.git.DefaultReadableGit
-
 import scalariform.formatter.preferences._
 
 name := "PragmaticScala"
@@ -24,9 +22,13 @@ enablePlugins(AutomateHeaderPlugin)
 
 (sources in Test) := Nil
 
-git.remoteRepo := "git@github.com:ReactivePlatform/Pragmatic-Scala.git"
+scmInfo := Some(ScmInfo(url(
+  "https://github.com/ReactivePlatform/Pragmatic-Scala.git"),
+  "git@github.com:ReactivePlatform/Pragmatic-Scala.git"))
 
-GitKeys.gitReader in ThisProject := baseDirectory(base => new DefaultReadableGit(base)).value
+git.remoteRepo := scmInfo.value.get.connection
+
+GitKeys.gitBranch in ThisProject := Some("sbt")
 
 excludeFilter in ghpagesCleanSite :=
   new FileFilter{
