@@ -16,7 +16,7 @@
 
 package chapter5
 
-object functions extends App {
+object Functions extends App {
   // #snip
   def function1(): Unit = { Math.sqrt(4) }
   def function2 = { Math.sqrt(4) }
