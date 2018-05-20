@@ -16,7 +16,7 @@
 
 package chapter6
 
-object sum extends App {
+object Sum extends App {
   // #snip
   def sum(number: Int) = {
     var result = 0
