@@ -16,7 +16,7 @@
 
 package chapter11
 
-object factorial extends App {
+object Factorial extends App {
   // #snip_11-1
   def factorial(number: Int): BigInt = {
     if (number == 0)

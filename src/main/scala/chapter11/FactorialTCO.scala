@@ -16,17 +16,17 @@
 
 package chapter11
 
-object factorialNoTCO extends App {
+object FactorialTCO extends App {
   // #snip
   @scala.annotation.tailrec
-  def factorial(number: Int): BigInt = {
+  def factorial(fact: BigInt, number: Int): BigInt = {
     if (number == 0)
-      1
+      fact
     else
-      number * factorial(number - 1)
+      factorial(fact * number, number - 1)
   }
 
-  println(factorial(10000))
+  println(factorial(1, 10000))
   // #snip
 
 }

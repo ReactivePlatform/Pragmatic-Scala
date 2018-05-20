@@ -16,17 +16,15 @@
 
 package chapter11
 
-object factorialTCO extends App {
+object Mad extends App {
   // #snip
-  @scala.annotation.tailrec
-  def factorial(fact: BigInt, number: Int): BigInt = {
-    if (number == 0)
-      fact
+  def mad(parameter: Int): Int = {
+    if (parameter == 0)
+      throw new RuntimeException("Error")
     else
-      factorial(fact * number, number - 1)
+      1 * mad(parameter - 1)
   }
 
-  println(factorial(1, 10000))
+  mad(5)
   // #snip
-
 }

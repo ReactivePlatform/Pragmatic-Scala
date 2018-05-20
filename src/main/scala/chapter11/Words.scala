@@ -16,28 +16,27 @@
 
 package chapter11
 
-object wordsTrampoline extends App {
+object Words extends App {
+
   // #snip
   import scala.io.Source._
-  import scala.util.control.TailCalls._
 
-  def explore(count: Int, words: List[String]): TailRec[Int] =
+  def explore(count: Int, words: List[String]): Int =
     if (words.isEmpty)
-      done(count)
+      count
     else
-      tailcall(countPalindrome(count, words))
+      countPalindrome(count, words)
 
-  def countPalindrome(count: Int, words: List[String]): TailRec[Int] = {
+  def countPalindrome(count: Int, words: List[String]): Int = {
     val firstWord = words.head
 
     if (firstWord.reverse == firstWord)
-      tailcall(explore(count + 1, words.tail))
+      explore(count + 1, words.tail)
     else
-      tailcall(explore(count, words.tail))
+      explore(count, words.tail)
   }
 
-  def callExplore(text: String): Unit =
-    println(explore(0, text.split(" ").toList).result)
+  def callExplore(text: String): Unit = println(explore(0, text.split(" ").toList))
 
   callExplore("dad mom and racecar")
 
@@ -49,4 +48,5 @@ object wordsTrampoline extends App {
     case ex: Throwable ⇒ println(ex)
   }
   // #snip
+
 }

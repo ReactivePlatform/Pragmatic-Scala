@@ -16,15 +16,16 @@
 
 package chapter11
 
-object mad extends App {
+object Mad2 extends App {
   // #snip
   def mad(parameter: Int): Int = {
     if (parameter == 0)
       throw new RuntimeException("Error")
     else
-      1 * mad(parameter - 1)
+      mad(parameter - 1)
   }
 
   mad(5)
   // #snip
+
 }

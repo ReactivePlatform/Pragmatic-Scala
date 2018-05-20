@@ -16,16 +16,17 @@
 
 package chapter11
 
-object mad2 extends App {
+object FactorialNoTCO extends App {
   // #snip
-  def mad(parameter: Int): Int = {
-    if (parameter == 0)
-      throw new RuntimeException("Error")
+  @scala.annotation.tailrec
+  def factorial(number: Int): BigInt = {
+    if (number == 0)
+      1
     else
-      mad(parameter - 1)
+      number * factorial(number - 1)
   }
 
-  mad(5)
+  println(factorial(10000))
   // #snip
 
 }
