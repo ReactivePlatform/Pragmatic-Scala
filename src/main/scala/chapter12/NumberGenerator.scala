@@ -16,28 +16,22 @@
 
 package chapter12
 
-object primes extends App {
-  // #snip_12-10
-  def isDivisibleBy(number: Int, divisor: Int) = number % divisor == 0
-
-  def isPrime(number: Int) =
-    number > 1 && !(2 until number).exists { isDivisibleBy(number, _) }
-
-  def primes(starting: Int): Stream[Int] = {
-    println(s"computing for $starting")
-    if (isPrime(starting))
-      starting #:: primes(starting + 1)
-    else
-      primes(starting + 1)
+object NumberGenerator extends App {
+  // #snip
+  def generate(starting: Int): Stream[Int] = {
+    starting #:: generate(starting + 1)
   }
-  // #snip_12-10
 
-  // #snip_12-11
-  val primesFrom100 = primes(100)
+  println(generate(25))
+  // #snip
 
-  println(primesFrom100.take(3).toList)
-  println("Let's ask for more...")
-  println(primesFrom100.take(4).toList)
-  // #snip_12-11
+  // #snip_12-8
+  println(generate(25).take(10).force)
+  println(generate(25).take(10).toList)
+  // #snip_12-8
+
+  // #snip_12-9
+  println(generate(25).takeWhile { _ < 40 }.force)
+  // #snip_12-9
 
 }

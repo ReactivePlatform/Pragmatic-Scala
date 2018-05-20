@@ -16,23 +16,18 @@
 
 package chapter12
 
-object eager extends App {
-  def expensiveComputation() = {
-    println("...assume slow operation...")
-    false
-  }
+object LazyOrder extends App {
+  // #snip
+  import scala.io._
 
-  def evaluate(input: Int): Unit = {
-    println(s"evaluate called with $input")
-    // #snip
-    val perform = expensiveComputation()
-    if (input >= 10 && perform)
-      // #snip
-      println("doing work...")
-    else
-      println("skipping")
-  }
+  def read = StdIn.readInt()
 
-  evaluate(0)
-  evaluate(100)
+  @volatile lazy val first = read
+  @volatile lazy val second = read
+
+  if (Math.random() < 0.5)
+    second
+
+  println(first - second)
+  // #snip
 }

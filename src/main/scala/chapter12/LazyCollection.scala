@@ -16,7 +16,7 @@
 
 package chapter12
 
-object lazyCollection extends App {
+object LazyCollection extends App {
   val people = List(("Mark", 32), ("Bob", 22), ("Jane", 8), ("Jill", 21),
     ("Nick", 50), ("Nancy", 42), ("Mike", 19), ("Sara", 12), ("Paula", 42),
     ("John", 21))

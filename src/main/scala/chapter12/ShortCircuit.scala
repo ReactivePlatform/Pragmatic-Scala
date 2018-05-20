@@ -16,7 +16,8 @@
 
 package chapter12
 
-object `lazy` extends App {
+object ShortCircuit extends App {
+  // #snip
   def expensiveComputation() = {
     println("...assume slow operation...")
     false
@@ -24,15 +25,13 @@ object `lazy` extends App {
 
   def evaluate(input: Int): Unit = {
     println(s"evaluate called with $input")
-    // #snip
-    @volatile lazy val perform = expensiveComputation()
-    if (input >= 10 && perform)
+    if (input >= 10 && expensiveComputation())
       println("doing work...")
-    // #snip
     else
       println("skipping")
   }
 
   evaluate(0)
   evaluate(100)
+  // #snip
 }

@@ -16,25 +16,28 @@
 
 package chapter12
 
-object strictCollection extends App {
-  // #snip
-  val people = List(("Mark", 32), ("Bob", 22), ("Jane", 8), ("Jill", 21),
-    ("Nick", 50), ("Nancy", 42), ("Mike", 19), ("Sara", 12), ("Paula", 42),
-    ("John", 21))
+object Primes extends App {
+  // #snip_12-10
+  def isDivisibleBy(number: Int, divisor: Int) = number % divisor == 0
 
-  def isOlderThan17(person: (String, Int)) = {
-    println(s"isOlderThan17 called for $person")
-    val (_, age) = person
-    age > 17
+  def isPrime(number: Int) =
+    number > 1 && !(2 until number).exists { isDivisibleBy(number, _) }
+
+  def primes(starting: Int): Stream[Int] = {
+    println(s"computing for $starting")
+    if (isPrime(starting))
+      starting #:: primes(starting + 1)
+    else
+      primes(starting + 1)
   }
+  // #snip_12-10
 
-  def isNameStartsWithJ(person: (String, Int)) = {
-    println(s"isNameStartsWithJ called for $person")
-    val (name, _) = person
-    name.startsWith("J")
-  }
+  // #snip_12-11
+  val primesFrom100 = primes(100)
 
-  println(people.filter { isOlderThan17 }.filter { isNameStartsWithJ }.head)
-  // #snip
+  println(primesFrom100.take(3).toList)
+  println("Let's ask for more...")
+  println(primesFrom100.take(4).toList)
+  // #snip_12-11
+
 }
-

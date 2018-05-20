@@ -16,8 +16,7 @@
 
 package chapter12
 
-object shortCircuit extends App {
-  // #snip
+object Eager extends App {
   def expensiveComputation() = {
     println("...assume slow operation...")
     false
@@ -25,7 +24,10 @@ object shortCircuit extends App {
 
   def evaluate(input: Int): Unit = {
     println(s"evaluate called with $input")
-    if (input >= 10 && expensiveComputation())
+    // #snip
+    val perform = expensiveComputation()
+    if (input >= 10 && perform)
+      // #snip
       println("doing work...")
     else
       println("skipping")
@@ -33,5 +35,4 @@ object shortCircuit extends App {
 
   evaluate(0)
   evaluate(100)
-  // #snip
 }

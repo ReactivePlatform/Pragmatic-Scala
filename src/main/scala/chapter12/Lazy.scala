@@ -16,22 +16,23 @@
 
 package chapter12
 
-object numberGenerator extends App {
-  // #snip
-  def generate(starting: Int): Stream[Int] = {
-    starting #:: generate(starting + 1)
+object Lazy extends App {
+  def expensiveComputation() = {
+    println("...assume slow operation...")
+    false
   }
 
-  println(generate(25))
-  // #snip
+  def evaluate(input: Int): Unit = {
+    println(s"evaluate called with $input")
+    // #snip
+    @volatile lazy val perform = expensiveComputation()
+    if (input >= 10 && perform)
+      println("doing work...")
+    // #snip
+    else
+      println("skipping")
+  }
 
-  // #snip_12-8
-  println(generate(25).take(10).force)
-  println(generate(25).take(10).toList)
-  // #snip_12-8
-
-  // #snip_12-9
-  println(generate(25).takeWhile { _ < 40 }.force)
-  // #snip_12-9
-
+  evaluate(0)
+  evaluate(100)
 }
