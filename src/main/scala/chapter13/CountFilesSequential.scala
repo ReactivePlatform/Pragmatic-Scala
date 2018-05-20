@@ -16,7 +16,7 @@
 
 package chapter13
 
-object countFilesSequential extends App {
+object CountFilesSequential extends App {
   // #snip
   import java.io.File
 
