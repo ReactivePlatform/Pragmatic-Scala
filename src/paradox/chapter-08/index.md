@@ -1,6 +1,10 @@
 # 第8章——集合
 
-## 代码清单8-1
+Scala 标准库包含了一组丰富的集合类，以及用于组合、遍历和提取元素的强大操作。在 创建 Scala 应用程序时，会经常用到这些集合。如果想要在使用 Scala 时更加具有生产力，彻 底地学习这些集合是很有必要的。
+
+## 8.1 常见的 Scala 集合
+
+>UsingCollections/UsingSet.scala
 
 @@snip[代码清单8-1](../../main/scala/chapter8/UsingSet.scala){ #snip }
 
@@ -8,15 +12,15 @@
 
 @@snip[代码清单8-1运行结果](../../main/scala/chapter8/output/UsingSet.output){ #snip }
 
-## 在REPL中执行
-
 @@snip[在REPL中执行](../../main/scala/chapter8/shoutput/RunREPL.output){ #snip }
 
-## 代码清单8-2
+## 8.2 使用 Set
+
+>UsingCollections/UsingSet.scala
 
 @@snip[代码清单8-2](../../main/scala/chapter8/PlayingWithSet.scala){ #snip_8-2 }
 
-## 代码清单8-3
+>UsingCollections/UsingSet.scala
 
 @@snip[代码清单8-3](../../main/scala/chapter8/PlayingWithSet.scala){ #snip_8-3 }
 
@@ -24,7 +28,7 @@
 
 @@snip[代码清单8-3运行结果](../../main/scala/chapter8/output/PlayingWithSet.output){ #snip_8-3_output }
 
-## 代码清单8-4
+>UsingCollections/UsingSet.scala
 
 @@snip[代码清单8-4](../../main/scala/chapter8/PlayingWithSet.scala){ #snip_8-4 }
 
@@ -32,7 +36,7 @@
 
 @@snip[代码清单8-4运行结果](../../main/scala/chapter8/output/PlayingWithSet.output){ #snip_8-4_output }
 
-## 代码清单8-5
+>UsingCollections/UsingSet.scala
 
 @@snip[代码清单8-5](../../main/scala/chapter8/PlayingWithSet.scala){ #snip_8-5 }
 
@@ -40,7 +44,7 @@
 
 @@snip[代码清单8-5运行结果](../../main/scala/chapter8/output/PlayingWithSet.output){ #snip_8-5_output }
 
-## 代码清单8-6
+>UsingCollections/UsingSet.scala
 
 @@snip[代码清单8-6](../../main/scala/chapter8/PlayingWithSet.scala){ #snip_8-6 }
 
@@ -48,7 +52,7 @@
 
 @@snip[代码清单8-6运行结果](../../main/scala/chapter8/output/PlayingWithSet.output){ #snip_8-6_output }
 
-## 代码清单8-7
+>UsingCollections/UsingSet.scala
 
 @@snip[代码清单8-7](../../main/scala/chapter8/PlayingWithSet.scala){ #snip_8-7 }
 
@@ -56,11 +60,13 @@
 
 @@snip[代码清单8-7运行结果](../../main/scala/chapter8/output/PlayingWithSet.output){ #snip_8-7_output }
 
-## 代码清单8-8
+## 8.3 关联映射
+
+>UsingCollections/PlayingWithMap.scala
 
 @@snip[代码清单8-8](../../main/scala/chapter8/PlayingWithMap.scala){ #snip_8-8 }
 
-## 代码清单8-9
+>UsingCollections/PlayingWithMap.scala
 
 @@snip[代码清单8-9](../../main/scala/chapter8/PlayingWithMap.scala){ #snip_8-9 }
 
@@ -68,7 +74,7 @@
 
 @@snip[代码清单8-9运行结果](../../main/scala/chapter8/output/PlayingWithMap.output){ #snip_8-9_output }
 
-## 代码清单8-10
+>UsingCollections/PlayingWithMap.scala
 
 @@snip[代码清单8-10](../../main/scala/chapter8/PlayingWithMap.scala){ #snip_8-10 }
 
@@ -76,7 +82,7 @@
 
 @@snip[代码清单8-10运行结果](../../main/scala/chapter8/output/PlayingWithMap.output){ #snip_8-10_output }
 
-## 代码清单8-11
+>UsingCollections/PlayingWithMap.scala
 
 @@snip[代码清单8-11](../../main/scala/chapter8/PlayingWithMap.scala){ #snip_8-11 }
 
@@ -84,7 +90,7 @@
 
 @@snip[代码清单8-11运行结果](../../main/scala/chapter8/output/PlayingWithMap.output){ #snip_8-11_output }
 
-## 代码清单8-12
+>UsingCollections/PlayingWithMap.scala
 
 @@snip[代码清单8-12](../../main/scala/chapter8/PlayingWithMap.scala){ #snip_8-12 }
 
@@ -92,7 +98,7 @@
 
 @@snip[代码清单8-12运行结果](../../main/scala/chapter8/output/PlayingWithMap.output){ #snip_8-12_output }
 
-## 代码清单8-13
+>UsingCollections/PlayingWithMap.scala
 
 @@snip[代码清单8-13](../../main/scala/chapter8/PlayingWithMap.scala){ #snip_8-13 }
 
@@ -100,7 +106,7 @@
 
 @@snip[代码清单8-13运行结果](../../main/scala/chapter8/output/PlayingWithMap.output){ #snip_8-13_output }
 
-## 代码清单8-14
+>UsingCollections/PlayingWithMap.scala
 
 @@snip[代码清单8-14](../../main/scala/chapter8/PlayingWithMap.scala){ #snip_8-14 }
 
@@ -108,11 +114,13 @@
 
 @@snip[代码清单8-14运行结果](../../main/scala/chapter8/output/PlayingWithMap.output){ #snip_8-14_output }
 
-## 代码清单8-15
+## 8.4 不可变列表
+
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-15](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-15 }
 
-## 代码清单8-16
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-16](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-16 }
 
@@ -120,7 +128,7 @@
 
 @@snip[代码清单8-16运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-16_output }
 
-## 代码清单8-17
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-17](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-17 }
 
@@ -128,7 +136,7 @@
 
 @@snip[代码清单8-17运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-17_output }
 
-## 代码清单8-18
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-18](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-18 }
 
@@ -136,7 +144,7 @@
 
 @@snip[代码清单8-18运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-18_output }
 
-## 代码清单8-19
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-19](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-19 }
 
@@ -144,7 +152,7 @@
 
 @@snip[代码清单8-19运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-19_output }
 
-## 代码清单8-20
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-20](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-20 }
 
@@ -152,7 +160,7 @@
 
 @@snip[代码清单8-20运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-20_output }
 
-## 代码清单8-21
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-21](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-21 }
 
@@ -160,7 +168,7 @@
 
 @@snip[代码清单8-21运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-21_output }
 
-## 代码清单8-22
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-22](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-22 }
 
@@ -168,7 +176,7 @@
 
 @@snip[代码清单8-22运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-22_output }
 
-## 代码清单8-23
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-23](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-23 }
 
@@ -176,7 +184,7 @@
 
 @@snip[代码清单8-23运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-23_output }
 
-## 代码清单8-24
+>UsingCollections/PlayingWithList.scala
 
 @@snip[代码清单8-24](../../main/scala/chapter8/PlayingWithList.scala){ #snip_8-24 }
 
@@ -184,11 +192,13 @@
 
 @@snip[代码清单8-24运行结果](../../main/scala/chapter8/output/PlayingWithList.output){ #snip_8-24_output }
 
-## 代码清单8-25
+## 8.5 方法名约定
+
+>UsingCollections/Colon.scala
 
 @@snip[代码清单8-25](../../main/scala/chapter8/Colon.scala){ #snip_8-25 }
 
-## 代码清单8-26
+>UsingCollections/Colon.scala
 
 @@snip[代码清单8-26](../../main/scala/chapter8/Colon.scala){ #snip_8-26 }
 
@@ -196,7 +206,7 @@
 
 @@snip[代码清单8-26运行结果](../../main/scala/chapter8/output/Colon.output){ #snip_8-26_output }
 
-## 代码清单8-27
+>UsingCollections/Unary.scala
 
 @@snip[代码清单8-27](../../main/scala/chapter8/Unary.scala){ #snip_8-27 }
 
@@ -204,27 +214,29 @@
 
 @@snip[代码清单8-27运行结果](../../main/scala/chapter8/output/Unary.output){ #snip_8-27_output }
 
-## 代码清单8-28
+## 8.6 for 表达式
+
+>UsingCollections/PowerOfFor.scala
 
 @@snip[代码清单8-28](../../main/scala/chapter8/PowerOfFor.scala){ #snip_8-28 }
 
-## 代码清单8-29
+>UsingCollections/PowerOfFor.scala
 
 @@snip[代码清单8-29](../../main/scala/chapter8/PowerOfFor.scala){ #snip_8-29 }
 
-## 代码清单8-30
+>UsingCollections/PowerOfFor.scala
 
 @@snip[代码清单8-30](../../main/scala/chapter8/PowerOfFor.scala){ #snip_8-30 }
 
-## 代码清单8-31
+>UsingCollections/PowerOfFor.scala
 
 @@snip[代码清单8-31](../../main/scala/chapter8/PowerOfFor.scala){ #snip_8-31 }
 
-## 代码清单8-32
+>UsingCollections/PowerOfFor.scala
 
 @@snip[代码清单8-32](../../main/scala/chapter8/PowerOfFor.scala){ #snip_8-32 }
 
-## 代码清单8-33
+>UsingCollections/Friends.scala
 
 @@snip[代码清单8-33](../../main/scala/chapter8/Friends.scala){ #snip_8-33 }
 
@@ -232,7 +244,7 @@
 
 @@snip[代码清单8-33运行结果](../../main/scala/chapter8/output/Friends.output){ #snip_8-33_output }
 
-## 代码清单8-34
+>UsingCollections/MultipleLoop.scala
 
 @@snip[代码清单8-34](../../main/scala/chapter8/MultipleLoop.scala){ #snip_8-34 }
 
