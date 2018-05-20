@@ -16,7 +16,7 @@
 
 package chapter14
 
-object usePerson extends App {
+object UsePerson extends App {
   // #snip
   val george = new Person("George", "Washington")
 
