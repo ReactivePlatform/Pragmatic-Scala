@@ -16,7 +16,7 @@
 
 package chapter5
 
-object UseInterpolator extends App {
+object Mask extends App {
   // #snip
   import MyInterpolator._
 
