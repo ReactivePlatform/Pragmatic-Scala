@@ -16,7 +16,7 @@
 
 package chapter2
 
-object script extends App {
+object Script extends App {
   val number = 6
   //number = 7
   //val number = 7
