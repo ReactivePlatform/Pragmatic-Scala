@@ -1,3 +1,4 @@
+// #snip_12-12
 import scala.io.Source
 import scala.xml._
 
@@ -12,13 +13,17 @@ def getWeatherData(city: String) = {
   val condition = (xmlResponse \\ "weather" \ "@value").text
   (cityName, temperature, condition)
 }
+// #snip_12-12
 
+// #snip_12-13
 def printWeatherData(weatherData: (String, String, String)): Unit = {
   val (cityName, temperature, condition) = weatherData
 
   println(f"$cityName%-15s $temperature%-6s $condition")
 }
+// #snip_12-13
 
+// #snip_12-14
 def timeSample(getData: List[String] ⇒ List[(String, String, String)]): Unit = {
   val cities = List("Houston,us", "Chicago,us", "Boston,us", "Minneapolis,us",
     "Oslo,norway", "Tromso,norway", "Sydney,australia", "Berlin,germany",
@@ -31,5 +36,12 @@ def timeSample(getData: List[String] ⇒ List[(String, String, String)]): Unit =
   println(s"Time taken: ${(end - start) / 1.0e9} sec")
 }
 
+// #snip_12-14
+
+// #snip_12-15
 timeSample { cities ⇒ cities map getWeatherData }
+// #snip_12-15
+
+// #snip_12-16
 timeSample { cities ⇒ (cities.par map getWeatherData).toList }
+// #snip_12-16

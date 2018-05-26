@@ -1,13 +1,13 @@
 import scala.io.Source._
 import scala.util.control.TailCalls._
 
-def explore(count: Int, words: List[String]) : TailRec[Int] =
-  if (words.size == 0)
+def explore(count: Int, words: List[String]): TailRec[Int] =
+  if (words.isEmpty)
     done(count)
   else
     tailcall(countPalindrome(count, words))
 
-def countPalindrome(count: Int, words: List[String]) : TailRec[Int]  = {
+def countPalindrome(count: Int, words: List[String]): TailRec[Int] = {
   val firstWord = words.head
 
   if (firstWord.reverse == firstWord)
@@ -16,15 +16,15 @@ def countPalindrome(count: Int, words: List[String]) : TailRec[Int]  = {
     tailcall(explore(count, words.tail))
 }
 
-def callExplore(text: String) =
-  println(explore(0, text.split(" ").tolist).result)
+def callExplore(text: String): Unit =
+  println(explore(0, text.split(" ").toList).result)
 
 callExplore("dad mom and racecar")
 
 try {
   val text =
-    fromURl("https:IIen.wikipedia.orgIwikiIGettysburg_Address").mkString
+    fromURL("https://en.wikipedia.org/wiki/Gettysburg_Address").mkString
   callExplore(text)
 } catch {
-  case ex : Throwable => println(ex)
+  case ex: Throwable ⇒ println(ex)
 }

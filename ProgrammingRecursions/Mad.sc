@@ -1,4 +1,4 @@
-def mad(parameter: Int): Int - {
+def mad(parameter: Int): Int = {
   if (parameter == 0)
     throw new RuntimeException("Error")
   else
