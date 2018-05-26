@@ -3,10 +3,39 @@
 > **需要注意的是：**<br>
 > 我们同时还提供了基于SBT的版本，可以直接导入到IDEA中使用，不过部分代码清单略微有调整，请切换到*sbt*分支。我们默认展示原书自带的代码清单形式。
 
+## 组织形式
+
+1. `sample`分支，原书的文件夹形式，部分代码清单可能更新到Ammonite Script形式的脚本。
+2. `sbt`分支，按照中文书章节形式组织，并且基于SBT构建工具进行组织，对应的代码清单大部分可以直接运行。
+
+## IDE和构建工具
+
+在工作中，大部分我们的代码都是利用构建工具和IDE进行组织和开发的。
+
+推荐的IDE或在线环境为：
+
+1. [IDEA](https://www.jetbrains.com/idea/)，同时需要安装Scala插件[intellij-scala](https://github.com/JetBrains/intellij-scala)
+2. [ScalaIDE](http://scala-ide.org/)
+3. [Ensime](http://ensime.github.io/)
+4. 在线的[ScalaFiddle](https://scalafiddle.io/)或者[scastie](https://scastie.scala-lang.org)
+
+常用的构建工具为：
+
+- Gradle ：需要安装插件[The Scala Plugin](https://docs.gradle.org/current/userguide/scala_plugin.html)
+- Maven ：需要安装插件:
+    - [scala-maven-plugin](https://github.com/davidB/scala-maven-plugin) 或者
+    - [scalor-maven-plugin](https://github.com/random-maven/scalor-maven-plugin)
+- SBT : 直接支持，需要安装插件IDE插件。
+
 ## 代码清单使用说明
-代码清单中以sc结尾的文件是Scala Script，建议用scala命令运行，以scala结尾的文件是一般意义上的Scala代码文件。
+
+代码清单中以`sc`结尾的文件是Scala Script，建议用scala命令运行，以`scala`结尾的文件是一般意义上的Scala代码文件。
 
 前三章建议只用scala命令行，用法参照第二章中的说明。后面的章节请使用scala, amm, javap, sbt等工具，灵活地探索Scala代码的奥秘。
+
+其中一些以`.sc`结尾的代码清单，并不能直接运行，这时需要借助于[Ammonite](https://blog.jetbrains.com/scala/2018/05/07/ammonite-support/)的力量。
+如果读者有疑问，可以直接切换到sbt分支，找到对应的文件，进行运行。
+
 
 ## 代码清单使用示范
 Tips:
