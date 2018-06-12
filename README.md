@@ -1,10 +1,4 @@
-本书勘误地址：
-
-https://www.epubit.com/book/detail/14723
-
-在线代码清单：
-
-https://pragmatic-scala.reactiveplatform.xyz/
+本书勘误地址：https://www.epubit.com/book/detail/14723
 
 QQ群号:474112260
 
