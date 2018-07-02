@@ -1,6 +1,6 @@
 本书勘误地址：https://www.epubit.com/book/detail/14723
 
-[京东购买链接—《Scala实用指南》](https://union-click.jd.com/jdc?d=1K75JB)
+[京东购买链接—《Scala实用指南》](https://union-click.jd.com/jdc?d=5TStbe)
 
 QQ群号:474112260
 
