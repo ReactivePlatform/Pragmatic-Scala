@@ -7,7 +7,7 @@ version := "1.0.0"
 
 scalaVersion := "2.12.6"
 
-scalafixSemanticdbVersion := "4.0.0-M7"
+scalafixSemanticdbVersion := "4.0.0"
 
 scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
 
@@ -79,10 +79,10 @@ ScalariformKeys.preferences in Compile := setPreferences(ScalariformKeys.prefere
 ScalariformKeys.preferences in Test := setPreferences(ScalariformKeys.preferences.value)
 
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.1.0"
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.14"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.16"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5"
 libraryDependencies += "junit" % "junit" % "4.12"
-libraryDependencies += "org.mockito" % "mockito-core" % "2.18.3"
+libraryDependencies += "org.mockito" % "mockito-core" % "2.22.0"
 
 //如果想要写更好的代码：）
 //wartremoverErrors ++= Warts.all
