@@ -5,7 +5,7 @@ name := "PragmaticScala"
 
 version := "1.0.0"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.7"
 
 scalafixSemanticdbVersion := "4.0.0"
 
