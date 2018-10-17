@@ -1,3 +1,3 @@
 def findMax(temperatures: List[Int]) = {
-  temperatures.foldleft(Integer.MIN_VAlUE)  { Math.max }
+  temperatures.foldLeft(Integer.MIN_VALUE)  { Math.max }
 }
