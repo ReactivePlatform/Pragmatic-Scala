@@ -15,13 +15,13 @@ def countPalindrome(count: Int, words: List[String]) : Int  = {
     explore(count, words.tail)
 }
 
-def callExplore(text: String) = println(explore(0, text.split(" ").tolist))
+def callExplore(text: String) = println(explore(0, text.split(" ").toList))
 
 callExplore("dad mom and racecar")
 
 try {
   val text =
-    fromURl("https://en.wikipedia.org/wiki/Gettysburg_Address").mkString
+    fromURL("https://en.wikipedia.org/wiki/Gettysburg_Address").mkString
   callExplore(text)
 } catch {
   case ex : Throwable => println(ex)
