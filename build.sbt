@@ -7,7 +7,7 @@ version := "1.0.0"
 
 scalaVersion := "2.12.7"
 
-scalafixSemanticdbVersion := "4.0.0"
+scalafixSemanticdbVersion := "4.1.0"
 
 scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
 
@@ -82,7 +82,7 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.1.1"
 libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.18"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5"
 libraryDependencies += "junit" % "junit" % "4.12"
-libraryDependencies += "org.mockito" % "mockito-core" % "2.23.0"
+libraryDependencies += "org.mockito" % "mockito-core" % "2.23.4"
 
 //如果想要写更好的代码：）
 //wartremoverErrors ++= Warts.all
