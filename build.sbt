@@ -15,17 +15,19 @@ javacOptions in compile ++= Seq("-encoding", "UTF-8", "-source", "1.8", "-target
 
 resolvers += "akka" at "https://dl.bintray.com/akka/maven/"
 
-javaFormattingSettingsFilename in ThisBuild := "formatting-java.xml"
+//javaFormattingSettingsFilename in ThisBuild := "formatting-java.xml"
 
-sourceLevel in ThisBuild := Some("1.8")
-
-targetLevel in ThisBuild := Some("1.8")
+//sourceLevel in ThisBuild := Some("1.8")
+//
+//targetLevel in ThisBuild := Some("1.8")
 
 enablePlugins(ParadoxSitePlugin)
 
 enablePlugins(GhpagesPlugin)
 
 enablePlugins(AutomateHeaderPlugin)
+
+enablePlugins(JavaFormatterPlugin)
 
 (sources in Test) := Nil
 
