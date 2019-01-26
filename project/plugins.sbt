@@ -26,4 +26,4 @@ addSbtPlugin("com.dwijnand" % "sbt-reloadquick" % "1.0.0")
 
 addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.4.1")
 
-addSbtPlugin("org.wartremover" % "sbt-wartremover" % "2.3.7")
+addSbtPlugin("org.wartremover" % "sbt-wartremover" % "2.4.0")
