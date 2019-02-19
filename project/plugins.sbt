@@ -24,6 +24,6 @@ addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.3.4")
 
 addSbtPlugin("com.dwijnand" % "sbt-reloadquick" % "1.0.0")
 
-addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.4.1")
+addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.4.3")
 
 addSbtPlugin("org.wartremover" % "sbt-wartremover" % "2.4.1")
