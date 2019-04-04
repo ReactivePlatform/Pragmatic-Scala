@@ -84,7 +84,7 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.1.1"
 libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.22"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.7"
 libraryDependencies += "junit" % "junit" % "4.12"
-libraryDependencies += "org.mockito" % "mockito-core" % "2.25.1"
+libraryDependencies += "org.mockito" % "mockito-core" % "2.26.0"
 
 //如果想要写更好的代码：）
 //wartremoverErrors ++= Warts.all
