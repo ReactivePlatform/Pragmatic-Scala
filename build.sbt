@@ -80,7 +80,7 @@ ScalariformKeys.preferences := setPreferences(ScalariformKeys.preferences.value)
 ScalariformKeys.preferences in Compile := setPreferences(ScalariformKeys.preferences.value)
 ScalariformKeys.preferences in Test := setPreferences(ScalariformKeys.preferences.value)
 
-libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.1.1"
+libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.2.0"
 libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.22"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.7"
 libraryDependencies += "junit" % "junit" % "4.12"
