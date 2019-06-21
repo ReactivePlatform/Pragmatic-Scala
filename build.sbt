@@ -7,7 +7,7 @@ version := "1.0.0"
 
 scalaVersion := "2.12.7"
 
-scalafixSemanticdbVersion := "4.1.10"
+scalafixSemanticdbVersion := "4.1.12"
 
 scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
 
