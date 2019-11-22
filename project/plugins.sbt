@@ -4,9 +4,9 @@ addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.5")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-site" % "1.3.3")
 
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.6.6")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.6.7")
 
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.6.6")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.6.7")
 
 addSbtPlugin("io.github.jonas" % "sbt-paradox-material-theme" % "0.6.0")
 
