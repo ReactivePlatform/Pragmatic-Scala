@@ -21,10 +21,10 @@ object MatchUsingRegex2 extends App {
   def process(input: String): Unit = {
     val MatchStock = """^(.+):(\d*\.\d+)""".r
     input match {
-      case MatchStock("GOOG", price) ⇒ println(s"We got GOOG at $$$price")
-      case MatchStock("IBM", price)  ⇒ println(s"IBM's trading at $$$price")
-      case MatchStock(symbol, price) ⇒ println(s"Price of $symbol is $$$price")
-      case _                         ⇒ println(s"not processing $input")
+      case MatchStock("GOOG", price) => println(s"We got GOOG at $$$price")
+      case MatchStock("IBM", price) => println(s"IBM's trading at $$$price")
+      case MatchStock(symbol, price) => println(s"Price of $symbol is $$$price")
+      case _ => println(s"not processing $input")
     }
   }
   process("GOOG:310.84")

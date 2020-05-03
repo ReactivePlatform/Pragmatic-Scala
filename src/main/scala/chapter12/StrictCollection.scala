@@ -18,8 +18,16 @@ package chapter12
 
 object StrictCollection extends App {
   // #snip
-  val people = List(("Mark", 32), ("Bob", 22), ("Jane", 8), ("Jill", 21),
-    ("Nick", 50), ("Nancy", 42), ("Mike", 19), ("Sara", 12), ("Paula", 42),
+  val people = List(
+    ("Mark", 32),
+    ("Bob", 22),
+    ("Jane", 8),
+    ("Jill", 21),
+    ("Nick", 50),
+    ("Nancy", 42),
+    ("Mike", 19),
+    ("Sara", 12),
+    ("Paula", 42),
     ("John", 21))
 
   def isOlderThan17(person: (String, Int)) = {
@@ -37,4 +45,3 @@ object StrictCollection extends App {
   println(people.filter { isOlderThan17 }.filter { isNameStartsWithJ }.head)
   // #snip
 }
-

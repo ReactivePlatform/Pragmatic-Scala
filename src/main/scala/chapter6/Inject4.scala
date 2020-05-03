@@ -18,9 +18,9 @@ package chapter6
 
 object Inject4 {
   // #snip_6-14
-  def inject(arr: Array[Int], initial: Int)(operation: (Int, Int) ⇒ Int): Int = {
+  def inject(arr: Array[Int], initial: Int)(operation: (Int, Int) => Int): Int = {
     var carryOver = initial
-    arr.foreach(element ⇒ carryOver = operation(carryOver, element))
+    arr.foreach(element => carryOver = operation(carryOver, element))
     carryOver
   }
   // #snip_6-14
@@ -28,7 +28,9 @@ object Inject4 {
   val array = Array(2, 3, 5, 1, 6, 4)
 
   // #snip_6-15
-  val sum: Int = inject(array, 0) { (carryOver, elem) ⇒ carryOver + elem }
+  val sum: Int = inject(array, 0) { (carryOver, elem) =>
+    carryOver + elem
+  }
   // #snip_6-15
 
   println(s"Sum of elements in array ${array.toString} is $sum")

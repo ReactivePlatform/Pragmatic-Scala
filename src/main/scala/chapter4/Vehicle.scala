@@ -22,8 +22,7 @@ object Vehicle extends App {
     override def toString = s"ID: $id Year: $year"
   }
 
-  class Car(override val id: Int, override val year: Int, var fuelLevel: Int)
-    extends Vehicle(id, year) {
+  class Car(override val id: Int, override val year: Int, var fuelLevel: Int) extends Vehicle(id, year) {
     override def toString = s"${super.toString} Fuel Level: $fuelLevel"
   }
 

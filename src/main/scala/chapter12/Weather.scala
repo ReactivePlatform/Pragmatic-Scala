@@ -24,8 +24,8 @@ object Weather extends App {
   def getWeatherData(city: String) = {
     val response = Source.fromURL(
       s"https://raw.githubusercontent.com/ReactivePlatform/" +
-        s"Pragmatic-Scala-StaticResources/master/src/main/resources/" +
-        s"weathers/$city.xml")
+      s"Pragmatic-Scala-StaticResources/master/src/main/resources/" +
+      s"weathers/$city.xml")
     val xmlResponse = XML.loadString(response.mkString)
     val cityName = (xmlResponse \\ "city" \ "@name").text
     val temperature = (xmlResponse \\ "temperature" \ "@value").text
@@ -43,11 +43,23 @@ object Weather extends App {
   // #snip_12-13
 
   // #snip_12-14
-  def timeSample(getData: List[String] ⇒ List[(String, String, String)]): Unit = {
-    val cities = List("Houston,us", "Chicago,us", "Boston,us", "Minneapolis,us",
-      "Oslo,norway", "Tromso,norway", "Sydney,australia", "Berlin,germany",
-      "London,uk", "Krakow,poland", "Rome,italy", "Stockholm,sweden",
-      "Bangalore,india", "Brussels,belgium", "Reykjavik,iceland")
+  def timeSample(getData: List[String] => List[(String, String, String)]): Unit = {
+    val cities = List(
+      "Houston,us",
+      "Chicago,us",
+      "Boston,us",
+      "Minneapolis,us",
+      "Oslo,norway",
+      "Tromso,norway",
+      "Sydney,australia",
+      "Berlin,germany",
+      "London,uk",
+      "Krakow,poland",
+      "Rome,italy",
+      "Stockholm,sweden",
+      "Bangalore,india",
+      "Brussels,belgium",
+      "Reykjavik,iceland")
 
     val start = System.nanoTime
     getData(cities).sortBy(_._1).foreach(printWeatherData)
@@ -58,11 +70,16 @@ object Weather extends App {
   // #snip_12-14
 
   // #snip_12-15
-  timeSample { cities ⇒ cities map getWeatherData }
+  timeSample { cities =>
+    cities.map(getWeatherData)
+  }
   // #snip_12-15
 
   // #snip_12-16
-  timeSample { cities ⇒ (cities.par map getWeatherData).toList }
+  import scala.collection.parallel.CollectionConverters._
+  timeSample { cities =>
+    cities.par.map(getWeatherData).toList
+  }
   // #snip_12-16
 
 }

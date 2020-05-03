@@ -30,30 +30,29 @@ object UseXML extends App {
 
   //  #snip_15-6
   var symbolNodes = xmlFragment \ "symbol"
-  symbolNodes foreach println
+  symbolNodes.foreach(println)
   println(symbolNodes.getClass)
   //  #snip_15-6
 
   //  #snip_15-7
   var unitsNodes = xmlFragment \\ "units"
-  unitsNodes foreach println
+  unitsNodes.foreach(println)
   println(unitsNodes.getClass)
   println(unitsNodes.head.text)
   //  #snip_15-7
 
   //  #snip_15-8
   unitsNodes.head match {
-    case <units>{ numberOfUnits }</units> ⇒ println(s"Units: $numberOfUnits")
+    case <units>{numberOfUnits}</units> => println(s"Units: $numberOfUnits")
   }
   //  #snip_15-8
 
   //  #snip_15-9
   println("Ticker\tUnits")
   xmlFragment match {
-    case <symbols>{ symbolNodes @ _* }</symbols> ⇒
-      for (symbolNode @ <symbol>{ _* }</symbol> ← symbolNodes) {
-        println("%-7s %s".format(
-          symbolNode \ "@ticker", (symbolNode \ "units").text))
+    case <symbols>{symbolNodes @ _*}</symbols> =>
+      for (symbolNode @ <symbol>{_*}</symbol> <- symbolNodes) {
+        println("%-7s %s".format(symbolNode \ "@ticker", (symbolNode \ "units").text))
       }
   }
   //  #snip_15-9
