@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="PragmaticScala">
+<meta name="generator" content="Paradox, paradox-material-theme=0.6.0, mkdocs-material=3.0.3">
+
+<meta name="lang:clipboard.copy" content="Copy to clipboard">
+<meta name="lang:clipboard.copied" content="Copied to clipboard">
+<meta name="lang:search.language" content="">
+<meta name="lang:search.pipeline.stopwords" content="true">
+<meta name="lang:search.pipeline.trimmer" content="true">
+<meta name="lang:search.result.none" content="No matching documents">
+<meta name="lang:search.result.one" content="1 matching document">
+<meta name="lang:search.result.other" content="# matching documents">
+<meta name="lang:search.tokenizer" content="[\s\-]+">
+
+
+<meta name="description" content="PragmaticScala">
+<link rel="shortcut icon" href="../assets/images/favicon.png">
+<title>第9章——模式匹配和正则表达式 · </title>
+<link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+<link rel="stylesheet" href="../lib/material__tabs/dist/mdc.tabs.min.css">
+<link rel="stylesheet" href="../lib/prettify/prettify.css">
+<script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+<style>
+body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}
+code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}
+</style>
+<link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+<link rel="stylesheet" href="../assets/fonts/material-icons.css">
+<link rel="stylesheet" href="../assets/stylesheets/paradox-material-theme.css">
+</head>
+<body
+>
+<input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+<input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a href="../index.html" title="" class="md-header-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+</span>
+<span class="md-header-nav__topic">
+第9章——模式匹配和正则表达式
+</span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+<label class="md-icon md-search__icon" for="__search"></label>
+<button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix>
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+Type to start searching
+</div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</nav>
+</header>
+
+<div class="md-container">
+<main class="md-main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0" style="visibility: hidden">
+<label class="md-nav__title md-nav__title--site" for="drawer">
+<a href="../index.html" title="" class="md-nav__button md-logo">
+<span class="md-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+<a href="../index.html" title="">
+</a>
+</label>
+<ul>
+  <li><a href="../contents.html" class="page">目录</a>
+  <ul>
+    <li><a href="../abstract.html" class="page">内容提要</a></li>
+    <li><a href="../part1.html" class="page">第一部分 小试牛刀</a></li>
+    <li><a href="../part2.html" class="page">第二部分 深入 Scala</a></li>
+    <li><a href="../part3.html" class="page">第三部分 Scala 中的并发编程</a></li>
+    <li><a href="../part4.html" class="page">第四部分 Scala 实战</a></li>
+    <li><a href="../refs/references.html" class="page">参考书目</a></li>
+    <li><a href="../extras.html" class="page">额外指引</a></li>
+    <li><a href="../errata.html" class="page">勘误</a></li>
+  </ul></li>
+</ul>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-09/index.html#第9章-模式匹配和正则表达式" class="header">第9章——模式匹配和正则表达式</a>
+  <ul>
+    <li><a href="../chapter-09/index.html#9-1-模式匹配综述" class="header">9.1 模式匹配综述</a></li>
+    <li><a href="../chapter-09/index.html#9-2-case-表达式中的模式变量和常量" class="header">9.2 case 表达式中的模式变量和常量</a></li>
+    <li><a href="../chapter-09/index.html#9-3-使用-case-类进行模式匹配" class="header">9.3 使用 case 类进行模式匹配</a></li>
+    <li><a href="../chapter-09/index.html#9-4-提取器和正则表达式" class="header">9.4 提取器和正则表达式</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</nav>
+<ul style="display: none">
+<li class="md-nav__item md-version" id="project.version">
+<label class="md-nav__link" for="__version">
+<i class="md-icon" title="Version">label_outline</i> 1.0.0
+</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-09/index.html#第9章-模式匹配和正则表达式" class="header">第9章——模式匹配和正则表达式</a>
+  <ul>
+    <li><a href="../chapter-09/index.html#9-1-模式匹配综述" class="header">9.1 模式匹配综述</a></li>
+    <li><a href="../chapter-09/index.html#9-2-case-表达式中的模式变量和常量" class="header">9.2 case 表达式中的模式变量和常量</a></li>
+    <li><a href="../chapter-09/index.html#9-3-使用-case-类进行模式匹配" class="header">9.3 使用 case 类进行模式匹配</a></li>
+    <li><a href="../chapter-09/index.html#9-4-提取器和正则表达式" class="header">9.4 提取器和正则表达式</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<div class="md-content__searchable">
+<h1><a href="#第9章-模式匹配和正则表达式" name="第9章-模式匹配和正则表达式" class="anchor"><span class="anchor-link"></span></a>第9章——模式匹配和正则表达式</h1>
+<p>模式匹配（pattern matching）在 Scala 被广泛使用的特性中排在第二位，仅次于函数值和 闭包。Scala 对于模式匹配的出色支持意味着，在并发编程中在处理 Actor 接收到的消息时， 将会大量地使用它。在本章中，我们将学到 Scala 的模式匹配的机制、case 类和提取器，以 及如何创建和使用正则表达式。</p>
+<h2><a href="#9-1-模式匹配综述" name="9-1-模式匹配综述" class="anchor"><span class="anchor-link"></span></a>9.1 模式匹配综述</h2>
+<blockquote>
+  <p>PatternMatching/MatchLiterals.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchLiterals.scala#L21-L29" target="_blank" title="Go to snippet source"></a><code class="language-scala">def activity(day: String): Unit = {
+  day match {
+    case &quot;Sunday&quot; =&gt; print(&quot;Eat, sleep, repeat... &quot;)
+    case &quot;Saturday&quot; =&gt; print(&quot;Hang out with friends... &quot;)
+    case &quot;Monday&quot; =&gt; print(&quot;...code for fun...&quot;)
+    case &quot;Friday&quot; =&gt; print(&quot;...read a good book...&quot;)
+  }
+}
+List(&quot;Monday&quot;, &quot;Sunday&quot;, &quot;Saturday&quot;).foreach { activity }</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchLiterals.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">...code for fun...Eat, sleep, repeat... Hang out with friends...</code></pre>
+<blockquote>
+  <p>PatternMatching/Wildcard.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Wildcard.scala#L21-L40" target="_blank" title="Go to snippet source"></a><code class="language-scala">object DayOfWeek extends Enumeration {
+  val SUNDAY: DayOfWeek.Value = Value(&quot;Sunday&quot;)
+  val MONDAY: DayOfWeek.Value = Value(&quot;Monday&quot;)
+  val TUESDAY: DayOfWeek.Value = Value(&quot;Tuesday&quot;)
+  val WEDNESDAY: DayOfWeek.Value = Value(&quot;Wednesday&quot;)
+  val THURSDAY: DayOfWeek.Value = Value(&quot;Thursday&quot;)
+  val FRIDAY: DayOfWeek.Value = Value(&quot;Friday&quot;)
+  val SATURDAY: DayOfWeek.Value = Value(&quot;Saturday&quot;)
+}
+
+def activity(day: DayOfWeek.Value): Unit = {
+  day match {
+    case DayOfWeek.SUNDAY =&gt; println(&quot;Eat, sleep, repeat...&quot;)
+    case DayOfWeek.SATURDAY =&gt; println(&quot;Hang out with friends&quot;)
+    case _ =&gt; println(&quot;...code for fun...&quot;)
+  }
+}
+
+activity(DayOfWeek.SATURDAY)
+activity(DayOfWeek.MONDAY)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/Wildcard.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">Hang out with friends
+...code for fun...</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchTuples.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchTuples.scala#L21-L30" target="_blank" title="Go to snippet source"></a><code class="language-scala">def processCoordinates(input: Any): Unit = {
+  input match {
+    case (lat, long) =&gt; printf(&quot;Processing (%d, %d)...&quot;, lat, long)
+    case &quot;done&quot; =&gt; println(&quot;done&quot;)
+    case _ =&gt; println(&quot;invalid input&quot;)
+  }
+}
+
+processCoordinates((39, -104))
+processCoordinates(&quot;done&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchTuples.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">Processing (39, -104)...done</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchList.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchList.scala#L21-L34" target="_blank" title="Go to snippet source"></a><code class="language-scala">def processItems(items: List[String]): Unit = {
+  items match {
+    case List(&quot;apple&quot;, &quot;ibm&quot;) =&gt; println(&quot;Apples and IBMs&quot;)
+    case List(&quot;red&quot;, &quot;blue&quot;, &quot;white&quot;) =&gt; println(&quot;Stars and Stripes...&quot;)
+    case List(&quot;red&quot;, &quot;blue&quot;, _*) =&gt; println(&quot;colors red, blue,... &quot;)
+    case List(&quot;apple&quot;, &quot;orange&quot;, otherFruits @ _*) =&gt;
+      println(&quot;apples, oranges, and &quot; + otherFruits)
+  }
+}
+
+processItems(List(&quot;apple&quot;, &quot;ibm&quot;))
+processItems(List(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;))
+processItems(List(&quot;red&quot;, &quot;blue&quot;, &quot;white&quot;))
+processItems(List(&quot;apple&quot;, &quot;orange&quot;, &quot;grapes&quot;, &quot;dates&quot;))</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchList.output#L2-L5" target="_blank" title="Go to snippet source"></a><code class="language-output">Apples and IBMs
+colors red, blue,... 
+Stars and Stripes...
+apples, oranges, and List(grapes, dates)</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchTypes.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchTypes.scala#L21-L35" target="_blank" title="Go to snippet source"></a><code class="language-scala">def process(input: Any): Unit = {
+  input match {
+    case (_: Int, _: Int) =&gt; print(&quot;Processing (int, int)... &quot;)
+    case (_: Double, _: Double) =&gt; print(&quot;Processing (double, double)... &quot;)
+    case msg: Int if msg &gt; 1000000 =&gt; println(&quot;Processing int &gt; 1000000&quot;)
+    case _: Int =&gt; print(&quot;Processing int... &quot;)
+    case _: String =&gt; println(&quot;Processing string... &quot;)
+    case _ =&gt; printf(s&quot;Can&#39;t handle $input... &quot;)
+  }
+}
+
+process((34.2, -159.3))
+process(0)
+process(1000001)
+process(2.2)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchTypes.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">Processing (double, double)... Processing int... Processing int &gt; 1000000
+Can&#39;t handle 2.2...</code></pre>
+<h2><a href="#9-2-case-表达式中的模式变量和常量" name="9-2-case-表达式中的模式变量和常量" class="anchor"><span class="anchor-link"></span></a>9.2 case 表达式中的模式变量和常量</h2>
+<blockquote>
+  <p>PatternMatching/MatchWithField.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchWithField.scala#L21-L37" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Sample {
+  val max = 100
+
+  def process(input: Int): Unit = {
+    input match {
+      case max =&gt; println(s&quot;You matched max $max&quot;)
+    }
+  }
+}
+
+val sample = new Sample
+try {
+  sample.process(0)
+} catch {
+  case ex: Throwable =&gt; println(ex)
+}
+sample.process(100)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchWithField.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">You matched max 0
+You matched max 100</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchWithField1.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchWithField1.scala#L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">case this.max =&gt; println(s&quot;You matched max $max&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchWithField1.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">scala.MatchError: 0 (of class java.lang.Integer)
+You matched max 100</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchWithField2.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchWithField2.scala#L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">case `max` =&gt; println(s&quot;You matched max $max&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchWithField2.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">scala.MatchError: 0 (of class java.lang.Integer)
+You matched max 100</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchWithValsOK.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchWithValsOK.scala#L21-L37" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Sample {
+  val MAX = 100
+
+  def process(input: Int): Unit = {
+    input match {
+      case MAX =&gt; println(&quot;You matched max&quot;)
+    }
+  }
+}
+
+val sample = new Sample
+try {
+  sample.process(0)
+} catch {
+  case ex: Throwable =&gt; println(ex)
+}
+sample.process(100)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchWithValsOK.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">scala.MatchError: 0 (of class java.lang.Integer)
+You matched max</code></pre>
+<h2><a href="#9-3-使用-case-类进行模式匹配" name="9-3-使用-case-类进行模式匹配" class="anchor"><span class="anchor-link"></span></a>9.3 使用 case 类进行模式匹配</h2>
+<blockquote>
+  <p>PatternMatching/TradeStock.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/TradeStock.scala#L21-L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">trait Trade
+case class Sell(stockSymbol: String, quantity: Int) extends Trade
+case class Buy(stockSymbol: String, quantity: Int) extends Trade
+case class Hedge(stockSymbol: String, quantity: Int) extends Trade</code></pre>
+<blockquote>
+  <p>PatternMatching/TradeStock.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/TradeStock.scala#L28-L40" target="_blank" title="Go to snippet source"></a><code class="language-scala">object TradeProcessor {
+  def processTransaction(request: Trade): Unit = {
+    request match {
+      case Sell(stock, 1000) =&gt; println(s&quot;Selling 1000-units of $stock&quot;)
+      case Sell(stock, quantity) =&gt;
+        println(s&quot;Selling $quantity units of $stock&quot;)
+      case Buy(stock, quantity) if quantity &gt; 2000 =&gt;
+        println(s&quot;Buying $quantity (large) units of $stock&quot;)
+      case Buy(stock, quantity) =&gt;
+        println(s&quot;Buying $quantity units of $stock&quot;)
+    }
+  }
+}</code></pre>
+<blockquote>
+  <p>PatternMatching/TradeStock.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/TradeStock.scala#L44-L47" target="_blank" title="Go to snippet source"></a><code class="language-scala">TradeProcessor.processTransaction(Sell(&quot;GOOG&quot;, 500))
+TradeProcessor.processTransaction(Buy(&quot;GOOG&quot;, 700))
+TradeProcessor.processTransaction(Sell(&quot;GOOG&quot;, 1000))
+TradeProcessor.processTransaction(Buy(&quot;GOOG&quot;, 3000))</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/TradeStock.output#L2-L5" target="_blank" title="Go to snippet source"></a><code class="language-output">Selling 500 units of GOOG
+Buying 700 units of GOOG
+Selling 1000-units of GOOG
+Buying 3000 (large) units of GOOG</code></pre>
+<blockquote>
+  <p>PatternMatching/ThingsAcceptor.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/ThingsAcceptor.scala#L21-L34" target="_blank" title="Go to snippet source"></a><code class="language-scala">case class Apple()
+case class Orange()
+case class Book()
+
+object ThingsAcceptor {
+  def acceptStuff(thing: Any): Unit = {
+    thing match {
+      case Apple() =&gt; println(&quot;Thanks for the Apple&quot;)
+      case Orange() =&gt; println(&quot;Thanks for the Orange&quot;)
+      case Book() =&gt; println(&quot;Thanks for the Book&quot;)
+      case _ =&gt; println(s&quot;Excuse me, why did you send me $thing&quot;)
+    }
+  }
+}</code></pre>
+<blockquote>
+  <p>PatternMatching/ThingsAcceptor.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/ThingsAcceptor.scala#L38-L40" target="_blank" title="Go to snippet source"></a><code class="language-scala">ThingsAcceptor.acceptStuff(Apple())
+ThingsAcceptor.acceptStuff(Book())
+ThingsAcceptor.acceptStuff(Apple)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/ThingsAcceptor.output#L2-L4" target="_blank" title="Go to snippet source"></a><code class="language-output">Thanks for the Apple
+Thanks for the Book
+Excuse me, why did you send me Apple</code></pre>
+<blockquote>
+  <p>PatternMatching/ThingsAcceptor2.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/test/scala/chapter9/ThingsAcceptor2.scala#L21-L33" target="_blank" title="Go to snippet source"></a><code class="language-scala">abstract class Thing
+case class Apple() extends Thing
+
+object ThingsAcceptor {
+  def acceptStuff(thing: Thing) {
+    thing match {
+      //...
+      case _ =&gt;
+    }
+  }
+}
+
+ThingsAcceptor.acceptStuff(Apple) //error: type mismatch;</code></pre>
+<h2><a href="#9-4-提取器和正则表达式" name="9-4-提取器和正则表达式" class="anchor"><span class="anchor-link"></span></a>9.4 提取器和正则表达式</h2>
+<blockquote>
+  <p>PatternMatching/Extractor1.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Extractor1.scala#L41-L43" target="_blank" title="Go to snippet source"></a><code class="language-scala">StockService.process(&quot;GOOG&quot;)
+StockService.process(&quot;IBM&quot;)
+StockService.process(&quot;ERR&quot;)</code></pre>
+<blockquote>
+  <p>PatternMatching/Extractor1.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Extractor1.scala#L21-L28" target="_blank" title="Go to snippet source"></a><code class="language-scala">object StockService {
+  def process(input: String): Unit = {
+    input match {
+      case Symbol() =&gt; println(s&quot;Look up price for valid symbol $input&quot;)
+      case _ =&gt; println(s&quot;Invalid input $input&quot;)
+    }
+  }
+}</code></pre>
+<blockquote>
+  <p>PatternMatching/Extractor1.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Extractor1.scala#L32-L37" target="_blank" title="Go to snippet source"></a><code class="language-scala">object Symbol {
+  def unapply(symbol: String): Boolean = {
+    // you&#39;d look up a database... here only GOOG and IBM are recognized
+    symbol == &quot;GOOG&quot; || symbol == &quot;IBM&quot;
+  }
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/Extractor1.output#L2-L4" target="_blank" title="Go to snippet source"></a><code class="language-output">Look up price for valid symbol GOOG
+Look up price for valid symbol IBM
+Invalid input ERR</code></pre>
+<blockquote>
+  <p>PatternMatching/Extractor.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Extractor.scala#L21-L30" target="_blank" title="Go to snippet source"></a><code class="language-scala">object StockService {
+  def process(input: String): Unit = {
+    input match {
+      case Symbol() =&gt; println(s&quot;Look up price for valid symbol $input&quot;)
+      case ReceiveStockPrice(symbol, price) =&gt;
+        println(s&quot;Received price $$$price for symbol $symbol&quot;)
+      case _ =&gt; println(s&quot;Invalid input $input&quot;)
+    }
+  }
+}</code></pre>
+<blockquote>
+  <p>PatternMatching/Extractor.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Extractor.scala#L39-L52" target="_blank" title="Go to snippet source"></a><code class="language-scala">object ReceiveStockPrice {
+  def unapply(input: String): Option[(String, Double)] = {
+    try {
+      if (input contains &quot;:&quot;) {
+        val splitQuote = input.split(&quot;:&quot;)
+        Some((splitQuote(0), splitQuote(1).toDouble))
+      } else {
+        None
+      }
+    } catch {
+      case _: NumberFormatException =&gt; None
+    }
+  }
+}</code></pre>
+<blockquote>
+  <p>PatternMatching/Extractor.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Extractor.scala#L56-L59" target="_blank" title="Go to snippet source"></a><code class="language-scala">StockService.process(&quot;GOOG&quot;)
+StockService.process(&quot;GOOG:310.84&quot;)
+StockService.process(&quot;GOOG:BUY&quot;)
+StockService.process(&quot;ERR:12.21&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/Extractor.output#L2-L5" target="_blank" title="Go to snippet source"></a><code class="language-output">Look up price for valid symbol GOOG
+Received price $310.84 for symbol GOOG
+Invalid input GOOG:BUY
+Received price $12.21 for symbol ERR</code></pre>
+<blockquote>
+  <p>PatternMatching/Extractor2.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/Extractor2.scala#L25-L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">case ReceiveStockPrice(symbol @ Symbol(), price) =&gt;
+  println(s&quot;Received price $$$price for symbol $symbol&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/Extractor2.output#L2-L5" target="_blank" title="Go to snippet source"></a><code class="language-output">Look up price for valid symbol GOOG
+Received price $310.84 for symbol GOOG
+Invalid input GOOG:BUY
+Invalid input ERR:12.21</code></pre>
+<blockquote>
+  <p>PatternMatching/RegularExpr.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/RegularExpr.scala#L21-L23" target="_blank" title="Go to snippet source"></a><code class="language-scala">val pattern = &quot;(S|s)cala&quot;.r
+val str = &quot;Scala is scalable and cool&quot;
+println(pattern.findFirstIn(str))</code></pre>
+<blockquote>
+  <p>PatternMatching/RegularExpr.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/RegularExpr.scala#L27" target="_blank" title="Go to snippet source"></a><code class="language-scala">println(pattern.findAllIn(str).mkString(&quot;, &quot;))</code></pre>
+<blockquote>
+  <p>PatternMatching/RegularExpr.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/RegularExpr.scala#L31" target="_blank" title="Go to snippet source"></a><code class="language-scala">println(&quot;cool&quot;.r.replaceFirstIn(str, &quot;awesome&quot;))</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/RegularExpr.output#L2-L4" target="_blank" title="Go to snippet source"></a><code class="language-output">Some(Scala)
+Scala, scala
+Scala is scalable and awesome</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchUsingRegex.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchUsingRegex.scala#L21-L30" target="_blank" title="Go to snippet source"></a><code class="language-scala">def process(input: String): Unit = {
+  val GoogStock = &quot;&quot;&quot;^GOOG:(\d*\.\d+)&quot;&quot;&quot;.r
+  input match {
+    case GoogStock(price) =&gt; println(s&quot;Price of GOOG is $$$price&quot;)
+    case _ =&gt; println(s&quot;not processing $input&quot;)
+  }
+}
+process(&quot;GOOG:310.84&quot;)
+process(&quot;GOOG:310&quot;)
+process(&quot;IBM:84.01&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchUsingRegex.output#L2-L4" target="_blank" title="Go to snippet source"></a><code class="language-output">Price of GOOG is $310.84
+not processing GOOG:310
+not processing IBM:84.01</code></pre>
+<blockquote>
+  <p>PatternMatching/MatchUsingRegex2.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/MatchUsingRegex2.scala#L21-L32" target="_blank" title="Go to snippet source"></a><code class="language-scala">def process(input: String): Unit = {
+  val MatchStock = &quot;&quot;&quot;^(.+):(\d*\.\d+)&quot;&quot;&quot;.r
+  input match {
+    case MatchStock(&quot;GOOG&quot;, price) =&gt; println(s&quot;We got GOOG at $$$price&quot;)
+    case MatchStock(&quot;IBM&quot;, price) =&gt; println(s&quot;IBM&#39;s trading at $$$price&quot;)
+    case MatchStock(symbol, price) =&gt; println(s&quot;Price of $symbol is $$$price&quot;)
+    case _ =&gt; println(s&quot;not processing $input&quot;)
+  }
+}
+process(&quot;GOOG:310.84&quot;)
+process(&quot;IBM:84.01&quot;)
+process(&quot;GE:15.96&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter9/output/MatchUsingRegex2.output#L2-L4" target="_blank" title="Go to snippet source"></a><code class="language-output">We got GOOG at $310.84
+IBM&#39;s trading at $84.01
+Price of GE is $15.96</code></pre>
+</div>
+<div>
+<a href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/paradox/chapter-09/index.md" title="Edit this page" class="md-source-file md-edit">
+Edit this page
+</a>
+</div>
+<div class="print-only">
+<span class="md-source-file md-version">
+1.0.0
+</span>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a href="../chapter-08/index.html" title="第8章——集合" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+第8章——集合
+</span>
+</div>
+</a>
+<a href="../chapter-10/index.html" title="第10章——处理异常" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Next
+</span>
+第10章——处理异常
+</span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+Powered by
+<a href="https://github.com/lightbend/paradox">Paradox</a>
+and
+<a href="https://jonas.github.io/paradox-material-theme/">Paradox Material Theme</a>
+
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="../assets/javascripts/application.583bbe55.js"></script>
+<script src="../assets/javascripts/paradox-material-theme.js"></script>
+<script>app.initialize({version:"0.17",url:{base:"../."}})</script>
+<script type="text/javascript" src="../lib/prettify/prettify.js"></script>
+<script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+window.prettyPrint && prettyPrint();
+});
+</script>
+</body>
+</html>

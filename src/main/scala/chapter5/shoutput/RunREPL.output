@@ -1,6 +1,0 @@
-// #output
-scala> val greet = "Ahoy!"
-greet: String = Ahoy!
-
-scala> :quit
-// #output

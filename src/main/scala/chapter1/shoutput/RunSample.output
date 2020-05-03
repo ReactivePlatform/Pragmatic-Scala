@@ -1,9 +1,0 @@
-// #snip
-sample.scala:2:
-error: type mismatch;
- found   : String("haha")
- required: Int
-i = "haha" //Error
-    ^
-one error found
-// #snip

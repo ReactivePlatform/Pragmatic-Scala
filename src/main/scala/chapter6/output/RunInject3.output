@@ -1,8 +1,0 @@
-// #output
-Inject3.scala:9: error: not enough arguments for method inject: (arr:
-Array[Int], initial: Int, operation: (Int, Int) => Int)Int.
-Unspecified value parameter operation.
-val sum = inject(array, 0) {(carryOver, elem) => carryOver + elem}
-                ^
-one error found
-// #output

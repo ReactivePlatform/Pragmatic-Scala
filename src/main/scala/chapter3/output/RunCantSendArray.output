@@ -1,8 +1,0 @@
-// #output
-CantSendArray.scala:5: error: type mismatch;
- found   : Array[Int]
- required: Int
-max(numbers) // type mismatch error
-    ^
-one error found
-// #output

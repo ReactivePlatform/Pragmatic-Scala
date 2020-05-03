@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="PragmaticScala">
+<meta name="generator" content="Paradox, paradox-material-theme=0.6.0, mkdocs-material=3.0.3">
+
+<meta name="lang:clipboard.copy" content="Copy to clipboard">
+<meta name="lang:clipboard.copied" content="Copied to clipboard">
+<meta name="lang:search.language" content="">
+<meta name="lang:search.pipeline.stopwords" content="true">
+<meta name="lang:search.pipeline.trimmer" content="true">
+<meta name="lang:search.result.none" content="No matching documents">
+<meta name="lang:search.result.one" content="1 matching document">
+<meta name="lang:search.result.other" content="# matching documents">
+<meta name="lang:search.tokenizer" content="[\s\-]+">
+
+
+<meta name="description" content="PragmaticScala">
+<link rel="shortcut icon" href="../assets/images/favicon.png">
+<title>第14章——和Java进行互操作 · </title>
+<link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+<link rel="stylesheet" href="../lib/material__tabs/dist/mdc.tabs.min.css">
+<link rel="stylesheet" href="../lib/prettify/prettify.css">
+<script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+<style>
+body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}
+code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}
+</style>
+<link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+<link rel="stylesheet" href="../assets/fonts/material-icons.css">
+<link rel="stylesheet" href="../assets/stylesheets/paradox-material-theme.css">
+</head>
+<body
+>
+<input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+<input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a href="../index.html" title="" class="md-header-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+</span>
+<span class="md-header-nav__topic">
+第14章——和Java进行互操作
+</span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+<label class="md-icon md-search__icon" for="__search"></label>
+<button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix>
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+Type to start searching
+</div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</nav>
+</header>
+
+<div class="md-container">
+<main class="md-main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0" style="visibility: hidden">
+<label class="md-nav__title md-nav__title--site" for="drawer">
+<a href="../index.html" title="" class="md-nav__button md-logo">
+<span class="md-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+<a href="../index.html" title="">
+</a>
+</label>
+<ul>
+  <li><a href="../contents.html" class="page">目录</a>
+  <ul>
+    <li><a href="../abstract.html" class="page">内容提要</a></li>
+    <li><a href="../part1.html" class="page">第一部分 小试牛刀</a></li>
+    <li><a href="../part2.html" class="page">第二部分 深入 Scala</a></li>
+    <li><a href="../part3.html" class="page">第三部分 Scala 中的并发编程</a></li>
+    <li><a href="../part4.html" class="page">第四部分 Scala 实战</a></li>
+    <li><a href="../refs/references.html" class="page">参考书目</a></li>
+    <li><a href="../extras.html" class="page">额外指引</a></li>
+    <li><a href="../errata.html" class="page">勘误</a></li>
+  </ul></li>
+</ul>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-14/index.html#第14章-和java进行互操作" class="header">第14章——和Java进行互操作</a>
+  <ul>
+    <li><a href="../chapter-14/index.html#14-1-在-scala-中使用-scala-类" class="header">14.1 在 Scala 中使用 Scala 类</a></li>
+    <li><a href="../chapter-14/index.html#14-2-在-scala-中使用-java-类" class="header">14.2 在 Scala 中使用 Java 类</a></li>
+    <li><a href="../chapter-14/index.html#14-3-在-java-中使用-scala-方法" class="header">14.3 在 Java 中使用 Scala 方法</a></li>
+    <li><a href="../chapter-14/index.html#14-4-在-java-中使用特质" class="header">14.4 在 Java 中使用特质</a></li>
+    <li><a href="../chapter-14/index.html#14-5-在-java-中使用单例对象和伴生对象" class="header">14.5 在 Java 中使用单例对象和伴生对象</a></li>
+    <li><a href="../chapter-14/index.html#14-6-扩展类" class="header">14.6 扩展类</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</nav>
+<ul style="display: none">
+<li class="md-nav__item md-version" id="project.version">
+<label class="md-nav__link" for="__version">
+<i class="md-icon" title="Version">label_outline</i> 1.0.0
+</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-14/index.html#第14章-和java进行互操作" class="header">第14章——和Java进行互操作</a>
+  <ul>
+    <li><a href="../chapter-14/index.html#14-1-在-scala-中使用-scala-类" class="header">14.1 在 Scala 中使用 Scala 类</a></li>
+    <li><a href="../chapter-14/index.html#14-2-在-scala-中使用-java-类" class="header">14.2 在 Scala 中使用 Java 类</a></li>
+    <li><a href="../chapter-14/index.html#14-3-在-java-中使用-scala-方法" class="header">14.3 在 Java 中使用 Scala 方法</a></li>
+    <li><a href="../chapter-14/index.html#14-4-在-java-中使用特质" class="header">14.4 在 Java 中使用特质</a></li>
+    <li><a href="../chapter-14/index.html#14-5-在-java-中使用单例对象和伴生对象" class="header">14.5 在 Java 中使用单例对象和伴生对象</a></li>
+    <li><a href="../chapter-14/index.html#14-6-扩展类" class="header">14.6 扩展类</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<div class="md-content__searchable">
+<h1><a href="#第14章-和java进行互操作" name="第14章-和java进行互操作" class="anchor"><span class="anchor-link"></span></a>第14章——和Java进行互操作</h1>
+<p>现已存在许多强大的 Scala 库，并与日俱增。开发人员不仅可以在 Scala 中使用这些库， 也可以在 Java 中使用它们。但是要做到这一点，必须要学习一些技巧。 ①</p>
+<blockquote>
+  <ol>
+    <li>因为某些库可能没有针对潜在的 Java 用户设计友好的 API，所以可能需要一些潜在适配工作。——译者注</li>
+  </ol>
+</blockquote>
+<h2><a href="#14-1-在-scala-中使用-scala-类" name="14-1-在-scala-中使用-scala-类" class="anchor"><span class="anchor-link"></span></a>14.1 在 Scala 中使用 Scala 类</h2>
+<blockquote>
+  <p>Intermixing/Person.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Person.scala#L20-L22" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Person(val firstName: String, val lastName: String) {
+  override def toString: String = firstName + &quot; &quot; + lastName
+}</code></pre>
+<blockquote>
+  <p>Intermixing/Dog.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Dog.scala#L20-L22" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Dog(val name: String) {
+  override def toString: String = name
+}</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/CompileAndCreateJar.sh#L4-L5" target="_blank" title="Go to snippet source"></a><code class="language-sh">scalac Person.scala Dog.scala
+jar cf /tmp/example.jar Person.class Dog.class</code></pre>
+<blockquote>
+  <p>Intermixing/UsePerson.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/UsePerson.scala#L21-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">val george = new Person(&quot;George&quot;, &quot;Washington&quot;)
+
+val georgesDogs = List(new Dog(&quot;Captain&quot;), new Dog(&quot;Clode&quot;), new Dog(&quot;Forester&quot;), new Dog(&quot;Searcher&quot;))
+
+println(s&quot;$george had several dogs ${georgesDogs.mkString(&quot;, &quot;)}...&quot;)</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUsePerson.sh#L5" target="_blank" title="Go to snippet source"></a><code class="language-sh">scala -classpath /tmp/example.jar usePerson.scala</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/RunUsePerson.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">George Washington had several dogs Captain, Clode, Forester, Searcher...</code></pre>
+<blockquote>
+  <p>Intermixing/UsePersonClass.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/UsePersonClass.scala#L20-L23" target="_blank" title="Go to snippet source"></a><code class="language-scala">object UsePersonClass extends App {
+  val ben = new Person(&quot;Ben&quot;, &quot;Franklin&quot;)
+  println(s&quot;$ben was a great inventor.&quot;)
+}</code></pre>
+<p><em>执行命令1</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUsePersonClass.sh#L5-L6" target="_blank" title="Go to snippet source"></a><code class="language-sh">mkdir -p classes
+scalac -d classes -classpath /tmp/example.jar UsePersonClass.scala</code></pre>
+<p><em>执行命令2</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUsePersonClass.sh#L10" target="_blank" title="Go to snippet source"></a><code class="language-sh">scala -classpath classes:/tmp/example.jar UsePersonClass</code></pre>
+<p><em>执行命令3</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUsePersonClassUsingJava.sh#L7-L8" target="_blank" title="Go to snippet source"></a><code class="language-sh">java -classpath $SCALA_HOME/lib/scala-library.jar:classes:/tmp/example.jar \
+  UsePersonClass</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/RunUsePersonClass.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">Ben Franklin was a great inventor.</code></pre>
+<h2><a href="#14-2-在-scala-中使用-java-类" name="14-2-在-scala-中使用-java-类" class="anchor"><span class="anchor-link"></span></a>14.2 在 Scala 中使用 Java 类</h2>
+<blockquote>
+  <p>Intermixing/UseJDKClass.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/UseJDKClass.scala#L21-L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">import java.util.Currency
+
+val currencies = Currency.getAvailableCurrencies
+println(s&quot;${currencies.size} currencies are available.&quot;)</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUseJDKClass.sh#L4" target="_blank" title="Go to snippet source"></a><code class="language-sh">scala UseJDKClass.scala</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/RunUseJDKClass.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">220 currencies are available.</code></pre>
+<blockquote>
+  <p>Intermixing/java/InvestmentType.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/usingjava/InvestmentType.java#L18-L23" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java code
+package chapter14.usingjava;
+
+public enum InvestmentType {
+  BOND, STOCK, REAL_ESTATE, COMMODITIES, COLLECTIBLES, MUTUAL_FUNDS
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/RunUseInvestment.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">class investments.Investment</code></pre>
+<blockquote>
+  <p>Intermixing/java/Investment.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/usingjava/Investment.java#L18-L30" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java code
+package chapter14.usingjava;
+
+public class Investment {                                        
+  private String investmentName;
+  private InvestmentType investmentType;
+             
+  public Investment(String name, InvestmentType type) {
+    investmentName = name;
+    investmentType = type;
+  } 
+  public int yield() { return 0; }
+}</code></pre>
+<blockquote>
+  <p>Intermixing/UseInvestment.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/UseInvestment.scala#L20-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">import chapter14.usingjava.{ Investment, InvestmentType }
+
+object UseInvestment extends App {
+  val investment = new Investment(&quot;XYZ Corporation&quot;, InvestmentType.STOCK)
+  println(investment.getClass)
+}</code></pre>
+<p><em>执行命令1</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUseInvestment.sh#L4-L7" target="_blank" title="Go to snippet source"></a><code class="language-sh">mkdir -p classes
+javac -d classes java/InvestmentType.java java/Investment.java
+scalac -classpath classes UseInvestment.scala
+scala -classpath classes:. UseInvestment</code></pre>
+<p><em>执行命令2</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUseInvestment2.sh#L4" target="_blank" title="Go to snippet source"></a><code class="language-sh">java -classpath $SCALA_HOME/lib/scala-library.jar:classes:. UseInvestment</code></pre>
+<blockquote>
+  <p>Intermixing/UseInvestmentError.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/test/scala/chapter14/UseInvestmentError.scala#L23-L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">val theYield1 = investment.yield   //ERROR
+val theYield2 = investment.yield() //ERROR</code></pre>
+<blockquote>
+  <p>Intermixing/UseInvestmentYield.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/UseInvestmentYield.scala#L23-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">val investment = new Investment(&quot;XYZ Corporation&quot;, InvestmentType.STOCK)
+val theYield1 = investment.`yield`
+val theYield2 = investment.`yield`()</code></pre>
+<h2><a href="#14-3-在-java-中使用-scala-方法" name="14-3-在-java-中使用-scala-方法" class="anchor"><span class="anchor-link"></span></a>14.3 在 Java 中使用 Scala 方法</h2>
+<blockquote>
+  <p>Intermixing/Car.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Car.scala#L18-L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter14
+
+class Car(val year: Int) {
+  private[this] var miles: Int = 0
+
+  def drive(distance: Int): Unit = { miles += distance }
+
+  override def toString: String = s&quot;year: $year miles: $miles&quot;
+}</code></pre>
+<blockquote>
+  <p>Intermixing/UseCar.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/UseCar.java#L18-L29" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java code
+package chapter14;
+
+public class UseCar {
+  public static void main(String[] args) {
+    Car car = new Car(2009);
+    
+    System.out.println(car);
+    car.drive(10);
+    System.out.println(car);
+  }
+}</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/RunUseCar.sh#L4-L9" target="_blank" title="Go to snippet source"></a><code class="language-sh">mkdir -p classes
+scalac -d classes Car.scala
+javac -d classes -classpath $SCALA_HOME/lib/scala-library.jar:classes \
+  UseCar.java
+java -classpath $SCALA_HOME/lib/scala-library.jar:classes \
+  automobiles.users.UseCar</code></pre>
+<h2><a href="#14-4-在-java-中使用特质" name="14-4-在-java-中使用特质" class="anchor"><span class="anchor-link"></span></a>14.4 在 Java 中使用特质</h2>
+<blockquote>
+  <p>Intermixing/Writable.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Writable.scala#L20-L22" target="_blank" title="Go to snippet source"></a><code class="language-scala">trait Writable {
+  def write(message: String): Unit
+}</code></pre>
+<blockquote>
+  <p>Intermixing/AWritableJavaClass.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/AWritableJavaClass.java#L19-L24" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java code
+public class AWritableJavaClass implements Writable {
+  public void write(String message) {
+    //...code...
+  }
+}</code></pre>
+<blockquote>
+  <p>Intermixing/Printable.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Printable.scala#L20-L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">trait Printable {
+  def print(): Unit = {
+    println(&quot;running printable...&quot;)
+  }
+}</code></pre>
+<p><em>执行命令1</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/CompileAPrintable.sh#L4-L5" target="_blank" title="Go to snippet source"></a><code class="language-sh">mkdir -p classes
+scalac -d classes Printable.scala</code></pre>
+<p><em>执行命令2</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/CompileAPrintable.sh#L9" target="_blank" title="Go to snippet source"></a><code class="language-sh">javap classes/Printable.class classes/Printable\$class.class</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/CompileAPrintable.output#L2-L11" target="_blank" title="Go to snippet source"></a><code class="language-output">Compiled from &quot;Printable.scala&quot;
+public abstract class Printable$class {
+  public static void print(Printable);
+  public static void $init$(Printable);
+}
+Compiled from &quot;Printable.scala&quot;
+public abstract class Printable$class {
+  public static void print(Printable);
+  public static void $init$(Printable);
+}</code></pre>
+<blockquote>
+  <p>Intermixing/APrintable.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/APrintable.java#L20-L35" target="_blank" title="Go to snippet source"></a><code class="language-java">public class APrintable implements Printable {
+  public void print() {
+    System.out.println(&quot;We can reuse the trait here if we like...&quot;);
+    //Printable$class.print(this); // for 2.11.x
+    Printable.super.print(); // for 2.12.x
+  }
+  
+  public static void use(Printable printable) {
+    printable.print();
+  }
+  
+  public static void main(String[] args) {
+    APrintable aPrintable = new APrintable();
+    use(aPrintable);
+  }
+}</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/CompileAPrintable.sh#L13-L15" target="_blank" title="Go to snippet source"></a><code class="language-sh">javac -d classes -classpath $SCALA_HOME/lib/scala-library.jar:classes \
+  APrintable.java
+java -classpath $SCALA_HOME/lib/scala-library.jar:classes APrintable</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/CompileAPrintable.output#L15-L16" target="_blank" title="Go to snippet source"></a><code class="language-output">We can reuse the trait here if we like...
+running printable...</code></pre>
+<h2><a href="#14-5-在-java-中使用单例对象和伴生对象" name="14-5-在-java-中使用单例对象和伴生对象" class="anchor"><span class="anchor-link"></span></a>14.5 在 Java 中使用单例对象和伴生对象</h2>
+<blockquote>
+  <p>Intermixing/Single.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Single.scala#L18-L22" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter14
+
+object Single {
+  def greet(): Unit = { println(&quot;Hello from Single&quot;) }
+}</code></pre>
+<blockquote>
+  <p>Intermixing/SingleUser.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/SingleUser.java#L19-L24" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java code
+public class SingleUser {
+  public static void main(String[] args) {
+    Single.greet();
+  }
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/RunSingle.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">Hello from Single</code></pre>
+<blockquote>
+  <p>Intermixing/Buddy.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Buddy.scala#L20-L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Buddy {
+  def greet(): Unit = { println(&quot;Hello from Buddy class&quot;) }
+}
+
+object Buddy {
+  def greet(): Unit = { println(&quot;Hello from Buddy object&quot;) }
+}</code></pre>
+<blockquote>
+  <p>Intermixing/BuddyUser.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/BuddyUser.java#L19-L25" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java code
+public class BuddyUser {
+  public static void main(String[] args) {
+    new Buddy().greet();
+    Buddy$.MODULE$.greet(); 
+  }
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/RunBuddy.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">Hello from Buddy class
+Hello from Buddy object</code></pre>
+<h2><a href="#14-6-扩展类" name="14-6-扩展类" class="anchor"><span class="anchor-link"></span></a>14.6 扩展类</h2>
+<blockquote>
+  <p>Intermixing/BirdWithProblem.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/BirdWithProblem.scala#L20-L23" target="_blank" title="Go to snippet source"></a><code class="language-scala">abstract class BirdWithProblem {
+  def fly(): Unit
+  //...
+}</code></pre>
+<blockquote>
+  <p>Intermixing/Ostrich.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Ostrich.scala#L20-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Ostrich extends BirdWithProblem {
+  override def fly(): Unit = {
+    throw new NoFlyException
+  }
+  //...
+}</code></pre>
+<blockquote>
+  <p>Intermixing/NoFlyException.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/NoFlyException.scala#L20" target="_blank" title="Go to snippet source"></a><code class="language-scala">class NoFlyException extends Exception {}</code></pre>
+<blockquote>
+  <p>Intermixing/Penguin.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Penguin.java#L20-L26" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java code
+class Penguin extends Bird {      
+  public void fly() throws NoFlyException {
+    throw new NoFlyException();
+  }
+  //...
+}</code></pre>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/shoutput/RunBirdWithProblem.output#L2-L6" target="_blank" title="Go to snippet source"></a><code class="language-output">Penguin.java:3: error: fly() in Penguin cannot override fly() in Bird
+  public void fly() throws NoFlyException {
+              ^
+  overridden method does not throw NoFlyException
+1 error</code></pre>
+<blockquote>
+  <p>Intermixing/Bird.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter14/Bird.scala#L20-L23" target="_blank" title="Go to snippet source"></a><code class="language-scala">abstract class Bird {
+  @throws(classOf[NoFlyException]) def fly(): Unit
+  //...
+}</code></pre>
+</div>
+<div>
+<a href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/paradox/chapter-14/index.md" title="Edit this page" class="md-source-file md-edit">
+Edit this page
+</a>
+</div>
+<div class="print-only">
+<span class="md-source-file md-version">
+1.0.0
+</span>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a href="../part4.html" title="第四部分 Scala 实战" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+第四部分 Scala 实战
+</span>
+</div>
+</a>
+<a href="../chapter-15/index.html" title="第15章——使用Scala创建应用程序" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Next
+</span>
+第15章——使用Scala创建应用程序
+</span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+Powered by
+<a href="https://github.com/lightbend/paradox">Paradox</a>
+and
+<a href="https://jonas.github.io/paradox-material-theme/">Paradox Material Theme</a>
+
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="../assets/javascripts/application.583bbe55.js"></script>
+<script src="../assets/javascripts/paradox-material-theme.js"></script>
+<script>app.initialize({version:"0.17",url:{base:"../."}})</script>
+<script type="text/javascript" src="../lib/prettify/prettify.js"></script>
+<script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+window.prettyPrint && prettyPrint();
+});
+</script>
+</body>
+</html>

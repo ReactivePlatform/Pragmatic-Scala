@@ -1,7 +1,0 @@
-UseInvestmentError.scala:7: error: identifier expected but 'yield' found.
-    val theYield1 = investment.yield   //ERROR
-                               ^
-UseInvestmentError.scala:13: error: identifier expected but 'yield' found.
-    val theYield2 = investment.yield() //ERROR
-                               ^
-two errors found

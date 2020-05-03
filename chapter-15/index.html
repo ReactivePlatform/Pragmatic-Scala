@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="PragmaticScala">
+<meta name="generator" content="Paradox, paradox-material-theme=0.6.0, mkdocs-material=3.0.3">
+
+<meta name="lang:clipboard.copy" content="Copy to clipboard">
+<meta name="lang:clipboard.copied" content="Copied to clipboard">
+<meta name="lang:search.language" content="">
+<meta name="lang:search.pipeline.stopwords" content="true">
+<meta name="lang:search.pipeline.trimmer" content="true">
+<meta name="lang:search.result.none" content="No matching documents">
+<meta name="lang:search.result.one" content="1 matching document">
+<meta name="lang:search.result.other" content="# matching documents">
+<meta name="lang:search.tokenizer" content="[\s\-]+">
+
+
+<meta name="description" content="PragmaticScala">
+<link rel="shortcut icon" href="../assets/images/favicon.png">
+<title>第15章——使用Scala创建应用程序 · </title>
+<link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+<link rel="stylesheet" href="../lib/material__tabs/dist/mdc.tabs.min.css">
+<link rel="stylesheet" href="../lib/prettify/prettify.css">
+<script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+<style>
+body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}
+code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}
+</style>
+<link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+<link rel="stylesheet" href="../assets/fonts/material-icons.css">
+<link rel="stylesheet" href="../assets/stylesheets/paradox-material-theme.css">
+</head>
+<body
+>
+<input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+<input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a href="../index.html" title="" class="md-header-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+</span>
+<span class="md-header-nav__topic">
+第15章——使用Scala创建应用程序
+</span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+<label class="md-icon md-search__icon" for="__search"></label>
+<button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix>
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+Type to start searching
+</div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</nav>
+</header>
+
+<div class="md-container">
+<main class="md-main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0" style="visibility: hidden">
+<label class="md-nav__title md-nav__title--site" for="drawer">
+<a href="../index.html" title="" class="md-nav__button md-logo">
+<span class="md-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+<a href="../index.html" title="">
+</a>
+</label>
+<ul>
+  <li><a href="../contents.html" class="page">目录</a>
+  <ul>
+    <li><a href="../abstract.html" class="page">内容提要</a></li>
+    <li><a href="../part1.html" class="page">第一部分 小试牛刀</a></li>
+    <li><a href="../part2.html" class="page">第二部分 深入 Scala</a></li>
+    <li><a href="../part3.html" class="page">第三部分 Scala 中的并发编程</a></li>
+    <li><a href="../part4.html" class="page">第四部分 Scala 实战</a></li>
+    <li><a href="../refs/references.html" class="page">参考书目</a></li>
+    <li><a href="../extras.html" class="page">额外指引</a></li>
+    <li><a href="../errata.html" class="page">勘误</a></li>
+  </ul></li>
+</ul>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-15/index.html#第15章-使用scala创建应用程序" class="header">第15章——使用Scala创建应用程序</a>
+  <ul>
+    <li><a href="../chapter-15/index.html#15-1-获取用户输入" class="header">15.1 获取用户输入</a></li>
+    <li><a href="../chapter-15/index.html#15-2-读写文件" class="header">15.2 读写文件</a></li>
+    <li><a href="../chapter-15/index.html#15-3-xml-作为一等公民" class="header">15.3 XML 作为一等公民</a></li>
+    <li><a href="../chapter-15/index.html#15-4-读写-xml" class="header">15.4 读写 XML</a></li>
+    <li><a href="../chapter-15/index.html#15-5-从-web-获取股票价格" class="header">15.5 从 Web 获取股票价格</a></li>
+    <li><a href="../chapter-15/index.html#15-6-编写并发的资产净值应用程序" class="header">15.6 编写并发的资产净值应用程序</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</nav>
+<ul style="display: none">
+<li class="md-nav__item md-version" id="project.version">
+<label class="md-nav__link" for="__version">
+<i class="md-icon" title="Version">label_outline</i> 1.0.0
+</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-15/index.html#第15章-使用scala创建应用程序" class="header">第15章——使用Scala创建应用程序</a>
+  <ul>
+    <li><a href="../chapter-15/index.html#15-1-获取用户输入" class="header">15.1 获取用户输入</a></li>
+    <li><a href="../chapter-15/index.html#15-2-读写文件" class="header">15.2 读写文件</a></li>
+    <li><a href="../chapter-15/index.html#15-3-xml-作为一等公民" class="header">15.3 XML 作为一等公民</a></li>
+    <li><a href="../chapter-15/index.html#15-4-读写-xml" class="header">15.4 读写 XML</a></li>
+    <li><a href="../chapter-15/index.html#15-5-从-web-获取股票价格" class="header">15.5 从 Web 获取股票价格</a></li>
+    <li><a href="../chapter-15/index.html#15-6-编写并发的资产净值应用程序" class="header">15.6 编写并发的资产净值应用程序</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<div class="md-content__searchable">
+<h1><a href="#第15章-使用scala创建应用程序" name="第15章-使用scala创建应用程序" class="anchor"><span class="anchor-link"></span></a>第15章——使用Scala创建应用程序</h1>
+<p>在本章中，我们将会把在本书中学到的许多东西汇集到一起，并学习一些新东西。我们 将逐步构建一个应用程序，用于找到股票市场中的投资的净值。在这个练习中，我们将会看 到一些夺目的特性：简洁性与表现力、模式匹配的力量以及函数值/闭包和并发。此外，我们 还将学习 Scala 对 XML 处理的支持—一个在构建企业级应用时会极大受益的特性。 ①</p>
+<blockquote>
+  <ol>
+    <li>从 Scala 2.11.x 版本开始，对 XML 的支持已经被移到了单独的模块中。——译者注</li>
+  </ol>
+</blockquote>
+<h2><a href="#15-1-获取用户输入" name="15-1-获取用户输入" class="anchor"><span class="anchor-link"></span></a>15.1 获取用户输入</h2>
+<blockquote>
+  <p>UsingScala/ConsoleInput.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/ConsoleInput.scala#L21-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.io._
+
+print(&quot;Please enter a ticker symbol:&quot;)
+val symbol = StdIn.readLine()
+println(s&quot;OK, got it, you own $symbol&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/shoutput/RunConsoleInput.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">Please enter a ticker symbol:OK, got it, you own AAPL</code></pre>
+<h2><a href="#15-2-读写文件" name="15-2-读写文件" class="anchor"><span class="anchor-link"></span></a>15.2 读写文件</h2>
+<blockquote>
+  <p>UsingScala/WriteToFile.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/WriteToFile.scala#L21-L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">import java.io._
+
+val writer = new PrintWriter(new File(&quot;symbols.txt&quot;))
+writer.write(&quot;AAPL&quot;)
+writer.close()
+println(scala.io.Source.fromFile(&quot;symbols.txt&quot;).mkString)</code></pre>
+<blockquote>
+  <p>UsingScala/ReadingFile.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/ReadingFile.scala#L21-L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.io.Source
+
+println(&quot;*** The content of the file you read is:&quot;)
+Source.fromFile(&quot;ReadingFile.scala&quot;).foreach { print }</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/ReadingFile.output#L2-L6" target="_blank" title="Go to snippet source"></a><code class="language-output">*** The content of the file you read is:
+import scala.io.Source
+
+println(&quot;*** The content of the file you read is:&quot;)
+Source.fromFile(&quot;ReadingFile.scala&quot;).foreach { print }</code></pre>
+<blockquote>
+  <p>UsingScala/ReadingURL.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/ReadingURL.scala#L21-L27" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.io.Source
+import java.net.URL
+
+val source = Source.fromURL(new URL(&quot;http://localhost&quot;))
+
+println(s&quot;What&#39;s Source?: $source&quot;)
+println(s&quot;Raw String: ${source.mkString}&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/ReadingURL.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">What&#39;s Source?: non-empty iterator
+Raw String: &lt;html&gt;&lt;body&gt;&lt;h1&gt;It works!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+<h2><a href="#15-3-xml-作为一等公民" name="15-3-xml-作为一等公民" class="anchor"><span class="anchor-link"></span></a>15.3 XML 作为一等公民</h2>
+<blockquote>
+  <p>UsingScala/UseXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/UseXML.scala#L21-L28" target="_blank" title="Go to snippet source"></a><code class="language-scala">val xmlFragment =
+  &lt;symbols&gt;
+    &lt;symbol ticker=&quot;AAPL&quot;&gt;&lt;units&gt;200&lt;/units&gt;&lt;/symbol&gt;
+    &lt;symbol ticker=&quot;IBM&quot;&gt;&lt;units&gt;215&lt;/units&gt;&lt;/symbol&gt;
+  &lt;/symbols&gt;
+
+println(xmlFragment)
+println(xmlFragment.getClass)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/UseXML.output#L2-L6" target="_blank" title="Go to snippet source"></a><code class="language-output">&lt;symbols&gt;
+  &lt;symbol ticker=&quot;AAPL&quot;&gt;&lt;units&gt;200&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;IBM&quot;&gt;&lt;units&gt;215&lt;/units&gt;&lt;/symbol&gt;
+&lt;/symbols&gt;
+class scala.xml.Elem</code></pre>
+<blockquote>
+  <p>UsingScala/UseXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/UseXML.scala#L32-L34" target="_blank" title="Go to snippet source"></a><code class="language-scala">var symbolNodes = xmlFragment \ &quot;symbol&quot;
+symbolNodes.foreach(println)
+println(symbolNodes.getClass)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/UseXML.output#L10-L12" target="_blank" title="Go to snippet source"></a><code class="language-output">&lt;symbol ticker=&quot;AAPL&quot;&gt;&lt;units&gt;200&lt;/units&gt;&lt;/symbol&gt;
+&lt;symbol ticker=&quot;IBM&quot;&gt;&lt;units&gt;215&lt;/units&gt;&lt;/symbol&gt;
+class scala.xml.NodeSeq$$anon$1</code></pre>
+<blockquote>
+  <p>UsingScala/UseXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/UseXML.scala#L38-L41" target="_blank" title="Go to snippet source"></a><code class="language-scala">var unitsNodes = xmlFragment \\ &quot;units&quot;
+unitsNodes.foreach(println)
+println(unitsNodes.getClass)
+println(unitsNodes.head.text)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/UseXML.output#L16-L19" target="_blank" title="Go to snippet source"></a><code class="language-output">&lt;units&gt;200&lt;/units&gt;
+&lt;units&gt;215&lt;/units&gt;
+class scala.xml.NodeSeq$$anon$1
+200</code></pre>
+<blockquote>
+  <p>UsingScala/UseXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/UseXML.scala#L45-L47" target="_blank" title="Go to snippet source"></a><code class="language-scala">unitsNodes.head match {
+  case &lt;units&gt;{numberOfUnits}&lt;/units&gt; =&gt; println(s&quot;Units: $numberOfUnits&quot;)
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/UseXML.output#L23" target="_blank" title="Go to snippet source"></a><code class="language-output">Units: 200</code></pre>
+<blockquote>
+  <p>UsingScala/UseXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/UseXML.scala#L51-L57" target="_blank" title="Go to snippet source"></a><code class="language-scala">println(&quot;Ticker\tUnits&quot;)
+xmlFragment match {
+  case &lt;symbols&gt;{symbolNodes @ _*}&lt;/symbols&gt; =&gt;
+    for (symbolNode @ &lt;symbol&gt;{_*}&lt;/symbol&gt; &lt;- symbolNodes) {
+      println(&quot;%-7s %s&quot;.format(symbolNode \ &quot;@ticker&quot;, (symbolNode \ &quot;units&quot;).text))
+    }
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/UseXML.output#L27-L29" target="_blank" title="Go to snippet source"></a><code class="language-output">Ticker	Units
+AAPL    200
+IBM     215</code></pre>
+<h2><a href="#15-4-读写-xml" name="15-4-读写-xml" class="anchor"><span class="anchor-link"></span></a>15.4 读写 XML</h2>
+<p><em>stocks.xml</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/stocks.xml.input#L2-L18" target="_blank" title="Go to snippet source"></a><code class="language-input">&lt;symbols&gt;
+  &lt;symbol ticker=&quot;AAPL&quot;&gt;&lt;units&gt;200&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;ADBE&quot;&gt;&lt;units&gt;125&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;ALU&quot;&gt;&lt;units&gt;150&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;AMD&quot;&gt;&lt;units&gt;150&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;CSCO&quot;&gt;&lt;units&gt;250&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;HPQ&quot;&gt;&lt;units&gt;225&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;IBM&quot;&gt;&lt;units&gt;215&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;INTC&quot;&gt;&lt;units&gt;160&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;MSFT&quot;&gt;&lt;units&gt;190&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;NSM&quot;&gt;&lt;units&gt;200&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;ORCL&quot;&gt;&lt;units&gt;200&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;SYMC&quot;&gt;&lt;units&gt;230&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;TXN&quot;&gt;&lt;units&gt;190&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;VRSN&quot;&gt;&lt;units&gt;200&lt;/units&gt;&lt;/symbol&gt;
+  &lt;symbol ticker=&quot;XRX&quot;&gt;&lt;units&gt;240&lt;/units&gt;&lt;/symbol&gt;
+&lt;/symbols&gt; </code></pre>
+<blockquote>
+  <p>UsingScala/ReadWriteXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/ReadWriteXML.scala#L21-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.xml._
+
+val stocksAndUnits = XML.load(&quot;stocks.xml&quot;)
+println(stocksAndUnits.getClass)
+println(s&quot;File has ${(stocksAndUnits \\ &quot;symbol&quot;).size} symbol elements&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/ReadWriteXML.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">class scala.xml.Elem
+File has 15 symbol elements</code></pre>
+<blockquote>
+  <p>UsingScala/ReadWriteXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/ReadWriteXML.scala#L29-L36" target="_blank" title="Go to snippet source"></a><code class="language-scala">val stocksAndUnitsMap =
+  (Map[String, Int]() /: (stocksAndUnits \ &quot;symbol&quot;)) { (map, symbolNode) =&gt;
+    val ticker = (symbolNode \ &quot;@ticker&quot;).toString
+    val units = (symbolNode \ &quot;units&quot;).text.toInt
+    map + (ticker -&gt; units) //return new map, with one additional entry
+  }
+
+println(s&quot;Number of symbol elements found is ${stocksAndUnitsMap.size}&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/ReadWriteXML.output#L7" target="_blank" title="Go to snippet source"></a><code class="language-output">Number of symbol elements found is 15</code></pre>
+<blockquote>
+  <p>UsingScala/ReadWriteXML.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/ReadWriteXML.scala#L40-L55" target="_blank" title="Go to snippet source"></a><code class="language-scala">val updatedStocksAndUnitsXML =
+  &lt;symbols&gt;
+    {stocksAndUnitsMap.map(updateUnitsAndCreateXML)}
+  &lt;/symbols&gt;
+
+def updateUnitsAndCreateXML(element: (String, Int)) = {
+  val (ticker, units) = element
+  &lt;symbol ticker={ticker}&gt;
+    &lt;units&gt;{units + 1}&lt;/units&gt;
+  &lt;/symbol&gt;
+}
+
+XML.save(&quot;stocks2.xml&quot;, updatedStocksAndUnitsXML)
+
+val elementsCount = (XML.load(&quot;stocks2.xml&quot;) \\ &quot;symbol&quot;).size
+println(s&quot;Saved file has $elementsCount symbol elements&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/ReadWriteXML.output#L11" target="_blank" title="Go to snippet source"></a><code class="language-output">Saved file has 15 symbol elements</code></pre>
+<p><em>示例文件</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/output/GOOG.out#L2-L6" target="_blank" title="Go to snippet source"></a><code class="language-out">Date,Open,High,Low,Close,Volume,Adj Close
+2015-03-20,561.65,561.72,559.05,560.36,2585800,560.36
+2015-03-19,559.39,560.80,556.15,557.99,1191100,557.99
+2015-03-18,552.50,559.78,547.00,559.50,2124400,559.50
+...</code></pre>
+<h2><a href="#15-5-从-web-获取股票价格" name="15-5-从-web-获取股票价格" class="anchor"><span class="anchor-link"></span></a>15.5 从 Web 获取股票价格</h2>
+<blockquote>
+  <p>UsingScala/StockPriceFinder.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/StockPriceFinder.scala#L20-L57" target="_blank" title="Go to snippet source"></a><code class="language-scala"><br/>object StockPriceFinder {
+  import scala.io.Source
+
+  case class Record(year: Int, month: Int, date: Int, closePrice: BigDecimal)
+
+  def getLatestClosingPrice(symbol: String): BigDecimal = {
+    val url = s&quot;https://raw.githubusercontent.com/ReactivePlatform/&quot; +
+      s&quot;Pragmatic-Scala-StaticResources/master/src/main/resources/&quot; +
+      s&quot;stocks/daily/daily_$symbol.csv&quot;
+
+    val data = Source.fromURL(url).mkString
+    val latestClosePrize = data
+      .split(&quot;\n&quot;)
+      .slice(1, 2)
+      .map(record =&gt; {
+        val Array(timestamp, open, high, low, close, volume) = record.split(&quot;,&quot;)
+        val Array(year, month, date) = timestamp.split(&quot;-&quot;)
+        Record(year.toInt, month.toInt, date.toInt, BigDecimal(close.trim))
+      })
+      .map(_.closePrice)
+      .head
+    latestClosePrize
+  }
+
+  def getTickersAndUnits: Map[String, Int] = {
+    val classLoader = this.getClass.getClassLoader
+    val stocksXMLInputStream = classLoader.getResourceAsStream(&quot;stocks.xml&quot;)
+    //或者来自于文件
+    val stocksAndUnitsXML = scala.xml.XML.load(stocksXMLInputStream)
+    (Map[String, Int]() /: (stocksAndUnitsXML \ &quot;symbol&quot;)) { (map, symbolNode) =&gt;
+      val ticker = (symbolNode \ &quot;@ticker&quot;).toString
+      val units = (symbolNode \ &quot;units&quot;).text.toInt
+      map + (ticker -&gt; units)
+    }
+  }
+}
+</code></pre>
+<blockquote>
+  <p>UsingScala/FindTotalWorthSequential.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/FindTotalWorthSequential.scala#L20-L48" target="_blank" title="Go to snippet source"></a><code class="language-scala">object FindTotalWorthSequential extends App {
+
+  val symbolsAndUnits = StockPriceFinder.getTickersAndUnits
+
+  println(&quot;Ticker  Units  Closing Price($) Total Value($)&quot;)
+
+  val startTime = System.nanoTime()
+  val valuesAndWorth = symbolsAndUnits.keys.map { symbol =&gt;
+    val units = symbolsAndUnits(symbol)
+    val latestClosingPrice = StockPriceFinder.getLatestClosingPrice(symbol)
+    val value = units * latestClosingPrice
+
+    (symbol, units, latestClosingPrice, value)
+  }
+
+  val netWorth = (BigDecimal(0.0d) /: valuesAndWorth) { (worth, valueAndWorth) =&gt;
+    val (_, _, _, value) = valueAndWorth
+    worth + value
+  }
+  val endTime = System.nanoTime()
+
+  valuesAndWorth.toList.sortBy(_._1).foreach { valueAndWorth =&gt;
+    val (symbol, units, latestClosingPrice, value) = valueAndWorth
+    println(f&quot;$symbol%7s  $units%5d  $latestClosingPrice%15.2f  $value%.2f&quot;)
+  }
+
+  println(f&quot;The total value of your investments is $$$netWorth%.2f&quot;)
+  println(f&quot;Took ${(endTime - startTime) / 1000000000.0}%.2f  seconds&quot;)
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/shoutput/RunFindTotalWorthSequential.output#L2-L19" target="_blank" title="Go to snippet source"></a><code class="language-output">Ticker  Units  Closing Price($) Total Value($)
+   AAPL    200           125.90  25180.00
+   ADBE    125            77.36  9670.00
+    ALU    150             3.84  576.00
+    AMD    150             2.80  420.00
+   CSCO    250            28.44  7110.00
+    HPQ    225            33.28  7488.00
+    IBM    215           162.88  35019.20
+   INTC    160            31.31  5009.60
+   MSFT    190            42.88  8147.20
+    NSM    200            29.94  5988.00
+   ORCL    200            44.41  8882.00
+   SYMC    230            24.38  5607.40
+    TXN    190            59.28  11263.20
+   VRSN    200            64.75  12950.00
+    XRX    240            13.18  3163.20
+The total value of your investments is $146473.80
+Took 11.13  seconds</code></pre>
+<h2><a href="#15-6-编写并发的资产净值应用程序" name="15-6-编写并发的资产净值应用程序" class="anchor"><span class="anchor-link"></span></a>15.6 编写并发的资产净值应用程序</h2>
+<blockquote>
+  <p>UsingScala/FindTotalWorthConcurrent.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/FindTotalWorthConcurrent.scala#L27-L28" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.collection.parallel.CollectionConverters._
+val valuesAndWorth = symbolsAndUnits.keys.par.map { symbol =&gt;</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter15/shoutput/RunFindTotalWorthConcurrent.output#L2-L19" target="_blank" title="Go to snippet source"></a><code class="language-output">Ticker  Units  Closing Price($) Total Value($)
+   AAPL    200           125.90  25180.00
+   ADBE    125            77.36  9670.00
+    ALU    150             3.84  576.00
+    AMD    150             2.80  420.00
+   CSCO    250            28.44  7110.00
+    HPQ    225            33.28  7488.00
+    IBM    215           162.88  35019.20
+   INTC    160            31.31  5009.60
+   MSFT    190            42.88  8147.20
+    NSM    200            29.94  5988.00
+   ORCL    200            44.41  8882.00
+   SYMC    230            24.38  5607.40
+    TXN    190            59.28  11263.20
+   VRSN    200            64.75  12950.00
+    XRX    240            13.18  3163.20
+The total value of your investments is $146473.80
+Took 1.98  seconds</code></pre>
+</div>
+<div>
+<a href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/paradox/chapter-15/index.md" title="Edit this page" class="md-source-file md-edit">
+Edit this page
+</a>
+</div>
+<div class="print-only">
+<span class="md-source-file md-version">
+1.0.0
+</span>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a href="../chapter-14/index.html" title="第14章——和Java进行互操作" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+第14章——和Java进行互操作
+</span>
+</div>
+</a>
+<a href="../chapter-16/index.html" title="第16章——单元测试" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Next
+</span>
+第16章——单元测试
+</span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+Powered by
+<a href="https://github.com/lightbend/paradox">Paradox</a>
+and
+<a href="https://jonas.github.io/paradox-material-theme/">Paradox Material Theme</a>
+
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="../assets/javascripts/application.583bbe55.js"></script>
+<script src="../assets/javascripts/paradox-material-theme.js"></script>
+<script>app.initialize({version:"0.17",url:{base:"../."}})</script>
+<script type="text/javascript" src="../lib/prettify/prettify.js"></script>
+<script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+window.prettyPrint && prettyPrint();
+});
+</script>
+</body>
+</html>

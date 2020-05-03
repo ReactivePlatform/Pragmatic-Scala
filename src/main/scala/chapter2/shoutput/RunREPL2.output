@@ -1,7 +1,0 @@
-// #output
-scala> number = 7
-<console>:11: error: reassignment to val
-       number = 7
-              ^
-// #output
-

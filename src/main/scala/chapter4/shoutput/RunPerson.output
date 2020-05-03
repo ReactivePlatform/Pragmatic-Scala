@@ -1,5 +1,0 @@
-// #output
-  private java.lang.String position;
-  public java.lang.String position();
-  public void position_$eq(java.lang.String);
-// #output

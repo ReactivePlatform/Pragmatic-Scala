@@ -1,8 +1,0 @@
-/Users/venkats/books/vsscala2/Book/code/PatternMatching/MatchTypesSwapped.s
-cala:6: warning: unreachable code
-    case msg : Int if (msg > 1000000) => println("Processing int > 
-1000000") 
-                                                ^
-one warning found
-Processing (double, double)... Processing int... Processing int... Can't 
-handle 2.2... 

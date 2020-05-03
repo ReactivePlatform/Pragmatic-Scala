@@ -1,7 +1,0 @@
-/Users/venkats/books/vsscala2/Book/code/PatternMatching/ThingsAcceptor2.sca
-la:13: error: type mismatch;
- found   : this.Apple.type
- required: this.Thing
-ThingsAcceptor.acceptStuff(Apple) //error: type mismatch;
-                           ^
-one error found

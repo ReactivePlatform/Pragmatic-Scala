@@ -1,5 +1,0 @@
-/Users/venkats/books/vsscala2/Book/code/PatternMatching/UseThingsAcceptor.s
-cala:1: error: not found: type ThingsAcceptor
-val acceptor = new ThingsAcceptor
-                   ^
-one error found

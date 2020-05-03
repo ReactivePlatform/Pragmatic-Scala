@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="PragmaticScala">
+<meta name="generator" content="Paradox, paradox-material-theme=0.6.0, mkdocs-material=3.0.3">
+
+<meta name="lang:clipboard.copy" content="Copy to clipboard">
+<meta name="lang:clipboard.copied" content="Copied to clipboard">
+<meta name="lang:search.language" content="">
+<meta name="lang:search.pipeline.stopwords" content="true">
+<meta name="lang:search.pipeline.trimmer" content="true">
+<meta name="lang:search.result.none" content="No matching documents">
+<meta name="lang:search.result.one" content="1 matching document">
+<meta name="lang:search.result.other" content="# matching documents">
+<meta name="lang:search.tokenizer" content="[\s\-]+">
+
+
+<meta name="description" content="PragmaticScala">
+<link rel="shortcut icon" href="../assets/images/favicon.png">
+<title>第16章——单元测试 · </title>
+<link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+<link rel="stylesheet" href="../lib/material__tabs/dist/mdc.tabs.min.css">
+<link rel="stylesheet" href="../lib/prettify/prettify.css">
+<script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+<style>
+body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}
+code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}
+</style>
+<link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+<link rel="stylesheet" href="../assets/fonts/material-icons.css">
+<link rel="stylesheet" href="../assets/stylesheets/paradox-material-theme.css">
+</head>
+<body
+>
+<input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+<input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a href="../index.html" title="" class="md-header-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+</span>
+<span class="md-header-nav__topic">
+第16章——单元测试
+</span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+<label class="md-icon md-search__icon" for="__search"></label>
+<button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix>
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+Type to start searching
+</div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</nav>
+</header>
+
+<div class="md-container">
+<main class="md-main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0" style="visibility: hidden">
+<label class="md-nav__title md-nav__title--site" for="drawer">
+<a href="../index.html" title="" class="md-nav__button md-logo">
+<span class="md-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+<a href="../index.html" title="">
+</a>
+</label>
+<ul>
+  <li><a href="../contents.html" class="page">目录</a>
+  <ul>
+    <li><a href="../abstract.html" class="page">内容提要</a></li>
+    <li><a href="../part1.html" class="page">第一部分 小试牛刀</a></li>
+    <li><a href="../part2.html" class="page">第二部分 深入 Scala</a></li>
+    <li><a href="../part3.html" class="page">第三部分 Scala 中的并发编程</a></li>
+    <li><a href="../part4.html" class="page">第四部分 Scala 实战</a></li>
+    <li><a href="../refs/references.html" class="page">参考书目</a></li>
+    <li><a href="../extras.html" class="page">额外指引</a></li>
+    <li><a href="../errata.html" class="page">勘误</a></li>
+  </ul></li>
+</ul>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-16/index.html#第16章-单元测试" class="header">第16章——单元测试</a>
+  <ul>
+    <li><a href="../chapter-16/index.html#16-1-使用-junit" class="header">16.1 使用 JUnit</a></li>
+    <li><a href="../chapter-16/index.html#16-2-使用-scalatest" class="header">16.2 使用 ScalaTest</a></li>
+    <li><a href="../chapter-16/index.html#16-3-使用-mockito" class="header">16.3 使用 Mockito</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</nav>
+<ul style="display: none">
+<li class="md-nav__item md-version" id="project.version">
+<label class="md-nav__link" for="__version">
+<i class="md-icon" title="Version">label_outline</i> 1.0.0
+</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-16/index.html#第16章-单元测试" class="header">第16章——单元测试</a>
+  <ul>
+    <li><a href="../chapter-16/index.html#16-1-使用-junit" class="header">16.1 使用 JUnit</a></li>
+    <li><a href="../chapter-16/index.html#16-2-使用-scalatest" class="header">16.2 使用 ScalaTest</a></li>
+    <li><a href="../chapter-16/index.html#16-3-使用-mockito" class="header">16.3 使用 Mockito</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<div class="md-content__searchable">
+<h1><a href="#第16章-单元测试" name="第16章-单元测试" class="anchor"><span class="anchor-link"></span></a>第16章——单元测试</h1>
+<p>代码将总是按照被编写的行为运行—单元测试将确保它做的确实符合编写者的本意。 在开发应用程序的过程中，单元测试还有助于确保代码行为持续符合预期。</p>
+<h2><a href="#16-1-使用-junit" name="16-1-使用-junit" class="anchor"><span class="anchor-link"></span></a>16.1 使用 JUnit</h2>
+<blockquote>
+  <p>UnitTesting/UsingJUnit.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/UsingJUnit.scala#L20-L33" target="_blank" title="Go to snippet source"></a><code class="language-scala">import java.util
+
+import org.junit.Assert._
+import org.junit.Test
+
+class UsingJUnit {
+  @Test
+  def listAdd(): Unit = {
+    val list = new util.ArrayList[String]
+    list.add(&quot;Milk&quot;)
+    list.add(&quot;Sugar&quot;)
+    assertEquals(2, list.size)
+  }
+}</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/RunUsingJUnit.sh#L6-L8" target="_blank" title="Go to snippet source"></a><code class="language-sh">scalac -d classes -classpath $JUNIT_JAR:$HAMCREST_JAR UsingJUnit.scala
+java -classpath $SCALALIBRARY:$JUNIT_JAR:$HAMCREST_JAR:classes \
+  org.junit.runner.JUnitCore UsingJUnit</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/shoutput/RunUsingJUnit.output#L2-L6" target="_blank" title="Go to snippet source"></a><code class="language-output">JUnit version 4.12
+.
+Time: 0.003
+
+OK (1 test)</code></pre>
+<h2><a href="#16-2-使用-scalatest" name="16-2-使用-scalatest" class="anchor"><span class="anchor-link"></span></a>16.2 使用 ScalaTest</h2>
+<blockquote>
+  <p>UnitTesting/UsingScalaTest.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/UsingScalaTest.scala#L20-L38" target="_blank" title="Go to snippet source"></a><code class="language-scala">import java.util
+import org.scalatest._
+
+class UsingScalaTest extends FlatSpec with Matchers {
+  trait EmptyArrayList {
+    val list = new util.ArrayList[String]
+  }
+
+  &quot;a list&quot; should &quot;be empty on create&quot; in new EmptyArrayList {
+    list.size should be(0)
+  }
+
+  &quot;a list&quot; should &quot;increase in size upon add&quot; in new EmptyArrayList {
+    list.add(&quot;Milk&quot;)
+    list.add(&quot;Sugar&quot;)
+
+    list.size should be(2)
+  }
+}</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/RunUsingScalaTest.sh#L6-L7" target="_blank" title="Go to snippet source"></a><code class="language-sh">scalac -d classes -classpath $SCALA_TEST_JAR UsingScalaTest.scala
+scala -classpath $SCALA_TEST_JAR:classes org.scalatest.run UsingScalaTest</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/shoutput/RunUsingScalaTest.output#L2-L12" target="_blank" title="Go to snippet source"></a><code class="language-output">Run starting. Expected test count is: 2
+UsingScalaTest:
+a list
+- should be empty on create
+a list
+- should increase in size upon add
+Run completed in 181 milliseconds.
+Total number of tests run: 2
+Suites: completed 1, aborted 0
+Tests: succeeded 2, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.</code></pre>
+<h2><a href="#16-3-使用-mockito" name="16-3-使用-mockito" class="anchor"><span class="anchor-link"></span></a>16.3 使用 Mockito</h2>
+<blockquote>
+  <p>UnitTesting/WordScorerTest.scala (withoutmock)</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withoutmock/WordScorerTest.scala#L20-L47" target="_blank" title="Go to snippet source"></a><code class="language-scala">import org.scalatest.{ FlatSpec, Matchers }
+
+class WordScorerTest extends FlatSpec with Matchers {
+
+  def withWordScorer(test: WordScorer =&gt; Unit): Unit = {
+    val wordScorer = new WordScorer()
+
+    test(wordScorer)
+  }
+
+  &quot;score&quot; should &quot;return 0 for an empty word&quot; in {
+    withWordScorer { wordScorer =&gt;
+      wordScorer.score(&quot;&quot;) should be(0)
+    }
+  }
+
+  &quot;score&quot; should &quot;return 2 for word with two vowels&quot; in {
+    withWordScorer { _.score(&quot;ai&quot;) should be(2) }
+  }
+
+  &quot;score&quot; should &quot;return 8 for word with four consonants&quot; in {
+    withWordScorer { _.score(&quot;myth&quot;) should be(8) }
+  }
+
+  &quot;score&quot; should &quot;return 7 for word with a vowel and three consonants&quot; in {
+    withWordScorer { _.score(&quot;that&quot;) should be(7) }
+  }
+}</code></pre>
+<blockquote>
+  <p>UnitTesting/WordScorer.scala (withoutmock)</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withoutmock/WordScorer.scala#L20-L28" target="_blank" title="Go to snippet source"></a><code class="language-scala">class WordScorer() {
+  private val VOWELS = List(&#39;a&#39;, &#39;e&#39;, &#39;i&#39;, &#39;o&#39;, &#39;u&#39;)
+
+  def score(word: String): Int = {
+    (0 /: word) { (total, letter) =&gt;
+      total + (if (VOWELS.contains(letter)) 1 else 2)
+    }
+  }
+}</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withoutmock/RunWordScorerTest.sh#L6-L8" target="_blank" title="Go to snippet source"></a><code class="language-sh">scalac -d classes -classpath $SCALA_TEST_JAR \
+  WordScorer.scala WordScorerTest.scala
+scala -classpath $SCALA_TEST_JAR:classes org.scalatest.run WordScorerTest</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withoutmock/shoutput/RunWordScorerTest.output#L2-L16" target="_blank" title="Go to snippet source"></a><code class="language-output">Run starting. Expected test count is: 4
+WordScorerTest:
+score
+- should return 0 for an empty word
+score
+- should return 2 for word with two vowels
+score
+- should return 8 for word with four consonants
+score
+- should return 7 for word that with a vowel and three consonants
+Run completed in 181 milliseconds.
+Total number of tests run: 4
+Suites: completed 1, aborted 0
+Tests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.</code></pre>
+<blockquote>
+  <p>UnitTesting/SpellChecker.scala (withmock)</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock/SpellChecker.scala#L20-L22" target="_blank" title="Go to snippet source"></a><code class="language-scala">trait SpellChecker {
+  def isCorrect(word: String): Boolean
+}</code></pre>
+<blockquote>
+  <p>UnitTesting/WordScorerTest.scala (withmock)</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock/WordScorerTest.scala#L20-L55" target="_blank" title="Go to snippet source"></a><code class="language-scala">import org.scalatest.{ FlatSpec, Matchers }
+import org.mockito.Mockito._
+import org.mockito.ArgumentMatchers.anyString
+
+class WordScorerTest extends FlatSpec with Matchers {
+
+  def withWordScorer(test: WordScorer =&gt; Unit): Boolean = {
+    val spellChecker = mock(classOf[SpellChecker])
+    when(spellChecker.isCorrect(anyString)).thenReturn(true)
+    val wordScorer = new WordScorer(spellChecker)
+
+    test(wordScorer)
+
+    verify(spellChecker, times(1)).isCorrect(anyString())
+  }
+
+  //No change to the tests, same as in the previous version
+  &quot;score&quot; should &quot;return 0 for an empty word&quot; in {
+    withWordScorer { wordScorer =&gt;
+      wordScorer.score(&quot;&quot;) should be(0)
+    }
+  }
+
+  &quot;score&quot; should &quot;return 2 for word with two vowels&quot; in {
+    withWordScorer { _.score(&quot;ai&quot;) should be(2) }
+  }
+
+  &quot;score&quot; should &quot;return 8 for word with four consonants&quot; in {
+    withWordScorer { _.score(&quot;myth&quot;) should be(8) }
+  }
+
+  &quot;score&quot; should &quot;return 7 for word that with a vowel and three consonants&quot; in {
+    withWordScorer { _.score(&quot;that&quot;) should be(7) }
+  }
+
+}</code></pre>
+<blockquote>
+  <p>UnitTesting/WordScorer.scala (withmock)</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock/WordScorer.scala#L20-L29" target="_blank" title="Go to snippet source"></a><code class="language-scala">class WordScorer(val spellChecker: SpellChecker) {
+  private val VOWELS = List(&#39;a&#39;, &#39;e&#39;, &#39;i&#39;, &#39;o&#39;, &#39;u&#39;)
+
+  def score(word: String): Int = {
+    spellChecker.isCorrect(word)
+    (0 /: word) { (total, letter) =&gt;
+      total + (if (VOWELS.contains(letter)) 1 else 2)
+    }
+  }
+}</code></pre>
+<p><em>执行命令</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock/RunWordScorerTest.sh#L6-L9" target="_blank" title="Go to snippet source"></a><code class="language-sh">scalac -d classes -classpath $SCALA_TEST_JAR:$MOCKITO_JAR \
+  WordScorer.scala SpellChecker.scala WordScorerTest.scala
+scala -classpath $SCALA_TEST_JAR::$MOCKITO_JAR:classes \
+  org.scalatest.run WordScorerTest</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock/shoutput/RunWordScorerTest.output#L2-L16" target="_blank" title="Go to snippet source"></a><code class="language-output">Run starting. Expected test count is: 4
+WordScorerTest:
+score
+- should return 0 for an empty word
+score
+- should return 2 for word with two vowels
+score
+- should return 8 for word with four consonants
+score
+- should return 7 for word that with a vowel and three consonants
+Run completed in 316 milliseconds.
+Total number of tests run: 4
+Suites: completed 1, aborted 0
+Tests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.</code></pre>
+<blockquote>
+  <p>UnitTesting/WordScorerTest.scala (withmock2)</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock2/WordScorerTest.scala#L54-L61" target="_blank" title="Go to snippet source"></a><code class="language-scala">&quot;score&quot; should &quot;return 0 for word with incorrect spelling&quot; in {
+  val spellChecker = mock(classOf[SpellChecker])
+  when(spellChecker.isCorrect(anyString)).thenReturn(false)
+  val wordScorer = new WordScorer(spellChecker)
+
+  wordScorer.score(&quot;aoe&quot;) should be(0)
+  verify(spellChecker, times(1)).isCorrect(anyString())
+}</code></pre>
+<blockquote>
+  <p>UnitTesting/WordScorer.scala (withmock2)</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock2/WordScorer.scala#L23-L29" target="_blank" title="Go to snippet source"></a><code class="language-scala">def score(word: String): Int = {
+  if (spellChecker.isCorrect(word))
+    (0 /: word) { (total, letter) =&gt;
+      total + (if (VOWELS.contains(letter)) 1 else 2)
+    } else
+    0
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter16/withmock2/shoutput/RunWordScorerTest.output#L2-L18" target="_blank" title="Go to snippet source"></a><code class="language-output">Run starting. Expected test count is: 5
+WordScorerTest:
+score
+- should return 0 for an empty word
+score
+- should return 2 for word with two vowels
+score
+- should return 8 for word with four consonants
+score
+- should return 7 for word that with a vowel and three consonants
+score
+- should return 0 for word with incorrect spelling
+Run completed in 208 milliseconds.
+Total number of tests run: 5
+Suites: completed 1, aborted 0
+Tests: succeeded 5, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.</code></pre>
+</div>
+<div>
+<a href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/paradox/chapter-16/index.md" title="Edit this page" class="md-source-file md-edit">
+Edit this page
+</a>
+</div>
+<div class="print-only">
+<span class="md-source-file md-version">
+1.0.0
+</span>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a href="../chapter-15/index.html" title="第15章——使用Scala创建应用程序" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+第15章——使用Scala创建应用程序
+</span>
+</div>
+</a>
+<a href="../refs/references.html" title="参考书目" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Next
+</span>
+参考书目
+</span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+Powered by
+<a href="https://github.com/lightbend/paradox">Paradox</a>
+and
+<a href="https://jonas.github.io/paradox-material-theme/">Paradox Material Theme</a>
+
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="../assets/javascripts/application.583bbe55.js"></script>
+<script src="../assets/javascripts/paradox-material-theme.js"></script>
+<script>app.initialize({version:"0.17",url:{base:"../."}})</script>
+<script type="text/javascript" src="../lib/prettify/prettify.js"></script>
+<script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+window.prettyPrint && prettyPrint();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="PragmaticScala">
+<meta name="generator" content="Paradox, paradox-material-theme=0.6.0, mkdocs-material=3.0.3">
+
+<meta name="lang:clipboard.copy" content="Copy to clipboard">
+<meta name="lang:clipboard.copied" content="Copied to clipboard">
+<meta name="lang:search.language" content="">
+<meta name="lang:search.pipeline.stopwords" content="true">
+<meta name="lang:search.pipeline.trimmer" content="true">
+<meta name="lang:search.result.none" content="No matching documents">
+<meta name="lang:search.result.one" content="1 matching document">
+<meta name="lang:search.result.other" content="# matching documents">
+<meta name="lang:search.tokenizer" content="[\s\-]+">
+
+
+<meta name="description" content="PragmaticScala">
+<link rel="shortcut icon" href="../assets/images/favicon.png">
+<title>第4章——善用对象 · </title>
+<link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+<link rel="stylesheet" href="../lib/material__tabs/dist/mdc.tabs.min.css">
+<link rel="stylesheet" href="../lib/prettify/prettify.css">
+<script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+<style>
+body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}
+code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}
+</style>
+<link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+<link rel="stylesheet" href="../assets/fonts/material-icons.css">
+<link rel="stylesheet" href="../assets/stylesheets/paradox-material-theme.css">
+</head>
+<body
+>
+<input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+<input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a href="../index.html" title="" class="md-header-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+</span>
+<span class="md-header-nav__topic">
+第4章——善用对象
+</span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+<label class="md-icon md-search__icon" for="__search"></label>
+<button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix>
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+Type to start searching
+</div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</nav>
+</header>
+
+<div class="md-container">
+<main class="md-main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0" style="visibility: hidden">
+<label class="md-nav__title md-nav__title--site" for="drawer">
+<a href="../index.html" title="" class="md-nav__button md-logo">
+<span class="md-nav__button md-logo">
+<i class="md-icon">local_library</i>
+</a>
+<a href="../index.html" title="">
+</a>
+</label>
+<ul>
+  <li><a href="../contents.html" class="page">目录</a>
+  <ul>
+    <li><a href="../abstract.html" class="page">内容提要</a></li>
+    <li><a href="../part1.html" class="page">第一部分 小试牛刀</a></li>
+    <li><a href="../part2.html" class="page">第二部分 深入 Scala</a></li>
+    <li><a href="../part3.html" class="page">第三部分 Scala 中的并发编程</a></li>
+    <li><a href="../part4.html" class="page">第四部分 Scala 实战</a></li>
+    <li><a href="../refs/references.html" class="page">参考书目</a></li>
+    <li><a href="../extras.html" class="page">额外指引</a></li>
+    <li><a href="../errata.html" class="page">勘误</a></li>
+  </ul></li>
+</ul>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-04/index.html#第4章-善用对象" class="header">第4章——善用对象</a>
+  <ul>
+    <li><a href="../chapter-04/index.html#4-1-创建并使用类" class="header">4.1 创建并使用类</a></li>
+    <li><a href="../chapter-04/index.html#4-2-遵循-javabean-惯例" class="header">4.2 遵循 JavaBean 惯例</a></li>
+    <li><a href="../chapter-04/index.html#4-3-类型别名" class="header">4.3 类型别名</a></li>
+    <li><a href="../chapter-04/index.html#4-4-扩展一个类" class="header">4.4 扩展一个类</a></li>
+    <li><a href="../chapter-04/index.html#4-5-参数化类型" class="header">4.5 参数化类型</a></li>
+    <li><a href="../chapter-04/index.html#4-6-单例对象和伴生对象" class="header">4.6 单例对象和伴生对象</a></li>
+    <li><a href="../chapter-04/index.html#4-7-创建枚举类" class="header">4.7 创建枚举类</a></li>
+    <li><a href="../chapter-04/index.html#4-8-包对象" class="header">4.8 包对象</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</nav>
+<ul style="display: none">
+<li class="md-nav__item md-version" id="project.version">
+<label class="md-nav__link" for="__version">
+<i class="md-icon" title="Version">label_outline</i> 1.0.0
+</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../chapter-04/index.html#第4章-善用对象" class="header">第4章——善用对象</a>
+  <ul>
+    <li><a href="../chapter-04/index.html#4-1-创建并使用类" class="header">4.1 创建并使用类</a></li>
+    <li><a href="../chapter-04/index.html#4-2-遵循-javabean-惯例" class="header">4.2 遵循 JavaBean 惯例</a></li>
+    <li><a href="../chapter-04/index.html#4-3-类型别名" class="header">4.3 类型别名</a></li>
+    <li><a href="../chapter-04/index.html#4-4-扩展一个类" class="header">4.4 扩展一个类</a></li>
+    <li><a href="../chapter-04/index.html#4-5-参数化类型" class="header">4.5 参数化类型</a></li>
+    <li><a href="../chapter-04/index.html#4-6-单例对象和伴生对象" class="header">4.6 单例对象和伴生对象</a></li>
+    <li><a href="../chapter-04/index.html#4-7-创建枚举类" class="header">4.7 创建枚举类</a></li>
+    <li><a href="../chapter-04/index.html#4-8-包对象" class="header">4.8 包对象</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<div class="md-content__searchable">
+<h1><a href="#第4章-善用对象" name="第4章-善用对象" class="anchor"><span class="anchor-link"></span></a>第4章——善用对象</h1>
+<p>Scala 是一门完全面向对象的编程语言，为类的创建和对象的处理提供了简洁的语法。 Java 中能做的，在 Scala 中都可以做，Scala 还额外提供了一些更强大的特性，以帮助我们进 行面向对象编程。尽管 Scala 是一门纯面向对象的编程语言，但是它也支持一些 Java 中不是 那么纯粹的面向对象概念，如静态方法 ① 。利用伴生对象，Scala 以一种相当有趣的方式处理 了这个问题。伴生对象是伴随一个类的单例，在 Scala 中非常常见。</p>
+<h2><a href="#4-1-创建并使用类" name="4-1-创建并使用类" class="anchor"><span class="anchor-link"></span></a>4.1 创建并使用类</h2>
+<blockquote>
+  <p>WorkingWithObjects/Car.java</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Car.java#L20-L33" target="_blank" title="Go to snippet source"></a><code class="language-java">//Java example
+public class Car {
+  private final int year;
+  private int miles;    
+  
+  public Car(int yearOfMake) { year = yearOfMake; }
+  
+  public int getYear() { return year; }
+  public int getMiles() { return miles; }
+  
+  public void drive(int distance) {                   
+    miles += Math.abs(distance);
+  }
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/UseCar.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/UseCar.scala#L21-L29" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Car(val year: Int) {
+  private var milesDriven: Int = 0
+
+  def miles: Int = milesDriven
+
+  def drive(distance: Int): Unit = {
+    milesDriven += Math.abs(distance)
+  }
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/UseCar.output#L2-L5" target="_blank" title="Go to snippet source"></a><code class="language-output">Car made in year 2015
+Miles driven 0
+Drive for 10 miles
+Miles driven 10</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/CreditCard.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/CreditCard.scala#L20" target="_blank" title="Go to snippet source"></a><code class="language-scala">class CreditCard(val number: Int, var creditLimit: Int)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/shoutput/RunCreditCard.output#L2-L10" target="_blank" title="Go to snippet source"></a><code class="language-output">Compiled from &quot;CreditCard.scala&quot;
+public class CreditCard {
+  private final int number;
+  private int creditLimit;
+  public int number();
+  public int creditLimit();
+  public void creditLimit_$eq(int);
+  public CreditCard(int, int);
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Construct.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Construct.scala#L21-L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Construct(param: String) {
+  println(s&quot;Creating an instance of Construct with parameter $param&quot;)
+}
+
+println(&quot;Let&#39;s create an instance&quot;)
+new Construct(&quot;sample&quot;)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Construct.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">Let&#39;s create an instance
+Creating an instance of Construct with parameter sample</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Person.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Person.scala#L21-L38" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Person(val firstName: String, val lastName: String) {
+  var position: String = _
+
+  println(s&quot;Creating $toString&quot;)
+
+  def this(firstName: String, lastName: String, positionHeld: String) {
+    this(firstName, lastName)
+    position = positionHeld
+  }
+  override def toString: String = {
+    s&quot;$firstName $lastName holds $position position&quot;
+  }
+}
+
+val john = new Person(&quot;John&quot;, &quot;Smith&quot;, &quot;Analyst&quot;)
+println(john)
+val bill = new Person(&quot;Bill&quot;, &quot;Walker&quot;)
+println(bill)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Person.output#L2-L5" target="_blank" title="Go to snippet source"></a><code class="language-output">Creating John Smith holds null position
+John Smith holds Analyst position
+Creating Bill Walker holds null position
+Bill Walker holds null position</code></pre>
+<p><em>反编译结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/shoutput/RunPerson.output#L2-L4" target="_blank" title="Go to snippet source"></a><code class="language-output">private java.lang.String position;
+public java.lang.String position();
+public void position_$eq(java.lang.String);</code></pre>
+<h2><a href="#4-2-遵循-javabean-惯例" name="4-2-遵循-javabean-惯例" class="anchor"><span class="anchor-link"></span></a>4.2 遵循 JavaBean 惯例</h2>
+<blockquote>
+  <p>WorkingWithObjects/Dude.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Dude.scala#L20-L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.beans.BeanProperty
+
+class Dude(@BeanProperty val firstName: String, val lastName: String) {
+  @BeanProperty var position: String = _
+}</code></pre>
+<p><em>反编译结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/shoutput/RunDude.output#L2-L15" target="_blank" title="Go to snippet source"></a><code class="language-output">Compiled from &quot;Dude.scala&quot;
+public class Dude {
+  private final java.lang.String firstName;
+  private final java.lang.String lastName;
+  private java.lang.String position;
+  public java.lang.String firstName();
+  public java.lang.String lastName();
+  public java.lang.String position();
+  public void position_$eq(java.lang.String);
+  public void setPosition(java.lang.String);
+  public java.lang.String getFirstName();
+  public java.lang.String getPosition();
+  public Dude(java.lang.String, java.lang.String);
+}</code></pre>
+<h2><a href="#4-3-类型别名" name="4-3-类型别名" class="anchor"><span class="anchor-link"></span></a>4.3 类型别名</h2>
+<blockquote>
+  <p>WorkingWithObjects/PoliceOfficer.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/PoliceOfficer.scala#L20" target="_blank" title="Go to snippet source"></a><code class="language-scala">class PoliceOfficer(val name: String)</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/CopApp.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/CopApp.scala#L20-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">object CopApp extends App {
+  type Cop = PoliceOfficer
+
+  val topCop = new Cop(&quot;Jack&quot;)
+  println(topCop.getClass)
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/shoutput/RunCopApp.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">class PoliceOfficer</code></pre>
+<h2><a href="#4-4-扩展一个类" name="4-4-扩展一个类" class="anchor"><span class="anchor-link"></span></a>4.4 扩展一个类</h2>
+<blockquote>
+  <p>WorkingWithObjects/Vehicle.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Vehicle.scala#L21-L30" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Vehicle(val id: Int, val year: Int) {
+  override def toString = s&quot;ID: $id Year: $year&quot;
+}
+
+class Car(override val id: Int, override val year: Int, var fuelLevel: Int) extends Vehicle(id, year) {
+  override def toString = s&quot;${super.toString} Fuel Level: $fuelLevel&quot;
+}
+
+val car = new Car(1, 2015, 100)
+println(car)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Vehicle.output#L2" target="_blank" title="Go to snippet source"></a><code class="language-output">ID: 1 Year: 2015 Fuel Level: 100</code></pre>
+<h2><a href="#4-5-参数化类型" name="4-5-参数化类型" class="anchor"><span class="anchor-link"></span></a>4.5 参数化类型</h2>
+<blockquote>
+  <p>WorkingWithObjects/Parameterized.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Parameterized.scala#L21-L22" target="_blank" title="Go to snippet source"></a><code class="language-scala">def echo[T](input1: T, input2: T): Unit =
+  println(s&quot;got $input1 (${input1.getClass}) $input2 (${input2.getClass})&quot;)</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Parameterized.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Parameterized.scala#L26-L27" target="_blank" title="Go to snippet source"></a><code class="language-scala">echo(&quot;hello&quot;, &quot;there&quot;)
+echo(4, 5)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Parameterized.output#L2-L3" target="_blank" title="Go to snippet source"></a><code class="language-output">got hello (class java.lang.String) there (class java.lang.String)
+got 4 (class java.lang.Integer) 5 (class java.lang.Integer)</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Parameterized.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Parameterized.scala#L31" target="_blank" title="Go to snippet source"></a><code class="language-scala">echo(&quot;hi&quot;, 5)</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Parameterized.output#L7" target="_blank" title="Go to snippet source"></a><code class="language-output">got hi (class java.lang.String) 5 (class java.lang.Integer)</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/EchoErr.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/test/scala/chapter4/EchoErr.scala#L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">echo[Int](&quot;hi&quot;, 5) //error: type mismatch</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Parameterized.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Parameterized.scala#L35-L38" target="_blank" title="Go to snippet source"></a><code class="language-scala">def echo2[T1, T2](input1: T1, input2: T2): Unit =
+  println(s&quot;received $input1 and $input2&quot;)
+
+echo2(&quot;Hi&quot;, &quot;5&quot;)</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Parameterized.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Parameterized.scala#L42-L46" target="_blank" title="Go to snippet source"></a><code class="language-scala">class Message[T](val content: T) {
+  override def toString = s&quot;message content is $content&quot;
+
+  def is(value: T): Boolean = value == content
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Parameterized.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Parameterized.scala#L50-L56" target="_blank" title="Go to snippet source"></a><code class="language-scala">val message1: Message[String] = new Message(&quot;howdy&quot;)
+val message2 = new Message(42)
+
+println(message1)
+println(message1.is(&quot;howdy&quot;))
+println(message1.is(&quot;hi&quot;))
+println(message2.is(22))</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Parameterized.output#L11-L14" target="_blank" title="Go to snippet source"></a><code class="language-output">message content is howdy
+true
+false
+false</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Message.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/test/scala/chapter4/Message.scala#L30" target="_blank" title="Go to snippet source"></a><code class="language-scala">message1.is(22) //error: type mismatch</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Message.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/test/scala/chapter4/Message.scala#L34" target="_blank" title="Go to snippet source"></a><code class="language-scala">message2.is(&#39;A&#39;) //No error!</code></pre>
+<h2><a href="#4-6-单例对象和伴生对象" name="4-6-单例对象和伴生对象" class="anchor"><span class="anchor-link"></span></a>4.6 单例对象和伴生对象</h2>
+<blockquote>
+  <p>WorkingWithObjects/Singleton.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Singleton.scala#L21-L41" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.collection._
+
+class Marker(val color: String) {
+  println(s&quot;Creating ${this}&quot;)
+
+  override def toString = s&quot;marker color $color&quot;
+}
+
+object MarkerFactory {
+  private val markers =
+    mutable.Map(&quot;red&quot; -&gt; new Marker(&quot;red&quot;), &quot;blue&quot; -&gt; new Marker(&quot;blue&quot;), &quot;yellow&quot; -&gt; new Marker(&quot;yellow&quot;))
+
+  def getMarker(color: String): Marker =
+    markers.getOrElseUpdate(color, new Marker(color))
+}
+
+println(MarkerFactory.getMarker(&quot;blue&quot;))
+println(MarkerFactory.getMarker(&quot;blue&quot;))
+println(MarkerFactory.getMarker(&quot;red&quot;))
+println(MarkerFactory.getMarker(&quot;red&quot;))
+println(MarkerFactory.getMarker(&quot;green&quot;))</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Singleton.output#L2-L10" target="_blank" title="Go to snippet source"></a><code class="language-output">Creating marker color red
+Creating marker color blue
+Creating marker color yellow
+marker color blue
+marker color blue
+marker color red
+marker color red
+Creating marker color green
+marker color green</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Marker.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Marker.scala#L21-L41" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.collection._
+
+class Marker private (val color: String) {
+  println(s&quot;Creating ${this}&quot;)
+
+  override def toString = s&quot;marker color $color&quot;
+}
+
+object Marker {
+  private val markers =
+    mutable.Map(&quot;red&quot; -&gt; new Marker(&quot;red&quot;), &quot;blue&quot; -&gt; new Marker(&quot;blue&quot;), &quot;yellow&quot; -&gt; new Marker(&quot;yellow&quot;))
+
+  def getMarker(color: String): Marker =
+    markers.getOrElseUpdate(color, new Marker(color))
+}
+
+println(Marker.getMarker(&quot;blue&quot;))
+println(Marker.getMarker(&quot;blue&quot;))
+println(Marker.getMarker(&quot;red&quot;))
+println(Marker.getMarker(&quot;red&quot;))
+println(Marker.getMarker(&quot;green&quot;))</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Marker.output#L2-L10" target="_blank" title="Go to snippet source"></a><code class="language-output">Creating marker color red
+Creating marker color blue
+Creating marker color yellow
+marker color blue
+marker color blue
+marker color red
+marker color red
+Creating marker color green
+marker color green</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Static.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Static.scala#L21-L35" target="_blank" title="Go to snippet source"></a><code class="language-scala">import scala.collection._
+
+class Marker private (val color: String) {
+  override def toString = s&quot;marker color $color&quot;
+}
+object Marker {
+  private val markers =
+    mutable.Map(&quot;red&quot; -&gt; new Marker(&quot;red&quot;), &quot;blue&quot; -&gt; new Marker(&quot;blue&quot;), &quot;yellow&quot; -&gt; new Marker(&quot;yellow&quot;))
+
+  def supportedColors: Iterable[String] = markers.keys
+  def apply(color: String): Marker = markers.getOrElseUpdate(color, op = new Marker(color))
+}
+println(s&quot;Supported colors are : ${Marker.supportedColors}&quot;)
+println(Marker(&quot;blue&quot;))
+println(Marker(&quot;red&quot;))</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/output/Marker.output#L2-L10" target="_blank" title="Go to snippet source"></a><code class="language-output">Creating marker color red
+Creating marker color blue
+Creating marker color yellow
+marker color blue
+marker color blue
+marker color red
+marker color red
+Creating marker color green
+marker color green</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/Greeter.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/Greeter.scala#L20-L22" target="_blank" title="Go to snippet source"></a><code class="language-scala">object Greeter {
+  def greet(): Unit = println(&quot;Ahoy, me hearties!&quot;)
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/shoutput/RunGreeter.output#L2-L5" target="_blank" title="Go to snippet source"></a><code class="language-output">Compiled from &quot;Greeter.scala&quot;
+public final class Greeter {
+  public static void greet();
+}</code></pre>
+<h2><a href="#4-7-创建枚举类" name="4-7-创建枚举类" class="anchor"><span class="anchor-link"></span></a>4.7 创建枚举类</h2>
+<blockquote>
+  <p>WorkingWithObjects/Currency.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance1/finance/currencies/Currency.scala#L18-L23" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter4.finance1.finance.currencies
+
+object Currency extends Enumeration {
+  type Currency = Value
+  val CNY, GBP, INR, JPY, NOK, PLN, SEK, USD = Value
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/finance1/finance/currencies/Money.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance1/finance/currencies/Money.scala#L18-L24" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter4.finance1.finance.currencies
+
+import Currency._
+
+class Money(val amount: Int, val currency: Currency) {
+  override def toString = s&quot;$amount $currency&quot;
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/UseCurrency.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/UseCurrency.scala#L20-L26" target="_blank" title="Go to snippet source"></a><code class="language-scala">import chapter4.finance1.finance.currencies.Currency
+
+object UseCurrency extends App {
+  Currency.values.foreach { currency =&gt;
+    println(currency)
+  }
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/shoutput/RunUseCurrency.output#L2-L9" target="_blank" title="Go to snippet source"></a><code class="language-output">CNY
+GBP
+INR
+JPY
+NOK
+PLN
+SEK
+USD</code></pre>
+<h2><a href="#4-8-包对象" name="4-8-包对象" class="anchor"><span class="anchor-link"></span></a>4.8 包对象</h2>
+<blockquote>
+  <p>WorkingWithObjects/finance1/finance/currencies/Converter.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance1/finance/currencies/Converter.scala#L18-L28" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter4.finance1.finance.currencies
+
+import Currency._
+
+object Converter {
+  def convert(money: Money, to: Currency): Money = {
+    //fetch current market rate... using mocked value here
+    val conversionRate = 2
+    new Money(money.amount * conversionRate, to)
+  }
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/finance1/finance/currencies/Charge.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance1/finance/currencies/Charge.scala#L18-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter4.finance1.finance.currencies
+
+object Charge {
+  def chargeInUSD(money: Money): String = {
+    def moneyInUSD = Converter.convert(money, Currency.USD)
+    s&quot;charged $$${moneyInUSD.amount}&quot;
+  }
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/finance1/CurrencyApp.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance1/CurrencyApp.scala#L20-L28" target="_blank" title="Go to snippet source"></a><code class="language-scala">import chapter4.finance1.finance.currencies._
+
+object CurrencyApp extends App {
+  var moneyInGBP = new Money(10, Currency.GBP)
+
+  println(Charge.chargeInUSD(moneyInGBP))
+
+  println(Converter.convert(moneyInGBP, Currency.USD))
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/finance2/finance/currencies/package.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance2/finance/currencies/package.scala#L18-L28" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter4.finance2.finance
+
+package object currencies {
+  import Currency._
+
+  def convert(money: Money, to: Currency): Money = {
+    //fetch current market rate... using mocked value here
+    val conversionRate = 2
+    new Money(money.amount * conversionRate, to)
+  }
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/finance2/finance/currencies/Charge.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance2/finance/currencies/Charge.scala#L18-L25" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter4.finance2.finance.currencies
+
+object Charge {
+  def chargeInUSD(money: Money): String = {
+    def moneyInUSD = convert(money, Currency.USD)
+    s&quot;charged $$${moneyInUSD.amount}&quot;
+  }
+}</code></pre>
+<blockquote>
+  <p>WorkingWithObjects/finance2/CurrencyApp.scala</p>
+</blockquote>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/finance2/CurrencyApp.scala#L34-L44" target="_blank" title="Go to snippet source"></a><code class="language-scala">package chapter4.finance2
+
+import chapter4.finance2.finance.currencies._
+
+object CurrencyApp extends App {
+  var moneyInGBP = new Money(10, Currency.GBP)
+
+  println(Charge.chargeInUSD(moneyInGBP))
+
+  println(convert(moneyInGBP, Currency.USD))
+}</code></pre>
+<p><em>运行结果</em></p>
+<pre class="prettyprint"><a class="icon go-to-source" href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/main/scala/chapter4/shoutput/RunUseCurrency.output#L2-L9" target="_blank" title="Go to snippet source"></a><code class="language-output">CNY
+GBP
+INR
+JPY
+NOK
+PLN
+SEK
+USD</code></pre>
+</div>
+<div>
+<a href="https://github.com/ReactivePlatform/Pragmatic-Scala.git/tree/v1.0.0/src/paradox/chapter-04/index.md" title="Edit this page" class="md-source-file md-edit">
+Edit this page
+</a>
+</div>
+<div class="print-only">
+<span class="md-source-file md-version">
+1.0.0
+</span>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a href="../chapter-03/index.html" title="第3章——从Java到Scala" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+第3章——从Java到Scala
+</span>
+</div>
+</a>
+<a href="../chapter-05/index.html" title="第5章——善用类型" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Next
+</span>
+第5章——善用类型
+</span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+Powered by
+<a href="https://github.com/lightbend/paradox">Paradox</a>
+and
+<a href="https://jonas.github.io/paradox-material-theme/">Paradox Material Theme</a>
+
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="../assets/javascripts/application.583bbe55.js"></script>
+<script src="../assets/javascripts/paradox-material-theme.js"></script>
+<script>app.initialize({version:"0.17",url:{base:"../."}})</script>
+<script type="text/javascript" src="../lib/prettify/prettify.js"></script>
+<script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+window.prettyPrint && prettyPrint();
+});
+</script>
+</body>
+</html>

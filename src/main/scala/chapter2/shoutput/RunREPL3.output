@@ -1,4 +1,0 @@
-// #output
-scala> val number = 7
-number: Int = 7
-// #output
