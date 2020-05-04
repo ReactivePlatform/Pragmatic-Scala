@@ -23,7 +23,7 @@ object HollywoodActor2 {
   class HollywoodActor() extends Actor {
     def receive: Receive = {
       // #snip
-      case message ⇒ println(s"$message - ${Thread.currentThread}")
+      case message => println(s"$message - ${Thread.currentThread}")
       // #snip
     }
   }

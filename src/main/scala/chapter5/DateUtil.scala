@@ -26,9 +26,9 @@ object DateUtil {
     def days(when: String): LocalDate = {
       val today = LocalDate.now
       when match {
-        case "ago"      ⇒ today.minusDays(offset)
-        case "from_now" ⇒ today.plusDays(offset)
-        case _          ⇒ today
+        case "ago" => today.minusDays(offset)
+        case "from_now" => today.plusDays(offset)
+        case _ => today
       }
     }
   }
@@ -39,8 +39,8 @@ object DateUtil {
 object UseDateUtil extends App {
   import DateUtil._
 
-  val past = 2 days ago
-  val appointment = 5 days from_now
+  val past = 2.days(ago)
+  val appointment = 5.days(from_now)
 
   println(past)
   println(appointment)

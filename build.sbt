@@ -1,13 +1,8 @@
-import com.typesafe.sbt.SbtScalariform.ScalariformKeys
-import scalariform.formatter.preferences._
-
 name := "PragmaticScala"
 
 version := "1.0.0"
 
-scalaVersion := "2.12.7"
-
-scalafixSemanticdbVersion := "4.2.0"
+scalaVersion := "2.13.1"
 
 scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
 
@@ -38,7 +33,7 @@ scmInfo := Some(ScmInfo(url(
 git.remoteRepo := scmInfo.value.get.connection
 
 excludeFilter in ghpagesCleanSite :=
-  new FileFilter{
+  new FileFilter {
     def accept(f: File) = (ghpagesRepository.value / "CNAME").getCanonicalPath == f.getCanonicalPath
   } || "versions.html"
 
@@ -59,36 +54,23 @@ paradoxMaterialTheme in Compile ~= {
     .withRepository(uri("https://github.com/ReactivePlatform/Pragmatic-Scala.git"))
     .withSearch(tokenizer = "[\\s\\-\\.]+")
     .withSocial(
-    uri("https://github.com/hepin1989")
-  )
+      uri("https://github.com/hepin1989")
+    )
 }
 
 organizationName := "pragmatic-scala.reactiveplatform.xyz"
 startYear := Some(2018)
 licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 
-def setPreferences(preferences: IFormattingPreferences): IFormattingPreferences = preferences
-  .setPreference(RewriteArrowSymbols, true)
-  .setPreference(AlignParameters, true)
-  .setPreference(AlignSingleLineCaseStatements, true)
-  .setPreference(DoubleIndentConstructorArguments, false)
-  .setPreference(DoubleIndentMethodDeclaration, false)
-  .setPreference(DanglingCloseParenthesis, Preserve)
-  .setPreference(NewlineAtEndOfFile, true)
-
-ScalariformKeys.preferences := setPreferences(ScalariformKeys.preferences.value)
-ScalariformKeys.preferences in Compile := setPreferences(ScalariformKeys.preferences.value)
-ScalariformKeys.preferences in Test := setPreferences(ScalariformKeys.preferences.value)
-
-libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.2.0"
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.1"
+libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.3.0"
+libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0"
+//
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.5"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
 libraryDependencies += "junit" % "junit" % "4.12"
-libraryDependencies += "org.mockito" % "mockito-core" % "3.1.0"
+libraryDependencies += "org.mockito" % "mockito-core" % "2.28.2"
 
 //如果想要写更好的代码：）
 //wartremoverErrors ++= Warts.all
 
-scalafixSettings
-
-scalafixConfigure(Compile)
+addCompilerPlugin(scalafixSemanticdb)

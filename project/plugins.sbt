@@ -14,9 +14,7 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-ghpages" % "0.6.3")
 
 addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.3.1")
 
-addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.3")
-
-addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.5.10")
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.9.15")
 
 addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.3")
 
@@ -26,4 +24,6 @@ addSbtPlugin("com.dwijnand" % "sbt-reloadquick" % "1.0.0")
 
 addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.4.4")
 
-addSbtPlugin("org.wartremover" % "sbt-wartremover" % "2.4.7")
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.3.4")
+
+addSbtPlugin("org.wartremover" % "sbt-wartremover" % "2.4.2")

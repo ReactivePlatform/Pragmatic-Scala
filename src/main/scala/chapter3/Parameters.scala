@@ -24,13 +24,13 @@ object Parameters extends App {
   println(
     // #snip_3-9
     max(8, 2, 3)
-  // #snip_3-9
+    // #snip_3-9
   )
 
   println(
     // #snip_3-10
     max(2, 5, 3, 7, 1, 6)
-  // #snip_3-10
+    // #snip_3-10
   )
 
   // #snip_3-13

@@ -35,7 +35,7 @@ object Factorial extends App {
     println(factorial(10000))
     // #snip_11-3
   } catch {
-    case ex: Throwable ⇒ println(ex)
+    case ex: Throwable => println(ex)
   }
 
 }

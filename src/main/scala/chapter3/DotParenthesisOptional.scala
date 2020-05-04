@@ -20,11 +20,10 @@ object DotParenthesisOptional extends App {
 
   class Car {
     def turn(direction: String): Unit = //...
-      {
-      }
+      {}
   }
 
   val car = new Car()
-  car turn "right"
+  car.turn("right")
 
 }

@@ -65,4 +65,3 @@ case class Play(role: String)
 case class ReportCount(role: String)
 
 // #snip
-

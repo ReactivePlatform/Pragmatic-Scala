@@ -24,7 +24,7 @@ object PlayingWithSet extends App {
   // #snip_8-2
 
   // #snip_8-3
-  val blogFeeds = feeds1 filter (_ contains "blog")
+  val blogFeeds = feeds1.filter(_ contains "blog")
   println(s"blog feeds: ${blogFeeds.mkString(", ")}")
   // #snip_8-3
 
@@ -39,13 +39,15 @@ object PlayingWithSet extends App {
   // #snip_8-5
 
   // #snip_8-6
-  val urls = feeds1 map ("http://" + _)
+  val urls = feeds1.map("http://" + _)
   println(s"One url: ${urls.head}")
   // #snip_8-6
 
   // #snip_8-7
   println("Refresh Feeds:")
-  feeds1 foreach { feed ⇒ println(s"  Refreshing $feed...") }
+  feeds1.foreach { feed =>
+    println(s"  Refreshing $feed...")
+  }
   // #snip_8-7
 
 }

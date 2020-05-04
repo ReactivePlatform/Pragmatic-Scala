@@ -21,8 +21,8 @@ object Extractor1 extends App {
   object StockService {
     def process(input: String): Unit = {
       input match {
-        case Symbol() ⇒ println(s"Look up price for valid symbol $input")
-        case _        ⇒ println(s"Invalid input $input")
+        case Symbol() => println(s"Look up price for valid symbol $input")
+        case _ => println(s"Invalid input $input")
       }
     }
   }
@@ -38,9 +38,9 @@ object Extractor1 extends App {
   // #snip_9-18
 
   // #snip_9-16
-  StockService process "GOOG"
-  StockService process "IBM"
-  StockService process "ERR"
+  StockService.process("GOOG")
+  StockService.process("IBM")
+  StockService.process("ERR")
   // #snip_9-16
 
 }

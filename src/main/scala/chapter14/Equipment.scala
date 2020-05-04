@@ -17,7 +17,7 @@
 package chapter14
 
 class Equipment {
-  def simulate(input: Int)(calculator: Int ⇒ Int): Int = {
+  def simulate(input: Int)(calculator: Int => Int): Int = {
     //...
     calculator(input)
   }

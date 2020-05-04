@@ -25,7 +25,7 @@ object ThingsAcceptor2 extends App {
     def acceptStuff(thing: Thing) {
       thing match {
         //...
-        case _ ⇒
+        case _ =>
       }
     }
   }
