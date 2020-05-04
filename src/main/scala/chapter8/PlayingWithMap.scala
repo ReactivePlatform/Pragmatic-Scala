@@ -18,21 +18,19 @@ package chapter8
 
 object PlayingWithMap extends App {
   // #snip_8-8
-  val feeds = Map(
-    "Andy Hunt" -> "blog.toolshed.com",
-    "Dave Thomas" -> "pragdave.me",
-    "NFJS" -> "nofluffjuststuff.com/blog")
+  val feeds =
+    Map("Andy Hunt" -> "blog.toolshed.com", "Dave Thomas" -> "pragdave.me", "NFJS" -> "nofluffjuststuff.com/blog")
   // #snip_8-8
 
   // #snip_8-9
-  val filterNameStartWithD = feeds filterKeys (_ startsWith "D")
+  val filterNameStartWithD = feeds.filterKeys(_.startsWith("D"))
   println(s"# of Filtered: ${filterNameStartWithD.size}")
   // #snip_8-9
 
   // #snip_8-10
-  val filterNameStartWithDAndPragprogInFeed = feeds filter { element ⇒
+  val filterNameStartWithDAndPragprogInFeed = feeds.filter { element =>
     val (key, value) = element
-    (key startsWith "D") && (value contains "pragdave")
+    (key.startsWith("D")) && (value contains "pragdave")
   }
   print("# of feeds with auth name D* and pragdave in URL: ")
   println(filterNameStartWithDAndPragprogInFeed.size)
@@ -49,7 +47,7 @@ object PlayingWithMap extends App {
     print("Get Bill's Feed: ")
     println(feeds("Bill Who"))
   } catch {
-    case _: java.util.NoSuchElementException ⇒ println("Not found")
+    case _: java.util.NoSuchElementException => println("Not found")
   }
   // #snip_8-12
 
@@ -60,8 +58,7 @@ object PlayingWithMap extends App {
   // #snip_8-13
 
   // #snip_8-14
-  val mutableFeeds = scala.collection.mutable.Map(
-    "Scala Book Forum" -> "forums.pragprog.com/forums/87")
+  val mutableFeeds = scala.collection.mutable.Map("Scala Book Forum" -> "forums.pragprog.com/forums/87")
   mutableFeeds("Groovy Book Forum") = "forums.pragprog.com/forums/246"
   println(s"Number of forums: ${mutableFeeds.size}")
   // #snip_8-14

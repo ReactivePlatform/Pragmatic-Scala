@@ -23,7 +23,7 @@ object MatchWithValsOK extends App {
 
     def process(input: Int): Unit = {
       input match {
-        case MAX ⇒ println("You matched max")
+        case MAX => println("You matched max")
       }
     }
   }
@@ -32,7 +32,7 @@ object MatchWithValsOK extends App {
   try {
     sample.process(0)
   } catch {
-    case ex: Throwable ⇒ println(ex)
+    case ex: Throwable => println(ex)
   }
   sample.process(100)
   // #snip

@@ -21,8 +21,8 @@ object Inject2 extends App {
   val array = Array(2, 3, 5, 1, 6, 4)
 
   // #snip_6-10
-  val sum = array.foldLeft(0)((sum, elem) ⇒ sum + elem) //可以被替换为对sum方法的调用
-  val max = array.foldLeft(Integer.MIN_VALUE) { (large, elem) ⇒
+  val sum = array.foldLeft(0)((sum, elem) => sum + elem) //可以被替换为对sum方法的调用
+  val max = array.foldLeft(Integer.MIN_VALUE) { (large, elem) =>
     Math.max(large, elem)
   }
 
@@ -32,9 +32,13 @@ object Inject2 extends App {
 
   {
     // #snip_6-11
-    val sum = (0 /: array) { (sum, elem) ⇒ sum + elem }
+    val sum = (0 /: array) { (sum, elem) =>
+      sum + elem
+    }
     val max =
-      (Integer.MIN_VALUE /: array) { (large, elem) ⇒ Math.max(large, elem) }
+      (Integer.MIN_VALUE /: array) { (large, elem) =>
+        Math.max(large, elem)
+      }
     // #snip_6-11
 
     println(s"Sum of elements in array ${array.toString} is $sum")

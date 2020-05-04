@@ -22,10 +22,9 @@ class WordScorer(val spellChecker: SpellChecker) {
   // #snip
   def score(word: String): Int = {
     if (spellChecker.isCorrect(word))
-      (0 /: word) { (total, letter) ⇒
+      (0 /: word) { (total, letter) =>
         total + (if (VOWELS.contains(letter)) 1 else 2)
-      }
-    else
+      } else
       0
   }
   // #snip

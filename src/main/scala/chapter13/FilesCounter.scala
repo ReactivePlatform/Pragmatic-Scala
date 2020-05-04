@@ -29,11 +29,11 @@ class FilesCounter extends Actor {
     context.actorOf(RoundRobinPool(100).props(Props[FileExplorer]))
 
   def receive: Receive = {
-    case dirName: String ⇒
+    case dirName: String =>
       pending = pending + 1
       fileExplorers ! dirName
 
-    case count: Int ⇒
+    case count: Int =>
       filesCount = filesCount + count
       pending = pending - 1
 

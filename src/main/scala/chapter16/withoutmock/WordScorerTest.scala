@@ -21,14 +21,16 @@ import org.scalatest.{ FlatSpec, Matchers }
 
 class WordScorerTest extends FlatSpec with Matchers {
 
-  def withWordScorer(test: WordScorer ⇒ Unit): Unit = {
+  def withWordScorer(test: WordScorer => Unit): Unit = {
     val wordScorer = new WordScorer()
 
     test(wordScorer)
   }
 
   "score" should "return 0 for an empty word" in {
-    withWordScorer { wordScorer ⇒ wordScorer.score("") should be(0) }
+    withWordScorer { wordScorer =>
+      wordScorer.score("") should be(0)
+    }
   }
 
   "score" should "return 2 for word with two vowels" in {

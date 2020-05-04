@@ -29,9 +29,10 @@ object StockPriceFinder {
       s"stocks/daily/daily_$symbol.csv"
 
     val data = Source.fromURL(url).mkString
-    val latestClosePrize = data.split("\n")
+    val latestClosePrize = data
+      .split("\n")
       .slice(1, 2)
-      .map(record ⇒ {
+      .map(record => {
         val Array(timestamp, open, high, low, close, volume) = record.split(",")
         val Array(year, month, date) = timestamp.split("-")
         Record(year.toInt, month.toInt, date.toInt, BigDecimal(close.trim))
@@ -46,14 +47,12 @@ object StockPriceFinder {
     val stocksXMLInputStream = classLoader.getResourceAsStream("stocks.xml")
     //或者来自于文件
     val stocksAndUnitsXML = scala.xml.XML.load(stocksXMLInputStream)
-    (Map[String, Int]() /: (stocksAndUnitsXML \ "symbol")) {
-      (map, symbolNode) ⇒
-        val ticker = (symbolNode \ "@ticker").toString
-        val units = (symbolNode \ "units").text.toInt
-        map + (ticker -> units)
+    (Map[String, Int]() /: (stocksAndUnitsXML \ "symbol")) { (map, symbolNode) =>
+      val ticker = (symbolNode \ "@ticker").toString
+      val units = (symbolNode \ "units").text.toInt
+      map + (ticker -> units)
     }
   }
 }
 
 //  #snip
-

@@ -39,4 +39,3 @@ object Protected extends App {
   }
   // #snip
 }
-

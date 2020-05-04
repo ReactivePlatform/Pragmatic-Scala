@@ -20,21 +20,25 @@ object Underscore extends App {
   // #snip_6-16
   val arr = Array(1, 2, 3, 4, 5)
 
-  val total = (0 /: arr) { (sum, elem) ⇒ sum + elem }
+  val total = arr.foldLeft(0) { (sum, elem) =>
+    sum + elem
+  }
   // #snip_6-16
 
   println(s"Sum of all values in array is $total")
 
   {
     // #snip_6-17
-    val total = (0 /: arr) { _ + _ }
+    val total = arr.foldLeft(0) { _ + _ }
     // #snip_6-17
 
   }
   println(s"Sum of all values in array is $total")
 
   // #snip_6-18
-  val negativeNumberExists1 = arr.exists { elem ⇒ elem < 0 }
+  val negativeNumberExists1 = arr.exists { elem =>
+    elem < 0
+  }
   val negativeNumberExists2 = arr.exists { _ < 0 }
   // #snip_6-18
 

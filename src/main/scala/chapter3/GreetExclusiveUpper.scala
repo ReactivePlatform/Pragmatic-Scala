@@ -18,7 +18,7 @@ package chapter3
 
 object GreetExclusiveUpper extends App {
   // #snip
-  for (i ← 1 until 3) {
+  for (i <- 1 until 3) {
     print(s"$i,")
   }
 

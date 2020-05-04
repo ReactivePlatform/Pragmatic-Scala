@@ -27,4 +27,3 @@ object CountFiles extends App {
   filesCounter ! args(0)
 }
 // #snip
-

@@ -30,9 +30,9 @@ object Wildcard extends App {
 
   def activity(day: DayOfWeek.Value): Unit = {
     day match {
-      case DayOfWeek.SUNDAY   ⇒ println("Eat, sleep, repeat...")
-      case DayOfWeek.SATURDAY ⇒ println("Hang out with friends")
-      case _                  ⇒ println("...code for fun...")
+      case DayOfWeek.SUNDAY => println("Eat, sleep, repeat...")
+      case DayOfWeek.SATURDAY => println("Hang out with friends")
+      case _ => println("...code for fun...")
     }
   }
 
