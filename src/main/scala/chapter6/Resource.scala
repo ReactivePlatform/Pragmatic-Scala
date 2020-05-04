@@ -27,7 +27,7 @@ object Resource extends App {
   }
 
   object Resource {
-    def use(codeBlock: Resource ⇒ Unit): Unit = {
+    def use(codeBlock: Resource => Unit): Unit = {
       val resource = new Resource
       try {
         codeBlock(resource)
@@ -39,7 +39,7 @@ object Resource extends App {
   // #snip_6-33
 
   // #snip_6-34
-  Resource.use { resource ⇒
+  Resource.use { resource =>
     resource.op1()
     resource.op2()
     resource.op3()

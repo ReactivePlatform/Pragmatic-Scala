@@ -20,7 +20,7 @@ object FindMaxImperative extends App {
   // #snip
   def findMax(temperatures: List[Int]) = {
     var highTemperature = Integer.MIN_VALUE
-    for (temperature ← temperatures) {
+    for (temperature <- temperatures) {
       highTemperature = Math.max(highTemperature, temperature)
     }
     highTemperature

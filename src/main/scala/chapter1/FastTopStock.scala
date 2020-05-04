@@ -18,18 +18,18 @@ package chapter1
 
 object FastTopStock extends App {
 
-  import scala.io
-
   // #snip_1-2
   case class Record(year: Int, month: Int, date: Int, closePrice: BigDecimal)
 
   def getYearEndClosingPrice(symbol: String, year: Int): BigDecimal = {
-    val url = s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/stocks/daily/daily_$symbol.csv"
+    val url =
+      s"https://raw.githubusercontent.com/ReactivePlatform/Pragmatic-Scala-StaticResources/master/src/main/resources/stocks/daily/daily_$symbol.csv"
 
     val data = io.Source.fromURL(url).mkString
-    val maxClosePrize = data.split("\n")
-      .filter(record ⇒ record.startsWith(s"$year-12"))
-      .map(record ⇒ {
+    val maxClosePrize = data
+      .split("\n")
+      .filter(record => record.startsWith(s"$year-12"))
+      .map(record => {
         val Array(timestamp, open, high, low, close, volume) = record.split(",")
         val Array(year, month, date) = timestamp.split("-")
         Record(year.toInt, month.toInt, date.toInt, BigDecimal(close.trim))
@@ -48,9 +48,15 @@ object FastTopStock extends App {
   val year = 2017
 
   // #snip
+  import scala.collection.parallel.CollectionConverters._
   val (topStock, topPrice) =
-    symbols.par.map { ticker ⇒ (ticker, getYearEndClosingPrice(ticker, year)) }
-      .maxBy { stockPrice ⇒ stockPrice._2 }
+    symbols.par
+      .map { ticker =>
+        (ticker, getYearEndClosingPrice(ticker, year))
+      }
+      .maxBy { stockPrice =>
+        stockPrice._2
+      }
   // #snip
 
   printf(s"Top stock of $year is $topStock closing at price $$$topPrice")

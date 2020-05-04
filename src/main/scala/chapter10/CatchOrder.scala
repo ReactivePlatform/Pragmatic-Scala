@@ -24,8 +24,8 @@ object CatchOrder extends App {
     print(s"Amount: $$$amount ")
     println(s"Tax: $$${Tax.taxFor(amount)}")
   } catch {
-    case _: Exception                 ⇒ println("Something went wrong")
-    case ex: IllegalArgumentException ⇒ println(ex.getMessage)
+    case _: Exception => println("Something went wrong")
+    case ex: IllegalArgumentException => println(ex.getMessage)
   }
   // #snip
 

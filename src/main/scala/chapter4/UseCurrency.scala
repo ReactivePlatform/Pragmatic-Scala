@@ -20,6 +20,8 @@ package chapter4
 import chapter4.finance1.finance.currencies.Currency
 
 object UseCurrency extends App {
-  Currency.values.foreach { currency ⇒ println(currency) }
+  Currency.values.foreach { currency =>
+    println(currency)
+  }
 }
 // #snip

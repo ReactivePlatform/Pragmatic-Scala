@@ -23,7 +23,7 @@ object MatchWithField extends App {
 
     def process(input: Int): Unit = {
       input match {
-        case max ⇒ println(s"You matched max $max")
+        case max => println(s"You matched max $max")
       }
     }
   }
@@ -32,7 +32,7 @@ object MatchWithField extends App {
   try {
     sample.process(0)
   } catch {
-    case ex: Throwable ⇒ println(ex)
+    case ex: Throwable => println(ex)
   }
   sample.process(100)
   // #snip

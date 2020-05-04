@@ -23,7 +23,7 @@ import org.mockito.ArgumentMatchers.anyString
 
 class WordScorerTest extends FlatSpec with Matchers {
 
-  def withWordScorer(test: WordScorer ⇒ Unit): Boolean = {
+  def withWordScorer(test: WordScorer => Unit): Boolean = {
     val spellChecker = mock(classOf[SpellChecker])
     when(spellChecker.isCorrect(anyString)).thenReturn(true)
     val wordScorer = new WordScorer(spellChecker)
@@ -35,7 +35,9 @@ class WordScorerTest extends FlatSpec with Matchers {
 
   //No change to the tests, same as in the previous version
   "score" should "return 0 for an empty word" in {
-    withWordScorer { wordScorer ⇒ wordScorer.score("") should be(0) }
+    withWordScorer { wordScorer =>
+      wordScorer.score("") should be(0)
+    }
   }
 
   "score" should "return 2 for word with two vowels" in {
@@ -52,4 +54,3 @@ class WordScorerTest extends FlatSpec with Matchers {
 
 }
 // #snip
-
