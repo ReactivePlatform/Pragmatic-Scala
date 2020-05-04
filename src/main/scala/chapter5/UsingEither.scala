@@ -29,8 +29,8 @@ object UsingEither extends App {
   def displayResult(result: Either[String, Double]): Unit = {
     println(s"Raw: $result")
     result match {
-      case Right(value) ⇒ println(s"result $value")
-      case Left(err)    ⇒ println(s"Error: $err")
+      case Right(value) => println(s"result $value")
+      case Left(err) => println(s"Error: $err")
     }
   }
   // #snip_5-12

@@ -18,12 +18,13 @@ package chapter8
 
 object PowerOfFor extends App {
   // #snip_8-28
-  for (_ ← 1 to 3) { print("ho ") }
+  for (_ <- 1 to 3) { print("ho ") }
   // #snip_8-28
 
   // #snip_8-29
-  val result = for (i ← 1 to 10)
-    yield i * 2
+  val result =
+    for (i <- 1 to 10)
+      yield i * 2
   // #snip_8-29
 
   // #snip_8-30
@@ -31,13 +32,14 @@ object PowerOfFor extends App {
   // #snip_8-30
 
   // #snip_8-31
-  val doubleEven = for (i ← 1 to 10; if i % 2 == 0)
-    yield i * 2
+  val doubleEven =
+    for (i <- 1 to 10; if i % 2 == 0)
+      yield i * 2
   // #snip_8-31
 
   // #snip_8-32
   for {
-    i ← 1 to 10
+    i <- 1 to 10
     if i % 2 == 0
   } yield i * 2
   // #snip_8-32

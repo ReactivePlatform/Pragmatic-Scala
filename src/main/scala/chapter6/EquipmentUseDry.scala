@@ -18,7 +18,9 @@ package chapter6
 
 // #snip
 object EquipmentUseDry extends App {
-  val calculator = { input: Int ⇒ println(s"calc with $input"); input }
+  val calculator = { input: Int =>
+    println(s"calc with $input"); input
+  }
 
   val equipment1 = new Equipment(calculator)
   val equipment2 = new Equipment(calculator)

@@ -29,9 +29,10 @@ object TopStock extends App {
       s"stocks/daily/daily_$symbol.csv"
 
     val data = io.Source.fromURL(url).mkString
-    val maxClosePrize = data.split("\n")
-      .filter(record ⇒ record.startsWith(s"$year-12"))
-      .map(record ⇒ {
+    val maxClosePrize = data
+      .split("\n")
+      .filter(record => record.startsWith(s"$year-12"))
+      .map(record => {
         val Array(timestamp, open, high, low, close, volume) = record.split(",")
         val Array(year, month, date) = timestamp.split("-")
         Record(year.toInt, month.toInt, date.toInt, BigDecimal(close.trim))
@@ -50,8 +51,13 @@ object TopStock extends App {
   val year = 2017
 
   val (topStock, topPrice) =
-    symbols.map { ticker ⇒ (ticker, getYearEndClosingPrice(ticker, year)) }
-      .maxBy { stockPrice ⇒ stockPrice._2 }
+    symbols
+      .map { ticker =>
+        (ticker, getYearEndClosingPrice(ticker, year))
+      }
+      .maxBy { stockPrice =>
+        stockPrice._2
+      }
 
   printf(s"Top stock of $year is $topStock closing at price $$$topPrice")
   // #snip_1-1

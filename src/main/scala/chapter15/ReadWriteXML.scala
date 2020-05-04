@@ -20,14 +20,14 @@ object ReadWriteXML extends App {
   //  #snip_15-11
   import scala.xml._
 
-  val stocksAndUnits = XML load "stocks.xml"
+  val stocksAndUnits = XML.load("stocks.xml")
   println(stocksAndUnits.getClass)
   println(s"File has ${(stocksAndUnits \\ "symbol").size} symbol elements")
   //  #snip_15-11
 
   //  #snip_15-12
   val stocksAndUnitsMap =
-    (Map[String, Int]() /: (stocksAndUnits \ "symbol")) { (map, symbolNode) ⇒
+    (Map[String, Int]() /: (stocksAndUnits \ "symbol")) { (map, symbolNode) =>
       val ticker = (symbolNode \ "@ticker").toString
       val units = (symbolNode \ "units").text.toInt
       map + (ticker -> units) //return new map, with one additional entry
@@ -39,20 +39,19 @@ object ReadWriteXML extends App {
   //  #snip_15-13
   val updatedStocksAndUnitsXML =
     <symbols>
-      { stocksAndUnitsMap map updateUnitsAndCreateXML }
+      {stocksAndUnitsMap.map(updateUnitsAndCreateXML)}
     </symbols>
 
   def updateUnitsAndCreateXML(element: (String, Int)) = {
     val (ticker, units) = element
-    <symbol ticker={ ticker }>
-      <units>{ units + 1 }</units>
+    <symbol ticker={ticker}>
+      <units>{units + 1}</units>
     </symbol>
   }
 
-  XML save ("stocks2.xml", updatedStocksAndUnitsXML)
+  XML.save("stocks2.xml", updatedStocksAndUnitsXML)
 
   val elementsCount = (XML.load("stocks2.xml") \\ "symbol").size
   println(s"Saved file has $elementsCount symbol elements")
   //  #snip_15-13
 }
-

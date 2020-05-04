@@ -27,7 +27,7 @@ class UsingJUnit {
   def listAdd(): Unit = {
     val list = new util.ArrayList[String]
     list.add("Milk")
-    list add "Sugar"
+    list.add("Sugar")
     assertEquals(2, list.size)
   }
 }

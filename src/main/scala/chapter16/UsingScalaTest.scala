@@ -31,7 +31,7 @@ class UsingScalaTest extends FlatSpec with Matchers {
 
   "a list" should "increase in size upon add" in new EmptyArrayList {
     list.add("Milk")
-    list add "Sugar"
+    list.add("Sugar")
 
     list.size should be(2)
   }

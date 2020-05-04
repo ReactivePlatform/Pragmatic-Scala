@@ -46,7 +46,7 @@ object WordsTrampoline extends App {
       fromURL("https://en.wikipedia.org/wiki/Gettysburg_Address").mkString
     callExplore(text)
   } catch {
-    case ex: Throwable ⇒ println(ex)
+    case ex: Throwable => println(ex)
   }
   // #snip
 }

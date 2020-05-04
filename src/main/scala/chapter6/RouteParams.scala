@@ -21,7 +21,9 @@ object RouteParams extends App {
 
   // #snip_6-19
   val largest =
-    (Integer.MIN_VALUE /: arr) { (carry, elem) ⇒ Math.max(carry, elem) }
+    (Integer.MIN_VALUE /: arr) { (carry, elem) =>
+      Math.max(carry, elem)
+    }
   // #snip_6-19
 
   println(largest)

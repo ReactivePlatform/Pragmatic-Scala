@@ -18,9 +18,9 @@ package chapter6
 
 object Loop extends App {
   // #snip_6-2
-  def totalResultOverRange(number: Int, codeBlock: Int ⇒ Int) = {
+  def totalResultOverRange(number: Int, codeBlock: Int => Int) = {
     var result = 0
-    for (i ← 1 to number) {
+    for (i <- 1 to number) {
       result += codeBlock(i)
     }
     result
@@ -28,15 +28,15 @@ object Loop extends App {
   // #snip_6-2
 
   // #snip_6-3
-  println(totalResultOverRange(11, i ⇒ i))
+  println(totalResultOverRange(11, i => i))
   // #snip_6-3
 
   // #snip_6-4
-  println(totalResultOverRange(11, i ⇒ if (i % 2 == 0) i else 0))
+  println(totalResultOverRange(11, i => if (i % 2 == 0) i else 0))
   // #snip_6-4
 
   // #snip_6-5
-  println(totalResultOverRange(11, i ⇒ if (i % 2 != 0) i else 0))
+  println(totalResultOverRange(11, i => if (i % 2 != 0) i else 0))
   // #snip_6-5
 
 }

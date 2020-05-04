@@ -21,4 +21,3 @@ trait SpellChecker {
   def isCorrect(word: String): Boolean
 }
 // #snip
-

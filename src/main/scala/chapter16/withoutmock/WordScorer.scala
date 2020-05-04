@@ -21,10 +21,9 @@ class WordScorer() {
   private val VOWELS = List('a', 'e', 'i', 'o', 'u')
 
   def score(word: String): Int = {
-    (0 /: word) { (total, letter) ⇒
+    (0 /: word) { (total, letter) =>
       total + (if (VOWELS.contains(letter)) 1 else 2)
     }
   }
 }
 // #snip
-

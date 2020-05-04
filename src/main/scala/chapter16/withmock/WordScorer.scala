@@ -22,7 +22,7 @@ class WordScorer(val spellChecker: SpellChecker) {
 
   def score(word: String): Int = {
     spellChecker.isCorrect(word)
-    (0 /: word) { (total, letter) ⇒
+    (0 /: word) { (total, letter) =>
       total + (if (VOWELS.contains(letter)) 1 else 2)
     }
   }

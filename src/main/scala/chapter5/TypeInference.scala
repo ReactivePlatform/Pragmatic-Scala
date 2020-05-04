@@ -21,4 +21,3 @@ class TypeInference {
   val greet = "Ahoy!"
 }
 // #snip
-

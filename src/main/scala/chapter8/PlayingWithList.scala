@@ -34,9 +34,7 @@ object PlayingWithList extends App {
 
   // #snip_8-18
   val feedsWithForums =
-    feeds ::: List(
-      "forums.pragprog.com/forums/87",
-      "forums.pragprog.com/forums/246")
+    feeds ::: List("forums.pragprog.com/forums/87", "forums.pragprog.com/forums/246")
   println(s"First feed in feeds with forum: ${feedsWithForums.head}")
   println(s"Last feed in feeds with forum: ${feedsWithForums.last}")
   // #snip_8-18
@@ -59,12 +57,16 @@ object PlayingWithList extends App {
   // #snip_8-21
 
   // #snip_8-22
-  val total = feeds.foldLeft(0) { (total, feed) ⇒ total + feed.length }
+  val total = feeds.foldLeft(0) { (total, feed) =>
+    total + feed.length
+  }
   println(s"Total length of feed urls: $total")
   // #snip_8-22
 
   // #snip_8-23
-  val total2 = (0 /: feeds) { (total, feed) ⇒ total + feed.length }
+  val total2 = (0 /: feeds) { (total, feed) =>
+    total + feed.length
+  }
   println(s"Total length of feed urls: $total2")
   // #snip_8-23
 

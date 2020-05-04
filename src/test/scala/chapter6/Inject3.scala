@@ -18,15 +18,17 @@ package chapter6
 
 object Inject3 extends App {
 
-  def inject(arr: Array[Int], initial: Int, operation: (Int, Int) ⇒ Int) = {
+  def inject(arr: Array[Int], initial: Int, operation: (Int, Int) => Int) = {
     var carryOver = initial
-    arr.foreach(element ⇒ carryOver = operation(carryOver, element))
+    arr.foreach(element => carryOver = operation(carryOver, element))
     carryOver
   }
   val array = Array(2, 3, 5, 1, 6, 4)
 
   // #snip
-  val sum = inject(array, 0) { (carryOver, elem) ⇒ carryOver + elem }
+  val sum = inject(array, 0) { (carryOver, elem) =>
+    carryOver + elem
+  }
   // #snip
 
   println(sum)
