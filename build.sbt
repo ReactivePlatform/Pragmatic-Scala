@@ -66,7 +66,7 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.3.0"
 libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0"
 //
 libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.5"
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.2"
 libraryDependencies += "junit" % "junit" % "4.12"
 libraryDependencies += "org.mockito" % "mockito-core" % "2.28.2"
 
