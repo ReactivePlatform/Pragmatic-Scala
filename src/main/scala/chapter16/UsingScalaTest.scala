@@ -19,8 +19,10 @@ package chapter16
 // #snip
 import java.util
 import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-class UsingScalaTest extends FlatSpec with Matchers {
+class UsingScalaTest extends AnyFlatSpec with Matchers {
   trait EmptyArrayList {
     val list = new util.ArrayList[String]
   }
