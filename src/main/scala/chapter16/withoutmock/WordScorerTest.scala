@@ -17,9 +17,10 @@
 package chapter16.withoutmock
 
 // #snip
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-class WordScorerTest extends FlatSpec with Matchers {
+class WordScorerTest extends AnyFlatSpec with Matchers {
 
   def withWordScorer(test: WordScorer => Unit): Unit = {
     val wordScorer = new WordScorer()
