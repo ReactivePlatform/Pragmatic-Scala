@@ -1,6 +1,6 @@
 resolvers += "Bintray Jcenter" at "https://jcenter.bintray.com/"
 
-addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.6")
+addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.6.1")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-site" % "1.3.3")
 
