@@ -2,7 +2,7 @@ name := "PragmaticScala"
 
 version := "1.0.0"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.4"
 
 scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
 
@@ -65,7 +65,7 @@ licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.3.0"
 libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0"
 //
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.5"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.10"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
 libraryDependencies += "junit" % "junit" % "4.12"
 libraryDependencies += "org.mockito" % "mockito-core" % "2.28.2"
