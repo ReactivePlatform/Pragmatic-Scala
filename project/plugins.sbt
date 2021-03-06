@@ -16,7 +16,7 @@ addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.6.0")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.9.25")
 
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.0")
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.2")
 
 addSbtPlugin("com.dwijnand" % "sbt-reloadquick" % "1.0.0")
 
