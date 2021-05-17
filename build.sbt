@@ -2,7 +2,7 @@ name := "PragmaticScala"
 
 version := "1.0.0"
 
-scalaVersion := "2.13.4"
+scalaVersion := "2.13.6"
 
 scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
 
