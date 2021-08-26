@@ -20,7 +20,7 @@ addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.0")
 
 addSbtPlugin("com.dwijnand" % "sbt-reloadquick" % "1.0.0")
 
-addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.4.4")
+addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.6.1")
 
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.2")
 
