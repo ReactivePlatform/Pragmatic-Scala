@@ -1,4 +1,4 @@
-resolvers += "Bintray Jcenter" at "https://jcenter.bintray.com/"
+resolvers += "Bintray Jcenter".at("https://jcenter.bintray.com/")
 
 addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.6")
 
@@ -12,7 +12,7 @@ addSbtPlugin("io.github.jonas" % "sbt-paradox-material-theme" % "0.6.0")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-ghpages" % "0.6.3")
 
-addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.6.0")
+addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.6.5")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.9.25")
 
