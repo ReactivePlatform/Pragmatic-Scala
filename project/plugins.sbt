@@ -1,4 +1,4 @@
-resolvers += "Bintray Jcenter" at "https://jcenter.bintray.com/"
+resolvers += "Bintray Jcenter".at("https://jcenter.bintray.com/")
 
 addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.6")
 
@@ -24,4 +24,4 @@ addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.4.4")
 
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.2")
 
-addSbtPlugin("org.wartremover" % "sbt-wartremover" % "2.4.2")
+addSbtPlugin("org.wartremover" % "sbt-wartremover" % "2.4.17")
