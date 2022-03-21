@@ -2,28 +2,13 @@ name := "PragmaticScala"
 
 version := "1.0.0"
 
-scalaVersion := "2.13.8"
+scalaVersion := "2.13.4"
 
-scalacOptions in Compile ++= Seq(
-  "-encoding",
-  "UTF-8",
-  "-target:jvm-1.8",
-  "-feature",
-  "-unchecked",
-  "-Xlog-reflective-calls",
-  "-Xlint")
+scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
 
-javacOptions in compile ++= Seq(
-  "-encoding",
-  "UTF-8",
-  "-source",
-  "1.8",
-  "-target",
-  "1.8",
-  "-Xlint:unchecked",
-  "-XDignore.symbol.file")
+javacOptions in compile ++= Seq("-encoding", "UTF-8", "-source", "1.8", "-target", "1.8", "-Xlint:unchecked", "-XDignore.symbol.file")
 
-resolvers += "akka".at("https://dl.bintray.com/akka/maven/")
+resolvers += "akka" at "https://dl.bintray.com/akka/maven/"
 
 //javaFormattingSettingsFilename in ThisBuild := "formatting-java.xml"
 
@@ -41,10 +26,9 @@ enablePlugins(JavaFormatterPlugin)
 
 (sources in Test) := Nil
 
-scmInfo := Some(
-  ScmInfo(
-    url("https://github.com/ReactivePlatform/Pragmatic-Scala.git"),
-    "git@github.com:ReactivePlatform/Pragmatic-Scala.git"))
+scmInfo := Some(ScmInfo(url(
+  "https://github.com/ReactivePlatform/Pragmatic-Scala.git"),
+  "git@github.com:ReactivePlatform/Pragmatic-Scala.git"))
 
 git.remoteRepo := scmInfo.value.get.connection
 
@@ -57,9 +41,11 @@ enablePlugins(ParadoxMaterialThemePlugin)
 
 ParadoxMaterialThemePlugin.paradoxMaterialThemeSettings(Paradox)
 
+
 paradoxProperties in Compile ++= Map(
   "project.name" -> "Pragmatic-Scala",
-  "github.base_url" -> "https://github.com/ReactivePlatform/Pragmatic-Scala")
+  "github.base_url" -> "https://github.com/ReactivePlatform/Pragmatic-Scala"
+)
 
 paradoxMaterialTheme in Compile ~= {
   _.withColor("red", "pink")
@@ -67,7 +53,9 @@ paradoxMaterialTheme in Compile ~= {
     .withCopyright("Copyleft © 2018 pragmatic-scala.reactiveplatform.xyz")
     .withRepository(uri("https://github.com/ReactivePlatform/Pragmatic-Scala.git"))
     .withSearch(tokenizer = "[\\s\\-\\.]+")
-    .withSocial(uri("https://github.com/hepin1989"))
+    .withSocial(
+      uri("https://github.com/hepin1989")
+    )
 }
 
 organizationName := "pragmatic-scala.reactiveplatform.xyz"
