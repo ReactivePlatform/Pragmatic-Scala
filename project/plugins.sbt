@@ -24,4 +24,4 @@ addSbtPlugin("com.lightbend.sbt" % "sbt-java-formatter" % "0.4.4")
 
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.2")
 
-addSbtPlugin("org.wartremover" % "sbt-wartremover" % "3.0.2")
+addSbtPlugin("org.wartremover" % "sbt-wartremover" % "3.0.4")
