@@ -77,7 +77,7 @@ licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "2.1.0"
 libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0"
 //
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.19"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.20"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
 libraryDependencies += "junit" % "junit" % "4.12"
 libraryDependencies += "org.mockito" % "mockito-core" % "4.5.0"
