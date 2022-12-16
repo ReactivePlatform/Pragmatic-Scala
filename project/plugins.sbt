@@ -10,7 +10,7 @@ addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.6.6")
 
 addSbtPlugin("io.github.jonas" % "sbt-paradox-material-theme" % "0.6.0")
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-ghpages" % "0.6.3")
+addSbtPlugin("com.github.sbt" % "sbt-ghpages" % "0.7.0")
 
 addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.6.0")
 
