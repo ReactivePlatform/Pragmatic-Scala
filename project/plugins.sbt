@@ -14,7 +14,7 @@ addSbtPlugin("com.github.sbt" % "sbt-ghpages" % "0.8.0")
 
 addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.6.0")
 
-addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.11.0")
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.11.1")
 
 addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.0")
 
