@@ -8,7 +8,7 @@ addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.10.5")
 
 addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.10.5")
 
-addSbtPlugin("io.github.jonas" % "sbt-paradox-material-theme" % "0.6.0")
+addSbtPlugin("com.github.sbt" % "sbt-paradox-material-theme" % "0.7.0")
 
 addSbtPlugin("com.github.sbt" % "sbt-ghpages" % "0.8.0")
 
