@@ -2,7 +2,7 @@ name := "PragmaticScala"
 
 version := "1.0.0"
 
-scalaVersion := "2.13.12"
+scalaVersion := "2.13.13"
 
 scalacOptions in Compile ++= Seq(
   "-encoding",
