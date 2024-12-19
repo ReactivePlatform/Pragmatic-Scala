@@ -75,7 +75,7 @@ startYear := Some(2018)
 licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "2.3.0"
-libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0"
+libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "1.1.0"
 //
 libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.20"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
